@@ -6,8 +6,12 @@ export function NewsSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-indigo-600 rounded-full mb-6">
-            <Newspaper size={40} className="text-white" />
+          <div className="inline-flex items-center justify-center mb-6">
+            <img
+              src="https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png"
+              alt="Cadence Henderson News"
+              className="w-24 h-24 object-contain"
+            />
           </div>
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
             Cadence Henderson News

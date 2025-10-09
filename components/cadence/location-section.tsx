@@ -7,8 +7,12 @@ export function LocationSection() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-red-600 rounded-full mb-6">
-              <MapPin size={40} className="text-white" />
+            <div className="inline-flex items-center justify-center mb-6">
+              <img
+                src="https://cadencenv.com/wp-content/uploads/2021/01/location-home-box-288x300.png"
+                alt="Cadence Henderson Location"
+                className="w-24 h-24 object-contain"
+              />
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Cadence Henderson Location

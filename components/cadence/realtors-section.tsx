@@ -16,8 +16,12 @@ export function RealtorsSection() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <div className="inline-flex items-center justify-center w-20 h-20 bg-purple-600 rounded-full mb-6">
-              <Building2 size={40} className="text-white" />
+            <div className="inline-flex items-center justify-center mb-6">
+              <img
+                src="https://cadencenv.com/wp-content/uploads/2021/01/realtors-home-box-288x300.png"
+                alt="Cadence Las Vegas Realtors"
+                className="w-24 h-24 object-contain"
+              />
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Cadence Las Vegas Realtors
