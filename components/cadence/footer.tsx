@@ -2,14 +2,14 @@ import Link from 'next/link'
 
 export function Footer() {
   const footerLinks = [
-    { title: 'Builders', href: '#' },
-    { title: 'News', href: '#' },
-    { title: 'Events', href: '#' },
-    { title: 'Amenities', href: '#' },
-    { title: 'Realtors', href: '#' },
-    { title: 'Maps', href: '#' },
-    { title: 'Lifestyle', href: '#' },
-    { title: 'Contact Us', href: '#' },
+    { title: 'Builders', href: '/new-homes' },
+    { title: 'News', href: '/news' },
+    { title: 'Events', href: '/lifestyle/events' },
+    { title: 'Amenities', href: '/lifestyle/amenities' },
+    { title: 'Realtors', href: '/realtors' },
+    { title: 'Maps', href: '/maps' },
+    { title: 'Lifestyle', href: '/lifestyle' },
+    { title: 'Contact Us', href: '/contact' },
   ]
 
   return (

@@ -8,42 +8,63 @@ import { Button } from '@/components/ui/button'
 const navigationItems = [
   {
     title: 'New Homes',
+    href: '/new-homes',
     items: [
-      'Start Your Search',
-      'Beazer Homes',
-      'Century Communities',
-      'D.R. Horton',
-      'Lennar',
-      'Richmond American Homes',
-      'StoryBook Homes',
-      'Taylor Morrison',
-      'Woodside Homes',
+      { label: 'Start Your Search', href: '/new-homes' },
+      { label: 'Beazer Homes', href: '/new-homes/beazer-homes' },
+      { label: 'Century Communities', href: '/new-homes/century-communities' },
+      { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
+      { label: 'Lennar', href: '/new-homes/lennar' },
+      {
+        label: 'Richmond American Homes',
+        href: '/new-homes/richmond-american',
+      },
+      { label: 'StoryBook Homes', href: '/new-homes/storybook-homes' },
+      { label: 'Taylor Morrison', href: '/new-homes/taylor-morrison' },
+      { label: 'Woodside Homes', href: '/new-homes/woodside-homes' },
     ],
   },
   {
     title: 'Rentals',
-    items: ['American Homes (AMH)', 'Element 12', 'Adler'],
+    href: '/rentals',
+    items: [
+      { label: 'American Homes (AMH)', href: '/rentals/american-homes' },
+      { label: 'Element 12', href: '/rentals/element-12' },
+      { label: 'Adler', href: '/rentals/adler' },
+    ],
   },
   {
     title: 'Lifestyle',
+    href: '/lifestyle',
     items: [
-      'Events',
-      'Parks & Trails',
-      'Shopping & Entertainment',
-      'Schools',
-      'Amenities',
-      'Community',
-      'Cadence Animal Hospital',
+      { label: 'Events', href: '/lifestyle/events' },
+      { label: 'Parks & Trails', href: '/lifestyle/parks-trails' },
+      {
+        label: 'Shopping & Entertainment',
+        href: '/lifestyle/shopping',
+      },
+      { label: 'Schools', href: '/lifestyle/schools' },
+      { label: 'Amenities', href: '/lifestyle/amenities' },
+      { label: 'Community', href: '/lifestyle/community' },
+      {
+        label: 'Cadence Animal Hospital',
+        href: '/lifestyle/animal-hospital',
+      },
     ],
   },
   {
     title: 'News',
-    items: ['Media', 'Gallery', 'FAQs'],
+    href: '/news',
+    items: [
+      { label: 'Media', href: '/news' },
+      { label: 'Gallery', href: '/news#gallery' },
+      { label: 'FAQs', href: '/news#faqs' },
+    ],
   },
-  { title: 'Realtors' },
-  { title: 'Residents' },
-  { title: 'Contact Us' },
-  { title: 'Maps' },
+  { title: 'Realtors', href: '/realtors' },
+  { title: 'Residents', href: '/residents' },
+  { title: 'Contact Us', href: '/contact' },
+  { title: 'Maps', href: '/maps' },
 ]
 
 export function Navigation() {
@@ -70,18 +91,21 @@ export function Navigation() {
                 }
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2">
+                <Link
+                  href={item.href || '#'}
+                  className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
+                >
                   {item.title}
-                </button>
+                </Link>
                 {item.items && activeDropdown === item.title && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50">
                     {item.items.map((subItem) => (
                       <Link
-                        key={subItem}
-                        href="#"
+                        key={subItem.label}
+                        href={subItem.href}
                         className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
                       >
-                        {subItem}
+                        {subItem.label}
                       </Link>
                     ))}
                   </div>
@@ -113,25 +137,32 @@ export function Navigation() {
           <div className="lg:hidden border-t border-gray-200 py-4">
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">
-                <button
-                  className="w-full text-left px-4 py-2 text-gray-700 font-medium"
-                  onClick={() =>
-                    setActiveDropdown(
-                      activeDropdown === item.title ? null : item.title,
-                    )
-                  }
+                <Link
+                  href={item.href || '#'}
+                  className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
+                  onClick={(e) => {
+                    if (item.items) {
+                      e.preventDefault()
+                      setActiveDropdown(
+                        activeDropdown === item.title ? null : item.title,
+                      )
+                    } else {
+                      setIsOpen(false)
+                    }
+                  }}
                 >
                   {item.title}
-                </button>
+                </Link>
                 {item.items && activeDropdown === item.title && (
                   <div className="pl-4">
                     {item.items.map((subItem) => (
                       <Link
-                        key={subItem}
-                        href="#"
+                        key={subItem.label}
+                        href={subItem.href}
                         className="block px-4 py-2 text-gray-600 hover:text-blue-900"
+                        onClick={() => setIsOpen(false)}
                       >
-                        {subItem}
+                        {subItem.label}
                       </Link>
                     ))}
                   </div>
