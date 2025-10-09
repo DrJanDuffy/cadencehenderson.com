@@ -39,7 +39,7 @@ const builders = [
     name: 'Lennar',
     slug: 'lennar',
     description:
-      'Everything's Included® homes with the latest technology and features.',
+      'Everything\'s Included® homes with the latest technology and features.',
     homes: 28,
     priceRange: '$380,000 - $600,000',
     image:

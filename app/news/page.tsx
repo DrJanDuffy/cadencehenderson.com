@@ -27,7 +27,7 @@ const newsArticles = [
     date: 'September 15, 2025',
     category: 'Events',
     excerpt:
-      'Join us for live music every Friday evening in Central Park. This year's lineup features local and regional artists across multiple genres.',
+      'Join us for live music every Friday evening in Central Park. This year\'s lineup features local and regional artists across multiple genres.',
     image:
       'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80',
   },
