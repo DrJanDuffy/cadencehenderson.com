@@ -237,7 +237,7 @@ export default function MapsPage() {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Contact</h4>
                     <p className="text-gray-700">
-                      Phone: (702) 555-2000
+                      Phone: 702-500-1955
                       <br />
                       Email: DrJanSells@CadenceHenderson.com
                     </p>

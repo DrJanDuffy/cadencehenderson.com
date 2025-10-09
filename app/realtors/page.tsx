@@ -21,33 +21,139 @@ export default function RealtorsPage() {
       <section className="relative bg-gradient-to-r from-purple-900 to-purple-700 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Realtor Resources</h1>
-            <p className="text-xl mb-8">
-              Partner with Cadence to offer your clients an exceptional living
-              experience in one of the nation's top 10 best-selling
-              master-planned communities.
+            <h1 className="text-5xl font-bold mb-6">Work with Dr. Jan Duffy</h1>
+            <p className="text-lg mb-4 font-medium">
+              REALTOR® | Las Vegas Luxury Home Specialist
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100"
-            >
-              <Download className="mr-2" size={20} />
-              Download Sales Kit
-            </Button>
+            <p className="text-lg mb-2">
+              Berkshire Hathaway HomeServices Nevada Properties
+            </p>
+            <p className="text-xl mb-8">
+              Specializing in Cadence Henderson - one of the nation's top 10
+              best-selling master-planned communities. Let's find your dream home
+              together.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="tel:702-500-1955">
+                <Button
+                  size="lg"
+                  className="bg-white text-purple-900 hover:bg-gray-100"
+                >
+                  <Phone className="mr-2" size={20} />
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-purple-900"
+                >
+                  <Download className="mr-2" size={20} />
+                  Email Dr. Jan
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Why Cadence */}
-      <section className="py-16">
+      {/* About Dr. Jan */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+              About Dr. Jan Duffy
+            </h2>
+            <div className="bg-purple-50 rounded-lg p-8 mb-8">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Dr. Jan Duffy is a distinguished REALTOR® with Berkshire Hathaway
+                HomeServices Nevada Properties, specializing in the Cadence
+                Henderson community. With deep knowledge of the Las Vegas Valley
+                real estate market and expertise in luxury homes, investment
+                properties, and master-planned communities, Dr. Duffy provides
+                exceptional service to buyers and sellers alike.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">
+                    Areas of Expertise:
+                  </h3>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
+                      <span className="text-gray-700">
+                        Luxury Homes in Las Vegas, Henderson & Summerlin
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
+                      <span className="text-gray-700">
+                        Investment Properties with Strong ROI
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
+                      <span className="text-gray-700">
+                        First-Time Homebuyers
+                      </span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-900 rounded-full mr-3 mt-2" />
+                      <span className="text-gray-700">
+                        Relocations to/from Las Vegas
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-3">Contact Info:</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm text-gray-600">Phone:</p>
+                      <a
+                        href="tel:702-500-1955"
+                        className="text-purple-900 font-bold hover:underline"
+                      >
+                        702-500-1955
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600">Email:</p>
+                      <a
+                        href="mailto:DrJanSells@CadenceHenderson.com"
+                        className="text-purple-900 font-bold hover:underline"
+                      >
+                        DrJanSells@CadenceHenderson.com
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-600">Office:</p>
+                      <p className="text-gray-700">
+                        1170 E. Sunset Rd, Ste. 101
+                        <br />
+                        Henderson, NV 89011
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Work with Dr. Jan */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Why Recommend Cadence?
+              Why Work with Dr. Jan Duffy?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Give your clients the best with award-winning builders, exceptional
-              amenities, and a thriving community.
+              Combining Berkshire Hathaway's prestigious brand with in-depth
+              local expertise to deliver personalized guidance and exceptional
+              results.
             </p>
           </div>
 
@@ -57,24 +163,24 @@ export default function RealtorsPage() {
                 <Award size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Top 10 Nationally
+                Berkshire Hathaway
               </h3>
               <p className="text-gray-700">
-                Consistently ranked as one of America's top-selling master-planned
-                communities
+                Backed by the prestigious Berkshire Hathaway HomeServices brand
+                and network
               </p>
             </div>
 
             <div className="text-center p-6">
               <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
-                <Building2 size={32} className="text-purple-900" />
+                <Users size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                8+ Builders
+                Client-Focused
               </h3>
               <p className="text-gray-700">
-                Multiple award-winning builders offering diverse home styles and
-                price points
+                Dedicated to putting clients' needs first with personalized
+                attention and care
               </p>
             </div>
 
@@ -83,11 +189,11 @@ export default function RealtorsPage() {
                 <MapPin size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Prime Location
+                Local Expertise
               </h3>
               <p className="text-gray-700">
-                Easy access to Las Vegas Strip, airport, and major employment
-                centers
+                Deep knowledge of Cadence, Henderson, Las Vegas, and Summerlin
+                markets
               </p>
             </div>
 
@@ -96,11 +202,51 @@ export default function RealtorsPage() {
                 <TrendingUp size={32} className="text-purple-900" />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Strong Resale
+                Proven Results
               </h3>
               <p className="text-gray-700">
-                Excellent property values and high demand in the Henderson market
+                Track record of successful transactions and satisfied clients
+                throughout the valley
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+              What Clients Say
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="text-5xl mb-4">⭐⭐⭐⭐⭐</div>
+                <p className="text-gray-700 italic mb-6">
+                  "Dr. Jan Duffy provided me with critical insights during my
+                  separation that helped me make informed, strategic decisions
+                  about selling and purchasing property. Her deep knowledge of the
+                  divorce process gave me much-needed confidence and clarity. I
+                  couldn't recommend her highly enough."
+                </p>
+                <p className="font-bold text-gray-900">Robin P.</p>
+                <p className="text-sm text-gray-600">Boulder City</p>
+              </div>
+
+              <div className="bg-white rounded-lg shadow-lg p-8">
+                <div className="text-5xl mb-4">⭐⭐⭐⭐⭐</div>
+                <p className="text-gray-700 italic mb-6">
+                  "Dr. Jan Duffy is hands down the best realtor in Nevada!
+                  Searching for a home can be overwhelming, but her dedication and
+                  genuine care made all the difference. She truly puts her clients'
+                  needs first and is incredibly knowledgeable and reliable. I
+                  couldn't recommend her enough to anyone looking for their dream
+                  home!"
+                </p>
+                <p className="font-bold text-gray-900">Kelsey C.</p>
+                <p className="text-sm text-gray-600">Las Vegas</p>
+              </div>
             </div>
           </div>
         </div>

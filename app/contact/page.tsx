@@ -81,13 +81,13 @@ export default function ContactPage() {
                     <Phone size={24} className="text-blue-900" />
                   </div>
                   <div className="ml-4">
-                    <h3 className="font-bold text-gray-900 mb-1">Call Us</h3>
+                    <h3 className="font-bold text-gray-900 mb-1">Call Dr. Jan</h3>
                     <p className="text-gray-700">
                       <a
-                        href="tel:+17025552000"
+                        href="tel:702-500-1955"
                         className="hover:text-blue-900 transition-colors"
                       >
-                        (702) 555-2000
+                        702-500-1955
                       </a>
                     </p>
                   </div>

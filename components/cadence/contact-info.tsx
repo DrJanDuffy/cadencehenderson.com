@@ -2,7 +2,7 @@
 
 export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
-  phone: '(702) 555-2000',
+  phone: '702-500-1955',
   address: {
     street: '1170 E. Sunset Rd, Ste. 101',
     city: 'Henderson',
@@ -11,6 +11,8 @@ export const CONTACT_INFO = {
   },
   hours: 'Monday - Sunday: 10:00 AM - 6:00 PM',
   welcomeCenter: '1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011',
+  brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
+  mainOffice: '8850 W Sunset Road Suite 200, Las Vegas, NV 89148',
 }
 
 export const SOCIAL_MEDIA = {
