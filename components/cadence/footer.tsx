@@ -21,11 +21,14 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <div className="text-3xl font-bold mb-2">CADENCE HENDERSON</div>
-          <div className="text-sm text-gray-400 mb-2">
-            Represented by Dr. Jan Sells
+          <div className="text-sm text-gray-400 mb-1">
+            Dr. Jan Duffy, REALTOR®
+          </div>
+          <div className="text-xs text-gray-400 mb-1">
+            Berkshire Hathaway HomeServices Nevada Properties
           </div>
           <div className="text-xs text-gray-400 mb-6">
-            1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011
+            1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011 | 702-500-1955
           </div>
           <div className="flex items-center justify-center gap-2 mb-6 text-blue-400">
             <Mail size={16} />
