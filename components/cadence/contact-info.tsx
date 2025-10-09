@@ -4,13 +4,13 @@ export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
   phone: '(702) 555-2000',
   address: {
-    street: '2450 Paseo Verde Parkway',
+    street: '1170 E. Sunset Rd, Ste. 101',
     city: 'Henderson',
     state: 'NV',
-    zip: '89052',
+    zip: '89011',
   },
   hours: 'Monday - Sunday: 10:00 AM - 6:00 PM',
-  welcomeCenter: 'Building 1, Cadence Welcome Center',
+  welcomeCenter: '1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011',
 }
 
 export const SOCIAL_MEDIA = {

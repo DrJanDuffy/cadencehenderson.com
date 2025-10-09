@@ -66,12 +66,12 @@ export default function ContactPage() {
                   </div>
                   <div className="ml-4">
                     <h3 className="font-bold text-gray-900 mb-1">
-                      Visit Our Welcome Center
+                      Visit Our Office
                     </h3>
                     <p className="text-gray-700">
-                      2450 Paseo Verde Parkway
+                      1170 E. Sunset Rd, Ste. 101
                       <br />
-                      Henderson, NV 89052
+                      Henderson, NV 89011
                     </p>
                   </div>
                 </div>

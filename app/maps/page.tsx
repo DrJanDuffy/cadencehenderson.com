@@ -218,12 +218,12 @@ export default function MapsPage() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">
-                      Welcome Center
+                      Office Location
                     </h4>
                     <p className="text-gray-700">
-                      2450 Paseo Verde Parkway
+                      1170 E. Sunset Rd, Ste. 101
                       <br />
-                      Henderson, NV 89052
+                      Henderson, NV 89011
                     </p>
                   </div>
                   <div>
