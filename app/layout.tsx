@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import DeployBanner from '../components/deploy-banner'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
+import { LocalBusinessSchema } from '../components/schema/local-business'
 import './globals.css'
 
 const geistSans = Geist({
@@ -54,6 +55,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <LocalBusinessSchema />
+        <link rel="canonical" href="https://www.cadencehenderson.com" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
