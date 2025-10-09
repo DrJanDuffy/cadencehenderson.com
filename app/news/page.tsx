@@ -45,7 +45,7 @@ const newsArticles = [
     date: 'August 10, 2025',
     category: 'New Homes',
     excerpt:
-      'We're excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
+      'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
     image:
       'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
   },
