@@ -35,10 +35,10 @@ A modern Next.js website for the Cadence master-planned community in Henderson, 
 
 4. **Lifestyle** (`/lifestyle`)
    - Central Park feature section
-   - Events calendar
-   - Parks & trails information
-   - Shopping & entertainment
-   - Schools overview
+   - **Events** (`/lifestyle/events`) - Community events calendar
+   - **Parks & Trails** (`/lifestyle/parks-trails`) - 50+ acres, trails map
+   - **Schools** (`/lifestyle/schools`) - Public and private schools
+   - **Shopping** (`/lifestyle/shopping`) - Retail, dining, entertainment
    - Community amenities
    - Resort-style features
 
@@ -58,10 +58,24 @@ A modern Next.js website for the Cadence master-planned community in Henderson, 
 
 7. **Contact** (`/contact`)
    - Contact form
-   - Location information
+   - Location information  
    - Office hours
    - Interactive map
    - Multiple contact methods
+   - Dr. Jan Sells contact: DrJanSells@CadenceHenderson.com
+
+8. **Maps** (`/maps`)
+   - Interactive community map (coming soon)
+   - Location highlights
+   - Directions to welcome center
+   - Nearby attractions
+
+9. **Residents** (`/residents`)
+   - HOA portal
+   - Pay dues online
+   - Document downloads
+   - Amenity reservations
+   - Community forum
 
 ### Technical Features
 
@@ -71,6 +85,9 @@ A modern Next.js website for the Cadence master-planned community in Henderson, 
 - **Type-Safe** - Full TypeScript implementation
 - **Accessible** - ARIA labels and semantic HTML
 - **SEO Optimized** - Proper metadata and structure
+- **Scroll to Top** - Smooth scroll button on all pages
+- **Centralized Contact** - Reusable contact information component
+- **Dynamic Routes** - Builder detail pages with [slug] routing
 
 ## Tech Stack
 
