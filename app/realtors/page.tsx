@@ -343,81 +343,127 @@ export default function RealtorsPage() {
         </div>
       </section>
 
-      {/* Resources */}
+      {/* Services for Buyers & Sellers */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-              Realtor Resources
+              Services for Buyers & Sellers
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
                 <FileText size={32} className="text-purple-900 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Sales Materials
+                  Buyer Guides
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Brochures, floor plans, community maps, and marketing
-                  materials for your clients.
+                  Free comprehensive guides on buying in Cadence, including
+                  floor plans, pricing, and step-by-step purchase process.
                 </p>
-                <Button
-                  variant="outline"
-                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-                >
-                  Download
-                </Button>
-              </div>
-
-              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
-                <MapPin size={32} className="text-purple-900 mb-4" />
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Interactive Map
-                </h3>
-                <p className="text-gray-700 mb-4">
-                  Explore available homes, amenities, and community features on
-                  our interactive map.
-                </p>
-                <Button
-                  variant="outline"
-                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-                >
-                  View Map
-                </Button>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Request Buyer Guide">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Request Guide
+                  </Button>
+                </a>
               </div>
 
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
                 <DollarSign size={32} className="text-purple-900 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Pricing & Incentives
+                  Free Home Valuation
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Current pricing, builder incentives, and special offers for
-                  your clients.
+                  Thinking of selling? Get a complimentary market analysis of
+                  your home's current value in today's market.
                 </p>
-                <Button
-                  variant="outline"
-                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-                >
-                  View Details
-                </Button>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Home Valuation Request">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Get Valuation
+                  </Button>
+                </a>
+              </div>
+
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
+                <MapPin size={32} className="text-purple-900 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Personalized Home Tour
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Schedule a private tour of Cadence with Dr. Jan. Visit
+                  multiple builders and find your perfect home.
+                </p>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Schedule Tour">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Schedule Tour
+                  </Button>
+                </a>
+              </div>
+
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
+                <TrendingUp size={32} className="text-purple-900 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Market Reports
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Stay informed with monthly market updates, pricing trends, and
+                  investment insights for Cadence and Henderson.
+                </p>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Subscribe to Market Reports">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Subscribe
+                  </Button>
+                </a>
+              </div>
+
+              <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
+                <Building2 size={32} className="text-purple-900 mb-4" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Investment Properties
+                </h3>
+                <p className="text-gray-700 mb-4">
+                  Looking for investment opportunities? Get expert guidance on
+                  rental properties and ROI analysis.
+                </p>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Investment Properties">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Learn More
+                  </Button>
+                </a>
               </div>
 
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">
                 <Users size={32} className="text-purple-900 mb-4" />
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Builder Contacts
+                  Relocation Assistance
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Direct contact information for all builder sales teams and new
-                  home specialists.
+                  Moving to Las Vegas? I'll help you navigate neighborhoods,
+                  schools, and find the perfect home for your family.
                 </p>
-                <Button
-                  variant="outline"
-                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-                >
-                  Get Contacts
-                </Button>
+                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Relocation Assistance">
+                  <Button
+                    variant="outline"
+                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                  >
+                    Get Started
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -429,24 +475,33 @@ export default function RealtorsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">
-              Register Your Clients Today
+              Ready to Find Your Dream Home in Cadence?
             </h2>
             <p className="text-xl mb-8">
-              Ensure you receive full commission by registering your clients
-              before their first visit to our sales centers.
+              Let Dr. Jan Duffy guide you through every step of buying or
+              selling your home. With Berkshire Hathaway's resources and local
+              expertise, you're in the best hands.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
-                Register Clients
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-900"
-              >
-                Contact Broker Liaison
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
+                  <Phone className="mr-2" size={20} />
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-purple-900"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
+            <p className="mt-6 text-sm opacity-90">
+              Serving Cadence, Henderson, Las Vegas, and Summerlin
+            </p>
           </div>
         </div>
       </section>
