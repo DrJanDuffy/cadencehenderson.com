@@ -10,6 +10,7 @@ import {
   Award,
   MapPin,
   DollarSign,
+  Phone,
 } from 'lucide-react'
 
 export default function RealtorsPage() {
