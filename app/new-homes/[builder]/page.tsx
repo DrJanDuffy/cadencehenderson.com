@@ -203,12 +203,13 @@ const builderData: Record<
   // Add more builders as needed
 }
 
-export default function BuilderPage({
+export default async function BuilderPage({
   params,
 }: {
-  params: { builder: string }
+  params: Promise<{ builder: string }>
 }) {
-  const builder = builderData[params.builder]
+  const { builder: builderSlug } = await params
+  const builder = builderData[builderSlug]
 
   if (!builder) {
     notFound()
