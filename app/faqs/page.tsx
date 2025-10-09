@@ -1,0 +1,213 @@
+'use client'
+
+import { useState } from 'react'
+import { Navigation } from '@/components/cadence/navigation'
+import { Footer } from '@/components/cadence/footer'
+import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+
+const faqCategories = [
+  {
+    category: 'General',
+    questions: [
+      {
+        q: 'What is Cadence?',
+        a: 'Cadence is a master-planned community in Henderson, Nevada, offering new homes from multiple builders, world-class amenities, and a vibrant lifestyle. Located just minutes from the Las Vegas Strip and Lake Mead, Cadence is one of the top 10 best-selling communities in the nation.',
+      },
+      {
+        q: 'Where is Cadence located?',
+        a: 'Cadence is located in Henderson, Nevada, at 2450 Paseo Verde Parkway. We are approximately 20 minutes from the Las Vegas Strip, 15 minutes from Harry Reid International Airport, and just minutes from Lake Mead.',
+      },
+      {
+        q: 'What is the price range for homes in Cadence?',
+        a: 'Home prices in Cadence range from approximately $300,000 to $650,000, depending on the builder, floor plan, and lot selection. We have options for first-time buyers, growing families, and luxury homebuyers.',
+      },
+    ],
+  },
+  {
+    category: 'Homes & Builders',
+    questions: [
+      {
+        q: 'How many builders are in Cadence?',
+        a: 'Cadence features 8 award-winning homebuilders: Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Each builder offers unique floor plans and design options.',
+      },
+      {
+        q: 'Can I tour model homes?',
+        a: 'Yes! Model homes are open daily from 10 AM to 6 PM. You can tour multiple builders in one visit to compare floor plans and features. Contact us to schedule a personal tour or visit our Welcome Center.',
+      },
+      {
+        q: 'Are there move-in ready homes available?',
+        a: 'Yes, many builders have quick move-in homes available. These homes are either completed or nearing completion and can close in 30-60 days. Check with individual builders for current inventory.',
+      },
+      {
+        q: 'What types of homes are available?',
+        a: 'Cadence offers single-family homes, townhomes, and estate homes ranging from 1,500 to 3,500+ square feet with 2-5 bedrooms. Many homes include smart home technology, energy-efficient features, and modern designs.',
+      },
+    ],
+  },
+  {
+    category: 'Amenities',
+    questions: [
+      {
+        q: 'What amenities are included?',
+        a: 'Cadence features a 50-acre Central Park, multiple pools and spas, fitness centers, sports courts, dog parks, playgrounds, walking trails, and clubhouses. Many amenities are free for residents.',
+      },
+      {
+        q: 'Are there HOA fees?',
+        a: 'Yes, Cadence has HOA fees that cover maintenance of common areas, amenities, landscaping, and community services. Fees vary by neighborhood. Contact us for specific HOA information.',
+      },
+      {
+        q: 'Can I reserve amenities for private events?',
+        a: 'Yes, residents can reserve clubhouses and other amenity spaces for private events through the online resident portal. Some fees may apply.',
+      },
+    ],
+  },
+  {
+    category: 'Schools',
+    questions: [
+      {
+        q: 'What schools serve Cadence?',
+        a: 'Cadence is served by highly-rated Clark County schools including Cadence Elementary School (on-site), Henderson Middle Schools, and Green Valley High School. Private school options are also available nearby.',
+      },
+      {
+        q: 'Is there a school within the community?',
+        a: 'Yes, Cadence Elementary School is located within the community, making it convenient for families with young children.',
+      },
+    ],
+  },
+  {
+    category: 'Living in Cadence',
+    questions: [
+      {
+        q: 'Are pets allowed?',
+        a: 'Yes, pets are welcome in Cadence! We have dedicated dog parks and pet-friendly trails throughout the community. Individual HOAs may have breed or size restrictions.',
+      },
+      {
+        q: 'What internet providers serve Cadence?',
+        a: 'Cadence has access to high-speed fiber internet and multiple providers including Cox Communications and CenturyLink. Many homes are smart-home ready.',
+      },
+      {
+        q: 'Is there shopping and dining nearby?',
+        a: 'Yes! Cadence Marketplace is within the community, and the Galleria at Sunset mall is just 5 minutes away. You\'ll find grocery stores, restaurants, retail shops, and entertainment options all nearby.',
+      },
+      {
+        q: 'How far is Cadence from the Las Vegas Strip?',
+        a: 'Cadence is approximately 20 minutes from the Las Vegas Strip, giving you easy access to world-class entertainment, dining, and shows while enjoying the peace of a residential community.',
+      },
+    ],
+  },
+]
+
+export default function FAQsPage() {
+  const [openIndex, setOpenIndex] = useState<string | null>(null)
+
+  const toggleQuestion = (categoryIndex: number, questionIndex: number) => {
+    const key = `${categoryIndex}-${questionIndex}`
+    setOpenIndex(openIndex === key ? null : key)
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Navigation />
+
+      {/* Hero Section */}
+      <section className="relative bg-gradient-to-r from-purple-900 to-purple-700 py-20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <HelpCircle size={64} className="mx-auto mb-6" />
+            <h1 className="text-5xl font-bold mb-6">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-xl">
+              Find answers to common questions about living in Cadence, our
+              homes, amenities, and community.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Content */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            {faqCategories.map((category, catIndex) => (
+              <div key={category.category} className="mb-12">
+                <h2 className="text-3xl font-bold text-gray-900 mb-6 border-b-2 border-purple-900 pb-3">
+                  {category.category}
+                </h2>
+                <div className="space-y-4">
+                  {category.questions.map((faq, qIndex) => {
+                    const key = `${catIndex}-${qIndex}`
+                    const isOpen = openIndex === key
+                    return (
+                      <div
+                        key={qIndex}
+                        className="border border-gray-200 rounded-lg overflow-hidden hover:border-purple-900 transition-colors"
+                      >
+                        <button
+                          onClick={() => toggleQuestion(catIndex, qIndex)}
+                          className="w-full px-6 py-4 text-left flex items-center justify-between bg-white hover:bg-gray-50 transition-colors"
+                        >
+                          <span className="font-semibold text-gray-900 pr-4">
+                            {faq.q}
+                          </span>
+                          {isOpen ? (
+                            <ChevronUp
+                              size={24}
+                              className="text-purple-900 flex-shrink-0"
+                            />
+                          ) : (
+                            <ChevronDown
+                              size={24}
+                              className="text-purple-900 flex-shrink-0"
+                            />
+                          )}
+                        </button>
+                        {isOpen && (
+                          <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+                            <p className="text-gray-700 leading-relaxed">
+                              {faq.a}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-16 bg-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">
+              Still Have Questions?
+            </h2>
+            <p className="text-xl text-gray-700 mb-8">
+              Our team is here to help! Contact Dr. Jan Sells for personalized
+              answers and to schedule a tour of Cadence.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <a href="/contact">
+                <button className="px-8 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-800 transition-colors text-lg font-medium">
+                  Contact Us
+                </button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com">
+                <button className="px-8 py-3 border-2 border-purple-900 text-purple-900 rounded-lg hover:bg-purple-900 hover:text-white transition-colors text-lg font-medium">
+                  Email Dr. Jan
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  )
+}
+
