@@ -200,7 +200,300 @@ const builderData: Record<
       },
     ],
   },
-  // Add more builders as needed
+  'lennar': {
+    name: 'Lennar',
+    description: 'Everything\'s Included® homes with the latest technology and features.',
+    longDescription:
+      'Lennar is one of the nation\'s leading homebuilders. At Cadence, our Everything\'s Included® homes come with premium features, smart home technology, and designer finishes as standard - no upgrades needed.',
+    logo: '🏡',
+    contact: {
+      phone: '(702) 555-0104',
+      email: 'cadence@lennar.com',
+      salesCenter: 'Building 20, Cadence Welcome Center',
+    },
+    models: [
+      {
+        name: 'Residence One',
+        price: '$410,000',
+        beds: 3,
+        baths: 2.5,
+        sqft: '1,976',
+        image:
+          'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80',
+        features: [
+          'Everything\'s Included®',
+          'Smart home automation',
+          'Stainless steel appliances',
+          'Upgraded flooring',
+          'Two-car garage',
+        ],
+      },
+      {
+        name: 'Residence Two',
+        price: '$465,000',
+        beds: 4,
+        baths: 3,
+        sqft: '2,344',
+        image:
+          'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80',
+        features: [
+          'Open-concept living',
+          'Gourmet kitchen',
+          'Owner\'s suite with spa bath',
+          'Loft space',
+          'Smart home package',
+        ],
+      },
+      {
+        name: 'Residence Three',
+        price: '$520,000',
+        beds: 5,
+        baths: 3.5,
+        sqft: '2,890',
+        image:
+          'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&q=80',
+        features: [
+          'Spacious floor plan',
+          'Premium kitchen island',
+          'Bonus room',
+          'Three-car garage',
+          'Wi-Fi certified',
+        ],
+      },
+    ],
+  },
+  'richmond-american': {
+    name: 'Richmond American Homes',
+    description: 'Personalized homes with flexible floor plans and premium upgrades.',
+    longDescription:
+      'Richmond American Homes offers exceptional personalization options at Cadence. Choose from our flexible floor plans and customize your home with our Personal Builder™ process to create a home that\'s uniquely yours.',
+    logo: '🏠',
+    contact: {
+      phone: '(702) 555-0105',
+      email: 'cadence@richmondamerican.com',
+      salesCenter: 'Building 25, Cadence Welcome Center',
+    },
+    models: [
+      {
+        name: 'Jasper',
+        price: '$375,000',
+        beds: 3,
+        baths: 2,
+        sqft: '1,752',
+        image:
+          'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80',
+        features: [
+          'Ranch-style living',
+          'Flex room options',
+          'Open kitchen',
+          'Energy-efficient design',
+          'Desert landscaping',
+        ],
+      },
+      {
+        name: 'Opal',
+        price: '$430,000',
+        beds: 4,
+        baths: 2.5,
+        sqft: '2,125',
+        image:
+          'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80',
+        features: [
+          'Two-story design',
+          'Loft or bedroom option',
+          'Walk-in pantry',
+          'Covered patio',
+          'Smart home prep',
+        ],
+      },
+      {
+        name: 'Sapphire',
+        price: '$495,000',
+        beds: 4,
+        baths: 3,
+        sqft: '2,567',
+        image:
+          'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&q=80',
+        features: [
+          'Spacious master suite',
+          'Gourmet kitchen',
+          'Game room',
+          'Three-car garage',
+          'Premium finishes',
+        ],
+      },
+    ],
+  },
+  'storybook-homes': {
+    name: 'StoryBook Homes',
+    description: 'Locally built homes with attention to detail and community focus.',
+    longDescription:
+      'StoryBook Homes is a locally owned Nevada builder dedicated to quality craftsmanship and customer service. Our homes at Cadence feature thoughtful designs, energy-efficient construction, and the personal touch of a local builder.',
+    logo: '📖',
+    contact: {
+      phone: '(702) 555-0106',
+      email: 'cadence@storybookhomes.com',
+      salesCenter: 'Building 18, Cadence Welcome Center',
+    },
+    models: [
+      {
+        name: 'Plan 1701',
+        price: '$355,000',
+        beds: 3,
+        baths: 2,
+        sqft: '1,701',
+        image:
+          'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80',
+        features: [
+          'Single-story convenience',
+          'Open living concept',
+          'Walk-in closets',
+          'Energy Star rated',
+          'Desert-ready yard',
+        ],
+      },
+      {
+        name: 'Plan 2184',
+        price: '$405,000',
+        beds: 4,
+        baths: 2.5,
+        sqft: '2,184',
+        image:
+          'https://images.unsplash.com/photo-1593696954146-e5e2d37f9eef?w=800&q=80',
+        features: [
+          'Two-story layout',
+          'Great room design',
+          'Kitchen island',
+          'Laundry upstairs',
+          'Covered entry',
+        ],
+      },
+    ],
+  },
+  'taylor-morrison': {
+    name: 'Taylor Morrison',
+    description: 'Luxury living with resort-style amenities and premium finishes.',
+    longDescription:
+      'Taylor Morrison brings over a century of homebuilding excellence to Cadence. Our luxury homes feature sophisticated designs, premium materials, and the attention to detail that has made us a leader in the industry.',
+    logo: '🏛️',
+    contact: {
+      phone: '(702) 555-0107',
+      email: 'cadence@taylormorrison.com',
+      salesCenter: 'Building 30, Cadence Welcome Center',
+    },
+    models: [
+      {
+        name: 'Montecito',
+        price: '$475,000',
+        beds: 3,
+        baths: 2.5,
+        sqft: '2,156',
+        image:
+          'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80',
+        features: [
+          'Luxury finishes throughout',
+          'Chef\'s kitchen',
+          'Spa-like master bath',
+          'Outdoor living space',
+          'Smart home ready',
+        ],
+      },
+      {
+        name: 'Sedona',
+        price: '$540,000',
+        beds: 4,
+        baths: 3,
+        sqft: '2,687',
+        image:
+          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80',
+        features: [
+          'Open-concept design',
+          'Gourmet kitchen',
+          'Multi-gen suite option',
+          'Premium appliances',
+          'Three-car garage',
+        ],
+      },
+      {
+        name: 'Catalina',
+        price: '$625,000',
+        beds: 5,
+        baths: 4,
+        sqft: '3,245',
+        image:
+          'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800&q=80',
+        features: [
+          'Luxury estate home',
+          'Designer kitchen',
+          'Guest casita',
+          'Resort-style backyard',
+          'Premium upgrades',
+        ],
+      },
+    ],
+  },
+  'woodside-homes': {
+    name: 'Woodside Homes',
+    description: 'Award-winning designs with energy efficiency and modern style.',
+    longDescription:
+      'Woodside Homes has been building quality homes in Nevada for decades. Our award-winning designs at Cadence combine contemporary style with energy-efficient features and flexible floor plans to fit your lifestyle.',
+    logo: '🌲',
+    contact: {
+      phone: '(702) 555-0108',
+      email: 'cadence@woodsidehomes.com',
+      salesCenter: 'Building 22, Cadence Welcome Center',
+    },
+    models: [
+      {
+        name: 'Plan A',
+        price: '$380,000',
+        beds: 3,
+        baths: 2,
+        sqft: '1,845',
+        image:
+          'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80',
+        features: [
+          'Modern design',
+          'Energy-efficient',
+          'Open floor plan',
+          'Master suite',
+          'Two-car garage',
+        ],
+      },
+      {
+        name: 'Plan B',
+        price: '$435,000',
+        beds: 4,
+        baths: 2.5,
+        sqft: '2,245',
+        image:
+          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
+        features: [
+          'Two-story home',
+          'Flexible loft space',
+          'Gourmet kitchen',
+          'Walk-in closets',
+          'Covered patio',
+        ],
+      },
+      {
+        name: 'Plan C',
+        price: '$510,000',
+        beds: 5,
+        baths: 3,
+        sqft: '2,845',
+        image:
+          'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80',
+        features: [
+          'Spacious family home',
+          'Bonus room',
+          'Kitchen island',
+          'Three-car garage',
+          'Premium lot',
+        ],
+      },
+    ],
+  },
 }
 
 export default async function BuilderPage({
