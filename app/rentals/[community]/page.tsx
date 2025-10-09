@@ -375,20 +375,25 @@ export default async function RentalCommunityPage({
               Ready to Call {community.name} Home?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Contact our leasing team today to schedule a tour and check
-              availability.
+              Contact Dr. Jan Duffy today to tour {community.name} and check
+              availability. I can connect you directly with their leasing team and
+              help you find the perfect rental.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
-                Schedule Tour
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-              >
-                Apply Online
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${community.name} Rental Inquiry`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
           </div>
         </div>

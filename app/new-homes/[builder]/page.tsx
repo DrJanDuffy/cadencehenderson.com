@@ -659,20 +659,25 @@ export default async function BuilderPage({
               Ready to Make {builder.name} Your Home?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Visit our sales center today to tour our model homes and find the
-              perfect floor plan for your family.
+              Contact Dr. Jan Duffy to tour {builder.name} model homes and explore
+              available floor plans. I'll arrange builder meetings and guide you
+              through the entire process.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
-                Schedule a Visit
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
-              >
-                Get Pre-Qualified
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${builder.name} Tour Request`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
           </div>
         </div>

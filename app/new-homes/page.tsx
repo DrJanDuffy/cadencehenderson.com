@@ -213,20 +213,25 @@ export default function NewHomesPage() {
               Ready to Find Your Dream Home?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Schedule a tour with our sales team and explore the community in
-              person. We're here to help you every step of the way.
+              Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
+              I'll guide you through all builders and help you find the perfect
+              home for your family.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
-                Schedule a Tour
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
-              >
-                Download Price List
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Schedule Cadence Tour">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
           </div>
         </div>

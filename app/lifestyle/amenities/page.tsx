@@ -358,19 +358,23 @@ export default function AmenitiesPage() {
               amenities through our online portal.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-cyan-900 hover:bg-gray-100"
-              >
-                Resident Login
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-cyan-900"
-              >
-                Schedule a Tour
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button
+                  size="lg"
+                  className="bg-white text-cyan-900 hover:bg-gray-100"
+                >
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Schedule Tour">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-cyan-900"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
           </div>
         </div>

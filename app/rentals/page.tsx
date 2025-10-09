@@ -207,23 +207,28 @@ export default function RentalsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Ready to Make Cadence Your Home?
+              Interested in Renting in Cadence?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Contact our rental partners directly or schedule a community tour
-              to see all that Cadence has to offer.
+              Contact Dr. Jan Duffy for information about available rentals and to
+              schedule a community tour. I can connect you with rental partners
+              and help you find the perfect place.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
-                Schedule a Tour
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-              >
-                Contact Leasing
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Rental Information">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                >
+                  Email for Info
+                </Button>
+              </a>
             </div>
           </div>
         </div>

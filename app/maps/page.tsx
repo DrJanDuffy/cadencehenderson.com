@@ -139,12 +139,14 @@ export default function MapsPage() {
                   </h3>
                   <p className="text-gray-700 mb-6">
                     Our interactive map feature is currently being developed.
-                    In the meantime, contact our sales team for a detailed
+                    In the meantime, contact Dr. Jan Duffy for a detailed
                     community map and lot availability.
                   </p>
-                  <Button className="bg-teal-900 hover:bg-teal-800">
-                    Contact Sales Team
-                  </Button>
+                  <a href="tel:702-500-1955">
+                    <Button className="bg-teal-900 hover:bg-teal-800">
+                      Call: 702-500-1955
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
