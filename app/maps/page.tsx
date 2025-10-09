@@ -21,10 +21,14 @@ export default function MapsPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <MapPin size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Interactive Maps</h1>
+            <h1 className="text-5xl font-bold mb-6">Find Us in Henderson</h1>
+            <p className="text-2xl font-bold mb-4">
+              Homes By Dr Jan Duffy
+            </p>
             <p className="text-xl mb-8">
-              Explore the Cadence community with our interactive maps. Discover
-              available homes, amenities, schools, shopping, and more.
+              Visit our office to learn about Cadence Henderson homes, schedule
+              tours, and get expert guidance from Dr. Jan Duffy, REALTOR® with
+              Berkshire Hathaway HomeServices.
             </p>
           </div>
         </div>
@@ -33,9 +37,12 @@ export default function MapsPage() {
       {/* Embedded Google Map */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Dr. Jan Duffy's Office Location
+          <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+            Homes By Dr Jan Duffy
           </h2>
+          <p className="text-xl text-gray-600 mb-8 text-center">
+            Office Location - Serving Cadence Henderson
+          </p>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5845!2d-115.0515617!3d36.0562609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d7e721d0e86b%3A0x95c8e8ce96aec347!2s1170%20E%20Sunset%20Rd%2C%20Henderson%2C%20NV%2089011!5e0!3m2!1sen!2sus!4v1234567890"
@@ -123,13 +130,16 @@ export default function MapsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Visit Cadence
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Homes By Dr Jan Duffy
                 </h3>
+                <p className="text-sm text-gray-600 mb-6">
+                  Dr. Jan Duffy, REALTOR® | License S.0197614
+                </p>
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">
-                      Office Location
+                      Office Address
                     </h4>
                     <p className="text-gray-700">
                       1170 E. Sunset Rd, Ste. 101
