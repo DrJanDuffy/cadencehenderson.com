@@ -15,17 +15,20 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Simple v0',
-  description: 'The simplest way to use v0 - just prompt and see your app',
+  title: 'Cadence - Henderson Master Planned Community',
+  description:
+    'Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views.',
   openGraph: {
-    title: 'Simple v0',
-    description: 'The simplest way to use v0 - just prompt and see your app',
+    title: 'Cadence - Henderson Master Planned Community',
+    description:
+      'Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views.',
     images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Simple v0',
-    description: 'The simplest way to use v0 - just prompt and see your app',
+    title: 'Cadence - Henderson Master Planned Community',
+    description:
+      'Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views.',
     images: ['/og-image.png'],
   },
 }
