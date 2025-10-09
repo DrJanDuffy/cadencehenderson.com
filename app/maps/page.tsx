@@ -30,126 +30,35 @@ export default function MapsPage() {
         </div>
       </section>
 
-      {/* Map Container */}
+      {/* Embedded Google Map */}
       <section className="py-16">
         <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            Dr. Jan Duffy's Office Location
+          </h2>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
-            {/* Map Placeholder */}
-            <div className="relative h-[600px] bg-gray-200">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=1200&q=80')",
-                }}
-              />
-              <div className="absolute inset-0 bg-blue-900/20" />
-
-              {/* Map Controls */}
-              <div className="absolute top-4 left-4 right-4 flex justify-between items-start">
-                <div className="bg-white rounded-lg shadow-lg p-4 max-w-xs">
-                  <h3 className="font-bold text-gray-900 mb-3">
-                    Map Filters
-                  </h3>
-                  <div className="space-y-2">
-                    <label className="flex items-center text-sm">
-                      <input
-                        type="checkbox"
-                        defaultChecked
-                        className="mr-2"
-                      />
-                      <Home size={16} className="mr-1" />
-                      Available Homes
-                    </label>
-                    <label className="flex items-center text-sm">
-                      <input
-                        type="checkbox"
-                        defaultChecked
-                        className="mr-2"
-                      />
-                      <Building2 size={16} className="mr-1" />
-                      Builder Sales Centers
-                    </label>
-                    <label className="flex items-center text-sm">
-                      <input
-                        type="checkbox"
-                        defaultChecked
-                        className="mr-2"
-                      />
-                      <Trees size={16} className="mr-1" />
-                      Parks & Amenities
-                    </label>
-                    <label className="flex items-center text-sm">
-                      <input type="checkbox" className="mr-2" />
-                      <GraduationCap size={16} className="mr-1" />
-                      Schools
-                    </label>
-                    <label className="flex items-center text-sm">
-                      <input type="checkbox" className="mr-2" />
-                      <ShoppingBag size={16} className="mr-1" />
-                      Shopping & Dining
-                    </label>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-lg shadow-lg p-3 space-y-2">
-                  <Button size="sm" variant="outline" className="w-full">
-                    Zoom In +
-                  </Button>
-                  <Button size="sm" variant="outline" className="w-full">
-                    Zoom Out -
-                  </Button>
-                  <Button size="sm" variant="outline" className="w-full">
-                    Reset View
-                  </Button>
-                </div>
-              </div>
-
-              {/* Map Legend */}
-              <div className="absolute bottom-4 left-4 bg-white rounded-lg shadow-lg p-4">
-                <h4 className="font-bold text-sm text-gray-900 mb-2">
-                  Legend
-                </h4>
-                <div className="space-y-1 text-xs">
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-blue-600 rounded-full mr-2" />
-                    <span>Available Homes</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-green-600 rounded-full mr-2" />
-                    <span>Parks</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-purple-600 rounded-full mr-2" />
-                    <span>Schools</span>
-                  </div>
-                  <div className="flex items-center">
-                    <div className="w-3 h-3 bg-orange-600 rounded-full mr-2" />
-                    <span>Shopping</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Interactive Message */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <div className="bg-white rounded-lg shadow-2xl p-8 max-w-md text-center pointer-events-auto">
-                  <MapPin size={48} className="mx-auto mb-4 text-teal-900" />
-                  <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                    Interactive Map Coming Soon
-                  </h3>
-                  <p className="text-gray-700 mb-6">
-                    Our interactive map feature is currently being developed.
-                    In the meantime, contact Dr. Jan Duffy for a detailed
-                    community map and lot availability.
-                  </p>
-                  <a href="tel:702-500-1955">
-                    <Button className="bg-teal-900 hover:bg-teal-800">
-                      Call: 702-500-1955
-                    </Button>
-                  </a>
-                </div>
-              </div>
-            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5845!2d-115.0515617!3d36.0562609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d7e721d0e86b%3A0x95c8e8ce96aec347!2s1170%20E%20Sunset%20Rd%2C%20Henderson%2C%20NV%2089011!5e0!3m2!1sen!2sus!4v1234567890"
+              width="100%"
+              height="500"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Dr. Jan Duffy Office Location"
+            />
+          </div>
+          <div className="text-center mt-6">
+            <a
+              href="https://www.google.com/maps/dir//1170+E+Sunset+Rd,+Henderson,+NV+89011/@36.0562609,-115.0515617,12z/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button size="lg" className="bg-teal-900 hover:bg-teal-800">
+                <MapPin className="mr-2" size={20} />
+                Get Directions in Google Maps
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -246,36 +155,39 @@ export default function MapsPage() {
                   </div>
                 </div>
                 <div className="mt-6 space-y-3">
-                  <Button className="w-full bg-teal-900 hover:bg-teal-800">
-                    Get Directions
-                  </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white"
+                  <a
+                    href="https://www.google.com/maps/dir//1170+E+Sunset+Rd,+Henderson,+NV+89011/@36.0562609,-115.0515617,12z/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    Download Map PDF
-                  </Button>
+                    <Button className="w-full bg-teal-900 hover:bg-teal-800">
+                      Get Directions
+                    </Button>
+                  </a>
+                  <a href="tel:702-500-1955">
+                    <Button
+                      variant="outline"
+                      className="w-full border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white"
+                    >
+                      Call for Directions
+                    </Button>
+                  </a>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <div className="h-full min-h-[400px] relative">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=800&q=80')",
-                    }}
+                <div className="h-full min-h-[400px]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5845!2d-115.0515617!3d36.0562609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d7e721d0e86b%3A0x95c8e8ce96aec347!2s1170%20E%20Sunset%20Rd%2C%20Henderson%2C%20NV%2089011!5e0!3m2!1sen!2sus!4v1234567890"
+                    width="100%"
+                    height="400"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Dr. Jan Duffy Office Map"
+                    className="rounded-lg"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-                    <Button
-                      size="lg"
-                      className="bg-white text-gray-900 hover:bg-gray-100"
-                    >
-                      <MapPin className="mr-2" size={20} />
-                      View in Google Maps
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
