@@ -552,28 +552,40 @@ export default async function BuilderPage({
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               {builder.longDescription}
             </p>
-            <div className="grid md:grid-cols-3 gap-6 bg-white rounded-lg shadow-lg p-6">
-              <div className="text-center">
-                <Phone className="mx-auto mb-3 text-blue-900" size={32} />
-                <h3 className="font-bold text-gray-900 mb-2">Call Us</h3>
-                <a
-                  href={`tel:${builder.contact.phone}`}
-                  className="text-blue-900 hover:underline"
-                >
-                  {builder.contact.phone}
-                </a>
-              </div>
-              <div className="text-center">
-                <MapPin className="mx-auto mb-3 text-blue-900" size={32} />
-                <h3 className="font-bold text-gray-900 mb-2">Visit Us</h3>
-                <p className="text-gray-700 text-sm">
-                  {builder.contact.salesCenter}
+            <div className="bg-blue-50 rounded-lg shadow-lg p-8 border-2 border-blue-900">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  Interested in {builder.name}?
+                </h3>
+                <p className="text-gray-700">
+                  Contact Dr. Jan Duffy to schedule a tour and get expert guidance
                 </p>
               </div>
-              <div className="text-center">
-                <Home className="mx-auto mb-3 text-blue-900" size={32} />
-                <h3 className="font-bold text-gray-900 mb-2">Models</h3>
-                <p className="text-gray-700">{builder.models.length} Floor Plans</p>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="text-center">
+                  <Phone className="mx-auto mb-3 text-blue-900" size={32} />
+                  <h3 className="font-bold text-gray-900 mb-2">Call Dr. Jan</h3>
+                  <a
+                    href="tel:702-500-1955"
+                    className="text-blue-900 hover:underline font-bold"
+                  >
+                    702-500-1955
+                  </a>
+                </div>
+                <div className="text-center">
+                  <MapPin className="mx-auto mb-3 text-blue-900" size={32} />
+                  <h3 className="font-bold text-gray-900 mb-2">Office</h3>
+                  <p className="text-gray-700 text-sm">
+                    1170 E. Sunset Rd, Ste. 101
+                    <br />
+                    Henderson, NV 89011
+                  </p>
+                </div>
+                <div className="text-center">
+                  <Home className="mx-auto mb-3 text-blue-900" size={32} />
+                  <h3 className="font-bold text-gray-900 mb-2">Available</h3>
+                  <p className="text-gray-700">{builder.models.length} Floor Plans</p>
+                </div>
               </div>
             </div>
           </div>
