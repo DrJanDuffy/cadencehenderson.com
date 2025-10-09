@@ -174,7 +174,7 @@ export default function ResidentsPage() {
                   <p className="text-gray-600">
                     Phone: (702) 555-3000
                     <br />
-                    Email: hoa@cadencenv.com
+                    Email: DrJanSells@CadenceHenderson.com
                     <br />
                     Hours: Mon-Fri, 9AM-5PM
                   </p>

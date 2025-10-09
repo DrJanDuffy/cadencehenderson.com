@@ -101,10 +101,10 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">Email Us</h3>
                     <p className="text-gray-700">
                       <a
-                        href="mailto:info@cadencenv.com"
+                        href="mailto:DrJanSells@CadenceHenderson.com"
                         className="hover:text-blue-900 transition-colors"
                       >
-                        info@cadencenv.com
+                        DrJanSells@CadenceHenderson.com
                       </a>
                     </p>
                   </div>

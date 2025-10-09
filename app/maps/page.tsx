@@ -239,7 +239,7 @@ export default function MapsPage() {
                     <p className="text-gray-700">
                       Phone: (702) 555-2000
                       <br />
-                      Email: info@cadencenv.com
+                      Email: DrJanSells@CadenceHenderson.com
                     </p>
                   </div>
                 </div>
