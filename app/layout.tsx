@@ -16,18 +16,18 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson - Master Planned Community | Dr. Jan Duffy',
+  title: 'Cadence Henderson | Homes By Dr Jan Duffy - Master Planned Community',
   description:
     'Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. Call 702-500-1955',
   openGraph: {
-    title: 'Cadence Henderson - Master Planned Community | Dr. Jan Duffy',
+    title: 'Cadence Henderson | Homes By Dr Jan Duffy',
     description:
       'Discover Cadence, a premier master-planned community in Henderson, Nevada. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices.',
     images: ['/og-image.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cadence Henderson - Master Planned Community | Dr. Jan Duffy',
+    title: 'Cadence Henderson | Homes By Dr Jan Duffy',
     description:
       'Discover Cadence, a premier master-planned community in Henderson, Nevada. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices.',
     images: ['/og-image.png'],

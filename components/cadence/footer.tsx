@@ -20,7 +20,9 @@ export function Footer() {
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
-          <div className="text-3xl font-bold mb-2">CADENCE HENDERSON</div>
+          <div className="text-3xl font-bold mb-2">
+            CADENCE HENDERSON
+          </div>
           <div className="text-base text-gray-300 mb-1">
             Homes By Dr Jan Duffy
           </div>

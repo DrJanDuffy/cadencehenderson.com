@@ -23,7 +23,7 @@ export default function MapsPage() {
             <MapPin size={64} className="mx-auto mb-6" />
             <h1 className="text-5xl font-bold mb-6">Find Us in Henderson</h1>
             <p className="text-2xl font-bold mb-4">
-              Homes By Dr Jan Duffy
+              Cadence Henderson | Homes By Dr Jan Duffy
             </p>
             <p className="text-xl mb-8">
               Visit our office to learn about Cadence Henderson homes, schedule
@@ -38,10 +38,10 @@ export default function MapsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-            Homes By Dr Jan Duffy
+            Cadence Henderson | Homes By Dr Jan Duffy
           </h2>
           <p className="text-xl text-gray-600 mb-8 text-center">
-            Office Location - Serving Cadence Henderson
+            Office Location
           </p>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
@@ -131,7 +131,7 @@ export default function MapsPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-8">
                 <h3 className="text-2xl font-bold text-gray-900 mb-2">
-                  Homes By Dr Jan Duffy
+                  Cadence Henderson | Homes By Dr Jan Duffy
                 </h3>
                 <p className="text-sm text-gray-600 mb-6">
                   Dr. Jan Duffy, REALTOR® | License S.0197614
