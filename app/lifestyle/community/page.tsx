@@ -89,12 +89,14 @@ export default function CommunityPage() {
               lifestyle. Connect with neighbors, join clubs, participate in
               events, and create lasting friendships in our vibrant community.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-amber-900 hover:bg-gray-100"
-            >
-              Join Our Community
-            </Button>
+            <a href="tel:702-500-1955">
+              <Button
+                size="lg"
+                className="bg-white text-amber-900 hover:bg-gray-100"
+              >
+                Call: 702-500-1955
+              </Button>
+            </a>
           </div>
         </div>
       </section>
@@ -313,19 +315,23 @@ export default function CommunityPage() {
               residents love calling this place home.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-amber-900 hover:bg-gray-100"
-              >
-                Schedule a Tour
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-amber-900"
-              >
-                View Available Homes
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button
+                  size="lg"
+                  className="bg-white text-amber-900 hover:bg-gray-100"
+                >
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href="/new-homes">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-amber-900"
+                >
+                  View Available Homes
+                </Button>
+              </a>
             </div>
           </div>
         </div>

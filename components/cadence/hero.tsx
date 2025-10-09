@@ -30,19 +30,23 @@ export function Hero() {
             better – then your future belongs at Cadence.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button
-              size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
-            >
-              Start Your Search
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
-            >
-              View Map
-            </Button>
+            <a href="tel:702-500-1955">
+              <Button
+                size="lg"
+                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
+              >
+                Call: 702-500-1955
+              </Button>
+            </a>
+            <a href="/new-homes">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              >
+                View Homes
+              </Button>
+            </a>
           </div>
         </div>
       </div>

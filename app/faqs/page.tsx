@@ -187,8 +187,8 @@ export default function FAQsPage() {
               Still Have Questions?
             </h2>
             <p className="text-xl text-gray-700 mb-8">
-              Our team is here to help! Contact Dr. Jan Sells for personalized
-              answers and to schedule a tour of Cadence.
+              I'm here to help! Contact Dr. Jan Duffy for personalized answers
+              and to schedule a tour of Cadence.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a href="/contact">

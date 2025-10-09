@@ -520,19 +520,23 @@ export default async function BuilderPage({
             <h1 className="text-5xl font-bold mb-4">{builder.name}</h1>
             <p className="text-xl mb-6">{builder.description}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100"
-              >
-                Schedule a Tour
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                Download Brochure
-              </Button>
+              <a href="tel:702-500-1955">
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-900 hover:bg-gray-100"
+                >
+                  Call: 702-500-1955
+                </Button>
+              </a>
+              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${builder.name} Information`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Email Dr. Jan
+                </Button>
+              </a>
             </div>
           </div>
         </div>
