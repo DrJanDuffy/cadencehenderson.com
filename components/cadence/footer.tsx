@@ -21,8 +21,11 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <div className="text-3xl font-bold mb-2">CADENCE HENDERSON</div>
+          <div className="text-base text-gray-300 mb-1">
+            Homes By Dr Jan Duffy
+          </div>
           <div className="text-sm text-gray-400 mb-1">
-            Dr. Jan Duffy, REALTOR®
+            Dr. Jan Duffy, REALTOR® | License S.0197614
           </div>
           <div className="text-xs text-gray-400 mb-1">
             Berkshire Hathaway HomeServices Nevada Properties
@@ -52,7 +55,10 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
-          <p>Copyright 2025 | All Rights Reserved</p>
+          <p className="text-sm">
+            Copyright 2025 Cadence Henderson | Homes By Dr Jan Duffy S.0197614
+          </p>
+          <p className="text-xs mt-2">All Rights Reserved</p>
         </div>
       </div>
     </footer>

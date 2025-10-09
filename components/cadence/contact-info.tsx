@@ -3,6 +3,7 @@
 export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
   phone: '702-500-1955',
+  licenseNumber: 'S.0197614',
   address: {
     street: '1170 E. Sunset Rd, Ste. 101',
     city: 'Henderson',
@@ -13,6 +14,7 @@ export const CONTACT_INFO = {
   welcomeCenter: '1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
   mainOffice: '8850 W Sunset Road Suite 200, Las Vegas, NV 89148',
+  brandName: 'Homes By Dr Jan Duffy',
 }
 
 export const SOCIAL_MEDIA = {
