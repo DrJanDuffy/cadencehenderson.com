@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import DeployBanner from '../components/deploy-banner'
+import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import './globals.css'
 
 const geistSans = Geist({
@@ -52,6 +53,7 @@ export default function RootLayout({
         >
           <DeployBanner />
           {children}
+          <ScrollToTop />
         </ThemeProvider>
       </body>
     </html>

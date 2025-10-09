@@ -1,6 +1,9 @@
 # Cadence Henderson Website
 
-A modern Next.js website clone of [cadencenv.com](https://cadencenv.com/) - showcasing the Cadence master-planned community in Henderson, Nevada.
+A modern Next.js website for the Cadence master-planned community in Henderson, Nevada.
+
+**Real Estate Professional:** Dr. Jan Sells  
+**Contact:** DrJanSells@CadenceHenderson.com
 
 ## Features
 
