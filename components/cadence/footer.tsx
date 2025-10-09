@@ -12,6 +12,8 @@ export function Footer() {
     { title: 'Maps', href: '/maps' },
     { title: 'Lifestyle', href: '/lifestyle' },
     { title: 'Contact Us', href: '/contact' },
+    { title: 'Gallery', href: '/gallery' },
+    { title: 'FAQs', href: '/faqs' },
   ]
 
   return (

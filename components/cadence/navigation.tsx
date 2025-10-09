@@ -57,8 +57,8 @@ const navigationItems = [
     href: '/news',
     items: [
       { label: 'Media', href: '/news' },
-      { label: 'Gallery', href: '/news#gallery' },
-      { label: 'FAQs', href: '/news#faqs' },
+      { label: 'Gallery', href: '/gallery' },
+      { label: 'FAQs', href: '/faqs' },
     ],
   },
   { title: 'Realtors', href: '/realtors' },
