@@ -1,7 +1,9 @@
 'use client'
 
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
+import { Calendar } from 'lucide-react'
 
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
@@ -36,10 +38,20 @@ export function Hero() {
             better – then your future belongs at Cadence.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+            <CalendlyLink>
               <Button
                 size="lg"
                 className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
+              >
+                <Calendar className="mr-2" size={20} />
+                Schedule a Call
+              </Button>
+            </CalendlyLink>
+            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
               >
                 Call: {CONTACT_INFO.phone}
               </Button>

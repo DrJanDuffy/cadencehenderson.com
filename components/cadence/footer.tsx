@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Mail } from 'lucide-react'
+import { Mail, Calendar } from 'lucide-react'
 import { CONTACT_INFO } from './contact-info'
 
 export function Footer() {
@@ -39,12 +39,22 @@ export function Footer() {
           <div className="text-xs text-gray-400 mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>
-          <div className="flex items-center justify-center gap-2 mb-6 text-blue-400">
-            <Mail size={16} />
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-blue-400">
+            <a
+              href={CONTACT_INFO.calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors font-medium"
+            >
+              <Calendar size={16} />
+              Schedule a consultation
+            </a>
+            <span className="text-gray-500">|</span>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
             >
+              <Mail size={16} />
               {CONTACT_INFO.email}
             </a>
           </div>

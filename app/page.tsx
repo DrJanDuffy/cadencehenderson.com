@@ -9,6 +9,7 @@ import { LocationSection } from '@/components/cadence/location-section'
 import { RealtorsSection } from '@/components/cadence/realtors-section'
 import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
+import { CTABanner } from '@/components/cadence/cta-banner'
 import { Newsletter } from '@/components/cadence/newsletter'
 import { Footer } from '@/components/cadence/footer'
 
@@ -34,6 +35,7 @@ export default function HomePage() {
         <NewsSection />
         <BuildersShowcase />
         <Newsletter />
+        <CTABanner />
       </main>
 
       <Footer />

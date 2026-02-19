@@ -1,0 +1,26 @@
+---
+description: When a task or implementation is complete, automatically run git add, commit, and push.
+globs: 
+alwaysApply: true
+---
+
+# Git after task completion
+
+## When to apply
+
+When you have finished implementing a task, plan, or set of changes (e.g. all to-dos completed, feature done, or user says "when done").
+
+## Requirement
+
+After completing the work:
+
+1. Run **git add** (stage all relevant changes: `git add -A` or stage specific files).
+2. Run **git commit** with a clear, concise message describing what was done.
+3. Run **git push** to update the remote.
+
+Do not skip these steps unless the user explicitly asks not to commit/push, or there are no changes to commit.
+
+## Notes
+
+- Prefer committing only project-tracked files (e.g. exclude `.agents/`, `.cursor/skills/` install trees if they are not meant to be versioned).
+- Commit message should be descriptive (e.g. "Add skills workflow sync and engagement CTAs" not "Updates").

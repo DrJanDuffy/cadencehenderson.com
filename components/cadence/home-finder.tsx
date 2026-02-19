@@ -1,5 +1,7 @@
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { Button } from '@/components/ui/button'
 
 export function HomeFinder() {
   return (
@@ -29,6 +31,17 @@ export function HomeFinder() {
             <RealScoutAdvancedSearch />
           </div>
           <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
+          <div className="text-center mt-8">
+            <p className="text-lg text-gray-700 mb-4">
+              Want a personalized tour or buyer consultation? Get expert guidance
+              from Dr. Jan Duffy.
+            </p>
+            <CalendlyLink>
+              <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+                Schedule a call with Dr. Jan
+              </Button>
+            </CalendlyLink>
+          </div>
         </div>
       </div>
     </section>
