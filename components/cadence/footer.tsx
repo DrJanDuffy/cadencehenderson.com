@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import { Mail, Calendar } from 'lucide-react'
-import { CONTACT_INFO } from './contact-info'
+import { Mail, Calendar, Facebook, Instagram } from 'lucide-react'
+import { CONTACT_INFO, SOCIAL_MEDIA } from './contact-info'
 
 export function Footer() {
   const footerLinks = [
@@ -23,6 +23,34 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
+        {/* Newsletter signup */}
+        <div className="text-center mb-10 pb-8 border-b border-gray-700">
+          <h3 className="text-lg font-semibold mb-3">Subscribe to Our Newsletter</h3>
+          <form
+            action="/api/newsletter"
+            method="post"
+            className="flex flex-wrap items-center justify-center gap-2 max-w-md mx-auto"
+          >
+            <label htmlFor="footer-email" className="sr-only">
+              Email for newsletter
+            </label>
+            <input
+              id="footer-email"
+              type="email"
+              name="email"
+              placeholder="Your email"
+              required
+              className="px-4 py-2 rounded-md text-gray-900 w-64 min-w-0"
+              aria-label="Email for newsletter"
+            />
+            <button
+              type="submit"
+              className="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 font-medium shrink-0"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
         <div className="text-center mb-8">
           <div className="text-3xl font-bold mb-2">
             CADENCE HENDERSON
@@ -39,14 +67,15 @@ export function Footer() {
           <div className="text-xs text-gray-400 mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-blue-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-4 text-blue-400">
             <a
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors font-medium"
+              aria-label="Schedule a consultation with Dr. Jan Duffy"
             >
-              <Calendar size={16} />
+              <Calendar size={16} aria-hidden />
               Schedule a consultation
             </a>
             <span className="text-gray-500">|</span>
@@ -56,6 +85,37 @@ export function Footer() {
             >
               <Mail size={16} />
               {CONTACT_INFO.email}
+            </a>
+          </div>
+          <div className="flex items-center justify-center gap-4 mb-6" aria-label="Social media">
+            <a
+              href={SOCIAL_MEDIA.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+              aria-label="Facebook"
+            >
+              <Facebook size={20} />
+            </a>
+            <a
+              href={SOCIAL_MEDIA.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram size={20} />
+            </a>
+            <a
+              href={SOCIAL_MEDIA.twitter}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-colors"
+              aria-label="X (Twitter)"
+            >
+              <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden>
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mb-8">

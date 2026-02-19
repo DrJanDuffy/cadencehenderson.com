@@ -1,9 +1,10 @@
 'use client'
 
+import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
-import { Calendar } from 'lucide-react'
+import { Calendar, Home } from 'lucide-react'
 
 const HERO_IMAGE =
   'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
@@ -14,7 +15,7 @@ export function Hero() {
       {/* LCP image: in-DOM and high priority so the browser discovers it early */}
       <img
         src={HERO_IMAGE}
-        alt=""
+        alt="Cadence Henderson master-planned community, Henderson Nevada real estate and new homes"
         width={1920}
         height={1080}
         fetchPriority="high"
@@ -38,37 +39,43 @@ export function Hero() {
             better – then your future belongs at Cadence.
           </p>
           <div className="flex flex-wrap gap-4">
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
-              >
-                <Calendar className="mr-2" size={20} />
+            <Button
+              size="lg"
+              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
+              asChild
+            >
+              <CalendlyLink>
+                <Calendar className="mr-2" size={20} aria-hidden />
                 Schedule a Call
-              </Button>
-            </CalendlyLink>
-            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              </CalendlyLink>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              asChild
+            >
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
               >
                 Call: {CONTACT_INFO.phone}
-              </Button>
-            </a>
-            <a
-              href={CONTACT_INFO.realScoutSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              asChild
             >
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              <a
+                href={CONTACT_INFO.realScoutSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 View Homes
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
       </div>

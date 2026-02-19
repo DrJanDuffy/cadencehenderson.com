@@ -8,6 +8,7 @@ import { Menu, X, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const navigationItems = [
+  { title: 'Home', href: '/' },
   {
     title: 'New Homes',
     href: '/new-homes',
@@ -63,10 +64,10 @@ const navigationItems = [
     href: '/news',
     items: [
       { label: 'Media', href: '/news' },
-      { label: 'Gallery', href: '/gallery' },
-      { label: 'FAQs', href: '/faqs' },
     ],
   },
+  { title: 'Gallery', href: '/gallery' },
+  { title: "FAQ's", href: '/faqs' },
   { title: 'Realtors', href: '/realtors' },
   { title: 'Past Home Sales', href: '/past-homesales' },
   { title: 'Residents', href: '/residents' },
@@ -133,11 +134,13 @@ export function Navigation() {
             ))}
           </div>
 
-          <CalendlyLink className="hidden lg:inline-block">
-            <Button size="sm" className="bg-blue-900 hover:bg-blue-800 text-white shrink-0">
-              Find a Realtor
-            </Button>
-          </CalendlyLink>
+          <Button
+            size="sm"
+            className="hidden lg:inline-flex bg-blue-900 hover:bg-blue-800 text-white shrink-0"
+            asChild
+          >
+            <CalendlyLink>Find a Realtor</CalendlyLink>
+          </Button>
 
           {/* Search Icon */}
           <button
@@ -161,11 +164,12 @@ export function Navigation() {
         {isOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4">
             <div className="px-4 pb-4">
-              <CalendlyLink>
-                <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">
-                  Find a Realtor
-                </Button>
-              </CalendlyLink>
+              <Button
+                className="w-full bg-blue-900 hover:bg-blue-800 text-white"
+                asChild
+              >
+                <CalendlyLink>Find a Realtor</CalendlyLink>
+              </Button>
             </div>
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">

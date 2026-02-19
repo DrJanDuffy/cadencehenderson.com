@@ -15,6 +15,7 @@ export function HomeFinder() {
                 alt="Henderson Home Finder"
                 width={288}
                 height={300}
+                loading="lazy"
                 className="w-24 h-24 object-contain"
               />
             </div>
@@ -36,11 +37,9 @@ export function HomeFinder() {
               Want a personalized tour or buyer consultation? Get expert guidance
               from Dr. Jan Duffy.
             </p>
-            <CalendlyLink>
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
-                Schedule a call with Dr. Jan
-              </Button>
-            </CalendlyLink>
+            <Button size="lg" className="bg-blue-900 hover:bg-blue-800" asChild>
+              <CalendlyLink>Schedule a call with Dr. Jan</CalendlyLink>
+            </Button>
           </div>
         </div>
       </div>

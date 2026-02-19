@@ -22,6 +22,7 @@ export function RealtorsSection() {
                 src="https://cadencenv.com/wp-content/uploads/2021/01/realtors-home-box-288x300.png"
                 width={288}
                 height={300}
+                loading="lazy"
                 alt="Cadence Las Vegas Realtors"
                 className="w-24 h-24 object-contain"
               />
@@ -34,23 +35,21 @@ export function RealtorsSection() {
               Communities in the nation. With a variety of home styles to choose
               from, your clients are sure to find the home of their dreams.
             </p>
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
-              >
-                Meet a Realtor
-              </Button>
-            </CalendlyLink>
-            <Link href="/realtors">
-              <Button
-                size="lg"
-                variant="outline"
-                className="ml-4 border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
-              >
-                Realtor Resources
-              </Button>
-            </Link>
+            <Button
+              size="lg"
+              className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              asChild
+            >
+              <CalendlyLink>Meet a Realtor</CalendlyLink>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="ml-4 border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
+              asChild
+            >
+              <Link href="/realtors">Realtor Resources</Link>
+            </Button>
           </div>
         </div>
       </div>

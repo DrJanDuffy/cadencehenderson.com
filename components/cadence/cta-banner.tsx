@@ -16,57 +16,61 @@ export function CTABanner() {
             expert team is here for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
-              >
-                I Want To Buy
-              </Button>
-            </CalendlyLink>
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
-              >
-                I Want To Sell
-              </Button>
-            </CalendlyLink>
+            <Button
+              size="lg"
+              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              asChild
+            >
+              <CalendlyLink>I Want To Buy</CalendlyLink>
+            </Button>
+            <Button
+              size="lg"
+              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              asChild
+            >
+              <CalendlyLink>I Want To Sell</CalendlyLink>
+            </Button>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <CalendlyLink>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <Calendar className="mr-2" size={20} />
-                Schedule Free Call
-              </Button>
-            </CalendlyLink>
-            <a href={`mailto:${CONTACT_INFO.email}`}>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <Mail className="mr-2" size={20} />
-                Email Dr. Jan
-              </Button>
-            </a>
-            <a
-              href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-              className="inline-block"
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+              asChild
             >
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
+              <CalendlyLink>
+                <Calendar className="mr-2" size={20} aria-hidden />
+                Schedule Free Call
+              </CalendlyLink>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+              asChild
+            >
+              <a
+                href={`mailto:${CONTACT_INFO.email}`}
+                aria-label="Email Dr. Jan Duffy"
               >
-                <Phone className="mr-2" size={20} />
+                <Mail className="mr-2" size={20} aria-hidden />
+                Email Dr. Jan
+              </a>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+              asChild
+            >
+              <a
+                href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
+              >
+                <Phone className="mr-2" size={20} aria-hidden />
                 {CONTACT_INFO.phone}
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
           <p className="mt-6 text-sm opacity-90">
             Licensed Real Estate Professional specializing in Cadence Henderson
