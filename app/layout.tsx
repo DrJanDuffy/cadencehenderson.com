@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { CalendlyScripts } from '../components/calendly/calendly-scripts'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
@@ -79,22 +80,7 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         )}
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-          onLoad={() => {
-            const cal = (window as unknown as { Calendly?: { initBadgeWidget?: (o: object) => void } }).Calendly
-            if (typeof window !== 'undefined' && cal?.initBadgeWidget) {
-              cal.initBadgeWidget({
-                  url: 'https://calendly.com/drjanduffy/15min',
-                  text: 'Call Your Cadence Consultant Today',
-                  color: '#0069ff',
-                  textColor: '#ffffff',
-                  branding: false,
-                })
-            }
-          }}
-        />
+        <CalendlyScripts />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
