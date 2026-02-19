@@ -9,5 +9,6 @@
     "remotion-dev/skills",
     "nextlevelbuilder/ui-ux-pro-max-skill",
     "cloudflare/skills"
-  ]
+  ],
+  "projectSkills": ["react-best-practices"]
 }
