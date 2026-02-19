@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -134,7 +135,7 @@ export default function MapsPage() {
                   Cadence Henderson | Homes By Dr Jan Duffy
                 </h3>
                 <p className="text-sm text-gray-600 mb-6">
-                  Dr. Jan Duffy, REALTOR® | License S.0197614
+                  Dr. Jan Duffy, REALTOR® | License {CONTACT_INFO.licenseNumber}
                 </p>
                 <div className="space-y-4">
                   <div>
@@ -158,9 +159,9 @@ export default function MapsPage() {
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2">Contact</h4>
                     <p className="text-gray-700">
-                      Phone: 702-500-1955
+                      Phone: {CONTACT_INFO.phone}
                       <br />
-                      Email: DrJanSells@CadenceHenderson.com
+                      Email: {CONTACT_INFO.email}
                     </p>
                   </div>
                 </div>
@@ -174,7 +175,7 @@ export default function MapsPage() {
                       Get Directions
                     </Button>
                   </a>
-                  <a href="tel:702-500-1955">
+                  <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                     <Button
                       variant="outline"
                       className="w-full border-teal-900 text-teal-900 hover:bg-teal-900 hover:text-white"

@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -35,13 +36,13 @@ export default function RealtorsPage() {
               together.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button
                   size="lg"
                   className="bg-white text-purple-900 hover:bg-gray-100"
                 >
                   <Phone className="mr-2" size={20} />
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
               <a href="mailto:DrJanSells@CadenceHenderson.com">
@@ -113,10 +114,10 @@ export default function RealtorsPage() {
                     <div>
                       <p className="text-sm text-gray-600">Phone:</p>
                       <a
-                        href="tel:702-500-1955"
+                        href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                         className="text-purple-900 font-bold hover:underline"
                       >
-                        702-500-1955
+                        {CONTACT_INFO.phone}
                       </a>
                     </div>
                     <div>
@@ -483,10 +484,10 @@ export default function RealtorsPage() {
               expertise, you're in the best hands.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
                   <Phone className="mr-2" size={20} />
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
               <a href="mailto:DrJanSells@CadenceHenderson.com">

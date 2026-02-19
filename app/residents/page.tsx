@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -31,7 +32,7 @@ export default function ResidentsPage() {
               Welcome home! Your guide to community resources, HOA information,
               and how I can help you as a current Cadence resident.
             </p>
-            <a href="tel:702-500-1955">
+            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
               <Button
                 size="lg"
                 className="bg-white text-emerald-900 hover:bg-gray-100"
@@ -220,10 +221,10 @@ export default function ResidentsPage() {
                   <div className="flex items-center">
                     <Phone size={18} className="mr-2 text-emerald-900" />
                     <a
-                      href="tel:702-500-1955"
+                      href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                       className="text-emerald-900 font-bold hover:underline"
                     >
-                      702-500-1955
+                      {CONTACT_INFO.phone}
                     </a>
                   </div>
                   <div className="flex items-center">

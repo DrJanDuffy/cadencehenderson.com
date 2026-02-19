@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
 import DeployBanner from '../components/deploy-banner'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
@@ -19,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Cadence Henderson | Homes By Dr Jan Duffy - Master Planned Community',
   description:
-    'Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. Call 702-500-1955',
+    `Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. Call ${CONTACT_INFO.phone}`,
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
     siteName: 'Cadence Henderson | Homes By Dr Jan Duffy',

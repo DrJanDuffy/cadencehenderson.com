@@ -3,7 +3,7 @@
 export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
   phone: '702-500-1955',
-  licenseNumber: 'S.0197614',
+  licenseNumber: 'S.0197614.LLC',
   address: {
     street: '1170 E. Sunset Rd, Ste. 101',
     city: 'Henderson',

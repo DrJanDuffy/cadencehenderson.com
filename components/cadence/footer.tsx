@@ -27,13 +27,13 @@ export function Footer() {
             Homes By Dr Jan Duffy
           </div>
           <div className="text-sm text-gray-400 mb-1">
-            Dr. Jan Duffy, REALTOR® | License S.0197614
+            Dr. Jan Duffy, REALTOR® | License {CONTACT_INFO.licenseNumber}
           </div>
           <div className="text-xs text-gray-400 mb-1">
             Berkshire Hathaway HomeServices Nevada Properties
           </div>
           <div className="text-xs text-gray-400 mb-6">
-            1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011 | 702-500-1955
+            {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>
           <div className="flex items-center justify-center gap-2 mb-6 text-blue-400">
             <Mail size={16} />
@@ -58,7 +58,7 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
           <p className="text-sm">
-            Copyright 2025 Cadence Henderson | Homes By Dr Jan Duffy S.0197614
+            Copyright 2025 Cadence Henderson | Homes By Dr Jan Duffy {CONTACT_INFO.licenseNumber}
           </p>
           <p className="text-xs mt-2">All Rights Reserved</p>
         </div>

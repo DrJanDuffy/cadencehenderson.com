@@ -1,19 +1,22 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+
 export function LocalBusinessSchema() {
+  const { address } = CONTACT_INFO
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: 'Cadence Henderson | Homes By Dr Jan Duffy',
+    name: CONTACT_INFO.brandName,
     image: 'https://www.cadencehenderson.com/og-image.png',
     '@id': 'https://www.cadencehenderson.com',
     url: 'https://www.cadencehenderson.com',
-    telephone: '+1-702-500-1955',
-    email: 'DrJanSells@CadenceHenderson.com',
+    telephone: `+1-${CONTACT_INFO.phone}`,
+    email: CONTACT_INFO.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '1170 E. Sunset Rd, Ste. 101',
-      addressLocality: 'Henderson',
-      addressRegion: 'NV',
-      postalCode: '89011',
+      streetAddress: address.street,
+      addressLocality: address.city,
+      addressRegion: address.state,
+      postalCode: address.zip,
       addressCountry: 'US',
     },
     geo: {
@@ -59,11 +62,11 @@ export function LocalBusinessSchema() {
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'Real Estate License',
-      identifier: 'S.0197614',
+      identifier: CONTACT_INFO.licenseNumber,
     },
     memberOf: {
       '@type': 'Organization',
-      name: 'Berkshire Hathaway HomeServices Nevada Properties',
+      name: CONTACT_INFO.brokerage,
     },
     knowsAbout: [
       'Luxury Homes',

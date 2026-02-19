@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -520,15 +521,15 @@ export default async function BuilderPage({
             <h1 className="text-5xl font-bold mb-4">{builder.name}</h1>
             <p className="text-xl mb-6">{builder.description}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button
                   size="lg"
                   className="bg-white text-blue-900 hover:bg-gray-100"
                 >
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${builder.name} Information`}>
+              <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Information`}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -566,10 +567,10 @@ export default async function BuilderPage({
                   <Phone className="mx-auto mb-3 text-blue-900" size={32} />
                   <h3 className="font-bold text-gray-900 mb-2">Call Dr. Jan</h3>
                   <a
-                    href="tel:702-500-1955"
+                    href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                     className="text-blue-900 hover:underline font-bold"
                   >
-                    702-500-1955
+                    {CONTACT_INFO.phone}
                   </a>
                 </div>
                 <div className="text-center">
@@ -680,12 +681,12 @@ export default async function BuilderPage({
               through the entire process.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${builder.name} Tour Request`}>
+              <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Tour Request`}>
                 <Button
                   size="lg"
                   variant="outline"

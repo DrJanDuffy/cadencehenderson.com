@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -380,9 +381,9 @@ export default async function RentalCommunityPage({
               help you find the perfect rental.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
               <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${community.name} Rental Inquiry`}>

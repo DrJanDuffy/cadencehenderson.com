@@ -24,14 +24,14 @@ export function CTABanner() {
                 Email Dr. Jan
               </Button>
             </a>
-            <a href="tel:702-500-1955">
+            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
               <Button
                 size="lg"
                 variant="outline"
                 className="border-white text-white hover:bg-white hover:text-blue-900"
               >
                 <Phone className="mr-2" size={20} />
-                702-500-1955
+                {CONTACT_INFO.phone}
               </Button>
             </a>
           </div>

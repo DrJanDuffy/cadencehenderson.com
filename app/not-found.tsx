@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -49,13 +50,13 @@ export default function NotFound() {
                 and information.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a href="tel:702-500-1955">
+                <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                   <Button className="bg-blue-900 hover:bg-blue-800">
                     <Phone className="mr-2" size={20} />
-                    Call: 702-500-1955
+                    Call: {CONTACT_INFO.phone}
                   </Button>
                 </a>
-                <a href="mailto:DrJanSells@CadenceHenderson.com">
+                <a href={`mailto:${CONTACT_INFO.email}`}>
                   <Button
                     variant="outline"
                     className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"

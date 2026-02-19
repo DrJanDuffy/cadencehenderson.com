@@ -1,5 +1,6 @@
 'use client'
 
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Button } from '@/components/ui/button'
 
 export function Hero() {
@@ -30,12 +31,12 @@ export function Hero() {
             better – then your future belongs at Cadence.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="tel:702-500-1955">
+            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
               <Button
                 size="lg"
                 className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
               >
-                Call: 702-500-1955
+                Call: {CONTACT_INFO.phone}
               </Button>
             </a>
             <a href="/new-homes">

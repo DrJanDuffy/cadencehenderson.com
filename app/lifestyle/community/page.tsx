@@ -1,3 +1,4 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -89,12 +90,12 @@ export default function CommunityPage() {
               lifestyle. Connect with neighbors, join clubs, participate in
               events, and create lasting friendships in our vibrant community.
             </p>
-            <a href="tel:702-500-1955">
+            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
               <Button
                 size="lg"
                 className="bg-white text-amber-900 hover:bg-gray-100"
               >
-                Call: 702-500-1955
+                Call: {CONTACT_INFO.phone}
               </Button>
             </a>
           </div>
@@ -315,12 +316,12 @@ export default function CommunityPage() {
               residents love calling this place home.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="tel:702-500-1955">
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
                 <Button
                   size="lg"
                   className="bg-white text-amber-900 hover:bg-gray-100"
                 >
-                  Call: 702-500-1955
+                  Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
               <a href="/new-homes">

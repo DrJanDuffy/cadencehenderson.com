@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -84,10 +85,10 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">Call Dr. Jan</h3>
                     <p className="text-gray-700">
                       <a
-                        href="tel:702-500-1955"
+                        href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
                         className="hover:text-blue-900 transition-colors"
                       >
-                        702-500-1955
+                        {CONTACT_INFO.phone}
                       </a>
                     </p>
                   </div>
