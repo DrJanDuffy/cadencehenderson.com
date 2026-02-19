@@ -1,5 +1,6 @@
-import { Building2, TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 
 export function RealtorsSection() {
   return (
@@ -33,12 +34,23 @@ export function RealtorsSection() {
               Communities in the nation. With a variety of home styles to choose
               from, your clients are sure to find the home of their dreams.
             </p>
-            <Button
-              size="lg"
-              className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
-            >
-              Realtor Resources
-            </Button>
+            <CalendlyLink>
+              <Button
+                size="lg"
+                className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              >
+                Meet a Realtor
+              </Button>
+            </CalendlyLink>
+            <Link href="/realtors">
+              <Button
+                size="lg"
+                variant="outline"
+                className="ml-4 border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
+              >
+                Realtor Resources
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

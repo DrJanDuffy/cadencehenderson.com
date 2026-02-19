@@ -11,18 +11,34 @@ export function CTABanner() {
           <h2 className="text-4xl font-bold mb-4">
             Ready to Buy or Sell at Cadence?
           </h2>
-          <p className="text-xl mb-2">
-            Schedule a free 15-min call with Dr. Jan Duffy — whether you&apos;re
-            a homebuyer or homeseller, get personalized guidance and next steps.
+          <p className="text-xl mb-8">
+            Whether you&apos;re looking for your dream home or ready to sell, our
+            expert team is here for you.
           </p>
-          <p className="text-sm opacity-90 mb-8">
-            No pressure. Just answers about Cadence Henderson and your options.
-          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+            <CalendlyLink>
+              <Button
+                size="lg"
+                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              >
+                I Want To Buy
+              </Button>
+            </CalendlyLink>
+            <CalendlyLink>
+              <Button
+                size="lg"
+                className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              >
+                I Want To Sell
+              </Button>
+            </CalendlyLink>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <CalendlyLink>
               <Button
                 size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-900"
               >
                 <Calendar className="mr-2" size={20} />
                 Schedule Free Call

@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { CONTACT_INFO } from './contact-info'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Menu, X, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -132,6 +133,12 @@ export function Navigation() {
             ))}
           </div>
 
+          <CalendlyLink className="hidden lg:inline-block">
+            <Button size="sm" className="bg-blue-900 hover:bg-blue-800 text-white shrink-0">
+              Find a Realtor
+            </Button>
+          </CalendlyLink>
+
           {/* Search Icon */}
           <button
             className="hidden lg:block p-2 text-gray-700 hover:text-blue-900"
@@ -153,6 +160,13 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4">
+            <div className="px-4 pb-4">
+              <CalendlyLink>
+                <Button className="w-full bg-blue-900 hover:bg-blue-800 text-white">
+                  Find a Realtor
+                </Button>
+              </CalendlyLink>
+            </div>
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">
                 <Link
