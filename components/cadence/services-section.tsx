@@ -19,6 +19,7 @@ const SERVICES: ServiceItem[] = [
     href: '/new-homes',
     icon: Home,
     ariaLabel: 'View new homes and resale in Cadence Henderson',
+    external: false,
   },
   {
     title: 'Sell Your Henderson Home',
@@ -26,6 +27,7 @@ const SERVICES: ServiceItem[] = [
     href: '/contact',
     icon: Key,
     ariaLabel: 'List your home for sale in Cadence Henderson',
+    external: false,
   },
   {
     title: 'Rentals in Cadence',
@@ -33,6 +35,7 @@ const SERVICES: ServiceItem[] = [
     href: '/rentals',
     icon: Building2,
     ariaLabel: 'Find rentals in Cadence Henderson',
+    external: false,
   },
   {
     title: 'Free Consultation',
@@ -62,6 +65,7 @@ export function ServicesSection() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => {
             const Icon = service.icon
+            const isExternal = service.href.startsWith('http')
             const content = (
               <>
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-blue-900 text-white mb-4">
@@ -80,7 +84,7 @@ export function ServicesSection() {
                 key={service.title}
                 className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
               >
-                {service.external ? (
+                {isExternal ? (
                   <a
                     href={service.href}
                     target="_blank"
