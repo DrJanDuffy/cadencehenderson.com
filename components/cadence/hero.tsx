@@ -3,16 +3,21 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Button } from '@/components/ui/button'
 
+const HERO_IMAGE =
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
+
 export function Hero() {
   return (
     <section className="relative h-[600px] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
-      {/* Background Image Overlay */}
-      <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80')",
-        }}
+      {/* LCP image: in-DOM and high priority so the browser discovers it early */}
+      <img
+        src={HERO_IMAGE}
+        alt=""
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
       />
 
       {/* Content */}

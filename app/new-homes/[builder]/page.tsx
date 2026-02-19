@@ -499,6 +499,33 @@ const builderData: Record<
   },
 }
 
+const BASE = 'https://www.cadencehenderson.com'
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ builder: string }>
+}): Promise<import('next').Metadata> {
+  const { builder: builderSlug } = await params
+  const builder = builderData[builderSlug]
+  if (!builder) return {}
+  const url = `${BASE}/new-homes/${builderSlug}`
+  const description =
+    builder.longDescription.slice(0, 155) +
+    (builder.longDescription.length > 155 ? '…' : '')
+  return {
+    title: `${builder.name} | New Homes at Cadence Henderson`,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${builder.name} | New Homes at Cadence Henderson`,
+      description,
+      url,
+      type: 'website',
+    },
+  }
+}
+
 export default async function BuilderPage({
   params,
 }: {
@@ -523,10 +550,19 @@ export default async function BuilderPage({
             <h1 className="text-5xl font-bold mb-4">{builder.name}</h1>
             <p className="text-xl mb-6">{builder.description}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button
                   size="lg"
                   className="bg-white text-blue-900 hover:bg-gray-100"
+                >
+                  Schedule with Cadence Expert
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
                 >
                   Call: {CONTACT_INFO.phone}
                 </Button>
@@ -688,6 +724,14 @@ export default async function BuilderPage({
               <CalendlyLink>
                 <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
                   Schedule {builder.name} Tour
+                </Button>
+              </CalendlyLink>
+              <CalendlyLink>
+                <Button
+                  size="lg"
+                  className="bg-blue-900 text-white hover:bg-blue-800"
+                >
+                  Schedule with Cadence Expert
                 </Button>
               </CalendlyLink>
               <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>

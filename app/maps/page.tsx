@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -12,6 +13,13 @@ import {
   ShoppingBag,
   Plane,
 } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Maps & Directions | Cadence Henderson | Dr Jan Duffy',
+  description:
+    'Find our office and get directions to Cadence Henderson. Dr. Jan Duffy, REALTOR® – 1170 E. Sunset Rd, Henderson, NV.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/maps' },
+}
 
 export default function MapsPage() {
   return (

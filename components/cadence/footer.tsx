@@ -5,10 +5,13 @@ import { CONTACT_INFO } from './contact-info'
 export function Footer() {
   const footerLinks = [
     { title: 'Builders', href: '/new-homes' },
+    { title: 'Rentals', href: '/rentals' },
     { title: 'News', href: '/news' },
     { title: 'Events', href: '/lifestyle/events' },
     { title: 'Amenities', href: '/lifestyle/amenities' },
+    { title: 'Community', href: '/lifestyle/community' },
     { title: 'Realtors', href: '/realtors' },
+    { title: 'Residents', href: '/residents' },
     { title: 'Past Home Sales', href: '/past-homesales' },
     { title: 'Maps', href: '/maps' },
     { title: 'Lifestyle', href: '/lifestyle' },

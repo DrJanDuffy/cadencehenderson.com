@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "format:check": "prettier --check \"**/*.{ts,tsx}\""
+    "format:check": "prettier --check \"**/*.{ts,tsx}\"",
+    "cloudflare:domains-git": "node scripts/cloudflare-domains-git-setup.mjs",
+    "consistency-lock-check": "node scripts/consistency-lock-check.mjs",
+    "consistency-lock-check:hard": "node scripts/consistency-lock-check.mjs --hard-clean"
   },
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.14",

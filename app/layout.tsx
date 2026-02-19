@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { CalendlyScripts } from '../components/calendly/calendly-scripts'
+import { CalendlyStyles } from '../components/calendly/calendly-styles'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
@@ -56,14 +57,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const heroImageUrl =
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <LocalBusinessSchema />
-        <link rel="canonical" href="https://www.cadencehenderson.com" />
+        {/* Preconnect to critical LCP and third-party origins (max 4) */}
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="preconnect" href="https://assets.calendly.com" />
+        <link rel="preconnect" href="https://cadencenv.com" />
+        {/* LCP image preload so browser discovers it from initial HTML */}
+        <link rel="preload" as="image" href={heroImageUrl} />
+        {/* Calendly CSS: media=print so non-blocking; CalendlyStyles sets media=all after hydration */}
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
+          media="print"
         />
       </head>
       <body
@@ -72,7 +84,7 @@ export default function RootLayout({
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         {process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID && (
           <Script
@@ -80,6 +92,7 @@ export default function RootLayout({
             strategy="afterInteractive"
           />
         )}
+        <CalendlyStyles />
         <CalendlyScripts />
         <ThemeProvider
           attribute="class"

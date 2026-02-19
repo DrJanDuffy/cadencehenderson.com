@@ -11,6 +11,8 @@ export function AmenitiesSection() {
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/amenities-home-box-288x300.png"
                 alt="Cadence Henderson Homes Amenities"
+                width={288}
+                height={300}
                 className="w-24 h-24 object-contain"
               />
             </div>

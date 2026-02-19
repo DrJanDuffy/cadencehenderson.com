@@ -38,10 +38,19 @@ export default function RealtorsPage() {
               together.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button
                   size="lg"
                   className="bg-white text-purple-900 hover:bg-gray-100"
+                >
+                  Schedule with Cadence Expert
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-purple-900"
                 >
                   <Phone className="mr-2" size={20} />
                   Call: {CONTACT_INFO.phone}
@@ -488,8 +497,17 @@ export default function RealtorsPage() {
               expertise, you're in the best hands.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button size="lg" className="bg-white text-purple-900 hover:bg-gray-100">
+                  Schedule with Cadence Expert
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-purple-900"
+                >
                   <Phone className="mr-2" size={20} />
                   Call: {CONTACT_INFO.phone}
                 </Button>

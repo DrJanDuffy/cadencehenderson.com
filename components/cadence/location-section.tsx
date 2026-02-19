@@ -11,6 +11,8 @@ export function LocationSection() {
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/location-home-box-288x300.png"
                 alt="Cadence Henderson Location"
+                width={288}
+                height={300}
                 className="w-24 h-24 object-contain"
               />
             </div>

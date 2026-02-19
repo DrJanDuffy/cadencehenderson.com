@@ -11,6 +11,8 @@ export function HomeFinder() {
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/homefinder-home-box-288x300.png"
                 alt="Henderson Home Finder"
+                width={288}
+                height={300}
                 className="w-24 h-24 object-contain"
               />
             </div>

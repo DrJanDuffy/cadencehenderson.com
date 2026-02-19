@@ -1,9 +1,25 @@
+import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
+
+const BASE = 'https://www.cadencehenderson.com'
+
+export const metadata: Metadata = {
+  title: 'Community Life at Cadence Henderson | Clubs, Events & Volunteering',
+  description:
+    'Join clubs, events, and volunteer at Cadence Henderson. Book Club, Running Club, Garden Club, Wine & Dine, and more. Connect with neighbors in Henderson, NV.',
+  alternates: { canonical: `${BASE}/lifestyle/community` },
+  openGraph: {
+    title: 'Community Life at Cadence Henderson | Clubs & Events',
+    description:
+      'Join clubs, events, and volunteer at Cadence. Connect with neighbors in Henderson, NV.',
+    url: `${BASE}/lifestyle/community`,
+  },
+}
 
 const clubs = [
   {

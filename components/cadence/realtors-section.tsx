@@ -19,6 +19,8 @@ export function RealtorsSection() {
             <div className="inline-flex items-center justify-center mb-6">
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/realtors-home-box-288x300.png"
+                width={288}
+                height={300}
                 alt="Cadence Las Vegas Realtors"
                 className="w-24 h-24 object-contain"
               />

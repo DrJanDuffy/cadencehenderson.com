@@ -6,7 +6,7 @@ import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-sea
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutYourListings } from '@/components/idx/realscout-your-listings'
 import { Button } from '@/components/ui/button'
-import { Home, Phone, Mail } from 'lucide-react'
+import { Calendar, Home, Phone, Mail } from 'lucide-react'
 
 export const metadata = {
   title: 'Dr. Jan Duffy Past Home Sales | Cadence Henderson',
@@ -32,10 +32,20 @@ export default function PastHomesalesPage() {
               their perfect home in Henderson and Cadence.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button
                   size="lg"
                   className="bg-white text-slate-800 hover:bg-gray-100"
+                >
+                  <Calendar className="mr-2" size={20} />
+                  Schedule with Cadence Expert
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-slate-800"
                 >
                   <Phone className="mr-2" size={20} />
                   Call: {CONTACT_INFO.phone}

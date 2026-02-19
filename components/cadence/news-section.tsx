@@ -9,6 +9,8 @@ export function NewsSection() {
           <div className="inline-flex items-center justify-center mb-6">
             <img
               src="https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png"
+              width={288}
+              height={300}
               alt="Cadence Henderson News"
               className="w-24 h-24 object-contain"
             />

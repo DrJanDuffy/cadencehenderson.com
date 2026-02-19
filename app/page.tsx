@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -10,6 +11,12 @@ import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
 import { Newsletter } from '@/components/cadence/newsletter'
 import { Footer } from '@/components/cadence/footer'
+
+const BASE = 'https://www.cadencehenderson.com'
+
+export const metadata: Metadata = {
+  alternates: { canonical: BASE },
+}
 
 export default function HomePage() {
   return (

@@ -387,8 +387,17 @@ export default async function RentalCommunityPage({
               help you find the perfect rental.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
+                  Schedule a Tour
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+                >
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
