@@ -1,0 +1,22 @@
+---
+description: Deploy to Vercel production only; skip preview environment.
+globs: 
+alwaysApply: true
+---
+
+# Vercel: production only, skip preview
+
+## When to apply
+
+When deploying to Vercel, triggering a deploy, or when the user asks to deploy or push to production.
+
+## Requirement
+
+- **Deploy straight to production.** Do not use or rely on the preview environment for this project.
+- Use **`vercel --prod`** (or equivalent) so the deployment targets the production environment and skips creating a preview deployment.
+- When suggesting deploy commands or CI/CD steps, always use production deployment (e.g. `vercel --prod`, or Vercel project setting: production branch = main and do not promote previews).
+
+## Notes
+
+- Preview deployments (per-PR or per-commit preview URLs) are not required; the user wants changes to go live to production.
+- If using Vercel CLI: `vercel --prod` deploys to production; `vercel` without `--prod` creates a preview.
