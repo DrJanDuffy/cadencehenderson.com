@@ -21,7 +21,7 @@ const rentalCommunities = [
       'Garage parking',
     ],
     image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80',
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fm=webp',
   },
   {
     name: 'Element 12',
@@ -37,7 +37,7 @@ const rentalCommunities = [
       'Business center',
     ],
     image:
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80',
+      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80&fm=webp',
   },
   {
     name: 'Adler',
@@ -53,7 +53,7 @@ const rentalCommunities = [
       'Package lockers',
     ],
     image:
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80',
+      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fm=webp',
   },
 ]
 

@@ -13,7 +13,7 @@ const newsArticles = [
     excerpt:
       'Cadence has been recognized as one of the top 10 best-selling master-planned communities in the United States for the third consecutive year.',
     image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80',
+      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fm=webp',
   },
   {
     title: 'New Central Park Expansion Opens This Fall',
@@ -22,7 +22,7 @@ const newsArticles = [
     excerpt:
       'Experience even more outdoor recreation with the opening of the new Central Park expansion featuring additional trails, picnic areas, and a new adventure playground.',
     image:
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80',
+      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80&fm=webp',
   },
   {
     title: 'Summer Concert Series Returns to Cadence',
@@ -31,7 +31,7 @@ const newsArticles = [
     excerpt:
       'Join us for live music every Friday evening in Central Park. This year\'s lineup features local and regional artists across multiple genres.',
     image:
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80',
+      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80&fm=webp',
   },
   {
     title: 'Cadence Schools Receive High Academic Ratings',
@@ -40,7 +40,7 @@ const newsArticles = [
     excerpt:
       'Clark County School District announces that schools serving Cadence residents have achieved outstanding academic ratings for the 2024-2025 school year.',
     image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80',
+      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&fm=webp',
   },
   {
     title: 'New Home Builders Join Cadence Community',
@@ -49,7 +49,7 @@ const newsArticles = [
     excerpt:
       'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp',
   },
   {
     title: 'Cadence Residents Celebrate Community Garden Harvest',
@@ -58,7 +58,7 @@ const newsArticles = [
     excerpt:
       'The Cadence Community Garden celebrates its first successful harvest, bringing residents together to share fresh produce and gardening tips.',
     image:
-      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80',
+      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80&fm=webp',
   },
 ]
 
@@ -164,7 +164,7 @@ export default function NewsPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-300"
                   style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-${1560000000000 + i * 10000000}?w=400&q=80')`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-${1560000000000 + i * 10000000}?w=400&q=80&fm=webp')`,
                   }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />

@@ -113,7 +113,7 @@ export default function ContactPage() {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80')",
+                      "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&fm=webp')",
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">

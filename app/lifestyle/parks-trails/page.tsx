@@ -21,7 +21,7 @@ const parks = [
       'Dog-friendly areas',
     ],
     image:
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80',
+      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80&fm=webp',
   },
   {
     name: 'Neighborhood Parks',
@@ -37,7 +37,7 @@ const parks = [
       'Pet waste stations',
     ],
     image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fm=webp',
   },
   {
     name: 'Dog Parks',
@@ -53,7 +53,7 @@ const parks = [
       'Pet waste stations and bags',
     ],
     image:
-      'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80',
+      'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80&fm=webp',
   },
 ]
 
@@ -137,7 +137,7 @@ export default function ParksTrailsPage() {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80')",
+                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80&fm=webp')",
                   }}
                 />
               </div>

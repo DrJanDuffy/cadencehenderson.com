@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Calendar, Home } from 'lucide-react'
 
 const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
+  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fm=webp'
 
 export function Hero() {
   return (

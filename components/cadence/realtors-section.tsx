@@ -12,7 +12,7 @@ export function RealtorsSection() {
               className="absolute inset-0 bg-cover bg-center"
               style={{
                 backgroundImage:
-                  "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80')",
+                  "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fm=webp')",
               }}
             />
           </div>
@@ -20,8 +20,8 @@ export function RealtorsSection() {
             <div className="inline-flex items-center justify-center mb-6">
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/realtors-home-box-288x300.png"
-                width={288}
-                height={300}
+                width={96}
+                height={100}
                 loading="lazy"
                 alt="Cadence Las Vegas Realtors"
                 className="w-24 h-24 object-contain"

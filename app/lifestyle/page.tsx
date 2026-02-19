@@ -22,7 +22,7 @@ const lifestyleFeatures = [
     description:
       'Year-round community events including concerts, movie nights, and seasonal celebrations.',
     image:
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80',
+      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80&fm=webp',
     link: '/lifestyle/events',
   },
   {
@@ -31,7 +31,7 @@ const lifestyleFeatures = [
     description:
       "Nearly 50-acre Central Park, walking trails, and nature areas for outdoor recreation.",
     image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80&fm=webp',
     link: '/lifestyle/parks-trails',
   },
   {
@@ -40,7 +40,7 @@ const lifestyleFeatures = [
     description:
       'Nearby retail, dining, and entertainment options with more coming to the community.',
     image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&fm=webp',
     link: '/lifestyle/shopping',
   },
   {
@@ -49,7 +49,7 @@ const lifestyleFeatures = [
     description:
       'Top-rated Clark County schools including elementary, middle, and high schools.',
     image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80',
+      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&fm=webp',
     link: '/lifestyle/schools',
   },
   {
@@ -58,7 +58,7 @@ const lifestyleFeatures = [
     description:
       'Multiple pools, splash pads, fitness centers, and recreation facilities.',
     image:
-      'https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&q=80',
+      'https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&q=80&fm=webp',
     link: '/lifestyle/amenities',
   },
   {
@@ -67,7 +67,7 @@ const lifestyleFeatures = [
     description:
       'Active resident community with clubs, activities, and neighborhood connections.',
     image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80',
+      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&fm=webp',
     link: '/lifestyle/community',
   },
 ]
@@ -204,7 +204,7 @@ export default function LifestylePage() {
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
                   backgroundImage:
-                    "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80')",
+                    "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80&fm=webp')",
                 }}
               />
             </div>

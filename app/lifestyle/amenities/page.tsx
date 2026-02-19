@@ -30,7 +30,7 @@ const amenities = [
       'Shaded seating areas',
     ],
     image:
-      'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80',
+      'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80&fm=webp',
   },
   {
     name: 'State-of-the-Art Fitness Centers',
@@ -46,7 +46,7 @@ const amenities = [
       '24/7 access for residents',
     ],
     image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
+      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&fm=webp',
   },
   {
     name: 'Clubhouses',
@@ -62,7 +62,7 @@ const amenities = [
       'Party rooms',
     ],
     image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80',
+      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fm=webp',
   },
   {
     name: 'Sports Courts',
@@ -78,7 +78,7 @@ const amenities = [
       'Private lessons',
     ],
     image:
-      'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80',
+      'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80&fm=webp',
   },
 ]
 
@@ -260,7 +260,7 @@ export default function AmenitiesPage() {
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
                     backgroundImage:
-                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80')",
+                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80&fm=webp')",
                   }}
                 />
               </div>

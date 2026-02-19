@@ -50,7 +50,7 @@ const rentalData: Record<
         sqft: '1,650',
         available: 8,
         image:
-          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80',
+          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fm=webp',
         features: [
           'Private backyard',
           '2-car garage',
@@ -67,7 +67,7 @@ const rentalData: Record<
         sqft: '2,150',
         available: 5,
         image:
-          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80',
+          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fm=webp',
         features: [
           'Two-story layout',
           'Large backyard',
@@ -98,7 +98,7 @@ const rentalData: Record<
         sqft: '625',
         available: 3,
         image:
-          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80',
+          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80&fm=webp',
         features: [
           'Modern finishes',
           'Open layout',
@@ -115,7 +115,7 @@ const rentalData: Record<
         sqft: '750',
         available: 12,
         image:
-          'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80',
+          'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80&fm=webp',
         features: [
           'Spacious bedroom',
           'Gourmet kitchen',
@@ -132,7 +132,7 @@ const rentalData: Record<
         sqft: '1,100',
         available: 7,
         image:
-          'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80',
+          'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fm=webp',
         features: [
           'Split bedrooms',
           'Island kitchen',
@@ -163,7 +163,7 @@ const rentalData: Record<
         sqft: '780',
         available: 15,
         image:
-          'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80',
+          'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80&fm=webp',
         features: [
           'Smart home tech',
           'Quartz countertops',
@@ -180,7 +180,7 @@ const rentalData: Record<
         sqft: '1,050',
         available: 10,
         image:
-          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80',
+          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80&fm=webp',
         features: [
           'Open concept',
           'Island seating',
@@ -197,7 +197,7 @@ const rentalData: Record<
         sqft: '1,450',
         available: 2,
         image:
-          'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&q=80',
+          'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&q=80&fm=webp',
         features: [
           'Top floor views',
           'Gourmet kitchen',

@@ -18,7 +18,7 @@ const builders = [
     homes: 15,
     priceRange: '$350,000 - $550,000',
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80',
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp',
   },
   {
     name: 'Century Communities',
@@ -28,7 +28,7 @@ const builders = [
     homes: 22,
     priceRange: '$320,000 - $480,000',
     image:
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80',
+      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80&fm=webp',
   },
   {
     name: 'D.R. Horton',
@@ -38,7 +38,7 @@ const builders = [
     homes: 35,
     priceRange: '$300,000 - $525,000',
     image:
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80',
+      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80&fm=webp',
   },
   {
     name: 'Lennar',
@@ -48,7 +48,7 @@ const builders = [
     homes: 28,
     priceRange: '$380,000 - $600,000',
     image:
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80',
+      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fm=webp',
   },
   {
     name: 'Richmond American Homes',
@@ -58,7 +58,7 @@ const builders = [
     homes: 18,
     priceRange: '$340,000 - $520,000',
     image:
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80',
+      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80&fm=webp',
   },
   {
     name: 'StoryBook Homes',
@@ -68,7 +68,7 @@ const builders = [
     homes: 12,
     priceRange: '$330,000 - $490,000',
     image:
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80',
+      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80&fm=webp',
   },
   {
     name: 'Taylor Morrison',
@@ -78,7 +78,7 @@ const builders = [
     homes: 16,
     priceRange: '$420,000 - $650,000',
     image:
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80',
+      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80&fm=webp',
   },
   {
     name: 'Woodside Homes',
@@ -88,7 +88,7 @@ const builders = [
     homes: 20,
     priceRange: '$360,000 - $540,000',
     image:
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80',
+      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80&fm=webp',
   },
 ]
 

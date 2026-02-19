@@ -32,11 +32,20 @@ export const CalendlyLink = React.forwardRef<HTMLAnchorElement, CalendlyLinkProp
 
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
       e.preventDefault()
-      loadCalendly().then(() => {
-        if (typeof window !== 'undefined' && window.Calendly?.initPopupWidget) {
-          window.Calendly.initPopupWidget({ url })
+      const openFallback = () => {
+        if (typeof window !== 'undefined') {
+          window.open(url, '_blank', 'noopener,noreferrer')
         }
-      })
+      }
+      loadCalendly()
+        .then(() => {
+          if (typeof window !== 'undefined' && window.Calendly?.initPopupWidget) {
+            window.Calendly.initPopupWidget({ url })
+          } else {
+            openFallback()
+          }
+        })
+        .catch(openFallback)
     }
 
     return (

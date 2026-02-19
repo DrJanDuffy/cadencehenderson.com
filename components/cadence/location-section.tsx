@@ -14,8 +14,8 @@ export function LocationSection() {
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/location-home-box-288x300.png"
                 alt="Cadence Henderson Location – master-planned community in Henderson NV 89011"
-                width={288}
-                height={300}
+                width={96}
+                height={100}
                 loading="lazy"
                 className="w-24 h-24 object-contain"
               />
@@ -56,13 +56,12 @@ export function LocationSection() {
               </Button>
             </div>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1564868705948-935dc992e0a4?w=800&q=80')",
-              }}
+          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
+            <img
+              src="https://images.unsplash.com/photo-1564868705948-935dc992e0a4?w=800&q=80&fm=webp"
+              alt="Cadence Henderson community and surrounding area"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
             />
           </div>
         </div>

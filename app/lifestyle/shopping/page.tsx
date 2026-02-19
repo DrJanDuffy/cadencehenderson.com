@@ -12,7 +12,7 @@ const shoppingCenters = [
       'Major shopping mall featuring department stores, specialty retailers, dining, and entertainment options.',
     stores: ['Macy\'s', 'JCPenney', 'Dillard\'s', '140+ stores'],
     image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
+      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fm=webp',
   },
   {
     name: 'District at Green Valley Ranch',
@@ -21,7 +21,7 @@ const shoppingCenters = [
       'Open-air lifestyle center with upscale shops, restaurants, and a movie theater.',
     stores: ['Whole Foods', 'REI', 'Anthropologie', '40+ stores'],
     image:
-      'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80',
+      'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80&fm=webp',
   },
   {
     name: 'Cadence Marketplace',
@@ -30,7 +30,7 @@ const shoppingCenters = [
       'Neighborhood shopping with grocery stores, restaurants, and essential services.',
     stores: ['Smith\'s', 'CVS', 'Starbucks', '25+ stores'],
     image:
-      'https://images.unsplash.com/photo-1555529669-2269763671c0?w=800&q=80',
+      'https://images.unsplash.com/photo-1555529669-2269763671c0?w=800&q=80&fm=webp',
   },
 ]
 

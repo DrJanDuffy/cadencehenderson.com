@@ -1,5 +1,6 @@
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Mail, Phone } from 'lucide-react'
@@ -61,10 +62,23 @@ export function ScheduleConsultationSection() {
           </div>
         </div>
         <div className="max-w-4xl mx-auto rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm">
-          <CalendlyInlineWidget
-            className="rounded-lg overflow-hidden"
-            style={{ minWidth: 320, height: 700 }}
-          />
+          <CalendlyWhenVisible>
+            <CalendlyInlineWidget
+              className="rounded-lg overflow-hidden"
+              style={{ minWidth: 320, height: 700 }}
+            />
+          </CalendlyWhenVisible>
+          <p className="text-center text-sm opacity-80 mt-4">
+            <a
+              href={CONTACT_INFO.calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:no-underline"
+            >
+              Open scheduler in a new tab
+            </a>
+            {' '}if the calendar doesn’t load.
+          </p>
         </div>
         <p className="text-center text-sm opacity-90 mt-6">
           Licensed Real Estate Professional specializing in Cadence Henderson

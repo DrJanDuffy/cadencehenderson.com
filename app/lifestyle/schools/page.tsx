@@ -19,7 +19,7 @@ const schools = [
       'Walking distance from most homes',
     ],
     image:
-      'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80',
+      'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&fm=webp',
   },
   {
     name: 'Henderson Middle School',
@@ -35,7 +35,7 @@ const schools = [
       'Dedicated counseling staff',
     ],
     image:
-      'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+      'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&fm=webp',
   },
   {
     name: 'Green Valley High School',
@@ -51,7 +51,7 @@ const schools = [
       'Career and technical education',
     ],
     image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80',
+      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&fm=webp',
   },
 ]
 

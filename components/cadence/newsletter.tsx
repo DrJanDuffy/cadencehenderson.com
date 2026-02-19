@@ -1,6 +1,7 @@
 'use client'
 
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { Calendar } from 'lucide-react'
 
 const NEWSLETTER_WIDGET_STYLE: React.CSSProperties = {
@@ -27,10 +28,12 @@ export function Newsletter() {
             </p>
           </div>
           <div className="bg-white rounded-lg p-4 min-h-[600px]">
-            <CalendlyInlineWidget
-              style={NEWSLETTER_WIDGET_STYLE}
-              className="w-full"
-            />
+            <CalendlyWhenVisible>
+              <CalendlyInlineWidget
+                style={NEWSLETTER_WIDGET_STYLE}
+                className="w-full"
+              />
+            </CalendlyWhenVisible>
           </div>
         </div>
       </div>

@@ -59,7 +59,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   const heroImageUrl =
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80'
+    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fm=webp'
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -67,7 +67,7 @@ export default function RootLayout({
         <LocalBusinessSchema />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
         <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="preconnect" href="https://em.realscout.com" />
+        <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://cadencenv.com" />
         {/* LCP image preload so browser discovers it from initial HTML */}
@@ -85,12 +85,12 @@ export default function RootLayout({
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID && (
           <Script
             src={`https://em.realscout.com/embed/${process.env.NEXT_PUBLIC_REALSCOUT_EMBED_ID}.js`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
           />
         )}
         <CalendlyStyles />
