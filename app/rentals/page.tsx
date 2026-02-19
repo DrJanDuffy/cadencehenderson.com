@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -81,6 +82,8 @@ export default function RentalsPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* Why Rent in Cadence */}
       <section className="py-16 bg-white">

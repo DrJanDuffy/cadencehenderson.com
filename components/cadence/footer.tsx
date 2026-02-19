@@ -9,6 +9,7 @@ export function Footer() {
     { title: 'Events', href: '/lifestyle/events' },
     { title: 'Amenities', href: '/lifestyle/amenities' },
     { title: 'Realtors', href: '/realtors' },
+    { title: 'Past Home Sales', href: '/past-homesales' },
     { title: 'Maps', href: '/maps' },
     { title: 'Lifestyle', href: '/lifestyle' },
     { title: 'Contact Us', href: '/contact' },

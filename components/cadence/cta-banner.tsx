@@ -1,5 +1,6 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
-import { Mail, Phone } from 'lucide-react'
+import { Calendar, Mail, Phone } from 'lucide-react'
 import { CONTACT_INFO } from './contact-info'
 
 export function CTABanner() {
@@ -15,16 +16,29 @@ export function CTABanner() {
             available homes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href={`mailto:${CONTACT_INFO.email}`}>
+            <CalendlyLink>
               <Button
                 size="lg"
                 className="bg-white text-blue-900 hover:bg-gray-100"
+              >
+                <Calendar className="mr-2" size={20} />
+                Schedule with Cadence Expert
+              </Button>
+            </CalendlyLink>
+            <a href={`mailto:${CONTACT_INFO.email}`}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-blue-900"
               >
                 <Mail className="mr-2" size={20} />
                 Email Dr. Jan
               </Button>
             </a>
-            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+            <a
+              href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+              className="inline-block"
+            >
               <Button
                 size="lg"
                 variant="outline"

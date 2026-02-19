@@ -1,3 +1,4 @@
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -62,6 +63,8 @@ export default function AnimalHospitalPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* About Section */}
       <section className="py-16">

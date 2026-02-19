@@ -1,4 +1,6 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -145,15 +147,19 @@ export default function AmenitiesPage() {
               pools and fitness centers to sports courts and clubhouses, our
               amenities are designed to enhance your lifestyle.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-cyan-900 hover:bg-gray-100"
-            >
-              Schedule a Tour
-            </Button>
+            <CalendlyLink>
+              <Button
+                size="lg"
+                className="bg-white text-cyan-900 hover:bg-gray-100"
+              >
+                Schedule a Tour
+              </Button>
+            </CalendlyLink>
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* Main Amenities Grid */}
       <section className="py-16">
@@ -367,15 +373,15 @@ export default function AmenitiesPage() {
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Schedule Tour">
+              <CalendlyLink>
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-cyan-900"
                 >
-                  Email Dr. Jan
+                  Schedule Tour
                 </Button>
-              </a>
+              </CalendlyLink>
             </div>
           </div>
         </div>

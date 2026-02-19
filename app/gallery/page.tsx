@@ -1,6 +1,8 @@
 'use client'
 
 import { useState } from 'react'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -105,6 +107,8 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      <RealScoutOfficeListings />
+
       {/* Category Filter */}
       <section className="py-8 bg-gray-50 sticky top-20 z-40 border-b">
         <div className="container mx-auto px-4">
@@ -191,9 +195,11 @@ export default function GalleryPage() {
               Photos can only tell part of the story. Schedule a tour and see
               the beauty of Cadence for yourself.
             </p>
-            <Button size="lg" className="bg-pink-900 hover:bg-pink-800">
-              Schedule Your Tour
-            </Button>
+            <CalendlyLink>
+              <Button size="lg" className="bg-pink-900 hover:bg-pink-800">
+                Schedule Your Tour
+              </Button>
+            </CalendlyLink>
           </div>
         </div>
       </section>

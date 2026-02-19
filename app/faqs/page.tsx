@@ -1,6 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
@@ -125,6 +128,8 @@ export default function FAQsPage() {
         </div>
       </section>
 
+      <RealScoutOfficeListings />
+
       {/* FAQs Content */}
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -191,12 +196,17 @@ export default function FAQsPage() {
               and to schedule a tour of Cadence.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href="/contact">
+              <CalendlyLink>
                 <button className="px-8 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-800 transition-colors text-lg font-medium">
+                  Schedule with Cadence Expert
+                </button>
+              </CalendlyLink>
+              <a href="/contact">
+                <button className="px-8 py-3 border-2 border-purple-900 text-purple-900 rounded-lg hover:bg-purple-900 hover:text-white transition-colors text-lg font-medium">
                   Contact Us
                 </button>
               </a>
-              <a href="mailto:DrJanSells@CadenceHenderson.com">
+              <a href={`mailto:${CONTACT_INFO.email}`}>
                 <button className="px-8 py-3 border-2 border-purple-900 text-purple-900 rounded-lg hover:bg-purple-900 hover:text-white transition-colors text-lg font-medium">
                   Email Dr. Jan
                 </button>

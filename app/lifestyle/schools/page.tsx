@@ -1,3 +1,4 @@
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -99,6 +100,8 @@ export default function SchoolsPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* School Rating Highlights */}
       <section className="py-16 bg-white">

@@ -1,5 +1,6 @@
 import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { HomeFinder } from '@/components/cadence/home-finder'
 import { AmenitiesSection } from '@/components/cadence/amenities-section'
 import { LifestyleSection } from '@/components/cadence/lifestyle-section'
@@ -15,6 +16,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <RealScoutOfficeListings />
 
       <main>
         <HomeFinder />

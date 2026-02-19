@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { CONTACT_INFO } from './contact-info'
 import { Menu, X, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
@@ -10,7 +11,11 @@ const navigationItems = [
     title: 'New Homes',
     href: '/new-homes',
     items: [
-      { label: 'Start Your Search', href: '/new-homes' },
+      {
+        label: 'Start Your Search',
+        href: CONTACT_INFO.realScoutSearchUrl,
+        external: true,
+      },
       { label: 'Beazer Homes', href: '/new-homes/beazer-homes' },
       { label: 'Century Communities', href: '/new-homes/century-communities' },
       { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
@@ -62,6 +67,7 @@ const navigationItems = [
     ],
   },
   { title: 'Realtors', href: '/realtors' },
+  { title: 'Past Home Sales', href: '/past-homesales' },
   { title: 'Residents', href: '/residents' },
   { title: 'Contact Us', href: '/contact' },
   { title: 'Maps', href: '/maps' },
@@ -99,15 +105,27 @@ export function Navigation() {
                 </Link>
                 {item.items && activeDropdown === item.title && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50">
-                    {item.items.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
+                    {item.items.map((subItem) =>
+                      (subItem as { external?: boolean }).external ? (
+                        <a
+                          key={subItem.label}
+                          href={subItem.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+                        >
+                          {subItem.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={subItem.label}
+                          href={subItem.href}
+                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+                        >
+                          {subItem.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>
@@ -155,16 +173,29 @@ export function Navigation() {
                 </Link>
                 {item.items && activeDropdown === item.title && (
                   <div className="pl-4">
-                    {item.items.map((subItem) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        className="block px-4 py-2 text-gray-600 hover:text-blue-900"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {subItem.label}
-                      </Link>
-                    ))}
+                    {item.items.map((subItem) =>
+                      (subItem as { external?: boolean }).external ? (
+                        <a
+                          key={subItem.label}
+                          href={subItem.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block px-4 py-2 text-gray-600 hover:text-blue-900"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {subItem.label}
+                        </a>
+                      ) : (
+                        <Link
+                          key={subItem.label}
+                          href={subItem.href}
+                          className="block px-4 py-2 text-gray-600 hover:text-blue-900"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {subItem.label}
+                        </Link>
+                      )
+                    )}
                   </div>
                 )}
               </div>

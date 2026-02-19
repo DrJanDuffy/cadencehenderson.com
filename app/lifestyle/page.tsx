@@ -1,3 +1,5 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -95,6 +97,8 @@ export default function LifestylePage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* Lifestyle Features Grid */}
       <section className="py-16">
@@ -266,12 +270,14 @@ export default function LifestylePage() {
               Schedule a tour and see why Cadence is more than just a community
               - it's a lifestyle.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-green-900 hover:bg-gray-100"
-            >
-              Schedule Your Tour
-            </Button>
+            <CalendlyLink>
+              <Button
+                size="lg"
+                className="bg-white text-green-900 hover:bg-gray-100"
+              >
+                Schedule Your Tour
+              </Button>
+            </CalendlyLink>
           </div>
         </div>
       </section>

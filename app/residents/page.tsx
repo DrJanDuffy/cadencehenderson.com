@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -43,6 +44,8 @@ export default function ResidentsPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* Services for Current Residents */}
       <section className="py-16">

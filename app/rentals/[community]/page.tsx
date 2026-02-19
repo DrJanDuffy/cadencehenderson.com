@@ -1,4 +1,6 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -231,12 +233,14 @@ export default async function RentalCommunityPage({
             <h1 className="text-5xl font-bold mb-4">{community.name}</h1>
             <p className="text-xl mb-6">{community.description}</p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-purple-900 hover:bg-gray-100"
-              >
-                Schedule a Tour
-              </Button>
+              <CalendlyLink>
+                <Button
+                  size="lg"
+                  className="bg-white text-purple-900 hover:bg-gray-100"
+                >
+                  Schedule a Tour
+                </Button>
+              </CalendlyLink>
               <Button
                 size="lg"
                 variant="outline"
@@ -248,6 +252,8 @@ export default async function RentalCommunityPage({
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* About */}
       <section className="py-16 bg-gray-50">

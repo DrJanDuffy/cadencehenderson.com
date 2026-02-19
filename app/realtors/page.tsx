@@ -1,4 +1,6 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -59,6 +61,8 @@ export default function RealtorsPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* About Dr. Jan */}
       <section className="py-16 bg-white">
@@ -400,14 +404,14 @@ export default function RealtorsPage() {
                   Schedule a private tour of Cadence with Dr. Jan. Visit
                   multiple builders and find your perfect home.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Schedule Tour">
+                <CalendlyLink>
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
                   >
                     Schedule Tour
                   </Button>
-                </a>
+                </CalendlyLink>
               </div>
 
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">

@@ -39,7 +39,11 @@ export function Hero() {
                 Call: {CONTACT_INFO.phone}
               </Button>
             </a>
-            <a href="/new-homes">
+            <a
+              href={CONTACT_INFO.realScoutSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size="lg"
                 variant="outline"

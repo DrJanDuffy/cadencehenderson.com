@@ -1,3 +1,4 @@
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -78,6 +79,8 @@ export default function NewsPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       {/* Filter/Category Section */}
       <section className="py-8 bg-gray-50 border-b">

@@ -183,6 +183,26 @@
   }
 }
 
+/* RealScout office listings widget */
+realscout-office-listings {
+  --rs-listing-divider-color: #0e64c8;
+  width: 100%;
+}
+
+/* RealScout your listings widget (past homesales) */
+realscout-your-listings {
+  --rs-listing-divider-color: rgb(101, 141, 172);
+  width: 100%;
+}
+
+/* RealScout advanced search widget */
+realscout-advanced-search {
+  --rs-as-button-text-color: #ffffff;
+  --rs-as-background-color: #ffffff;
+  --rs-as-button-color: #4a90e2;
+  --rs-as-widget-width: 500px !important;
+}
+
 /* Stack mobile deploy buttons vertically on very small screens */
 @media (max-width: 360px) {
   .mobile-deploy-buttons {

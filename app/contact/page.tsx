@@ -1,39 +1,14 @@
 'use client'
 
-import { useState } from 'react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    interest: '',
-    message: '',
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    // Add form submission logic here
-  }
-
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -50,6 +25,8 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      <RealScoutOfficeListings />
 
       <section className="py-16">
         <div className="container mx-auto px-4">
@@ -70,9 +47,10 @@ export default function ContactPage() {
                       Visit Our Office
                     </h3>
                     <p className="text-gray-700">
-                      1170 E. Sunset Rd, Ste. 101
+                      {CONTACT_INFO.address.street}
                       <br />
-                      Henderson, NV 89011
+                      {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
+                      {CONTACT_INFO.address.zip}
                     </p>
                   </div>
                 </div>
@@ -102,10 +80,10 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">Email Us</h3>
                     <p className="text-gray-700">
                       <a
-                        href="mailto:DrJanSells@CadenceHenderson.com"
+                        href={`mailto:${CONTACT_INFO.email}`}
                         className="hover:text-blue-900 transition-colors"
                       >
-                        DrJanSells@CadenceHenderson.com
+                        {CONTACT_INFO.email}
                       </a>
                     </p>
                   </div>
@@ -120,7 +98,7 @@ export default function ContactPage() {
                       Welcome Center Hours
                     </h3>
                     <p className="text-gray-700">
-                      Monday - Sunday: 10:00 AM - 6:00 PM
+                      {CONTACT_INFO.hours}
                       <br />
                       Closed major holidays
                     </p>
@@ -138,148 +116,29 @@ export default function ContactPage() {
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                  <Button className="bg-white text-gray-900 hover:bg-gray-100">
-                    Open in Maps
-                  </Button>
+                  <a
+                    href="https://maps.google.com/?q=1170+E+Sunset+Rd+Henderson+NV+89011"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button className="bg-white text-gray-900 hover:bg-gray-100">
+                      Open in Maps
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Schedule a Consultation - Calendly */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
-                Send Us a Message
+                Schedule a Consultation
               </h2>
-
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label
-                      htmlFor="firstName"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      value={formData.firstName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                    />
-                  </div>
-                  <div>
-                    <label
-                      htmlFor="lastName"
-                      className="block text-sm font-medium text-gray-700 mb-2"
-                    >
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      value={formData.lastName}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Email *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="interest"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    I'm Interested In *
-                  </label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    required
-                    value={formData.interest}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                  >
-                    <option value="">Select an option</option>
-                    <option value="buying">Buying a Home</option>
-                    <option value="renting">Renting</option>
-                    <option value="general">General Information</option>
-                    <option value="tour">Scheduling a Tour</option>
-                    <option value="realtor">Realtor Resources</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
-                  >
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-                  />
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-blue-900 hover:bg-blue-800"
-                >
-                  <Send className="mr-2" size={20} />
-                  Send Message
-                </Button>
-
-                <p className="text-sm text-gray-600 text-center">
-                  By submitting this form, you agree to be contacted by Cadence
-                  regarding your inquiry.
-                </p>
-              </form>
+              <p className="text-gray-700 mb-6">
+                Book a 15-minute call with Dr. Jan Duffy to discuss Cadence
+                Henderson homes, schedule a tour, or get personalized guidance.
+              </p>
+              <CalendlyInlineWidget className="rounded-lg overflow-hidden" />
             </div>
           </div>
         </div>
@@ -289,4 +148,3 @@ export default function ContactPage() {
     </div>
   )
 }
-

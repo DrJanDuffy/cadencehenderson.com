@@ -1,4 +1,8 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -104,13 +108,19 @@ export default function NewHomesPage() {
               find the perfect fit for your lifestyle.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-blue-900 hover:bg-gray-100"
+              <a
+                href={CONTACT_INFO.realScoutSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Home className="mr-2" size={20} />
-                Start Your Search
-              </Button>
+                <Button
+                  size="lg"
+                  className="bg-white text-blue-900 hover:bg-gray-100"
+                >
+                  <Home className="mr-2" size={20} />
+                  Start Your Search
+                </Button>
+              </a>
               <Button
                 size="lg"
                 variant="outline"
@@ -120,6 +130,23 @@ export default function NewHomesPage() {
                 View Community Map
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <RealScoutOfficeListings />
+
+      {/* MLS Search Widget */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+              Search Henderson Homes for Sale
+            </h2>
+            <div className="flex justify-center mb-8">
+              <RealScoutAdvancedSearch />
+            </div>
+            <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden border border-gray-200 shadow-sm" />
           </div>
         </div>
       </section>
@@ -219,8 +246,17 @@ export default function NewHomesPage() {
               home for your family.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+                  Schedule with Cadence Expert
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                >
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>

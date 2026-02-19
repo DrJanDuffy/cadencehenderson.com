@@ -16,6 +16,9 @@ export const CONTACT_INFO = {
   mainOffice: '8850 W Sunset Road Suite 200, Las Vegas, NV 89148',
   brandName: 'Cadence Henderson | Homes By Dr Jan Duffy',
   shortBrandName: 'Homes By Dr Jan Duffy',
+  realScoutSearchUrl:
+    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM0Mw==',
+  calendlyUrl: 'https://calendly.com/drjanduffy/15min',
 }
 
 export const SOCIAL_MEDIA = {

@@ -1,4 +1,6 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -543,6 +545,8 @@ export default async function BuilderPage({
         </div>
       </section>
 
+      <RealScoutOfficeListings />
+
       {/* About Builder */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -681,8 +685,17 @@ export default async function BuilderPage({
               through the entire process.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+              <CalendlyLink>
                 <Button size="lg" className="bg-blue-900 hover:bg-blue-800">
+                  Schedule {builder.name} Tour
+                </Button>
+              </CalendlyLink>
+              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                >
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>

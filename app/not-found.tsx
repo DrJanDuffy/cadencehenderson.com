@@ -1,5 +1,7 @@
 import Link from 'next/link'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -29,7 +31,11 @@ export default function NotFound() {
                   Back to Homepage
                 </Button>
               </Link>
-              <Link href="/new-homes">
+              <Link
+                href={CONTACT_INFO.realScoutSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button
                   size="lg"
                   variant="outline"
@@ -41,6 +47,8 @@ export default function NotFound() {
               </Link>
             </div>
 
+            <RealScoutOfficeListings />
+
             <div className="bg-blue-50 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
                 Need Help Finding Something?
@@ -50,8 +58,16 @@ export default function NotFound() {
                 and information.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                <CalendlyLink>
                   <Button className="bg-blue-900 hover:bg-blue-800">
+                    Schedule with Cadence Expert
+                  </Button>
+                </CalendlyLink>
+                <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+                  <Button
+                    variant="outline"
+                    className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
+                  >
                     <Phone className="mr-2" size={20} />
                     Call: {CONTACT_INFO.phone}
                   </Button>
