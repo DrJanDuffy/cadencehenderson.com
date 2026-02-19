@@ -3,6 +3,11 @@
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { Calendar } from 'lucide-react'
 
+const NEWSLETTER_WIDGET_STYLE: React.CSSProperties = {
+  minWidth: 320,
+  height: 600,
+}
+
 export function Newsletter() {
   return (
     <section className="py-20 bg-blue-900 text-white">
@@ -23,7 +28,7 @@ export function Newsletter() {
           </div>
           <div className="bg-white rounded-lg p-4 min-h-[600px]">
             <CalendlyInlineWidget
-              style={{ minWidth: 320, height: 600 }}
+              style={NEWSLETTER_WIDGET_STYLE}
               className="w-full"
             />
           </div>

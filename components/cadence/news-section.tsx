@@ -1,4 +1,4 @@
-import { Newspaper } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export function NewsSection() {
@@ -11,7 +11,8 @@ export function NewsSection() {
               src="https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png"
               width={288}
               height={300}
-              alt="Cadence Henderson News"
+              loading="lazy"
+              alt="Cadence Henderson news and community updates"
               className="w-24 h-24 object-contain"
             />
           </div>
@@ -21,12 +22,23 @@ export function NewsSection() {
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
             For announcements, updates, offers and tips, check out our newsroom.
           </p>
-          <Button
-            size="lg"
-            className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
-          >
-            Read Latest News
-          </Button>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              asChild
+            >
+              <Link href="/news">Read Latest News</Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
+              asChild
+            >
+              <Link href="/gallery">View Photo Gallery</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

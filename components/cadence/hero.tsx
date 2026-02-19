@@ -29,6 +29,9 @@ export function Hero() {
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             Let's Address Your Future.
           </h1>
+          <p className="text-lg text-white/90 mb-2">
+            Cadence Henderson, Nevada
+          </p>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
             With astounding views, great variety and distinctive amenities that
             provide opportunities for amazing experiences each and every day;

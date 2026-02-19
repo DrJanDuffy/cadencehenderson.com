@@ -55,6 +55,7 @@ You can deploy your own version of Simple v0 to Vercel with one click:
 
 ## Skills check and workflow install
 
+For agent orientation (which skill when, rules, commands) see **[AGENTS.md](AGENTS.md)**.  
 This project uses the [skills CLI](https://skills.sh) to manage AI agent skills. Declared skills live in `skills.json`; workflow-recommended repos are in `skills-workflow.json`.
 
 - **Check:** Run `npm run consistency-lock-check` to compare `skills.json` to `npx skills list` (declared vs loaded, global CLI, runtime variant). For a clean reinstall check use `npm run consistency-lock-check:hard`.

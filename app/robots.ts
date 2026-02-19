@@ -1,5 +1,10 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 
+const BASE_URL = 'https://www.cadencehenderson.com'
+
+/**
+ * robots.txt for crawlers. Points Google and others to the sitemap.
+ */
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
@@ -9,7 +14,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://www.cadencehenderson.com/sitemap.xml',
+    sitemap: `${BASE_URL}/sitemap.xml`,
+    host: BASE_URL,
   }
 }
 

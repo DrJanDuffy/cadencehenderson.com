@@ -145,9 +145,10 @@ export default function RealtorsPage() {
                     <div>
                       <p className="text-sm text-gray-600">Office:</p>
                       <p className="text-gray-700">
-                        1170 E. Sunset Rd, Ste. 101
+                        {CONTACT_INFO.address.street}
                         <br />
-                        Henderson, NV 89011
+                        {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
+                        {CONTACT_INFO.address.zip}
                       </p>
                     </div>
                   </div>

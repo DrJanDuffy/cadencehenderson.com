@@ -242,9 +242,10 @@ export default function ResidentsPage() {
                   <div className="flex items-start">
                     <MapPin size={18} className="mr-2 text-emerald-900 mt-1" />
                     <p className="text-gray-700 text-sm">
-                      1170 E. Sunset Rd, Ste. 101
+                      {CONTACT_INFO.address.street}
                       <br />
-                      Henderson, NV 89011
+                      {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
+                      {CONTACT_INFO.address.zip}
                     </p>
                   </div>
                 </div>

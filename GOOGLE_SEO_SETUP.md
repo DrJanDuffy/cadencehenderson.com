@@ -54,7 +54,7 @@ Sitemap: https://www.cadencehenderson.com/sitemap.xml
   "telephone": "+1-702-500-1955",
   "email": "DrJanSells@CadenceHenderson.com",
   "address": {
-    "streetAddress": "1170 E. Sunset Rd, Ste. 101",
+    "streetAddress": "1170 E Sunset Rd, 2nd Floor",
     "addressLocality": "Henderson",
     "addressRegion": "NV",
     "postalCode": "89011"
@@ -150,7 +150,7 @@ Call 702-500-1955
 2. Create/claim business listing
 3. Use exact name: **"Cadence Henderson | Homes By Dr Jan Duffy"**
 4. Category: Real Estate Agent
-5. Address: 1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011
+5. Address: 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011
 6. Phone: 702-500-1955
 7. Website: https://www.cadencehenderson.com
 8. Verify with postcard or phone

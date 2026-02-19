@@ -1,3 +1,4 @@
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -199,7 +200,7 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Newsletter CTA */}
+      {/* Schedule consultation CTA */}
       <section className="py-16 bg-orange-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
@@ -207,19 +208,15 @@ export default function EventsPage() {
               Never Miss an Event
             </h2>
             <p className="text-xl mb-8">
-              Subscribe to our event newsletter and get weekly updates on
-              upcoming activities and community happenings.
+              Schedule a call with Dr. Jan Duffy to get personalized updates on
+              upcoming activities and community happenings in Cadence.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-white"
-              />
+            <CalendlyLink>
               <Button className="bg-white text-orange-900 hover:bg-gray-100 px-8">
-                Subscribe
+                <Calendar className="mr-2" size={20} />
+                Schedule with Cadence Expert
               </Button>
-            </div>
+            </CalendlyLink>
           </div>
         </div>
       </section>

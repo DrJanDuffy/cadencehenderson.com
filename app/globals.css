@@ -181,6 +181,10 @@
   html {
     font-family: var(--font-geist-mono), ui-monospace, monospace;
   }
+  /* Visible focus for keyboard users; minimal impact for mouse */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-ring;
+  }
 }
 
 /* RealScout office listings widget */

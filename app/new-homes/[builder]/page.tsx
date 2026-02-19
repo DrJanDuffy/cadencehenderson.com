@@ -617,9 +617,10 @@ export default async function BuilderPage({
                   <MapPin className="mx-auto mb-3 text-blue-900" size={32} />
                   <h3 className="font-bold text-gray-900 mb-2">Office</h3>
                   <p className="text-gray-700 text-sm">
-                    1170 E. Sunset Rd, Ste. 101
+                    {CONTACT_INFO.address.street}
                     <br />
-                    Henderson, NV 89011
+                    {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
+                    {CONTACT_INFO.address.zip}
                   </p>
                 </div>
                 <div className="text-center">

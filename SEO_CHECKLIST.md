@@ -378,7 +378,7 @@ Based on Google's guidelines:
 - Primary: Real Estate Agent
 - Secondary: Real Estate Consultant
 
-**Address:** 1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011
+**Address:** 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011
 
 **Service Area:** 
 - Henderson, NV

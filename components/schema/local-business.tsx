@@ -41,7 +41,27 @@ export function LocalBusinessSchema() {
       },
     ],
     priceRange: '$$',
+    serviceType: [
+      'Real estate agent',
+      "Buyer's agent",
+      'Listing agent',
+      'New home sales',
+      'Resale homes',
+      'Rental homes',
+      'Real estate consultation',
+    ],
     areaServed: [
+      {
+        '@type': 'Place',
+        name: 'Cadence',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Henderson',
+          addressRegion: 'NV',
+          postalCode: '89011',
+          addressCountry: 'US',
+        },
+      },
       {
         '@type': 'City',
         name: 'Henderson',

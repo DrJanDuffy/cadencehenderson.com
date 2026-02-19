@@ -5,7 +5,7 @@
  *
  * Usage: node scripts/skills-workflow-sync.mjs
  *
- * Optional: DISABLE_TELEMETRY=1 to opt out of skills CLI telemetry when running installs.
+ * Telemetry: DISABLE_TELEMETRY=1 by default for installs. Set DISABLE_TELEMETRY=0 to enable.
  */
 
 import { readFile, writeFile } from 'node:fs/promises'
@@ -56,10 +56,7 @@ async function main() {
     return
   }
 
-  const env = { ...process.env }
-  if (process.env.DISABLE_TELEMETRY !== undefined) {
-    env.DISABLE_TELEMETRY = process.env.DISABLE_TELEMETRY
-  }
+  const env = { ...process.env, DISABLE_TELEMETRY: process.env.DISABLE_TELEMETRY ?? '1' }
 
   console.log('Installing missing workflow skills:', missing.join(', '))
   for (const repo of missing) {

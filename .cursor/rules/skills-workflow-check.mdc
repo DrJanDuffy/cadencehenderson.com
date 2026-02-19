@@ -1,0 +1,25 @@
+---
+description: When a task involves skills, workflow skills, or agent setup, run workflow sync and consistency lock check first.
+globs: skills.json, skills-workflow.json, scripts/skills-*.mjs, scripts/consistency-lock-check.mjs
+alwaysApply: false
+---
+
+# Skills workflow check
+
+## When to apply
+
+When the user asks about skills, installing skills, workflow-appropriate skills, consistency lock, or when the task involves editing `skills.json`, `skills-workflow.json`, or the skills/consistency scripts.
+
+## Requirement
+
+Before making changes (or when the user asks to check skills):
+
+1. Run **`npm run skills:workflow`** to install any workflow repos not yet in `skills.json` and keep the manifest in sync.
+2. Run **`npm run consistency-lock-check`** to verify declared state equals loaded state (`npx skills list`), no global CLI interference, and correct runtime repo.
+
+If the lock check fails, fix the mismatch (manifest, install, or repo choice) before continuing. If both pass, the environment is structurally locked and you can proceed.
+
+## Notes
+
+- Telemetry: the workflow sync script can set `DISABLE_TELEMETRY=1` when calling the CLI if the project prefers opt-out.
+- Do not run a full hard clean (`consistency-lock-check:hard`) unless the user requests it or the normal check indicates contamination.

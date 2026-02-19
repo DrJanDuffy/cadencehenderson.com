@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: 'Maps & Directions | Cadence Henderson | Dr Jan Duffy',
   description:
-    'Find our office and get directions to Cadence Henderson. Dr. Jan Duffy, REALTOR® – 1170 E. Sunset Rd, Henderson, NV.',
+    `Find our office and get directions to Cadence Henderson. Dr. Jan Duffy, REALTOR® – ${CONTACT_INFO.address.street}, ${CONTACT_INFO.address.city}, ${CONTACT_INFO.address.state} ${CONTACT_INFO.address.zip}.`,
   alternates: { canonical: 'https://www.cadencehenderson.com/maps' },
 }
 
@@ -57,7 +57,7 @@ export default function MapsPage() {
           </p>
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5845!2d-115.0515617!3d36.0562609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d7e721d0e86b%3A0x95c8e8ce96aec347!2s1170%20E%20Sunset%20Rd%2C%20Henderson%2C%20NV%2089011!5e0!3m2!1sen!2sus!4v1234567890"
+              src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}&output=embed`}
               width="100%"
               height="500"
               style={{ border: 0 }}
@@ -69,7 +69,7 @@ export default function MapsPage() {
           </div>
           <div className="text-center mt-6">
             <a
-              href="https://www.google.com/maps/dir//1170+E+Sunset+Rd,+Henderson,+NV+89011/@36.0562609,-115.0515617,12z/"
+              href={`https://www.google.com/maps/dir//${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -154,9 +154,10 @@ export default function MapsPage() {
                       Office Address
                     </h4>
                     <p className="text-gray-700">
-                      1170 E. Sunset Rd, Ste. 101
+                      {CONTACT_INFO.address.street}
                       <br />
-                      Henderson, NV 89011
+                      {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
+                      {CONTACT_INFO.address.zip}
                     </p>
                   </div>
                   <div>
@@ -178,7 +179,7 @@ export default function MapsPage() {
                 </div>
                 <div className="mt-6 space-y-3">
                   <a
-                    href="https://www.google.com/maps/dir//1170+E+Sunset+Rd,+Henderson,+NV+89011/@36.0562609,-115.0515617,12z/"
+                    href={`https://www.google.com/maps/dir//${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -200,7 +201,7 @@ export default function MapsPage() {
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div className="h-full min-h-[400px]">
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3224.5845!2d-115.0515617!3d36.0562609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8d7e721d0e86b%3A0x95c8e8ce96aec347!2s1170%20E%20Sunset%20Rd%2C%20Henderson%2C%20NV%2089011!5e0!3m2!1sen!2sus!4v1234567890"
+                    src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}&output=embed`}
                     width="100%"
                     height="400"
                     style={{ border: 0 }}

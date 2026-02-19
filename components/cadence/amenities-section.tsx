@@ -1,9 +1,9 @@
-import { Trees, Waves } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export function AmenitiesSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" aria-labelledby="amenities-heading">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -13,10 +13,11 @@ export function AmenitiesSection() {
                 alt="Cadence Henderson Homes Amenities"
                 width={288}
                 height={300}
+                loading="lazy"
                 className="w-24 h-24 object-contain"
               />
             </div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 id="amenities-heading" className="text-4xl font-bold text-gray-900 mb-6">
               Cadence Henderson Homes Amenities
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
@@ -27,8 +28,9 @@ export function AmenitiesSection() {
             <Button
               size="lg"
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              asChild
             >
-              Explore Amenities
+              <Link href="/lifestyle/amenities">Explore Amenities</Link>
             </Button>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">

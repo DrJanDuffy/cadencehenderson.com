@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
-import { CalendlyScripts } from '../components/calendly/calendly-scripts'
+import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
+import { SkipToContent } from '../components/cadence/skip-to-content'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { ThemeProvider } from 'next-themes'
@@ -93,7 +94,8 @@ export default function RootLayout({
           />
         )}
         <CalendlyStyles />
-        <CalendlyScripts />
+        <CalendlyProvider>
+        <SkipToContent />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -105,6 +107,7 @@ export default function RootLayout({
           {children}
           <ScrollToTop />
         </ThemeProvider>
+        </CalendlyProvider>
       </body>
     </html>
   )

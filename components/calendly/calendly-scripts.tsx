@@ -1,7 +1,12 @@
 'use client'
 
 import Script from 'next/script'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
+/**
+ * Loads Calendly widget.js (lazyOnload) and initializes the floating badge
+ * ("Call Your Cadence Consultant Today"). Single source of truth: CONTACT_INFO.calendlyUrl.
+ */
 export function CalendlyScripts() {
   return (
     <Script
@@ -15,7 +20,7 @@ export function CalendlyScripts() {
         ).Calendly
         if (typeof window !== 'undefined' && cal?.initBadgeWidget) {
           cal.initBadgeWidget({
-            url: 'https://calendly.com/drjanduffy/15min',
+            url: CONTACT_INFO.calendlyUrl,
             text: 'Call Your Cadence Consultant Today',
             color: '#0069ff',
             textColor: '#ffffff',

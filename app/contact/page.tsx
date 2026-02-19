@@ -2,6 +2,7 @@
 
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -117,7 +118,7 @@ export default function ContactPage() {
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                   <a
-                    href="https://maps.google.com/?q=1170+E+Sunset+Rd+Henderson+NV+89011"
+                    href={`https://maps.google.com/?q=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -129,7 +130,8 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Schedule a Consultation - Calendly */}
+            {/* Schedule a Consultation - Calendly (loads when in view) */}
+            <CalendlyWhenVisible>
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">
                 Schedule a Consultation
@@ -140,6 +142,7 @@ export default function ContactPage() {
               </p>
               <CalendlyInlineWidget className="rounded-lg overflow-hidden" />
             </div>
+            </CalendlyWhenVisible>
           </div>
         </div>
       </section>

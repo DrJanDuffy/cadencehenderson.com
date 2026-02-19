@@ -92,6 +92,7 @@ export function BuildersShowcase() {
                   alt={`${builder.name} - New homes at Cadence Henderson`}
                   width={builder.width}
                   height={builder.height}
+                  loading="lazy"
                   className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform"
                 />
               </div>

@@ -1,4 +1,4 @@
-import { Calendar, Music } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 
 export function LifestyleSection() {
@@ -21,12 +21,13 @@ export function LifestyleSection() {
                 src="https://cadencenv.com/wp-content/uploads/2021/01/lifestyle-home-box-288x300.png"
                 width={288}
                 height={300}
-                alt="Cadence Las Vegas Lifestyle"
+                loading="lazy"
+                alt="Cadence Henderson lifestyle: amenities and community"
                 className="w-24 h-24 object-contain"
               />
             </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Cadence Las Vegas Lifestyle
+              Cadence Henderson Lifestyle
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
               Find out what makes Cadence the perfect place to live. Our master
@@ -36,8 +37,9 @@ export function LifestyleSection() {
             <Button
               size="lg"
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+              asChild
             >
-              Discover Lifestyle
+              <Link href="/lifestyle">Discover Lifestyle</Link>
             </Button>
           </div>
         </div>

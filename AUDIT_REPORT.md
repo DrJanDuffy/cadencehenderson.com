@@ -166,7 +166,7 @@ Renamed to **"Living in Cadence"** with clear separation:
 **Website:** Professional, honest, and optimized for lead generation  
 **Branding:** Dr. Jan Duffy, REALTOR® - Berkshire Hathaway HomeServices  
 **Contact:** 702-500-1955 | DrJanSells@CadenceHenderson.com  
-**Address:** 1170 E. Sunset Rd, Ste. 101, Henderson, NV 89011  
+**Address:** 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011  
 
 **Compliance:** ✅ All pages accurately represent Dr. Jan's services  
 **Lead Generation:** ✅ Optimized throughout  

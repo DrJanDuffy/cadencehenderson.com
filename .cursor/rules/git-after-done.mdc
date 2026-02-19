@@ -22,5 +22,5 @@ Do not skip these steps unless the user explicitly asks not to commit/push, or t
 
 ## Notes
 
-- Prefer committing only project-tracked files (e.g. exclude `.agents/`, `.cursor/skills/` install trees if they are not meant to be versioned).
+- Prefer committing project source and config (e.g. `AGENTS.md`, `.cursor/rules/`, `.cursor/skills/` project skills). Exclude `.agents/` and CLI-installed skill trees (e.g. under `.agents/skills/`) unless the repo is meant to version them.
 - Commit message should be descriptive (e.g. "Add skills workflow sync and engagement CTAs" not "Updates").
