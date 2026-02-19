@@ -1,0 +1,13 @@
+{
+  "workflowRepos": [
+    "vercel-labs/skills",
+    "vercel-labs/agent-skills",
+    "vercel-labs/agent-browser",
+    "inference-sh-3/skills",
+    "anthropics/skills",
+    "millionco/react-doctor",
+    "remotion-dev/skills",
+    "nextlevelbuilder/ui-ux-pro-max-skill",
+    "cloudflare/skills"
+  ]
+}

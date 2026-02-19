@@ -53,6 +53,16 @@ You can deploy your own version of Simple v0 to Vercel with one click:
 - **Responsive Design**: Works seamlessly on desktop and mobile devices
 - **Session Caching**: Improved performance with intelligent caching of projects and chats
 
+## Skills check and workflow install
+
+This project uses the [skills CLI](https://skills.sh) to manage AI agent skills. Declared skills live in `skills.json`; workflow-recommended repos are in `skills-workflow.json`.
+
+- **Check:** Run `npm run consistency-lock-check` to compare `skills.json` to `npx skills list` (declared vs loaded, global CLI, runtime variant). For a clean reinstall check use `npm run consistency-lock-check:hard`.
+- **Workflow install:** Run `npm run skills:workflow` to install any repo in `skills-workflow.json` that is not yet in `skills.json` (via `npx skills add <repo> -y`) and update `skills.json`. Then run `npm run consistency-lock-check` to verify.
+- **CLI:** Use `npx skills add <owner/repo>` for one-off installs; add `-y` to skip prompts. To disable telemetry: `DISABLE_TELEMETRY=1 npx skills add ...`.
+
+Aliases: `npm run skills:check` is the same as `npm run consistency-lock-check`.
+
 ## API Routes
 
 - `GET /api/validate` - Validate API key
