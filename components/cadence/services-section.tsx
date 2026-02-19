@@ -1,8 +1,18 @@
 import Link from 'next/link'
+import type { LucideIcon } from 'lucide-react'
 import { Home, Key, Building2, Calendar, MapPin } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
-const SERVICES = [
+type ServiceItem = {
+  title: string
+  description: string
+  href: string
+  icon: LucideIcon
+  ariaLabel: string
+  external?: boolean
+}
+
+const SERVICES: ServiceItem[] = [
   {
     title: 'Buy Homes in Cadence',
     description: 'New construction and resale homes in Cadence Henderson. Expert guidance through every step.',
@@ -32,7 +42,7 @@ const SERVICES = [
     ariaLabel: 'Schedule a free real estate consultation in Cadence Henderson',
     external: true,
   },
-] as const
+]
 
 export function ServicesSection() {
   return (
