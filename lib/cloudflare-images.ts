@@ -24,10 +24,16 @@ const BASE_URL = `https://imagedelivery.net/${CLOUDFLARE_ACCOUNT_HASH}`
 export type ImageVariant = 'public' | 'hero' | 'card' | 'thumbnail' | 'avatar' | 'og' | 'gallery'
 
 /**
+ * Placeholder image for missing/unset images
+ * Using a solid color data URL to prevent build errors
+ */
+const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3C/svg%3E'
+
+/**
  * Generate Cloudflare Image delivery URL
  */
 export function cfImage(imageId: string, variant: ImageVariant = 'public'): string {
-  if (!imageId) return ''
+  if (!imageId) return PLACEHOLDER_IMAGE
   return `${BASE_URL}/${imageId}/${variant}`
 }
 
