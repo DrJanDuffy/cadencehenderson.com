@@ -11,7 +11,10 @@ import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
 import { FAQPageSchema } from '../components/schema/faq-page'
 import { GeoMeta } from '../components/schema/geo-meta'
+import { getHeroImage } from '@/lib/cloudflare-images'
 import './globals.css'
+
+const heroImageUrl = getHeroImage('homepage')
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
