@@ -23,6 +23,11 @@ declare module 'react/jsx-runtime' {
       'realscout-simple-search': HTMLAttributes<HTMLElement> & {
         'agent-encoded-id'?: string
       }
+      'realscout-home-value': HTMLAttributes<HTMLElement> & {
+        'agent-encoded-id'?: string
+        'include-name'?: boolean
+        'include-phone'?: boolean
+      }
     }
   }
 }
