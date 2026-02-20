@@ -1,6 +1,18 @@
 import type { NextConfig } from 'next'
 
+const REALSCOUT_RENTALS_URL =
+  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw=='
+const REALSCOUT_BEAZER_HOMES_URL =
+  'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA=='
+
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: '/rentals', destination: REALSCOUT_RENTALS_URL, permanent: false },
+      { source: '/rentals/:path*', destination: REALSCOUT_RENTALS_URL, permanent: false },
+      { source: '/new-homes/beazer-homes', destination: REALSCOUT_BEAZER_HOMES_URL, permanent: false },
+    ]
+  },
   async headers() {
     return [
       {

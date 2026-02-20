@@ -16,8 +16,6 @@ const BUILDERS = [
   'woodside-homes',
 ] as const
 
-const RENTALS = ['american-homes', 'element-12', 'adler'] as const
-
 const LIFESTYLE_PAGES = [
   '/lifestyle/events',
   '/lifestyle/parks-trails',
@@ -42,7 +40,6 @@ export function getSitemapEntries(): SitemapEntry[] {
   const mainPages: SitemapEntry[] = [
     { url: base, lastModified: now, changeFrequency: 'daily', priority: 1 },
     { url: `${base}/new-homes`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${base}/rentals`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/lifestyle`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/news`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${base}/realtors`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
@@ -68,12 +65,5 @@ export function getSitemapEntries(): SitemapEntry[] {
     priority: 0.9,
   }))
 
-  const rentalPages: SitemapEntry[] = RENTALS.map((slug) => ({
-    url: `${base}/rentals/${slug}`,
-    lastModified: now,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
-  }))
-
-  return [...mainPages, ...lifestyle, ...builderPages, ...rentalPages]
+  return [...mainPages, ...lifestyle, ...builderPages]
 }

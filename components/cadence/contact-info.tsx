@@ -18,6 +18,10 @@ export const CONTACT_INFO = {
   shortBrandName: 'Homes By Dr Jan Duffy',
   realScoutSearchUrl:
     'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM0Mw==',
+  realScoutRentalsUrl:
+    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw==',
+  realScoutBeazerHomesUrl:
+    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA==',
   calendlyUrl: 'https://calendly.com/drjanduffy/15min',
 }
 

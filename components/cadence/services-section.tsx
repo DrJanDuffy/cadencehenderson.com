@@ -32,10 +32,10 @@ const SERVICES: ServiceItem[] = [
   {
     title: 'Rentals in Cadence',
     description: 'Rental homes and communities in Cadence, Henderson NV 89011.',
-    href: '/rentals',
+    href: CONTACT_INFO.realScoutRentalsUrl,
     icon: Building2,
     ariaLabel: 'Find rentals in Cadence Henderson',
-    external: false,
+    external: true,
   },
   {
     title: 'Free Consultation',

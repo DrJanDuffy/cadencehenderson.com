@@ -18,7 +18,11 @@ const navigationItems = [
         href: CONTACT_INFO.realScoutSearchUrl,
         external: true,
       },
-      { label: 'Beazer Homes', href: '/new-homes/beazer-homes' },
+      {
+        label: 'Beazer Homes',
+        href: CONTACT_INFO.realScoutBeazerHomesUrl,
+        external: true,
+      },
       { label: 'Century Communities', href: '/new-homes/century-communities' },
       { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
       { label: 'Lennar', href: '/new-homes/lennar' },
@@ -33,12 +37,8 @@ const navigationItems = [
   },
   {
     title: 'Rentals',
-    href: '/rentals',
-    items: [
-      { label: 'American Homes (AMH)', href: '/rentals/american-homes' },
-      { label: 'Element 12', href: '/rentals/element-12' },
-      { label: 'Adler', href: '/rentals/adler' },
-    ],
+    href: CONTACT_INFO.realScoutRentalsUrl,
+    external: true,
   },
   {
     title: 'Lifestyle',
@@ -99,12 +99,23 @@ export function Navigation() {
                 }
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <Link
-                  href={item.href || '#'}
-                  className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
-                >
-                  {item.title}
-                </Link>
+                {(item as { external?: boolean }).external ? (
+                  <a
+                    href={item.href || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href || '#'}
+                    className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
+                  >
+                    {item.title}
+                  </Link>
+                )}
                 {item.items && activeDropdown === item.title && (
                   <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50">
                     {item.items.map((subItem) =>
@@ -173,22 +184,34 @@ export function Navigation() {
             </div>
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">
-                <Link
-                  href={item.href || '#'}
-                  className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
-                  onClick={(e) => {
-                    if (item.items) {
-                      e.preventDefault()
-                      setActiveDropdown(
-                        activeDropdown === item.title ? null : item.title,
-                      )
-                    } else {
-                      setIsOpen(false)
-                    }
-                  }}
-                >
-                  {item.title}
-                </Link>
+                {(item as { external?: boolean }).external ? (
+                  <a
+                    href={item.href || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.title}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href || '#'}
+                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
+                    onClick={(e) => {
+                      if (item.items) {
+                        e.preventDefault()
+                        setActiveDropdown(
+                          activeDropdown === item.title ? null : item.title,
+                        )
+                      } else {
+                        setIsOpen(false)
+                      }
+                    }}
+                  >
+                    {item.title}
+                  </Link>
+                )}
                 {item.items && activeDropdown === item.title && (
                   <div className="pl-4">
                     {item.items.map((subItem) =>

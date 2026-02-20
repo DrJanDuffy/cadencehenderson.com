@@ -2,10 +2,12 @@ import Link from 'next/link'
 import { Mail, Calendar, Facebook, Instagram } from 'lucide-react'
 import { CONTACT_INFO, SOCIAL_MEDIA } from './contact-info'
 
+import { CONTACT_INFO } from './contact-info'
+
 export function Footer() {
   const footerLinks = [
     { title: 'Builders', href: '/new-homes' },
-    { title: 'Rentals', href: '/rentals' },
+    { title: 'Rentals', href: CONTACT_INFO.realScoutRentalsUrl, external: true },
     { title: 'News', href: '/news' },
     { title: 'Events', href: '/lifestyle/events' },
     { title: 'Amenities', href: '/lifestyle/amenities' },
@@ -119,15 +121,27 @@ export function Footer() {
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 mb-8">
-            {footerLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="hover:text-blue-400 transition-colors"
-              >
-                {link.title}
-              </Link>
-            ))}
+            {footerLinks.map((link) =>
+              (link as { external?: boolean }).external ? (
+                <a
+                  key={link.title}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  {link.title}
+                </a>
+              ) : (
+                <Link
+                  key={link.title}
+                  href={link.href}
+                  className="hover:text-blue-400 transition-colors"
+                >
+                  {link.title}
+                </Link>
+              )
+            )}
           </div>
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-400">
