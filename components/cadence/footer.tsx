@@ -2,8 +2,6 @@ import Link from 'next/link'
 import { Mail, Calendar, Facebook, Instagram } from 'lucide-react'
 import { CONTACT_INFO, SOCIAL_MEDIA } from './contact-info'
 
-import { CONTACT_INFO } from './contact-info'
-
 export function Footer() {
   const footerLinks = [
     { title: 'Builders', href: '/new-homes' },
