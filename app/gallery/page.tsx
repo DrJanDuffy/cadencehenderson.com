@@ -10,6 +10,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { getGalleryImage } from '@/lib/cloudflare-images'
 
 const galleryCategories = [
   'All',
@@ -22,62 +23,62 @@ const galleryCategories = [
 
 const galleryImages = [
   {
-    url: 'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80&fm=webp',
+    url: getGalleryImage('parkVista'),
     title: 'Central Park Vista',
     category: 'Central Park',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80&fm=webp',
+    url: getGalleryImage('newHome'),
     title: 'Beautiful New Home',
     category: 'Homes',
   },
   {
-    url: 'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=1200&q=80&fm=webp',
+    url: getGalleryImage('resortPool'),
     title: 'Resort-Style Pool',
     category: 'Amenities',
   },
   {
-    url: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=1200&q=80&fm=webp',
+    url: getGalleryImage('concert'),
     title: 'Concert in the Park',
     category: 'Events',
   },
   {
-    url: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80&fm=webp',
+    url: getGalleryImage('communityGathering'),
     title: 'Community Gathering',
     category: 'Community',
   },
   {
-    url: 'https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=1200&q=80&fm=webp',
+    url: getGalleryImage('playground'),
     title: 'Park Playground',
     category: 'Central Park',
   },
   {
-    url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80&fm=webp',
+    url: getGalleryImage('fitnessCenter'),
     title: 'Fitness Center',
     category: 'Amenities',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80&fm=webp',
+    url: getGalleryImage('modernExterior'),
     title: 'Modern Home Exterior',
     category: 'Homes',
   },
   {
-    url: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&fm=webp',
+    url: getGalleryImage('walkingTrails'),
     title: 'Walking Trails',
     category: 'Central Park',
   },
   {
-    url: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1200&q=80&fm=webp',
+    url: getGalleryImage('communityEvent'),
     title: 'Community Event',
     category: 'Events',
   },
   {
-    url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1200&q=80&fm=webp',
+    url: getGalleryImage('luxuryInterior'),
     title: 'Luxury Home Interior',
     category: 'Homes',
   },
   {
-    url: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1200&q=80&fm=webp',
+    url: getGalleryImage('dogPark'),
     title: 'Dog Park Fun',
     category: 'Amenities',
   },

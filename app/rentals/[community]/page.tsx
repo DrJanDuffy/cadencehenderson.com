@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Building2, DollarSign, Bed, Bath, Phone, Mail } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import { cfImage, SITE_IMAGES, getHomeImage } from '@/lib/cloudflare-images'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -52,8 +53,7 @@ const rentalData: Record<
         baths: 2,
         sqft: '1,650',
         available: 8,
-        image:
-          'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fm=webp',
+        image: cfImage(SITE_IMAGES.rentals.americanHomes, 'card'),
         features: [
           'Private backyard',
           '2-car garage',
@@ -69,8 +69,7 @@ const rentalData: Record<
         baths: 2.5,
         sqft: '2,150',
         available: 5,
-        image:
-          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior1', 'card'),
         features: [
           'Two-story layout',
           'Large backyard',
@@ -100,8 +99,7 @@ const rentalData: Record<
         baths: 1,
         sqft: '625',
         available: 3,
-        image:
-          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80&fm=webp',
+        image: cfImage(SITE_IMAGES.rentals.element12, 'card'),
         features: [
           'Modern finishes',
           'Open layout',
@@ -117,8 +115,7 @@ const rentalData: Record<
         baths: 1,
         sqft: '750',
         available: 12,
-        image:
-          'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80&fm=webp',
+        image: getHomeImage('livingRoom', 'card'),
         features: [
           'Spacious bedroom',
           'Gourmet kitchen',
@@ -134,8 +131,7 @@ const rentalData: Record<
         baths: 2,
         sqft: '1,100',
         available: 7,
-        image:
-          'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80&fm=webp',
+        image: getHomeImage('kitchen', 'card'),
         features: [
           'Split bedrooms',
           'Island kitchen',
@@ -165,8 +161,7 @@ const rentalData: Record<
         baths: 1,
         sqft: '780',
         available: 15,
-        image:
-          'https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80&fm=webp',
+        image: cfImage(SITE_IMAGES.rentals.adler, 'card'),
         features: [
           'Smart home tech',
           'Quartz countertops',
@@ -182,8 +177,7 @@ const rentalData: Record<
         baths: 2,
         sqft: '1,050',
         available: 10,
-        image:
-          'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80&fm=webp',
+        image: getHomeImage('interior1', 'card'),
         features: [
           'Open concept',
           'Island seating',
@@ -199,8 +193,7 @@ const rentalData: Record<
         baths: 2.5,
         sqft: '1,450',
         available: 2,
-        image:
-          'https://images.unsplash.com/photo-1536376072261-38c75010e6c9?w=800&q=80&fm=webp',
+        image: getHomeImage('interior2', 'card'),
         features: [
           'Top floor views',
           'Gourmet kitchen',

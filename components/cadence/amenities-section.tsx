@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 
 export function AmenitiesSection() {
   return (
@@ -9,7 +10,7 @@ export function AmenitiesSection() {
           <div>
             <div className="inline-flex items-center justify-center mb-6">
               <img
-                src="https://cadencenv.com/wp-content/uploads/2021/01/amenities-home-box-288x300.png"
+                src={cfImage(SITE_IMAGES.icons.amenitiesBox, 'thumbnail')}
                 alt="Cadence Central Park Henderson Nevada amenities"
                 width={96}
                 height={100}
@@ -35,7 +36,7 @@ export function AmenitiesSection() {
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
-              src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=800&q=80&fm=webp"
+              src={getAmenityImage('centralPark', 'card')}
               alt="Cadence Henderson amenities and parks - Central Park 89011"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"

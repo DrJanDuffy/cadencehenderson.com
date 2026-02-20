@@ -60,9 +60,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const heroImageUrl =
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fm=webp'
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -70,7 +67,7 @@ export default function RootLayout({
         <FAQPageSchema />
         <GeoMeta />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://imagedelivery.net" />
         <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />
         <link rel="preconnect" href="https://assets.calendly.com" />
         <link rel="preconnect" href="https://cadencenv.com" />

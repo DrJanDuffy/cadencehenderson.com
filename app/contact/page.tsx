@@ -9,6 +9,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export default function ContactPage() {
   return (
@@ -130,8 +131,7 @@ export default function ContactPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage:
-                      "url('https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&q=80&fm=webp')",
+                    backgroundImage: `url('${cfImage(SITE_IMAGES.location.mapOverview, 'card')}')`,
                   }}
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-black/20">

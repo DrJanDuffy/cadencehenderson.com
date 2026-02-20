@@ -15,6 +15,7 @@ import {
   Paintbrush,
   Heart,
 } from 'lucide-react'
+import { getAmenityImage } from '@/lib/cloudflare-images'
 
 const amenities = [
   {
@@ -30,8 +31,7 @@ const amenities = [
       'Poolside cabanas',
       'Shaded seating areas',
     ],
-    image:
-      'https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?w=800&q=80&fm=webp',
+    image: getAmenityImage('pool', 'card'),
   },
   {
     name: 'State-of-the-Art Fitness Centers',
@@ -46,8 +46,7 @@ const amenities = [
       'Locker rooms with showers',
       '24/7 access for residents',
     ],
-    image:
-      'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80&fm=webp',
+    image: getAmenityImage('fitness', 'card'),
   },
   {
     name: 'Clubhouses',
@@ -62,8 +61,7 @@ const amenities = [
       'Catering-friendly',
       'Party rooms',
     ],
-    image:
-      'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&fm=webp',
+    image: getAmenityImage('clubhouse', 'card'),
   },
   {
     name: 'Sports Courts',
@@ -78,8 +76,7 @@ const amenities = [
       'League play',
       'Private lessons',
     ],
-    image:
-      'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80&fm=webp',
+    image: getAmenityImage('sportsCourts', 'card'),
   },
 ]
 
@@ -269,8 +266,7 @@ export default function AmenitiesPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage:
-                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80&fm=webp')",
+                    backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
                   }}
                 />
               </div>

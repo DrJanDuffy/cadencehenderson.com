@@ -4,6 +4,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
+import { getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 
 const parks = [
   {
@@ -21,8 +22,7 @@ const parks = [
       'Open green spaces',
       'Dog-friendly areas',
     ],
-    image:
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80&fm=webp',
+    image: getGalleryImage('parkVista', 'card'),
   },
   {
     name: 'Neighborhood Parks',
@@ -37,8 +37,7 @@ const parks = [
       'Walking paths',
       'Pet waste stations',
     ],
-    image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80&fm=webp',
+    image: getAmenityImage('playground', 'card'),
   },
   {
     name: 'Dog Parks',
@@ -53,8 +52,7 @@ const parks = [
       'Benches and shade',
       'Pet waste stations and bags',
     ],
-    image:
-      'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80&fm=webp',
+    image: getAmenityImage('dogPark', 'card'),
   },
 ]
 
@@ -146,8 +144,7 @@ export default function ParksTrailsPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center"
                   style={{
-                    backgroundImage:
-                      "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1000&q=80&fm=webp')",
+                    backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
                   }}
                 />
               </div>

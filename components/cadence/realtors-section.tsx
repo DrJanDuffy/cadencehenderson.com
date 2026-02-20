@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { cfImage, SITE_IMAGES, getHomeImage } from '@/lib/cloudflare-images'
 
 export function RealtorsSection() {
   return (
@@ -11,15 +12,14 @@ export function RealtorsSection() {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage:
-                  "url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&fm=webp')",
+                backgroundImage: `url('${getHomeImage('exterior1', 'card')}')`,
               }}
             />
           </div>
           <div className="order-1 md:order-2">
             <div className="inline-flex items-center justify-center mb-6">
               <img
-                src="https://cadencenv.com/wp-content/uploads/2021/01/realtors-home-box-288x300.png"
+                src={cfImage(SITE_IMAGES.agent.logo, 'thumbnail')}
                 width={96}
                 height={100}
                 loading="lazy"

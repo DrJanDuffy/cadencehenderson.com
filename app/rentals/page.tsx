@@ -8,6 +8,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const rentalCommunities = [
   {
@@ -23,8 +24,7 @@ const rentalCommunities = [
       'Online portal',
       'Garage parking',
     ],
-    image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.rentals.americanHomes, 'card'),
   },
   {
     name: 'Element 12',
@@ -39,8 +39,7 @@ const rentalCommunities = [
       'Pet park',
       'Business center',
     ],
-    image:
-      'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.rentals.element12, 'card'),
   },
   {
     name: 'Adler',
@@ -55,8 +54,7 @@ const rentalCommunities = [
       'Dog spa',
       'Package lockers',
     ],
-    image:
-      'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.rentals.adler, 'card'),
   },
 ]
 

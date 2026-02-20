@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export function LifestyleSection() {
   return (
@@ -8,7 +9,7 @@ export function LifestyleSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
-              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&q=80&fm=webp"
+              src={cfImage(SITE_IMAGES.lifestyle.community, 'card')}
               alt="Cadence Henderson lifestyle and community"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
@@ -17,7 +18,7 @@ export function LifestyleSection() {
           <div className="order-1 md:order-2">
             <div className="inline-flex items-center justify-center mb-6">
               <img
-                src="https://cadencenv.com/wp-content/uploads/2021/01/lifestyle-home-box-288x300.png"
+                src={cfImage(SITE_IMAGES.icons.lifestyleBox, 'thumbnail')}
                 width={96}
                 height={100}
                 loading="lazy"

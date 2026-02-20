@@ -4,6 +4,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { GraduationCap, Award, Users, BookOpen, Bus } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const schools = [
   {
@@ -19,8 +20,7 @@ const schools = [
       'Music and arts programs',
       'Walking distance from most homes',
     ],
-    image:
-      'https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
   {
     name: 'Henderson Middle School',
@@ -35,8 +35,7 @@ const schools = [
       'Student clubs and organizations',
       'Dedicated counseling staff',
     ],
-    image:
-      'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
   {
     name: 'Green Valley High School',
@@ -51,8 +50,7 @@ const schools = [
       'Fine arts programs',
       'Career and technical education',
     ],
-    image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
 ]
 

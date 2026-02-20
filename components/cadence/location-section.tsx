@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`
 
@@ -12,7 +13,7 @@ export function LocationSection() {
           <div>
             <div className="inline-flex items-center justify-center mb-6">
               <img
-                src="https://cadencenv.com/wp-content/uploads/2021/01/location-home-box-288x300.png"
+                src={cfImage(SITE_IMAGES.icons.homesBox, 'thumbnail')}
                 alt="Cadence Henderson Location – master-planned community in Henderson NV 89011"
                 width={96}
                 height={100}
@@ -58,7 +59,7 @@ export function LocationSection() {
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
-              src="https://images.unsplash.com/photo-1564868705948-935dc992e0a4?w=800&q=80&fm=webp"
+              src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
               alt="Cadence Henderson community and surrounding area"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"

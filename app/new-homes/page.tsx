@@ -9,6 +9,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Home, MapPin, Bed, Bath, Ruler } from 'lucide-react'
 import Link from 'next/link'
+import { getBuilderImage } from '@/lib/cloudflare-images'
 
 const builders = [
   {
@@ -18,8 +19,7 @@ const builders = [
       'Quality craftsmanship and energy-efficient homes with flexible floor plans.',
     homes: 15,
     priceRange: '$350,000 - $550,000',
-    image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp',
+    image: getBuilderImage('beazer'),
   },
   {
     name: 'Century Communities',
@@ -28,8 +28,7 @@ const builders = [
       'Innovative designs with modern amenities and smart home technology.',
     homes: 22,
     priceRange: '$320,000 - $480,000',
-    image:
-      'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&q=80&fm=webp',
+    image: getBuilderImage('century'),
   },
   {
     name: 'D.R. Horton',
@@ -38,8 +37,7 @@ const builders = [
       "America's Builder - offering exceptional value and quality homes.",
     homes: 35,
     priceRange: '$300,000 - $525,000',
-    image:
-      'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&q=80&fm=webp',
+    image: getBuilderImage('drHorton'),
   },
   {
     name: 'Lennar',
@@ -48,8 +46,7 @@ const builders = [
       'Everything\'s Included® homes with the latest technology and features.',
     homes: 28,
     priceRange: '$380,000 - $600,000',
-    image:
-      'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=600&q=80&fm=webp',
+    image: getBuilderImage('lennar'),
   },
   {
     name: 'Richmond American Homes',
@@ -58,8 +55,7 @@ const builders = [
       'Personalized homes with flexible floor plans and premium upgrades.',
     homes: 18,
     priceRange: '$340,000 - $520,000',
-    image:
-      'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80&fm=webp',
+    image: getBuilderImage('richmond'),
   },
   {
     name: 'StoryBook Homes',
@@ -68,8 +64,7 @@ const builders = [
       'Locally built homes with attention to detail and community focus.',
     homes: 12,
     priceRange: '$330,000 - $490,000',
-    image:
-      'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&q=80&fm=webp',
+    image: getBuilderImage('storybook'),
   },
   {
     name: 'Taylor Morrison',
@@ -78,8 +73,7 @@ const builders = [
       'Luxury living with resort-style amenities and premium finishes.',
     homes: 16,
     priceRange: '$420,000 - $650,000',
-    image:
-      'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=600&q=80&fm=webp',
+    image: getBuilderImage('taylorMorrison'),
   },
   {
     name: 'Woodside Homes',
@@ -88,8 +82,7 @@ const builders = [
       'Award-winning designs with energy efficiency and modern style.',
     homes: 20,
     priceRange: '$360,000 - $540,000',
-    image:
-      'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&q=80&fm=webp',
+    image: getBuilderImage('woodside'),
   },
 ]
 

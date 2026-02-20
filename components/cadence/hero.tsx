@@ -6,9 +6,9 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
 import { Calendar, Home } from 'lucide-react'
+import { getHeroImage } from '@/lib/cloudflare-images'
 
-const HERO_IMAGE =
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80&fm=webp'
+const HERO_IMAGE = getHeroImage('homepage')
 
 export function Hero() {
   return (

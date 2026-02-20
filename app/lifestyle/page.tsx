@@ -19,6 +19,7 @@ import {
   Mail,
 } from 'lucide-react'
 import Link from 'next/link'
+import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 
 const lifestyleFeatures = [
   {
@@ -26,8 +27,7 @@ const lifestyleFeatures = [
     title: 'Events',
     description:
       'Year-round community events including concerts, movie nights, and seasonal celebrations.',
-    image:
-      'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
     link: '/lifestyle/events',
   },
   {
@@ -35,8 +35,7 @@ const lifestyleFeatures = [
     title: 'Parks & Trails',
     description:
       "Nearly 50-acre Central Park, walking trails, and nature areas for outdoor recreation.",
-    image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80&fm=webp',
+    image: getAmenityImage('trails', 'card'),
     link: '/lifestyle/parks-trails',
   },
   {
@@ -44,8 +43,7 @@ const lifestyleFeatures = [
     title: 'Shopping & Entertainment',
     description:
       'Nearby retail, dining, and entertainment options with more coming to the community.',
-    image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
     link: '/lifestyle/shopping',
   },
   {
@@ -53,8 +51,7 @@ const lifestyleFeatures = [
     title: 'Schools',
     description:
       'Top-rated Clark County schools including elementary, middle, and high schools.',
-    image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
     link: '/lifestyle/schools',
   },
   {
@@ -62,8 +59,7 @@ const lifestyleFeatures = [
     title: 'Amenities',
     description:
       'Multiple pools, splash pads, fitness centers, and recreation facilities.',
-    image:
-      'https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=600&q=80&fm=webp',
+    image: getAmenityImage('pool', 'card'),
     link: '/lifestyle/amenities',
   },
   {
@@ -71,8 +67,7 @@ const lifestyleFeatures = [
     title: 'Community',
     description:
       'Active resident community with clubs, activities, and neighborhood connections.',
-    image:
-      'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.community, 'card'),
     link: '/lifestyle/community',
   },
 ]
@@ -208,8 +203,7 @@ export default function LifestylePage() {
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage:
-                    "url('https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&q=80&fm=webp')",
+                  backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
                 }}
               />
             </div>

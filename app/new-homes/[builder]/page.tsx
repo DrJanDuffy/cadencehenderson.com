@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button'
 import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { getHomeImage, getBuilderImage } from '@/lib/cloudflare-images'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
   'beazer-homes': CONTACT_INFO.realScoutBeazerHomesUrl,
@@ -55,8 +56,7 @@ const builderData: Record<
         beds: 3,
         baths: 2.5,
         sqft: '2,150',
-        image:
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior1', 'card'),
         features: [
           'Open concept living',
           'Gourmet kitchen',
@@ -71,8 +71,7 @@ const builderData: Record<
         beds: 4,
         baths: 3,
         sqft: '2,450',
-        image:
-          'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior2', 'card'),
         features: [
           'Spacious family room',
           'Upstairs loft',
@@ -87,8 +86,7 @@ const builderData: Record<
         beds: 5,
         baths: 4,
         sqft: '3,200',
-        image:
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&fm=webp',
+        image: getHomeImage('interior1', 'card'),
         features: [
           'Premium finishes throughout',
           'Bonus room',
@@ -118,8 +116,7 @@ const builderData: Record<
         beds: 3,
         baths: 2,
         sqft: '1,849',
-        image:
-          'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80&fm=webp',
+        image: getHomeImage('kitchen', 'card'),
         features: [
           'Modern open layout',
           'Smart home technology',
@@ -134,8 +131,7 @@ const builderData: Record<
         beds: 4,
         baths: 2.5,
         sqft: '2,247',
-        image:
-          'https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior3', 'card'),
         features: [
           'Two-story design',
           'Tech package included',
@@ -164,8 +160,7 @@ const builderData: Record<
         beds: 3,
         baths: 2,
         sqft: '1,632',
-        image:
-          'https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=800&q=80&fm=webp',
+        image: getHomeImage('livingRoom', 'card'),
         features: [
           'Single-story living',
           'Open floor plan',
@@ -180,8 +175,7 @@ const builderData: Record<
         beds: 4,
         baths: 2,
         sqft: '2,015',
-        image:
-          'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80&fm=webp',
+        image: getHomeImage('backyard', 'card'),
         features: [
           'Split bedroom layout',
           'Great room concept',
@@ -196,8 +190,7 @@ const builderData: Record<
         beds: 4,
         baths: 3,
         sqft: '2,533',
-        image:
-          'https://images.unsplash.com/photo-1600585154363-67eb9e2e2099?w=800&q=80&fm=webp',
+        image: getHomeImage('interior2', 'card'),
         features: [
           'Two-story home',
           'Loft or 5th bedroom',
@@ -226,8 +219,7 @@ const builderData: Record<
         beds: 3,
         baths: 2.5,
         sqft: '1,976',
-        image:
-          'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior1', 'card'),
         features: [
           'Everything\'s Included®',
           'Smart home automation',
@@ -242,8 +234,7 @@ const builderData: Record<
         beds: 4,
         baths: 3,
         sqft: '2,344',
-        image:
-          'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior2', 'card'),
         features: [
           'Open-concept living',
           'Gourmet kitchen',
@@ -258,8 +249,7 @@ const builderData: Record<
         beds: 5,
         baths: 3.5,
         sqft: '2,890',
-        image:
-          'https://images.unsplash.com/photo-1605146769289-440113cc3d00?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior3', 'card'),
         features: [
           'Spacious floor plan',
           'Premium kitchen island',
@@ -288,8 +278,7 @@ const builderData: Record<
         beds: 3,
         baths: 2,
         sqft: '1,752',
-        image:
-          'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior1', 'card'),
         features: [
           'Ranch-style living',
           'Flex room options',
@@ -304,8 +293,7 @@ const builderData: Record<
         beds: 4,
         baths: 2.5,
         sqft: '2,125',
-        image:
-          'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80&fm=webp',
+        image: getHomeImage('kitchen', 'card'),
         features: [
           'Two-story design',
           'Loft or bedroom option',
@@ -320,8 +308,7 @@ const builderData: Record<
         beds: 4,
         baths: 3,
         sqft: '2,567',
-        image:
-          'https://images.unsplash.com/photo-1600585154084-4e5fe7c39198?w=800&q=80&fm=webp',
+        image: getHomeImage('interior1', 'card'),
         features: [
           'Spacious master suite',
           'Gourmet kitchen',
@@ -350,8 +337,7 @@ const builderData: Record<
         beds: 3,
         baths: 2,
         sqft: '1,701',
-        image:
-          'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior2', 'card'),
         features: [
           'Single-story convenience',
           'Open living concept',
@@ -366,8 +352,7 @@ const builderData: Record<
         beds: 4,
         baths: 2.5,
         sqft: '2,184',
-        image:
-          'https://images.unsplash.com/photo-1593696954146-e5e2d37f9eef?w=800&q=80&fm=webp',
+        image: getHomeImage('livingRoom', 'card'),
         features: [
           'Two-story layout',
           'Great room design',
@@ -396,8 +381,7 @@ const builderData: Record<
         beds: 3,
         baths: 2.5,
         sqft: '2,156',
-        image:
-          'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior3', 'card'),
         features: [
           'Luxury finishes throughout',
           'Chef\'s kitchen',
@@ -412,8 +396,7 @@ const builderData: Record<
         beds: 4,
         baths: 3,
         sqft: '2,687',
-        image:
-          'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80&fm=webp',
+        image: getHomeImage('interior2', 'card'),
         features: [
           'Open-concept design',
           'Gourmet kitchen',
@@ -428,8 +411,7 @@ const builderData: Record<
         beds: 5,
         baths: 4,
         sqft: '3,245',
-        image:
-          'https://images.unsplash.com/photo-1600566753151-384129cf4e3e?w=800&q=80&fm=webp',
+        image: getHomeImage('backyard', 'card'),
         features: [
           'Luxury estate home',
           'Designer kitchen',
@@ -458,8 +440,7 @@ const builderData: Record<
         beds: 3,
         baths: 2,
         sqft: '1,845',
-        image:
-          'https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior1', 'card'),
         features: [
           'Modern design',
           'Energy-efficient',
@@ -474,8 +455,7 @@ const builderData: Record<
         beds: 4,
         baths: 2.5,
         sqft: '2,245',
-        image:
-          'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior2', 'card'),
         features: [
           'Two-story home',
           'Flexible loft space',
@@ -490,8 +470,7 @@ const builderData: Record<
         beds: 5,
         baths: 3,
         sqft: '2,845',
-        image:
-          'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=800&q=80&fm=webp',
+        image: getHomeImage('exterior3', 'card'),
         features: [
           'Spacious family home',
           'Bonus room',

@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
+import { cfImage, SITE_IMAGES, getHomeImage, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 
 const newsArticles = [
   {
@@ -15,8 +16,7 @@ const newsArticles = [
     category: 'Awards',
     excerpt:
       'Cadence has been recognized as one of the top 10 best-selling master-planned communities in the United States for the third consecutive year.',
-    image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80&fm=webp',
+    image: getHomeImage('exterior1', 'card'),
   },
   {
     title: 'New Central Park Expansion Opens This Fall',
@@ -24,8 +24,7 @@ const newsArticles = [
     category: 'Community',
     excerpt:
       'Experience even more outdoor recreation with the opening of the new Central Park expansion featuring additional trails, picnic areas, and a new adventure playground.',
-    image:
-      'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80&fm=webp',
+    image: getGalleryImage('parkVista', 'card'),
   },
   {
     title: 'Summer Concert Series Returns to Cadence',
@@ -33,8 +32,7 @@ const newsArticles = [
     category: 'Events',
     excerpt:
       'Join us for live music every Friday evening in Central Park. This year\'s lineup features local and regional artists across multiple genres.',
-    image:
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
     title: 'Cadence Schools Receive High Academic Ratings',
@@ -42,8 +40,7 @@ const newsArticles = [
     category: 'Education',
     excerpt:
       'Clark County School District announces that schools serving Cadence residents have achieved outstanding academic ratings for the 2024-2025 school year.',
-    image:
-      'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
   {
     title: 'New Home Builders Join Cadence Community',
@@ -51,8 +48,7 @@ const newsArticles = [
     category: 'New Homes',
     excerpt:
       'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
-    image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80&fm=webp',
+    image: getHomeImage('exterior2', 'card'),
   },
   {
     title: 'Cadence Residents Celebrate Community Garden Harvest',
@@ -60,8 +56,7 @@ const newsArticles = [
     category: 'Community',
     excerpt:
       'The Cadence Community Garden celebrates its first successful harvest, bringing residents together to share fresh produce and gardening tips.',
-    image:
-      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=600&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.farmersMarket, 'card'),
   },
 ]
 
@@ -159,7 +154,7 @@ export default function NewsPage() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+            {Object.values(SITE_IMAGES.gallery).slice(0, 8).map((imageId, i) => (
               <div
                 key={i}
                 className="relative h-48 bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
@@ -167,7 +162,7 @@ export default function NewsPage() {
                 <div
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-300"
                   style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-${1560000000000 + i * 10000000}?w=400&q=80&fm=webp')`,
+                    backgroundImage: `url('${cfImage(imageId, 'thumbnail')}')`,
                   }}
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />

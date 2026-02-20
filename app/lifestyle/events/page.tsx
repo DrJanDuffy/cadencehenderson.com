@@ -8,6 +8,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Clock, MapPin, Music, Users, Phone, Mail } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export const metadata: Metadata = {
   title: 'Events | Cadence Henderson Community 89011',
@@ -26,8 +27,7 @@ const upcomingEvents = [
     category: 'Music',
     description:
       'Join us for live music under the stars every Friday evening throughout the summer. Bring your blankets and lawn chairs for a family-friendly evening of entertainment.',
-    image:
-      'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
     title: 'Cadence Farmers Market',
@@ -36,8 +36,7 @@ const upcomingEvents = [
     category: 'Community',
     description:
       'Shop local produce, artisan goods, and handmade crafts from local vendors. Fresh, organic products delivered straight to your neighborhood.',
-    image:
-      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.farmersMarket, 'card'),
   },
   {
     title: 'Halloween Spooktacular',
@@ -46,8 +45,7 @@ const upcomingEvents = [
     category: 'Holiday',
     description:
       'Trick-or-treating, costume contests, haunted houses, and family fun activities. Safe, supervised Halloween celebration for the whole community.',
-    image:
-      'https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.events, 'card'),
   },
   {
     title: 'Food Truck Friday',
@@ -56,8 +54,7 @@ const upcomingEvents = [
     category: 'Food',
     description:
       'Enjoy diverse culinary offerings from local food trucks. Different vendors each month featuring everything from BBQ to international cuisine.',
-    image:
-      'https://images.unsplash.com/photo-1565123409695-7b5ef63a2efb?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.foodTruck, 'card'),
   },
   {
     title: 'Movie Night in the Park',
@@ -66,8 +63,7 @@ const upcomingEvents = [
     category: 'Family',
     description:
       'Family-friendly movies on a giant outdoor screen. Bring blankets and enjoy popcorn and refreshments under the stars.',
-    image:
-      'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.movieNight, 'card'),
   },
   {
     title: 'Yoga in the Park',
@@ -76,8 +72,7 @@ const upcomingEvents = [
     category: 'Wellness',
     description:
       'Free community yoga sessions for all skill levels. Bring your mat and start your day with mindfulness and movement.',
-    image:
-      'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.lifestyle.yoga, 'card'),
   },
 ]
 

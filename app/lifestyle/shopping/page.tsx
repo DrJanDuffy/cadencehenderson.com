@@ -4,6 +4,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag, Coffee, Utensils, Film, Heart } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const shoppingCenters = [
   {
@@ -12,8 +13,7 @@ const shoppingCenters = [
     description:
       'Major shopping mall featuring department stores, specialty retailers, dining, and entertainment options.',
     stores: ['Macy\'s', 'JCPenney', 'Dillard\'s', '140+ stores'],
-    image:
-      'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
   },
   {
     name: 'District at Green Valley Ranch',
@@ -21,8 +21,7 @@ const shoppingCenters = [
     description:
       'Open-air lifestyle center with upscale shops, restaurants, and a movie theater.',
     stores: ['Whole Foods', 'REI', 'Anthropologie', '40+ stores'],
-    image:
-      'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
   },
   {
     name: 'Cadence Marketplace',
@@ -30,8 +29,7 @@ const shoppingCenters = [
     description:
       'Neighborhood shopping with grocery stores, restaurants, and essential services.',
     stores: ['Smith\'s', 'CVS', 'Starbucks', '25+ stores'],
-    image:
-      'https://images.unsplash.com/photo-1555529669-2269763671c0?w=800&q=80&fm=webp',
+    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
   },
 ]
 
