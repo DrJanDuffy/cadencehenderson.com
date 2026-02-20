@@ -1,5 +1,22 @@
 // Centralized contact information for the Cadence Henderson website
 
+// Cloudflare Images configuration
+export const CLOUDFLARE_IMAGES = {
+  accountId: '2cc579c1ec9e426ed585e933ebf4753b',
+  accountHash: 'byE6BTe9lNqo21V57n4aPQ',
+  baseUrl: 'https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ',
+}
+
+/**
+ * Generate Cloudflare Image URL
+ * @param imageId - The Cloudflare Image ID
+ * @param variant - The variant name (e.g., 'public', 'thumbnail', 'hero', 'card')
+ * @returns Full Cloudflare Image delivery URL
+ */
+export function getCloudflareImageUrl(imageId: string, variant: string = 'public'): string {
+  return `${CLOUDFLARE_IMAGES.baseUrl}/${imageId}/${variant}`
+}
+
 export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
   phone: '702-500-1955',

@@ -6,6 +6,19 @@ const REALSCOUT_BEAZER_HOMES_URL =
   'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA=='
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+        pathname: '/byE6BTe9lNqo21V57n4aPQ/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
   async redirects() {
     return [
       { source: '/rentals', destination: REALSCOUT_RENTALS_URL, permanent: false },
