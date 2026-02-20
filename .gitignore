@@ -38,10 +38,13 @@ yarn-error.log*
 # vercel
 .vercel
 
-# Cursor: ignore all skills except the project-specific one (see .cursor/skills/README.md)
+# Cursor: ignore all skills except the project-specific ones (see .cursor/skills/README.md)
 .cursor/skills/*
 !.cursor/skills/README.md
 !.cursor/skills/react-best-practices/
+!.cursor/skills/realscout-integration/
+!.cursor/skills/seo-geo-aeo/
+!.cursor/skills/realscout-calendly-gsc/
 
 # typescript
 *.tsbuildinfo
