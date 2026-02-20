@@ -207,6 +207,14 @@ realscout-advanced-search {
   --rs-as-widget-width: 500px !important;
 }
 
+/* RealScout simple search widget */
+realscout-simple-search {
+  --rs-ss-font-primary-color: #000000;
+  --rs-ss-searchbar-border-color: #8b572a;
+  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-widget-width: 500px !important;
+}
+
 /* Stack mobile deploy buttons vertically on very small screens */
 @media (max-width: 360px) {
   .mobile-deploy-buttons {

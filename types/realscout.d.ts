@@ -20,6 +20,9 @@ declare module 'react/jsx-runtime' {
       'realscout-advanced-search': HTMLAttributes<HTMLElement> & {
         'agent-encoded-id'?: string
       }
+      'realscout-simple-search': HTMLAttributes<HTMLElement> & {
+        'agent-encoded-id'?: string
+      }
     }
   }
 }
