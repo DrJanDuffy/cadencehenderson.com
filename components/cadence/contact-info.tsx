@@ -22,6 +22,8 @@ export const CONTACT_INFO = {
     'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw==',
   realScoutBeazerHomesUrl:
     'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA==',
+  realScoutCenturyCommunitiesUrl:
+    'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5OA==',
   calendlyUrl: 'https://calendly.com/drjanduffy/15min',
 }
 

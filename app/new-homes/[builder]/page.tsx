@@ -4,9 +4,14 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone } from 'lucide-react'
+import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+
+const builderRealScoutUrls: Record<string, string | undefined> = {
+  'beazer-homes': CONTACT_INFO.realScoutBeazerHomesUrl,
+  'century-communities': CONTACT_INFO.realScoutCenturyCommunitiesUrl,
+}
 
 const builderData: Record<
   string,
@@ -533,6 +538,7 @@ export default async function BuilderPage({
 }) {
   const { builder: builderSlug } = await params
   const builder = builderData[builderSlug]
+  const builderRealScoutUrl = builderRealScoutUrls[builderSlug]
 
   if (!builder) {
     notFound()
@@ -550,6 +556,21 @@ export default async function BuilderPage({
             <h1 className="text-5xl font-bold mb-4">{builder.name}</h1>
             <p className="text-xl mb-6">{builder.description}</p>
             <div className="flex flex-wrap gap-4 justify-center">
+              {builderRealScoutUrl && (
+                <a
+                  href={builderRealScoutUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    size="lg"
+                    className="bg-green-600 text-white hover:bg-green-700"
+                  >
+                    <Search className="mr-2 h-5 w-5" />
+                    View {builder.name} Homes for Sale
+                  </Button>
+                </a>
+              )}
               <CalendlyLink>
                 <Button
                   size="lg"
