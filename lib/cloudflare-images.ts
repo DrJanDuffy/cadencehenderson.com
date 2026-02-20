@@ -52,113 +52,113 @@ export function isCloudflareImage(url: string): boolean {
 export const SITE_IMAGES = {
   // Hero/Banner Images
   hero: {
-    homepage: 'hero-homepage',           // Main hero - luxury home exterior
-    newHomes: 'hero-new-homes',          // New homes page hero
-    lifestyle: 'hero-lifestyle',         // Lifestyle page hero
-    contact: 'hero-contact',             // Contact page hero
-    rentals: 'hero-rentals',             // Rentals page hero
-    gallery: 'hero-gallery',             // Gallery page hero
-    news: 'hero-news',                   // News page hero
-    faqs: 'hero-faqs',                   // FAQs page hero
-    realtors: 'hero-realtors',           // Realtors page hero
-    events: 'hero-events',               // Events page hero
-    amenities: 'hero-amenities',         // Amenities page hero
-    schools: 'hero-schools',             // Schools page hero
-    parksTrails: 'hero-parks-trails',    // Parks & trails hero
-    shopping: 'hero-shopping',           // Shopping page hero
+    homepage: 'lonemountaineights/hero/hero-las-vegas.png',
+    newHomes: 'centennialhillshomes/photos/modern-home-exterior.jpg',
+    lifestyle: 'centennialhillshomes/photos/community-lounge.jpg',
+    contact: 'lonemountaineights/agents/dr-jan-duffy.jpg',
+    rentals: 'lonemountaineights/photos/home-featured-2.jpg',
+    gallery: 'centennialhillshomes/photos/clubhouse-exterior.jpg',
+    news: 'centennialhillshomes/og/blog-default.jpg',
+    faqs: 'centennialhillshomes/photos/community-lounge-2.jpg',
+    realtors: 'lonemountaineights/agents/dr-jan-duffy.jpg',
+    events: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    amenities: 'centennialhillshomes/photos/swimming-pool.jpg',
+    schools: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    parksTrails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    shopping: 'centennialhillshomes/photos/community-kitchen.jpg',
   },
 
-  // Builder Images (8 builders)
+  // Builder Images (8 builders) - using home exteriors as placeholders
   builders: {
-    beazer: 'builder-beazer',
-    century: 'builder-century',
-    drHorton: 'builder-dr-horton',
-    lennar: 'builder-lennar',
-    richmond: 'builder-richmond',
-    storybook: 'builder-storybook',
-    taylorMorrison: 'builder-taylor-morrison',
-    woodside: 'builder-woodside',
+    beazer: 'lonemountaineights/photos/home-featured-1.jpg',
+    century: 'lonemountaineights/photos/home-featured-2.jpg',
+    drHorton: 'lonemountaineights/photos/home-featured-3.jpg',
+    lennar: 'centennialhillshomes/photos/modern-home-exterior.jpg',
+    richmond: 'lonemountaineights/photos/home-featured-1.jpg',
+    storybook: 'lonemountaineights/photos/home-featured-2.jpg',
+    taylorMorrison: 'lonemountaineights/photos/home-featured-3.jpg',
+    woodside: 'centennialhillshomes/photos/modern-home-exterior.jpg',
   },
 
   // Amenities Images
   amenities: {
-    centralPark: 'amenity-central-park',
-    pool: 'amenity-pool',
-    splashPad: 'amenity-splash-pad',
-    fitness: 'amenity-fitness',
-    dogPark: 'amenity-dog-park',
-    playground: 'amenity-playground',
-    trails: 'amenity-trails',
-    sportsCourts: 'amenity-sports-courts',
-    clubhouse: 'amenity-clubhouse',
+    centralPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    pool: 'centennialhillshomes/photos/swimming-pool.jpg',
+    splashPad: 'centennialhillshomes/photos/swimming-pool-2.jpg',
+    fitness: 'centennialhillshomes/photos/fitness-center.jpg',
+    dogPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    playground: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    trails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    sportsCourts: 'centennialhillshomes/photos/pickleball-courts.jpg',
+    clubhouse: 'centennialhillshomes/photos/clubhouse-exterior.jpg',
   },
 
   // Lifestyle/Community Images
   lifestyle: {
-    community: 'lifestyle-community',
-    families: 'lifestyle-families',
-    events: 'lifestyle-events',
-    concert: 'lifestyle-concert',
-    farmersMarket: 'lifestyle-farmers-market',
-    movieNight: 'lifestyle-movie-night',
-    yoga: 'lifestyle-yoga',
-    foodTruck: 'lifestyle-food-truck',
+    community: 'centennialhillshomes/photos/community-lounge.jpg',
+    families: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    events: 'centennialhillshomes/photos/community-lounge-2.jpg',
+    concert: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    farmersMarket: 'centennialhillshomes/photos/community-kitchen.jpg',
+    movieNight: 'centennialhillshomes/photos/community-lounge.jpg',
+    yoga: 'centennialhillshomes/photos/fitness-center.jpg',
+    foodTruck: 'centennialhillshomes/photos/outdoor-patio.jpg',
   },
 
   // Home Exterior/Interior Images
   homes: {
-    exterior1: 'home-exterior-1',
-    exterior2: 'home-exterior-2',
-    exterior3: 'home-exterior-3',
-    interior1: 'home-interior-1',
-    interior2: 'home-interior-2',
-    kitchen: 'home-kitchen',
-    livingRoom: 'home-living-room',
-    backyard: 'home-backyard',
+    exterior1: 'lonemountaineights/photos/home-featured-1.jpg',
+    exterior2: 'lonemountaineights/photos/home-featured-2.jpg',
+    exterior3: 'lonemountaineights/photos/home-featured-3.jpg',
+    interior1: 'centennialhillshomes/photos/community-lounge.jpg',
+    interior2: 'centennialhillshomes/photos/community-lounge-2.jpg',
+    kitchen: 'centennialhillshomes/photos/community-kitchen.jpg',
+    livingRoom: 'centennialhillshomes/photos/community-lounge.jpg',
+    backyard: 'centennialhillshomes/photos/outdoor-patio.jpg',
   },
 
   // Rental Communities
   rentals: {
-    americanHomes: 'rental-american-homes',
-    element12: 'rental-element-12',
-    adler: 'rental-adler',
+    americanHomes: 'lonemountaineights/photos/home-featured-1.jpg',
+    element12: 'lonemountaineights/photos/home-featured-2.jpg',
+    adler: 'lonemountaineights/photos/home-featured-3.jpg',
   },
 
   // Gallery Images (full set)
   gallery: {
-    parkVista: 'gallery-park-vista',
-    newHome: 'gallery-new-home',
-    resortPool: 'gallery-resort-pool',
-    concert: 'gallery-concert',
-    communityGathering: 'gallery-community-gathering',
-    playground: 'gallery-playground',
-    fitnessCenter: 'gallery-fitness-center',
-    modernExterior: 'gallery-modern-exterior',
-    walkingTrails: 'gallery-walking-trails',
-    communityEvent: 'gallery-community-event',
-    luxuryInterior: 'gallery-luxury-interior',
-    dogPark: 'gallery-dog-park',
+    parkVista: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    newHome: 'centennialhillshomes/photos/modern-home-exterior.jpg',
+    resortPool: 'centennialhillshomes/photos/swimming-pool.jpg',
+    concert: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    communityGathering: 'centennialhillshomes/photos/community-lounge.jpg',
+    playground: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    fitnessCenter: 'centennialhillshomes/photos/fitness-center.jpg',
+    modernExterior: 'lonemountaineights/photos/home-featured-1.jpg',
+    walkingTrails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    communityEvent: 'centennialhillshomes/photos/community-lounge-2.jpg',
+    luxuryInterior: 'centennialhillshomes/photos/community-kitchen.jpg',
+    dogPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
   },
 
   // Location/Map Images
   location: {
-    mapOverview: 'location-map-overview',
-    welcomeCenter: 'location-welcome-center',
-    aerialView: 'location-aerial-view',
+    mapOverview: 'centennialhillshomes/og/centennial-hills-map.jpg',
+    welcomeCenter: 'centennialhillshomes/photos/entrance-guardhouse.jpg',
+    aerialView: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
   },
 
   // Agent/Branding
   agent: {
-    headshot: 'agent-headshot',
-    logo: 'agent-logo',
-    bhhs: 'agent-bhhs-logo',
+    headshot: 'lonemountaineights/agents/dr-jan-duffy.jpg',
+    logo: 'centennialhillshomes/branding/logo.png',
+    bhhs: 'centennialhillshomes/branding/logo.png',
   },
 
-  // Icons/Graphics (from cadencenv.com)
+  // Icons/Graphics - using logo as placeholder
   icons: {
-    amenitiesBox: 'icon-amenities-box',
-    lifestyleBox: 'icon-lifestyle-box',
-    homesBox: 'icon-homes-box',
+    amenitiesBox: 'centennialhillshomes/branding/logo.png',
+    lifestyleBox: 'centennialhillshomes/branding/logo.png',
+    homesBox: 'centennialhillshomes/branding/logo.png',
   },
 } as const
 
