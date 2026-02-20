@@ -17,9 +17,9 @@ import { WebPageSchema } from '@/components/schema/web-page'
 const BASE = 'https://www.cadencehenderson.com'
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson | Homes for Sale & New Homes – Dr. Jan Duffy, REALTOR®',
+  title: 'Cadence Henderson | Homes for Sale & New Homes 89011',
   description:
-    'Real estate services in Cadence Henderson, NV 89011: new homes, resale, rentals & consultations. Dr. Jan Duffy, Berkshire Hathaway. Serving Cadence and Henderson.',
+    'Cadence Henderson homes for sale, new construction, townhomes in Henderson NV 89011. Dr. Jan Duffy, REALTOR®. Master-planned community.',
   alternates: { canonical: BASE },
   openGraph: {
     title: 'Cadence Henderson | Homes for Sale & New Homes – Dr. Jan Duffy',

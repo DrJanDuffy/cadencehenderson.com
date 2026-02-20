@@ -15,7 +15,7 @@ export function Hero() {
       {/* LCP image: in-DOM and high priority so the browser discovers it early */}
       <img
         src={HERO_IMAGE}
-        alt="Cadence Henderson master-planned community, Henderson Nevada real estate and new homes"
+        alt="New homes for sale in Cadence Henderson NV - master planned community"
         width={1920}
         height={1080}
         fetchPriority="high"
@@ -76,7 +76,7 @@ export function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Homes
+                Cadence Henderson homes for sale
               </a>
             </Button>
           </div>

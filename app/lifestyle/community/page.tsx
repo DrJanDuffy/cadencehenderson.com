@@ -9,9 +9,9 @@ import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-reac
 const BASE = 'https://www.cadencehenderson.com'
 
 export const metadata: Metadata = {
-  title: 'Community Life at Cadence Henderson | Clubs, Events & Volunteering',
+  title: 'Community | Cadence Henderson 89011',
   description:
-    'Join clubs, events, and volunteer at Cadence Henderson. Book Club, Running Club, Garden Club, Wine & Dine, and more. Connect with neighbors in Henderson, NV.',
+    'Cadence Henderson community: clubs, events, volunteering. Living in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club.',
   alternates: { canonical: `${BASE}/lifestyle/community` },
   openGraph: {
     title: 'Community Life at Cadence Henderson | Clubs & Events',

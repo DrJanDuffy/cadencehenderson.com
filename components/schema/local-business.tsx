@@ -5,7 +5,9 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: CONTACT_INFO.brandName,
+    name: 'Dr. Jan Duffy - Cadence Henderson Real Estate',
+    description:
+      'Cadence Henderson homes for sale. Expert guidance for buyers, sellers, and investors in Cadence master-planned community, Henderson NV 89011.',
     image: 'https://www.cadencehenderson.com/og-image.png',
     '@id': 'https://www.cadencehenderson.com',
     url: 'https://www.cadencehenderson.com',
@@ -50,35 +52,17 @@ export function LocalBusinessSchema() {
       'Rental homes',
       'Real estate consultation',
     ],
-    areaServed: [
-      {
-        '@type': 'Place',
-        name: 'Cadence',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Henderson',
-          addressRegion: 'NV',
-          postalCode: '89011',
-          addressCountry: 'US',
-        },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Cadence Master Planned Community, Henderson, NV',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Henderson',
+        addressRegion: 'NV',
+        postalCode: '89011',
+        addressCountry: 'US',
       },
-      {
-        '@type': 'City',
-        name: 'Henderson',
-        containedIn: {
-          '@type': 'State',
-          name: 'Nevada',
-        },
-      },
-      {
-        '@type': 'City',
-        name: 'Las Vegas',
-        containedIn: {
-          '@type': 'State',
-          name: 'Nevada',
-        },
-      },
-    ],
+    },
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
       credentialCategory: 'Real Estate License',
@@ -89,12 +73,12 @@ export function LocalBusinessSchema() {
       name: CONTACT_INFO.brokerage,
     },
     knowsAbout: [
-      'Luxury Homes',
-      'Investment Properties',
-      'First-Time Homebuyers',
-      'Relocations',
-      'Cadence Henderson',
-      'Master-Planned Communities',
+      'Cadence Henderson homes for sale',
+      'Cadence Henderson new construction',
+      'Henderson NV real estate',
+      'Cadence master planned community',
+      'Cadence Henderson townhomes',
+      'Cadence Henderson investment property',
     ],
   }
 

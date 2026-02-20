@@ -9,9 +9,9 @@ import { Button } from '@/components/ui/button'
 import { Calendar, Home, Phone, Mail } from 'lucide-react'
 
 export const metadata = {
-  title: 'Dr. Jan Duffy Past Home Sales | Cadence Henderson',
+  title: 'Past Home Sales | Cadence Henderson 89011',
   description:
-    'Browse Dr. Jan Duffy\'s past home sales in Henderson and Las Vegas. See sold listings, in-contract homes, and current for-sale properties. REALTOR® with Berkshire Hathaway HomeServices.',
+    'Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011. Berkshire Hathaway.',
 }
 
 export default function PastHomesalesPage() {

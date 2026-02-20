@@ -82,7 +82,10 @@ const galleryImages = [
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('All')
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+  const [lightboxImage, setLightboxImage] = useState<{
+    url: string
+    title: string
+  } | null>(null)
 
   const filteredImages =
     selectedCategory === 'All'
@@ -138,7 +141,7 @@ export default function GalleryPage() {
               <div
                 key={index}
                 className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
-                onClick={() => setLightboxImage(image.url)}
+                onClick={() => setLightboxImage({ url: image.url, title: image.title })}
               >
                 <div
                   className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-300"
@@ -177,8 +180,8 @@ export default function GalleryPage() {
             <X size={32} />
           </button>
           <img
-            src={lightboxImage}
-            alt="Gallery"
+            src={lightboxImage.url}
+            alt={`${lightboxImage.title} - Cadence Henderson community gallery`}
             className="max-w-full max-h-full object-contain"
           />
         </div>

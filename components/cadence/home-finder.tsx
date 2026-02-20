@@ -12,7 +12,7 @@ export function HomeFinder() {
             <div className="inline-flex items-center justify-center mb-6">
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/homefinder-home-box-288x300.png"
-                alt="Henderson Home Finder"
+                alt="Search Cadence Henderson homes - home finder"
                 width={96}
                 height={100}
                 loading="lazy"

@@ -23,7 +23,7 @@ export function RealtorsSection() {
                 width={96}
                 height={100}
                 loading="lazy"
-                alt="Cadence Las Vegas Realtors"
+                alt="Cadence Henderson NV real estate - Realtors"
                 className="w-24 h-24 object-contain"
               />
             </div>

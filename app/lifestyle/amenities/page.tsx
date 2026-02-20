@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -81,6 +82,15 @@ const amenities = [
       'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?w=800&q=80&fm=webp',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Cadence Henderson Amenities | Central Park 89011',
+  description:
+    'Cadence Henderson amenities: Central Park, pools, fitness, sports park. Cadence master-planned community Henderson NV 89011.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/amenities',
+  },
+}
 
 const additionalAmenities = [
   {

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -6,6 +7,8 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Building2, DollarSign, Bed, Bath, Phone, Mail } from 'lucide-react'
 import { notFound } from 'next/navigation'
+
+const BASE = 'https://www.cadencehenderson.com'
 
 const rentalData: Record<
   string,
@@ -208,6 +211,28 @@ const rentalData: Record<
       },
     ],
   },
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ community: string }>
+}): Promise<Metadata> {
+  const { community: communitySlug } = await params
+  const community = rentalData[communitySlug]
+  if (!community) return {}
+  const url = `${BASE}/rentals/${communitySlug}`
+  return {
+    title: `${community.name} Rentals | Cadence Henderson 89011`,
+    description: `${community.description} Cadence Henderson rental homes in Henderson NV 89011. Dr. Jan Duffy, REALTOR®.`,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${community.name} Rentals | Cadence Henderson 89011`,
+      description: `${community.description} Henderson NV 89011.`,
+      url,
+      type: 'website',
+    },
+  }
 }
 
 export default async function RentalCommunityPage({

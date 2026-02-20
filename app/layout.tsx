@@ -9,6 +9,8 @@ import { ThemeProvider } from 'next-themes'
 import DeployBanner from '../components/deploy-banner'
 import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
+import { FAQPageSchema } from '../components/schema/faq-page'
+import { GeoMeta } from '../components/schema/geo-meta'
 import './globals.css'
 
 const geistSans = Geist({
@@ -22,15 +24,15 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson | Homes By Dr Jan Duffy - Master Planned Community',
+  title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
   description:
-    `Discover Cadence, a premier master-planned community in Henderson, Nevada. Featuring new homes, exceptional amenities, and stunning views. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. Call ${CONTACT_INFO.phone}`,
+    'Cadence Henderson homes for sale, new construction & townhomes in 89011. Master-planned community Henderson NV. Dr. Jan Duffy, REALTOR®.',
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
     siteName: 'Cadence Henderson | Homes By Dr Jan Duffy',
-    title: 'Cadence Henderson | Homes By Dr Jan Duffy',
+    title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
     description:
-      'Discover Cadence, a premier master-planned community in Henderson, Nevada. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices.',
+      'Cadence Henderson homes for sale and new construction in Henderson NV 89011. Master-planned community. Dr. Jan Duffy, REALTOR®.',
     url: 'https://www.cadencehenderson.com',
     images: [
       {
@@ -45,9 +47,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cadence Henderson | Homes By Dr Jan Duffy',
+    title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
     description:
-      'Discover Cadence, a premier master-planned community in Henderson, Nevada. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices.',
+      'Cadence Henderson homes for sale and new construction in Henderson NV 89011. Dr. Jan Duffy, REALTOR®.',
     images: ['/og-image.png'],
     creator: '@CadenceHenderson',
   },
@@ -65,6 +67,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <LocalBusinessSchema />
+        <FAQPageSchema />
+        <GeoMeta />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />

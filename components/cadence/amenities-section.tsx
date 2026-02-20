@@ -10,7 +10,7 @@ export function AmenitiesSection() {
             <div className="inline-flex items-center justify-center mb-6">
               <img
                 src="https://cadencenv.com/wp-content/uploads/2021/01/amenities-home-box-288x300.png"
-                alt="Cadence Henderson Homes Amenities"
+                alt="Cadence Central Park Henderson Nevada amenities"
                 width={96}
                 height={100}
                 loading="lazy"
@@ -30,13 +30,13 @@ export function AmenitiesSection() {
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
               asChild
             >
-              <Link href="/lifestyle/amenities">Explore Amenities</Link>
+              <Link href="/lifestyle/amenities">Cadence community amenities</Link>
             </Button>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
               src="https://images.unsplash.com/photo-1587582423116-ec07293f0395?w=800&q=80&fm=webp"
-              alt="Cadence Henderson amenities and parks"
+              alt="Cadence Henderson amenities and parks - Central Park 89011"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />

@@ -89,7 +89,7 @@ export function BuildersShowcase() {
               <div className="relative w-full h-20 mb-3 flex items-center justify-center">
                 <img
                   src={builder.logo}
-                  alt={`${builder.name} - New homes at Cadence Henderson`}
+                  alt={`Cadence Henderson new homes by ${builder.name}`}
                   width={builder.width}
                   height={builder.height}
                   loading="lazy"

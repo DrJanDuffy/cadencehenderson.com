@@ -15,9 +15,9 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Maps & Directions | Cadence Henderson | Dr Jan Duffy',
+  title: 'Maps & Directions | Cadence Henderson 89011',
   description:
-    `Find our office and get directions to Cadence Henderson. Dr. Jan Duffy, REALTOR® – ${CONTACT_INFO.address.street}, ${CONTACT_INFO.address.city}, ${CONTACT_INFO.address.state} ${CONTACT_INFO.address.zip}.`,
+    `Find Cadence Henderson office. Dr. Jan Duffy, REALTOR® – ${CONTACT_INFO.address.street}, Henderson NV 89011. Maps and directions.`,
   alternates: { canonical: 'https://www.cadencehenderson.com/maps' },
 }
 

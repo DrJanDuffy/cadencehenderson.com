@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -72,6 +73,15 @@ const privateSchools = [
     specialty: 'College Preparatory',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Cadence Henderson Schools | Legacy Traditional 89011',
+  description:
+    'Cadence Henderson schools: Legacy Traditional, Cadence Elementary. Henderson NV 89011. Dr. Jan Duffy, REALTOR®.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/schools',
+  },
+}
 
 export default function SchoolsPage() {
   return (

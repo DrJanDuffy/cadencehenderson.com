@@ -36,7 +36,7 @@ export function NewsSection() {
               className="border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
               asChild
             >
-              <Link href="/gallery">View Photo Gallery</Link>
+              <Link href="/gallery">Photos of Cadence Henderson</Link>
             </Button>
           </div>
         </div>

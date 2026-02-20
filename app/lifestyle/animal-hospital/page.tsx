@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -36,6 +37,15 @@ const services = [
     icon: Heart,
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Cadence Animal Hospital | Cadence Henderson 89011',
+  description:
+    'Cadence Henderson animal hospital. Pet care in Cadence master-planned community Henderson NV 89011.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/animal-hospital',
+  },
+}
 
 export default function AnimalHospitalPage() {
   return (

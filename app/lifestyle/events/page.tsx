@@ -1,9 +1,19 @@
+import type { Metadata } from 'next'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Calendar, Clock, MapPin, Music, Users } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Events | Cadence Henderson Community 89011',
+  description:
+    'Cadence Henderson events: concerts, farmers market, community gatherings. Central Park Henderson NV 89011.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/events',
+  },
+}
 
 const upcomingEvents = [
   {

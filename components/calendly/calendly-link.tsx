@@ -5,14 +5,6 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { useCalendly } from './calendly-loader'
 import { cn } from '@/lib/utils'
 
-declare global {
-  interface Window {
-    Calendly?: {
-      initPopupWidget: (options: { url: string }) => void
-    }
-  }
-}
-
 type CalendlyLinkProps = {
   children: React.ReactNode
   className?: string

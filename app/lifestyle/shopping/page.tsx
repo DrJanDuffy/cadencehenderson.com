@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -33,6 +34,15 @@ const shoppingCenters = [
       'https://images.unsplash.com/photo-1555529669-2269763671c0?w=800&q=80&fm=webp',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Shopping | Cadence Henderson NV 89011',
+  description:
+    'Cadence Henderson shopping: Galleria at Sunset, Cadence Marketplace. Henderson NV 89011 dining and retail.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/shopping',
+  },
+}
 
 const restaurants = [
   {

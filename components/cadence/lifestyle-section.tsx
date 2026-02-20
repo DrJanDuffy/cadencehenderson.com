@@ -21,7 +21,7 @@ export function LifestyleSection() {
                 width={96}
                 height={100}
                 loading="lazy"
-                alt="Cadence Henderson lifestyle: amenities and community"
+                alt="Cadence Henderson lifestyle, trails and community"
                 className="w-24 h-24 object-contain"
               />
             </div>
@@ -38,7 +38,7 @@ export function LifestyleSection() {
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
               asChild
             >
-              <Link href="/lifestyle">Discover Lifestyle</Link>
+              <Link href="/lifestyle">Cadence Henderson lifestyle</Link>
             </Button>
           </div>
         </div>

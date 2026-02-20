@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Photo Gallery | Cadence Henderson Community',
+  title: 'Photo Gallery | Cadence Henderson 89011',
   description:
-    'Explore photos of Cadence Henderson: Central Park, amenities, homes, and community events. See what makes Cadence special.',
+    'Cadence Henderson gallery: Central Park, amenities, homes, community. Cadence master-planned community Henderson NV 89011.',
   alternates: { canonical: 'https://www.cadencehenderson.com/gallery' },
 }
 

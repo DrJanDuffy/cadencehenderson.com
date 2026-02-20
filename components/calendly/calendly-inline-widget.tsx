@@ -11,17 +11,6 @@ export type CalendlyInlineWidgetProps = {
   style?: React.CSSProperties
 }
 
-declare global {
-  interface Window {
-    Calendly?: {
-      initInlineWidget?: (options: {
-        url: string
-        parentElement: HTMLElement
-      }) => void
-    }
-  }
-}
-
 /**
  * Renders the Calendly inline scheduling widget. Requires Calendly script
  * to be loaded (e.g. via CalendlyWhenVisible or a prior CalendlyLink click).

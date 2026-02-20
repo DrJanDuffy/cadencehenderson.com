@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -56,6 +57,15 @@ const parks = [
       'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=800&q=80&fm=webp',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Parks & Trails | Cadence Henderson 89011',
+  description:
+    'Cadence Henderson parks, dog park, trails. Central Park, 30+ miles of trails. Cadence Henderson sports park Henderson NV 89011.',
+  alternates: {
+    canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
+  },
+}
 
 const trails = [
   {
