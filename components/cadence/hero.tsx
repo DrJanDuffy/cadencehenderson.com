@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
 import { Calendar, Home } from 'lucide-react'
 
@@ -41,6 +42,11 @@ export function Hero() {
             Because if <em>where</em> you live makes <em>how</em> you live even
             better – then your future belongs at Cadence.
           </p>
+          {/* Quick Search */}
+          <div className="mb-8">
+            <RealScoutSimpleSearch />
+          </div>
+
           <div className="flex flex-wrap gap-4">
             <Button
               size="lg"

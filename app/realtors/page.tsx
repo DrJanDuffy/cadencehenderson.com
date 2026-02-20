@@ -1,6 +1,8 @@
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
+import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -392,17 +394,10 @@ export default function RealtorsPage() {
                   Free Home Valuation
                 </h3>
                 <p className="text-gray-700 mb-4">
-                  Thinking of selling? Get a complimentary market analysis of
-                  your home's current value in today's market.
+                  Thinking of selling? Get an instant estimate of your home's
+                  current value in today's market.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Home Valuation Request">
-                  <Button
-                    variant="outline"
-                    className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
-                  >
-                    Get Valuation
-                  </Button>
-                </a>
+                <RealScoutHomeValue />
               </div>
 
               <div className="bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-purple-900 hover:shadow-lg transition-all">

@@ -4,6 +4,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -28,6 +29,23 @@ export default function ContactPage() {
       </section>
 
       <RealScoutOfficeListings />
+
+      {/* Home Value Widget for Sellers */}
+      <section className="py-12 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Thinking of Selling?
+            </h2>
+            <p className="text-gray-600 mb-8">
+              Get a free, instant estimate of your home's value in today's market.
+            </p>
+            <div className="flex justify-center">
+              <RealScoutHomeValue />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="py-16">
         <div className="container mx-auto px-4">

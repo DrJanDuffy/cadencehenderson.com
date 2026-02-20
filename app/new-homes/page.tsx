@@ -2,6 +2,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -107,6 +108,10 @@ export default function NewHomesPage() {
               award-winning builders. From cozy townhomes to spacious estates,
               find the perfect fit for your lifestyle.
             </p>
+            {/* Quick Search */}
+            <div className="flex justify-center mb-8">
+              <RealScoutSimpleSearch />
+            </div>
             <div className="flex flex-wrap gap-4 justify-center">
               <a
                 href={CONTACT_INFO.realScoutSearchUrl}

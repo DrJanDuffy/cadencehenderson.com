@@ -1,5 +1,6 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
+import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
@@ -72,13 +73,23 @@ export default function RentalsPage() {
               From single-family homes to luxury apartments, find your perfect
               rental in our vibrant community.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-purple-900 hover:bg-gray-100"
+            {/* Quick Search */}
+            <div className="flex justify-center mb-8">
+              <RealScoutSimpleSearch />
+            </div>
+            <a
+              href={CONTACT_INFO.realScoutRentalsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <Building2 className="mr-2" size={20} />
-              View Available Rentals
-            </Button>
+              <Button
+                size="lg"
+                className="bg-white text-purple-900 hover:bg-gray-100"
+              >
+                <Building2 className="mr-2" size={20} />
+                View Available Rentals
+              </Button>
+            </a>
           </div>
         </div>
       </section>
