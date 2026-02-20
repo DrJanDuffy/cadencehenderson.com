@@ -10,7 +10,7 @@ export function RealScoutYourListings() {
   return createElement('realscout-your-listings', {
     'agent-encoded-id': 'QWdlbnQtMjI1MDUw',
     'sort-order': 'STATUS_AND_SIGNIFICANT_CHANGE',
-    'listing-status': 'In Contract,Sold,For Sale',
+    'listing-status': 'Sold,For Sale,In Contract',
     'property-types': 'SFR',
   })
 }
