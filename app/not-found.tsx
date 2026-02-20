@@ -1,11 +1,13 @@
 import Link from 'next/link'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, Search, Phone } from 'lucide-react'
+import { Home, Search, Phone, Calendar, Mail } from 'lucide-react'
 
 export default function NotFound() {
   return (
@@ -49,37 +51,38 @@ export default function NotFound() {
 
             <RealScoutOfficeListings />
 
-            <div className="bg-blue-50 rounded-lg p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <div className="bg-gradient-to-r from-blue-900 to-blue-700 rounded-lg p-8 text-white">
+              <Calendar size={40} className="mx-auto mb-4" />
+              <h2 className="text-2xl font-bold mb-4">
                 Need Help Finding Something?
               </h2>
-              <p className="text-gray-700 mb-6">
-                Contact Dr. Jan Duffy for assistance with Cadence Henderson homes
-                and information.
+              <p className="opacity-95 mb-6">
+                Schedule a call with Dr. Jan Duffy for assistance with Cadence Henderson
+                homes and information.
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <CalendlyLink>
-                  <Button className="bg-blue-900 hover:bg-blue-800">
-                    Schedule with Cadence Expert
-                  </Button>
-                </CalendlyLink>
-                <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-                  <Button
-                    variant="outline"
-                    className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
-                  >
-                    <Phone className="mr-2" size={20} />
-                    Call: {CONTACT_INFO.phone}
-                  </Button>
+              <div className="flex flex-wrap gap-4 justify-center mb-6">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm"
+                >
+                  <Phone size={18} />
+                  {CONTACT_INFO.phone}
                 </a>
-                <a href={`mailto:${CONTACT_INFO.email}`}>
-                  <Button
-                    variant="outline"
-                    className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white"
-                  >
-                    Email Dr. Jan
-                  </Button>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-2 px-4 py-2 border-2 border-white rounded-lg hover:bg-white hover:text-blue-900 transition-colors text-sm"
+                >
+                  <Mail size={18} />
+                  Email Dr. Jan
                 </a>
+              </div>
+              <div className="bg-white rounded-lg overflow-hidden">
+                <CalendlyWhenVisible>
+                  <CalendlyInlineWidget
+                    className="w-full"
+                    style={{ minWidth: 280, height: 550 }}
+                  />
+                </CalendlyWhenVisible>
               </div>
             </div>
 

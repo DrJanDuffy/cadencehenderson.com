@@ -1,10 +1,13 @@
 import type { Metadata } from 'next'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Calendar, Clock, MapPin, Music, Users } from 'lucide-react'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { Calendar, Clock, MapPin, Music, Users, Phone, Mail } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Events | Cadence Henderson Community 89011',
@@ -210,23 +213,44 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Schedule consultation CTA */}
-      <section className="py-16 bg-orange-900 text-white">
+      {/* Schedule Consultation Section */}
+      <section className="py-16 bg-gradient-to-r from-orange-900 to-orange-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Never Miss an Event
-            </h2>
-            <p className="text-xl mb-8">
-              Schedule a call with Dr. Jan Duffy to get personalized updates on
-              upcoming activities and community happenings in Cadence.
-            </p>
-            <CalendlyLink>
-              <Button className="bg-white text-orange-900 hover:bg-gray-100 px-8">
-                <Calendar className="mr-2" size={20} />
-                Schedule with Cadence Expert
-              </Button>
-            </CalendlyLink>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Calendar size={48} className="mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4">
+                Never Miss an Event
+              </h2>
+              <p className="text-xl opacity-95 mb-6">
+                Schedule a call with Dr. Jan Duffy to get personalized updates on
+                upcoming activities and community happenings in Cadence.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-orange-900 transition-colors"
+                >
+                  <Phone size={20} />
+                  {CONTACT_INFO.phone}
+                </a>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-orange-900 transition-colors"
+                >
+                  <Mail size={20} />
+                  Email Dr. Jan
+                </a>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <CalendlyWhenVisible>
+                <CalendlyInlineWidget
+                  className="w-full"
+                  style={{ minWidth: 320, height: 650 }}
+                />
+              </CalendlyWhenVisible>
+            </div>
           </div>
         </div>
       </section>

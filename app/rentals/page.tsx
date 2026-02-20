@@ -1,10 +1,12 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Building2, MapPin, DollarSign, Calendar } from 'lucide-react'
+import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
 
 const rentalCommunities = [
@@ -217,33 +219,43 @@ export default function RentalsPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-purple-50">
+      {/* Schedule Consultation Section */}
+      <section className="py-16 bg-gradient-to-r from-purple-900 to-purple-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Interested in Renting in Cadence?
-            </h2>
-            <p className="text-xl text-gray-700 mb-8">
-              Contact Dr. Jan Duffy for information about available rentals and to
-              schedule a community tour. I can connect you with rental partners
-              and help you find the perfect place.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-                <Button size="lg" className="bg-purple-900 hover:bg-purple-800">
-                  Call: {CONTACT_INFO.phone}
-                </Button>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=Rental Information`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Calendar size={48} className="mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4">
+                Interested in Renting in Cadence?
+              </h2>
+              <p className="text-xl opacity-95 mb-6">
+                Schedule a call with Dr. Jan Duffy for information about available
+                rentals, community tours, and rental partner connections.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-purple-900 transition-colors"
                 >
+                  <Phone size={20} />
+                  {CONTACT_INFO.phone}
+                </a>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}?subject=Rental Information`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-purple-900 transition-colors"
+                >
+                  <Mail size={20} />
                   Email for Info
-                </Button>
-              </a>
+                </a>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <CalendlyWhenVisible>
+                <CalendlyInlineWidget
+                  className="w-full"
+                  style={{ minWidth: 320, height: 650 }}
+                />
+              </CalendlyWhenVisible>
             </div>
           </div>
         </div>

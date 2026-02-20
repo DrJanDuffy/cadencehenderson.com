@@ -2,11 +2,14 @@
 
 import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Image as ImageIcon, X } from 'lucide-react'
+import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 const galleryCategories = [
   'All',
@@ -187,22 +190,44 @@ export default function GalleryPage() {
         </div>
       )}
 
-      {/* CTA */}
-      <section className="py-16 bg-pink-50">
+      {/* Schedule Tour Section */}
+      <section className="py-16 bg-gradient-to-r from-pink-900 to-pink-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Experience Cadence in Person
-            </h2>
-            <p className="text-xl text-gray-700 mb-8">
-              Photos can only tell part of the story. Schedule a tour and see
-              the beauty of Cadence for yourself.
-            </p>
-            <CalendlyLink>
-              <Button size="lg" className="bg-pink-900 hover:bg-pink-800">
-                Schedule Your Tour
-              </Button>
-            </CalendlyLink>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Calendar size={48} className="mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4">
+                Experience Cadence in Person
+              </h2>
+              <p className="text-xl opacity-95 mb-6">
+                Photos can only tell part of the story. Schedule a tour and see
+                the beauty of Cadence for yourself.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-pink-900 transition-colors"
+                >
+                  <Phone size={20} />
+                  {CONTACT_INFO.phone}
+                </a>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-pink-900 transition-colors"
+                >
+                  <Mail size={20} />
+                  Email Dr. Jan
+                </a>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <CalendlyWhenVisible>
+                <CalendlyInlineWidget
+                  className="w-full"
+                  style={{ minWidth: 320, height: 650 }}
+                />
+              </CalendlyWhenVisible>
+            </div>
           </div>
         </div>
       </section>

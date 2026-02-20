@@ -1,8 +1,11 @@
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import {
   Calendar,
   Trees,
@@ -12,6 +15,8 @@ import {
   Users,
   Music,
   Sparkles,
+  Phone,
+  Mail,
 } from 'lucide-react'
 import Link from 'next/link'
 
@@ -259,25 +264,44 @@ export default function LifestylePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-green-900 text-white">
+      {/* Schedule Tour Section */}
+      <section className="py-16 bg-gradient-to-r from-green-900 to-green-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">
-              Experience the Lifestyle Firsthand
-            </h2>
-            <p className="text-xl mb-8">
-              Schedule a tour and see why Cadence is more than just a community
-              - it's a lifestyle.
-            </p>
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-white text-green-900 hover:bg-gray-100"
-              >
-                Schedule Your Tour
-              </Button>
-            </CalendlyLink>
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Calendar size={48} className="mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4">
+                Experience the Lifestyle Firsthand
+              </h2>
+              <p className="text-xl opacity-95 mb-6">
+                Schedule a tour and see why Cadence is more than just a community
+                - it's a lifestyle.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-green-900 transition-colors"
+                >
+                  <Phone size={20} />
+                  {CONTACT_INFO.phone}
+                </a>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-green-900 transition-colors"
+                >
+                  <Mail size={20} />
+                  Email Dr. Jan
+                </a>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <CalendlyWhenVisible>
+                <CalendlyInlineWidget
+                  className="w-full"
+                  style={{ minWidth: 320, height: 650 }}
+                />
+              </CalendlyWhenVisible>
+            </div>
           </div>
         </div>
       </section>

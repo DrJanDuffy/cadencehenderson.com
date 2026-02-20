@@ -2,11 +2,13 @@
 
 import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
+import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { ChevronDown, ChevronUp, HelpCircle } from 'lucide-react'
+import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
 
 const faqCategories = [
   {
@@ -184,33 +186,43 @@ export default function FAQsPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="py-16 bg-purple-50">
+      {/* Schedule Consultation Section */}
+      <section className="py-16 bg-gradient-to-r from-purple-900 to-purple-700 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Still Have Questions?
-            </h2>
-            <p className="text-xl text-gray-700 mb-8">
-              I'm here to help! Contact Dr. Jan Duffy for personalized answers
-              and to schedule a tour of Cadence.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <CalendlyLink>
-                <button className="px-8 py-3 bg-purple-900 text-white rounded-lg hover:bg-purple-800 transition-colors text-lg font-medium">
-                  Schedule with Cadence Expert
-                </button>
-              </CalendlyLink>
-              <a href="/contact">
-                <button className="px-8 py-3 border-2 border-purple-900 text-purple-900 rounded-lg hover:bg-purple-900 hover:text-white transition-colors text-lg font-medium">
-                  Contact Us
-                </button>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}`}>
-                <button className="px-8 py-3 border-2 border-purple-900 text-purple-900 rounded-lg hover:bg-purple-900 hover:text-white transition-colors text-lg font-medium">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
+              <Calendar size={48} className="mx-auto mb-4" />
+              <h2 className="text-3xl font-bold mb-4">
+                Still Have Questions?
+              </h2>
+              <p className="text-xl opacity-95 mb-6">
+                Schedule a free consultation with Dr. Jan Duffy for personalized answers
+                and to schedule a tour of Cadence.
+              </p>
+              <div className="flex flex-wrap gap-4 justify-center mb-8">
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-purple-900 transition-colors"
+                >
+                  <Phone size={20} />
+                  {CONTACT_INFO.phone}
+                </a>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="inline-flex items-center gap-2 px-6 py-3 border-2 border-white rounded-lg hover:bg-white hover:text-purple-900 transition-colors"
+                >
+                  <Mail size={20} />
                   Email Dr. Jan
-                </button>
-              </a>
+                </a>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg overflow-hidden">
+              <CalendlyWhenVisible>
+                <CalendlyInlineWidget
+                  className="w-full"
+                  style={{ minWidth: 320, height: 650 }}
+                />
+              </CalendlyWhenVisible>
             </div>
           </div>
         </div>

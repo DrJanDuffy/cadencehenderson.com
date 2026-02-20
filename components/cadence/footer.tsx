@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Mail, Calendar, Facebook, Instagram } from 'lucide-react'
 import { CONTACT_INFO, SOCIAL_MEDIA } from './contact-info'
+import { CalendlyLink } from '@/components/calendly/calendly-link'
 
 export function Footer() {
   const footerLinks = [
@@ -23,33 +24,18 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="container mx-auto px-4">
-        {/* Newsletter signup */}
+        {/* Schedule Consultation CTA */}
         <div className="text-center mb-10 pb-8 border-b border-gray-700">
-          <h3 className="text-lg font-semibold mb-3">Subscribe to Our Newsletter</h3>
-          <form
-            action="/api/newsletter"
-            method="post"
-            className="flex flex-wrap items-center justify-center gap-2 max-w-md mx-auto"
-          >
-            <label htmlFor="footer-email" className="sr-only">
-              Email for newsletter
-            </label>
-            <input
-              id="footer-email"
-              type="email"
-              name="email"
-              placeholder="Your email"
-              required
-              className="px-4 py-2 rounded-md text-gray-900 w-64 min-w-0"
-              aria-label="Email for newsletter"
-            />
-            <button
-              type="submit"
-              className="px-4 py-2 rounded-md bg-blue-700 hover:bg-blue-600 font-medium shrink-0"
-            >
-              Subscribe
+          <h3 className="text-lg font-semibold mb-3">Ready to Find Your Dream Home?</h3>
+          <p className="text-gray-400 text-sm mb-4 max-w-md mx-auto">
+            Schedule a free 15-minute consultation with Dr. Jan Duffy
+          </p>
+          <CalendlyLink>
+            <button className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-700 hover:bg-blue-600 font-medium transition-colors">
+              <Calendar size={18} />
+              Schedule a Call
             </button>
-          </form>
+          </CalendlyLink>
         </div>
         <div className="text-center mb-8">
           <div className="text-3xl font-bold mb-2">
