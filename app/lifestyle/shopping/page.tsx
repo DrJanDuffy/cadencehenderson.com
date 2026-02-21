@@ -111,7 +111,7 @@ export default function ShoppingPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-pink-900 to-pink-700 py-20">
+      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <ShoppingBag size={64} className="mx-auto mb-6" />
@@ -291,7 +291,7 @@ export default function ShoppingPage() {
       </section>
 
       {/* Las Vegas Strip Section */}
-      <section className="py-16 bg-gradient-to-r from-purple-900 to-pink-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">

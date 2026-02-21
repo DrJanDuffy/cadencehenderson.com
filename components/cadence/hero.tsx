@@ -10,7 +10,7 @@ const HERO_IMAGE = '/images/hero/CendenceDrJanDuffy.png'
 
 export function Hero() {
   return (
-    <section className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden" aria-label="Hero">
+    <section className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] flex flex-col bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden" aria-label="Hero">
       {/* LCP: native img; on error hide so gradient shows and alt text is not displayed */}
       <img
         src={HERO_IMAGE}
@@ -19,14 +19,14 @@ export function Hero() {
         height={1080}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
         onError={(e) => {
           e.currentTarget.style.display = 'none'
         }}
       />
-      {/* Overlay: balanced so background (cityscape/tower) shows while text stays readable */}
+      {/* Light overlay so photo shows; keeps white text readable */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-900/55 to-blue-900/30"
+        className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/20"
         aria-hidden
       />
 

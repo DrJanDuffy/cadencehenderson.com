@@ -97,7 +97,7 @@ export default function SchoolsPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-indigo-900 to-indigo-700 py-20">
+      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <GraduationCap size={64} className="mx-auto mb-6" />

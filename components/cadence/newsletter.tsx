@@ -11,7 +11,7 @@ const NEWSLETTER_WIDGET_STYLE: React.CSSProperties = {
 
 export function Newsletter() {
   return (
-    <section className="py-20 bg-blue-900 text-white">
+    <section className="py-20 bg-slate-900 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">

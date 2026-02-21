@@ -152,7 +152,7 @@ export default function AmenitiesPage() {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-cyan-900 to-cyan-700 py-20">
+      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <Waves size={64} className="mx-auto mb-6" />
@@ -370,7 +370,7 @@ export default function AmenitiesPage() {
       </section>
 
       {/* Reservation CTA */}
-      <section className="py-16 bg-cyan-900 text-white">
+      <section className="py-16 bg-slate-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">

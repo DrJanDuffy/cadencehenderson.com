@@ -79,7 +79,7 @@ export default function LifestylePage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-green-900 to-green-700 py-20">
+      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-5xl font-bold mb-6">Live the Cadence Lifestyle</h1>
@@ -262,7 +262,7 @@ export default function LifestylePage() {
       </section>
 
       {/* Schedule Tour Section */}
-      <section className="py-16 bg-gradient-to-r from-green-900 to-green-700 text-white">
+      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">

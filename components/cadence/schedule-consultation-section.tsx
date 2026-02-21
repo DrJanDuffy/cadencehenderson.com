@@ -12,7 +12,7 @@ import { Calendar, Mail, Phone } from 'lucide-react'
 export function ScheduleConsultationSection() {
   return (
     <section
-      className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
+      className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white"
       aria-labelledby="schedule-consultation-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -26,7 +26,7 @@ export function ScheduleConsultationSection() {
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
               size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 font-semibold shadow-lg"
+              className="bg-white text-slate-900 hover:bg-gray-100 font-semibold shadow-lg"
               asChild
             >
               <CalendlyLink>
@@ -36,7 +36,7 @@ export function ScheduleConsultationSection() {
             </Button>
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-blue-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-slate-900 transition-colors"
               aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
             >
               <Phone size={20} aria-hidden />
@@ -44,7 +44,7 @@ export function ScheduleConsultationSection() {
             </a>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-blue-900 transition-colors"
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-slate-900 transition-colors"
               aria-label="Email Dr. Jan Duffy"
             >
               <Mail size={20} aria-hidden />

@@ -5,7 +5,7 @@ import { CONTACT_INFO } from './contact-info'
 
 export function CTABanner() {
   return (
-    <section className="py-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white">
+    <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-4">
@@ -18,14 +18,14 @@ export function CTABanner() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button
               size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              className="bg-white text-slate-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Buy</CalendlyLink>
             </Button>
             <Button
               size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              className="bg-white text-slate-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Sell</CalendlyLink>
@@ -35,7 +35,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              className="border-white text-white hover:bg-white hover:text-slate-900"
               asChild
             >
               <CalendlyLink>
@@ -46,7 +46,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              className="border-white text-white hover:bg-white hover:text-slate-900"
               asChild
             >
               <a
@@ -60,7 +60,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              className="border-white text-white hover:bg-white hover:text-slate-900"
               asChild
             >
               <a
