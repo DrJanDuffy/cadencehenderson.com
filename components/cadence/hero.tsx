@@ -56,8 +56,7 @@ export function Hero() {
             </Button>
             <Button
               size="default"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              className="bg-white text-slate-900 hover:bg-gray-100 font-medium border-0"
               asChild
             >
               <a
@@ -69,8 +68,7 @@ export function Hero() {
             </Button>
             <Button
               size="default"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900"
+              className="bg-white text-slate-900 hover:bg-gray-100 font-medium border-0"
               asChild
             >
               <a
