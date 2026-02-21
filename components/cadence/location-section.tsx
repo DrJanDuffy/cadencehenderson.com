@@ -27,7 +27,7 @@ export function LocationSection() {
             <p className="text-xl text-gray-700 mb-4 leading-relaxed">
               Cadence is a master-planned community in <strong>Henderson, NV 89011</strong>. We serve Cadence and the greater Henderson area from our office at {CONTACT_INFO.welcomeCenter}.
             </p>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-700 mb-6">
               Easy access to Harry Reid International Airport, the Las Vegas Strip, downtown Las Vegas, and minutes from Lake Mead Recreational Area.
             </p>
             <div className="flex flex-wrap gap-3">

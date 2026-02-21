@@ -227,7 +227,7 @@ export default function EventsPage() {
               <h2 className="text-3xl font-bold mb-4">
                 Never Miss an Event
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Schedule a call with Dr. Jan Duffy to get personalized updates on
                 upcoming activities and community happenings in Cadence.
               </p>

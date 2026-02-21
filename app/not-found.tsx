@@ -56,7 +56,7 @@ export default function NotFound() {
               <h2 className="text-2xl font-bold mb-4">
                 Need Help Finding Something?
               </h2>
-              <p className="opacity-95 mb-6">
+              <p className="text-white mb-6">
                 Schedule a call with Dr. Jan Duffy for assistance with Cadence Henderson
                 homes and information.
               </p>

@@ -198,7 +198,7 @@ export default function NewHomesPage() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Our Trusted Builders
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
               150 homes
             </p>
@@ -293,7 +293,7 @@ export default function NewHomesPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
               Frequently Asked Questions
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-700 mb-8">
               New homes in Cadence Henderson, Henderson NV 89011
             </p>
             <script

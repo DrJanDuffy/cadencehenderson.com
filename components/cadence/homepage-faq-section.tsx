@@ -46,7 +46,7 @@ export function HomepageFAQSection() {
                 <dt className="text-lg font-semibold text-gray-900 mb-3">
                   {item.question}
                 </dt>
-                <dd className="text-gray-700 leading-relaxed">{item.answer}</dd>
+                <dd className="text-gray-800 leading-relaxed">{item.answer}</dd>
               </div>
             ))}
           </dl>

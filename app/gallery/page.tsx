@@ -203,7 +203,7 @@ export default function GalleryPage() {
               <h2 className="text-3xl font-bold mb-4">
                 Experience Cadence in Person
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Photos can only tell part of the story. Schedule a tour and see
                 the beauty of Cadence for yourself.
               </p>

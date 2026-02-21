@@ -75,7 +75,7 @@ export default function PastHomesalesPage() {
             <RealScoutAdvancedSearch />
           </div>
           <RealScoutYourListings />
-          <p className="mt-4 text-xs text-gray-500">
+          <p className="mt-4 text-xs text-gray-600">
             Listings displayed via MLS. All information deemed reliable but not
             guaranteed. © {new Date().getFullYear()} MLS.
           </p>

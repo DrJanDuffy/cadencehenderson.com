@@ -195,7 +195,7 @@ export default function FAQsPage() {
               <h2 className="text-3xl font-bold mb-4">
                 Still Have Questions?
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Schedule a free consultation with Dr. Jan Duffy for personalized answers
                 and to schedule a tour of Cadence.
               </p>

@@ -229,7 +229,7 @@ export default function RentalsPage() {
               <h2 className="text-3xl font-bold mb-4">
                 Interested in Renting in Cadence?
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Schedule a call with Dr. Jan Duffy for information about available
                 rentals, community tours, and rental partner connections.
               </p>

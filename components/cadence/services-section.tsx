@@ -107,7 +107,7 @@ export function ServicesSection() {
             <MapPin className="inline w-4 h-4 mr-1" aria-hidden />
             Serving Cadence, Henderson NV 89011 and the greater Henderson area
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-600">
             {CONTACT_INFO.welcomeCenter} · {CONTACT_INFO.phone}
           </p>
         </div>

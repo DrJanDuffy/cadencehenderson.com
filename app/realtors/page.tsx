@@ -521,7 +521,7 @@ export default function RealtorsPage() {
                 </Button>
               </a>
             </div>
-            <p className="mt-6 text-sm opacity-90">
+            <p className="mt-6 text-sm text-white">
               Serving Cadence, Henderson, Las Vegas, and Summerlin
             </p>
           </div>

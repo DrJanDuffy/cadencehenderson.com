@@ -72,7 +72,7 @@ export function CTABanner() {
               </a>
             </Button>
           </div>
-          <p className="mt-6 text-sm opacity-90">
+          <p className="mt-6 text-sm text-white">
             Licensed Real Estate Professional specializing in Cadence Henderson
           </p>
         </div>

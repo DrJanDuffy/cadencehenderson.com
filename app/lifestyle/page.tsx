@@ -270,7 +270,7 @@ export default function LifestylePage() {
               <h2 className="text-3xl font-bold mb-4">
                 Experience the Lifestyle Firsthand
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Schedule a tour and see why Cadence is more than just a community
                 - it's a lifestyle.
               </p>

@@ -188,7 +188,7 @@ export default function NewsPage() {
               <h2 className="text-3xl font-bold mb-4">
                 Stay in the Loop
               </h2>
-              <p className="text-xl opacity-95 mb-6">
+              <p className="text-xl text-white mb-6">
                 Schedule a call with Dr. Jan Duffy for the latest news, events,
                 and exclusive Cadence updates—personalized to your interests.
               </p>

@@ -39,7 +39,7 @@ export default function ContactPage() {
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Thinking of Selling?
             </h2>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-700 mb-8">
               Get a free, instant estimate of your home's value in today's market.
             </p>
             <div className="flex justify-center">
@@ -182,7 +182,7 @@ export default function ContactPage() {
             <h2 id="contact-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
               Frequently Asked Questions
             </h2>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-700 mb-8">
               Contact Cadence Henderson Real Estate – Henderson NV 89011
             </p>
             <script
