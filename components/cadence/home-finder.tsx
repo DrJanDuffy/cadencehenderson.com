@@ -7,7 +7,7 @@ import { Search } from 'lucide-react'
 export function HomeFinder() {
   return (
     <section id="home-search" className="py-20 bg-gray-50" aria-labelledby="homefinder-heading">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 id="homefinder-heading" className="text-4xl font-bold text-gray-900 mb-6">

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 export function NewsSection() {
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center mb-6">
             <img

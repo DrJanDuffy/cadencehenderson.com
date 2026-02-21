@@ -5,7 +5,7 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 export function LifestyleSection() {
   return (
     <section className="py-20 bg-blue-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img

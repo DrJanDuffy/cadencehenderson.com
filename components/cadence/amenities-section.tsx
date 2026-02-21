@@ -5,7 +5,7 @@ import { getAmenityImage } from '@/lib/cloudflare-images'
 export function AmenitiesSection() {
   return (
     <section className="py-20 bg-white" aria-labelledby="amenities-heading">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 id="amenities-heading" className="text-4xl font-bold text-gray-900 mb-6">

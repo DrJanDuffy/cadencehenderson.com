@@ -15,7 +15,7 @@ export function ScheduleConsultationSection() {
       className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       aria-labelledby="schedule-consultation-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-bold mb-3 text-white">
             Ready to Buy New Homes at Cadence Henderson?
@@ -56,8 +56,8 @@ export function ScheduleConsultationSection() {
         <div className="max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-xl p-4 md:p-6">
           <CalendlyWhenVisible loadOnMount>
             <CalendlyInlineWidget
-              className="rounded-lg overflow-hidden"
-              style={{ minWidth: 320, height: 700 }}
+              className="rounded-lg overflow-hidden w-full"
+              style={{ minWidth: 280, height: 630 }}
             />
           </CalendlyWhenVisible>
           <p className="text-center text-sm text-gray-600 mt-4">

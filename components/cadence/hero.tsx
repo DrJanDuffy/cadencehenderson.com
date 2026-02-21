@@ -11,7 +11,7 @@ const HERO_IMAGE = getHeroImage('homepage')
 
 export function Hero() {
   return (
-    <section className="relative min-h-[560px] md:min-h-[600px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+    <section className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden" aria-label="Hero">
       {/* LCP: native img; on error hide so gradient shows and alt text is not displayed */}
       <img
         src={HERO_IMAGE}
@@ -32,16 +32,16 @@ export function Hero() {
       />
 
       {/* Content: concise hero, smaller type */}
-      <div className="relative container mx-auto px-4 flex-1 flex items-center pb-28">
+      <div className="relative container mx-auto px-4 sm:px-6 flex-1 flex items-center pb-24 sm:pb-28">
         <div className="max-w-2xl text-white">
           <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
-          <p className="text-base md:text-lg text-white/90 mb-6">
+          <p className="text-base md:text-lg text-white mb-6">
             New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
           </p>
           {/* Wrapper forces dark text on the white search box so placeholder/labels are visible */}
-          <div className="mb-6 text-gray-900 [&_input]:text-gray-900 [&_input::placeholder]:text-gray-500">
+          <div className="mb-6 w-full max-w-full text-gray-900 [&_input]:text-gray-900 [&_input::placeholder]:text-gray-500 [&_realscout-simple-search]:max-w-full">
             <RealScoutSimpleSearch />
           </div>
           <div className="flex flex-wrap gap-3">

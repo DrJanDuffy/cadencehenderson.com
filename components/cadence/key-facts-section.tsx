@@ -11,7 +11,7 @@ export function KeyFactsSection() {
       className="py-8 bg-white border-b border-gray-100"
       aria-labelledby="key-facts-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <h2 id="key-facts-heading" className="sr-only">
           Key Facts — Cadence Henderson NV 89011
         </h2>

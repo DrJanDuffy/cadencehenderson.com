@@ -7,7 +7,7 @@ import { getHomeImage } from '@/lib/cloudflare-images'
 export function RealtorsSection() {
   return (
     <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl">
             <div

@@ -53,7 +53,7 @@ export function ServicesSection() {
       className="py-16 bg-gray-50"
       aria-labelledby="services-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 id="services-heading" className="text-4xl font-bold text-gray-900 mb-4">
             What Buyers Get at Cadence Henderson — Free Expert Representation

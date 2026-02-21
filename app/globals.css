@@ -230,7 +230,9 @@ realscout-simple-search {
   --rs-ss-font-primary-color: #000000;
   --rs-ss-searchbar-border-color: #1e3a5f;
   --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
-  --rs-ss-widget-width: 500px !important;
+  --rs-ss-widget-width: min(500px, 100%) !important;
+  width: 100%;
+  max-width: 500px;
   min-height: 80px;
   display: block;
   background-color: #ffffff;

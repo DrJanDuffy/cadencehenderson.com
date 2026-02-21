@@ -35,7 +35,7 @@ export function HomepageFAQSection() {
       className="py-16 bg-white"
       aria-labelledby="homepage-faq-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
           <h2 id="homepage-faq-heading" className="text-4xl font-bold text-gray-900 mb-10 text-center">
             Frequently Asked Questions — New Homes in Cadence Henderson NV

@@ -20,7 +20,7 @@ export function MarketSnapshotSection() {
       className="py-16 bg-gray-50"
       aria-labelledby="market-snapshot-heading"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           <h2 id="market-snapshot-heading" className="text-4xl font-bold text-gray-900 mb-6 text-center">
             Cadence Henderson Market Snapshot

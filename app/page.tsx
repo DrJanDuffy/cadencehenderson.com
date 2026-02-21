@@ -45,7 +45,7 @@ export default function HomePage() {
       <KeyFactsSection />
       <RealScoutOfficeListings />
 
-      <main>
+      <main id="homepage-content" className="scroll-mt-20" role="main">
         <MarketSnapshotSection />
         <ServicesSection />
         <HomeFinder />
