@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
@@ -12,60 +11,53 @@ const HERO_IMAGE = getHeroImage('homepage')
 
 export function Hero() {
   return (
-    <section className="relative min-h-[720px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
-      {/* LCP: next/image with priority for under 2.5s target */}
-      <Image
+    <section className="relative min-h-[560px] md:min-h-[600px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+      {/* LCP: native img; on error hide so gradient shows and alt text is not displayed */}
+      <img
         src={HERO_IMAGE}
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         width={1920}
         height={1080}
-        priority
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center opacity-50"
+        onError={(e) => {
+          e.currentTarget.style.display = 'none'
+        }}
       />
-      {/* Dark overlay for text readability (especially bottom area) */}
+      {/* Overlay: balanced so background (cityscape/tower) shows while text stays readable */}
       <div
-        className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/70 to-blue-900/40"
+        className="absolute inset-0 bg-gradient-to-t from-blue-950/85 via-blue-900/55 to-blue-900/30"
         aria-hidden
       />
 
-      {/* Content: padded above wave so text is never clipped */}
-      <div className="relative container mx-auto px-4 flex-1 flex items-center pb-32">
-        <div className="max-w-3xl text-white">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+      {/* Content: concise hero, smaller type */}
+      <div className="relative container mx-auto px-4 flex-1 flex items-center pb-28">
+        <div className="max-w-2xl text-white">
+          <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
-          <p className="text-lg text-white/90 mb-2">
-            New homes Cadence Henderson NV 89011 — your Cadence Henderson buyer&apos;s agent.
+          <p className="text-base md:text-lg text-white/90 mb-6">
+            New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
           </p>
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed">
-            With astounding views, great variety and distinctive amenities that
-            provide opportunities for amazing experiences each and every day;
-            Cadence is the best home value in Southern Nevada.
-          </p>
-          <p className="text-lg mb-8">
-            Because if <em>where</em> you live makes <em>how</em> you live even
-            better – then your future belongs at Cadence.
-          </p>
-          {/* Quick Search */}
-          <div className="mb-8">
+          <div className="mb-6">
             <RealScoutSimpleSearch />
           </div>
-
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3">
             <Button
-              size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8"
+              size="default"
+              className="bg-white text-blue-900 hover:bg-gray-100"
               asChild
             >
               <CalendlyLink>
-                <Calendar className="mr-2" size={20} aria-hidden />
+                <Calendar className="mr-2" size={18} aria-hidden />
                 Schedule a Call
               </CalendlyLink>
             </Button>
             <Button
-              size="lg"
+              size="default"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
               asChild
             >
               <a
@@ -76,9 +68,9 @@ export function Hero() {
               </a>
             </Button>
             <Button
-              size="lg"
+              size="default"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-blue-900 text-lg px-8"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
               asChild
             >
               <a
