@@ -30,14 +30,34 @@ export function CalendlyInlineWidget({
 
   useEffect(() => {
     if (!isLoaded || initedRef.current || !containerRef.current) return
-    const cal = typeof window !== 'undefined' ? window.Calendly : undefined
-    if (cal?.initInlineWidget) {
-      cal.initInlineWidget({
-        url: CONTACT_INFO.calendlyUrl,
-        parentElement: containerRef.current,
-      })
-      initedRef.current = true
+    let intervalId: ReturnType<typeof setInterval> | null = null
+    let timeoutId: ReturnType<typeof setTimeout> | null = null
+    const cleanup = () => {
+      if (intervalId) {
+        clearInterval(intervalId)
+        intervalId = null
+      }
+      if (typeof window !== 'undefined') window.removeEventListener('calendly-loaded', tryInit)
+      if (timeoutId) clearTimeout(timeoutId)
     }
+    const tryInit = () => {
+      const cal = typeof window !== 'undefined' ? window.Calendly : undefined
+      if (cal?.initInlineWidget && containerRef.current && !initedRef.current) {
+        cal.initInlineWidget({
+          url: CONTACT_INFO.calendlyUrl,
+          parentElement: containerRef.current,
+        })
+        initedRef.current = true
+        cleanup()
+      }
+    }
+    tryInit()
+    if (!initedRef.current && typeof window !== 'undefined') {
+      window.addEventListener('calendly-loaded', tryInit)
+      intervalId = setInterval(tryInit, 300)
+      timeoutId = setTimeout(cleanup, 12000)
+    }
+    return cleanup
   }, [isLoaded])
 
   return (
@@ -45,7 +65,7 @@ export function CalendlyInlineWidget({
       ref={containerRef}
       className={`calendly-inline-widget bg-slate-50 border border-slate-200 rounded-lg overflow-hidden ${className ?? ''}`.trim()}
       style={combinedStyle}
-      aria-busy={!isLoaded ? 'true' : 'false'}
+      aria-busy={!isLoaded}
       aria-label="Schedule a consultation – Calendly"
     />
   )

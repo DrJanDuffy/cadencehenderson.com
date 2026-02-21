@@ -40,7 +40,8 @@ export function Hero() {
           <p className="text-base md:text-lg text-white/90 mb-6">
             New homes Cadence Henderson NV 89011 — your buyer&apos;s agent. Free representation; builder pays the fee.
           </p>
-          <div className="mb-6">
+          {/* Wrapper forces dark text on the white search box so placeholder/labels are visible */}
+          <div className="mb-6 text-gray-900 [&_input]:text-gray-900 [&_input::placeholder]:text-gray-500">
             <RealScoutSimpleSearch />
           </div>
           <div className="flex flex-wrap gap-3">

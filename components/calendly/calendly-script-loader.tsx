@@ -3,16 +3,19 @@
 import Script from 'next/script'
 
 /**
- * Loads Calendly widget.js and dispatches calendly-loaded event for CalendlyProvider.
- * Must be a Client Component so onLoad (event handler) is not passed from Server.
+ * Loads Calendly widget.js and dispatches calendly-loaded when ready.
+ * afterInteractive so the calendar can load when the schedule section is visible.
  */
 export function CalendlyScriptLoader() {
   return (
     <Script
       src="https://assets.calendly.com/assets/external/widget.js"
-      strategy="lazyOnload"
+      strategy="afterInteractive"
       onLoad={() => {
-        window.dispatchEvent(new CustomEvent('calendly-loaded'))
+        // Calendly may attach window.Calendly asynchronously; notify when it's there
+        const fire = () => window.dispatchEvent(new CustomEvent('calendly-loaded'))
+        if (typeof window !== 'undefined' && window.Calendly) fire()
+        else setTimeout(fire, 100)
       }}
     />
   )

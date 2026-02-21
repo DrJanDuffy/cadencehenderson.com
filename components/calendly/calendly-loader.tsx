@@ -47,17 +47,44 @@ function ensureCalendlyCss() {
   }
 }
 
+function waitForCalendly(): Promise<void> {
+  return new Promise((resolve) => {
+    if (typeof window !== 'undefined' && window.Calendly) {
+      resolve()
+      return
+    }
+    let done = false
+    const finish = () => {
+      if (done) return
+      done = true
+      if (intervalId) clearInterval(intervalId)
+      if (timeoutId) clearTimeout(timeoutId)
+      window.removeEventListener('calendly-loaded', onLoaded)
+      resolve()
+    }
+    const onLoaded = () => finish()
+    window.addEventListener('calendly-loaded', onLoaded)
+    const intervalId = setInterval(() => {
+      if (window.Calendly) finish()
+    }, 100)
+    const timeoutId = setTimeout(finish, 6000)
+  })
+}
+
 function loadScript(): Promise<void> {
   if (typeof document === 'undefined') return Promise.resolve()
   const existing = document.querySelector(`script[src="${CALENDLY_SCRIPT}"]`)
-  if (existing) return Promise.resolve()
+  if (existing) {
+    ensureCalendlyCss()
+    return waitForCalendly()
+  }
   return new Promise((resolve, reject) => {
     const script = document.createElement('script')
     script.src = CALENDLY_SCRIPT
     script.async = true
     script.onload = () => {
       ensureCalendlyCss()
-      resolve()
+      waitForCalendly().then(resolve)
     }
     script.onerror = () => reject(new Error('Calendly script failed to load'))
     document.body.appendChild(script)
