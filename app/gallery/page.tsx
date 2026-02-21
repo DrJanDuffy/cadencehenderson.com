@@ -185,7 +185,7 @@ export default function GalleryPage() {
           </button>
           <img
             src={lightboxImage.url}
-            alt={`${lightboxImage.title} - Cadence Henderson community gallery`}
+            alt={`${lightboxImage.title} - Cadence Henderson NV 89011 community gallery`}
             className="max-w-full max-h-full object-contain"
           />
         </div>

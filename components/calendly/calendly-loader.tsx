@@ -4,6 +4,7 @@ import {
   createContext,
   useCallback,
   useContext,
+  useEffect,
   useRef,
   useState,
   type ReactNode,
@@ -73,6 +74,14 @@ export function CalendlyProvider({ children }: { children: ReactNode }) {
       setIsLoaded(true)
     })
     return loadPromise.current
+  }, [])
+
+  // Listen for Calendly script loaded from layout <Script>
+  useEffect(() => {
+    const onLoaded = () => setIsLoaded(true)
+    window.addEventListener('calendly-loaded', onLoaded)
+    if (typeof window !== 'undefined' && window.Calendly) setIsLoaded(true)
+    return () => window.removeEventListener('calendly-loaded', onLoaded)
   }, [])
 
   return (

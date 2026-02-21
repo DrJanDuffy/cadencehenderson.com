@@ -10,7 +10,7 @@ export function LifestyleSection() {
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
               src={cfImage(SITE_IMAGES.lifestyle.community, 'card')}
-              alt="Cadence Henderson lifestyle and community"
+              alt="Cadence Henderson NV 89011 lifestyle and community"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />

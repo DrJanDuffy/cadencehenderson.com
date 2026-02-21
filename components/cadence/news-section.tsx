@@ -12,7 +12,7 @@ export function NewsSection() {
               width={96}
               height={100}
               loading="lazy"
-              alt="Cadence Henderson news and community updates"
+              alt="Cadence Henderson NV 89011 news and community updates"
               className="w-24 h-24 object-contain"
             />
           </div>

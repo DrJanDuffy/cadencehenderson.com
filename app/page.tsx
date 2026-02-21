@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
+import { KeyFactsSection } from '@/components/cadence/key-facts-section'
+import { MarketSnapshotSection } from '@/components/cadence/market-snapshot-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { HomeFinder } from '@/components/cadence/home-finder'
 import { AmenitiesSection } from '@/components/cadence/amenities-section'
@@ -9,6 +11,7 @@ import { ServicesSection } from '@/components/cadence/services-section'
 import { RealtorsSection } from '@/components/cadence/realtors-section'
 import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
+import { HomepageFAQSection } from '@/components/cadence/homepage-faq-section'
 import { ScheduleConsultationSection } from '@/components/cadence/schedule-consultation-section'
 import { Footer } from '@/components/cadence/footer'
 import { WebPageSchema } from '@/components/schema/web-page'
@@ -16,14 +19,14 @@ import { WebPageSchema } from '@/components/schema/web-page'
 const BASE = 'https://www.cadencehenderson.com'
 
 export const metadata: Metadata = {
-  title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
+  title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
   description:
-    'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community. Licensed REALTOR® on-site.',
+    "Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy 702-930-8672.",
   alternates: { canonical: BASE },
   openGraph: {
-    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
+    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
     description:
-      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011.',
+      "Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy 702-930-8672.",
     url: BASE,
     type: 'website',
   },
@@ -36,15 +39,18 @@ export default function HomePage() {
       <WebPageSchema />
       <Navigation />
       <Hero />
+      <KeyFactsSection />
       <RealScoutOfficeListings />
 
       <main>
+        <MarketSnapshotSection />
         <ServicesSection />
         <HomeFinder />
         <AmenitiesSection />
         <LifestyleSection />
         <RealtorsSection />
         <BuildersShowcase />
+        <HomepageFAQSection />
         <ScheduleConsultationSection />
       </main>
 

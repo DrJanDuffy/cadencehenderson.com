@@ -8,9 +8,9 @@ export function WebPageSchema() {
     '@type': 'WebPage',
     '@id': 'https://www.cadencehenderson.com/#webpage',
     url: 'https://www.cadencehenderson.com',
-    name: 'Cadence Henderson | Homes for Sale & New Homes – Dr. Jan Duffy, REALTOR®',
+    name: "New Home Buyer's Agent Cadence Henderson NV 89011 | Dr. Jan Duffy — Free Buyer Representation",
     description:
-      'Find new homes and resale homes in Cadence, Henderson NV. Master-planned community with parks, pools, schools. Dr. Jan Duffy, Berkshire Hathaway HomeServices.',
+      "New homes Cadence Henderson NV 89011. Free buyer representation — builder pays. Cadence Henderson buyer's agent. Dr. Jan Duffy, Berkshire Hathaway HomeServices.",
     isPartOf: {
       '@type': 'WebSite',
       '@id': 'https://www.cadencehenderson.com/#website',

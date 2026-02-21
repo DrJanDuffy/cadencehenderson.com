@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { getHomeImage } from '@/lib/cloudflare-images'
 
@@ -18,14 +19,10 @@ export function RealtorsSection() {
           </div>
           <div className="order-1 md:order-2">
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Cadence Henderson Real Estate Team
+              Why Use a Buyer&apos;s Agent for New Construction in Henderson NV
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Cadence Henderson is one of the Top 10 Best Selling Master Planned
-              Communities in the nation. Whether you’re buying a new home,
-              resale, or rental—our team helps you find the right fit in Cadence
-              Henderson NV 89011.
-            </p>
+              Dr. Jan Duffy provides free new home buyer representation at Cadence Henderson NV 89011. She negotiates upgrades, lot premiums, and closing costs with all 9 builders — at zero cost to you. The builder pays her full commission. Call {CONTACT_INFO.phone} before your first model home visit.</p>
             <Button
               size="lg"
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"

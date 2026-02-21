@@ -1,9 +1,6 @@
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
-
 /**
- * FAQPage JSON-LD schema targeting "People Also Ask" queries.
- * Service-first, hyperlocal questions for Cadence Henderson NV 89011.
- * Renders in root layout for site-wide FAQ rich results.
+ * FAQPage JSON-LD schema targeting "People Also Ask" and AEO.
+ * Mirrors on-page HomepageFAQSection. Buyer-focused, Cadence Henderson NV 89011.
  */
 export function FAQPageSchema() {
   const schema = {
@@ -12,50 +9,42 @@ export function FAQPageSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'What new homes are for sale in Cadence Henderson NV?',
+        name: 'Do I need a realtor to buy a new home in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson NV 89011 has 8 builders: Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside. Prices $300K–$650K+. Tours 7 days at 1170 E Sunset Rd, Henderson NV 89011. Call 702-930-8672.',
+          text: 'Yes — and it costs you nothing. Dr. Jan Duffy represents new home buyers at Cadence Henderson and her fee is paid entirely by the builder. She negotiates upgrades, lot premiums, and closing costs on your behalf across all 9 builders. Call 702-930-8672 before your first model home visit.',
         },
       },
       {
         '@type': 'Question',
-        name: 'How much does it cost to buy a home in Cadence Henderson 89011?',
+        name: 'Which builders are in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Home prices in Cadence Henderson 89011 range from approximately $300,000 to $650,000+. New construction townhomes start in the mid-$300s; single-family homes range from $380K to $650K+. Resale homes typically price between $400K–$575K. Call 702-930-8672 for current Cadence Henderson pricing.',
+          text: 'Cadence Henderson has 9 active builders: Century Communities, D.R. Horton, Lennar, Richmond American, Taylor Morrison, Beazer Homes, Woodside Homes, StoryBook Homes, and American Homes 4 Rent. Availability and incentives change weekly — call Dr. Jan at 702-930-8672 for current inventory.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Are there rentals available in Cadence Henderson?',
+        name: 'How much do new homes cost in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, rental homes and apartments are available in Cadence Henderson NV 89011. Single-family rental options include AMH (American Homes 4 Rent), Element 12, and Adler communities, typically ranging from $1,500–$2,800/month. Call 702-930-8672 to find current Cadence Henderson rental availability.',
+          text: 'New homes in Cadence Henderson range from the $300Ks to $700K+, depending on the builder, floor plan, and lot. Rate buydown incentives and closing cost contributions are often available. Call Dr. Jan Duffy at 702-930-8672 for this week\'s pricing.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What amenities does Cadence Henderson have?',
+        name: 'Can a buyer\'s agent negotiate with new home builders in Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson NV 89011 has a 50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
+          text: 'Absolutely. Dr. Jan Duffy negotiates upgrades, lot premiums, closing costs, and rate buydowns with all 9 Cadence builders on behalf of buyers — at zero cost to the buyer. The builder pays her full commission.',
         },
       },
       {
         '@type': 'Question',
-        name: 'Which builders are building homes in Cadence Henderson?',
+        name: 'Is there a state income tax in Henderson Nevada?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Active homebuilders in Cadence Henderson NV 89011 include Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Call ${CONTACT_INFO.phone} or visit the Cadence Henderson Welcome Center to tour model homes from all builders.`,
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Where is Cadence Henderson located?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. Office: 1170 E Sunset Rd. 20 min from the Strip, 15 min from Harry Reid Airport.',
+          text: 'No. Nevada has no state income tax, which is a major reason CA and WA buyers choose Cadence Henderson. Combined with lower home prices and builder incentives, the financial advantage is significant.',
         },
       },
     ],

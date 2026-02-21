@@ -81,7 +81,7 @@ export function BuildersShowcase() {
     <section className="py-20 bg-gray-100">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-          View Homes from Our Builders
+          New Home Builders in Cadence Henderson
         </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
           {builders.map((builder) => {
@@ -92,7 +92,7 @@ export function BuildersShowcase() {
                 <div className="relative w-full h-20 mb-3 flex items-center justify-center">
                   <img
                     src={builder.logo}
-                    alt={`Cadence Henderson new homes by ${builder.name}`}
+                    alt={`Cadence Henderson NV 89011 new homes by ${builder.name}`}
                     width={builder.width}
                     height={builder.height}
                     loading="lazy"

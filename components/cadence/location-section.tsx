@@ -14,7 +14,7 @@ export function LocationSection() {
             <div className="inline-flex items-center justify-center mb-6">
               <img
                 src={cfImage(SITE_IMAGES.icons.homesBox, 'thumbnail')}
-                alt="Cadence Henderson Location – master-planned community in Henderson NV 89011"
+                alt="Cadence Henderson NV 89011 location — master-planned community"
                 width={96}
                 height={100}
                 loading="lazy"
@@ -60,7 +60,7 @@ export function LocationSection() {
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
             <img
               src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
-              alt="Cadence Henderson community and surrounding area"
+              alt="Cadence Henderson NV 89011 community and surrounding area"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />

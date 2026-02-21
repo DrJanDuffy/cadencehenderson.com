@@ -14,8 +14,8 @@ type ServiceItem = {
 
 const SERVICES: ServiceItem[] = [
   {
-    title: 'Buy Homes in Cadence',
-    description: 'New construction and resale homes in Cadence Henderson. Expert guidance through every step.',
+    title: 'Free Buyer Representation',
+    description: 'New homes Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across all 9 builders — builder pays the fee.',
     href: '/new-homes',
     icon: Home,
     ariaLabel: 'View new homes and resale in Cadence Henderson',
@@ -56,11 +56,10 @@ export function ServicesSection() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 id="services-heading" className="text-4xl font-bold text-gray-900 mb-4">
-            Real Estate Services in Cadence Henderson
+            What Buyers Get at Cadence Henderson — Free Expert Representation
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            Dr. Jan Duffy serves Cadence and Henderson, Nevada. From new homes and resale to rentals—we’re your hyperlocal real estate team.
-          </p>
+            Dr. Jan Duffy represents new home buyers only at Cadence Henderson NV 89011. The builder pays her fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties. </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {SERVICES.map((service) => {

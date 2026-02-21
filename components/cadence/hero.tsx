@@ -16,22 +16,27 @@ export function Hero() {
       {/* LCP image: in-DOM and high priority so the browser discovers it early */}
       <img
         src={HERO_IMAGE}
-        alt="New homes for sale in Cadence Henderson NV - master planned community"
+        alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         width={1920}
         height={1080}
         fetchPriority="high"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
       />
+      {/* Dark overlay for text readability (especially bottom area) */}
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-blue-950/95 via-blue-900/70 to-blue-900/40"
+        aria-hidden
+      />
 
       {/* Content */}
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-3xl text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            New Homes for Sale in Cadence Henderson, NV 89011
+            New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
           </h1>
           <p className="text-lg text-white/90 mb-2">
-            Cadence Henderson, Nevada
+            New homes Cadence Henderson NV 89011 — your Cadence Henderson buyer&apos;s agent.
           </p>
           <p className="text-xl md:text-2xl mb-8 leading-relaxed">
             With astounding views, great variety and distinctive amenities that

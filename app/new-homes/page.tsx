@@ -204,7 +204,7 @@ export default function NewHomesPage() {
                   <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-6 transition-transform duration-300 group-hover:scale-[1.02]">
                     <img
                       src={BUILDER_LOGOS[builder.slug]}
-                      alt={`${builder.name} - New homes at Cadence Henderson`}
+                      alt={`${builder.name} - New homes at Cadence Henderson NV 89011`}
                       className="max-h-full max-w-full object-contain"
                       loading="lazy"
                     />

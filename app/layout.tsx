@@ -27,15 +27,15 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
+  title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
   description:
-    'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community. Licensed REALTOR® on-site.',
+    "Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy 702-930-8672.",
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
     siteName: 'Cadence Henderson Real Estate',
-    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
+    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
     description:
-      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community.',
+      "Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy 702-930-8672.",
     url: 'https://www.cadencehenderson.com',
     images: [
       {
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
+    title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
     description:
-      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011.',
+      "Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy 702-930-8672.",
     images: ['/og-image.png'],
     creator: '@CadenceHenderson',
   },
@@ -86,6 +86,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+          onLoad={() => {
+            window.dispatchEvent(new CustomEvent('calendly-loaded'))
+          }}
+        />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"

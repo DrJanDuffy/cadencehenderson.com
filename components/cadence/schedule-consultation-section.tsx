@@ -18,11 +18,10 @@ export function ScheduleConsultationSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 id="schedule-consultation-heading" className="text-4xl font-bold mb-4">
-            Ready to Buy or Sell at Cadence?
+            Ready to Buy New Homes at Cadence Henderson?
           </h2>
           <p className="text-xl opacity-95 mb-6">
-            Schedule your Cadence consultation with Dr. Jan Duffy. Get
-            personalized guidance, tour homes, or list your property.
+            Schedule your free Cadence Henderson buyer consultation with Dr. Jan Duffy. Get personalized guidance and tour new homes Cadence Henderson NV 89011.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <Button
@@ -62,7 +61,7 @@ export function ScheduleConsultationSection() {
           </div>
         </div>
         <div className="max-w-4xl mx-auto rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm">
-          <CalendlyWhenVisible>
+          <CalendlyWhenVisible loadOnMount>
             <CalendlyInlineWidget
               className="rounded-lg overflow-hidden"
               style={{ minWidth: 320, height: 700 }}

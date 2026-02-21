@@ -3,16 +3,26 @@
 import { useEffect, useRef, type ReactNode } from 'react'
 import { useCalendly } from './calendly-loader'
 
+type CalendlyWhenVisibleProps = {
+  children: ReactNode
+  /** When true, load script on mount (for below-fold sections so widget is ready when user scrolls). */
+  loadOnMount?: boolean
+}
+
 /**
- * Loads Calendly script when the wrapped content enters the viewport.
- * Use around the Newsletter section so the inline widget script loads only when the user scrolls to it.
+ * Loads Calendly script when the wrapped content enters the viewport (or on mount if loadOnMount).
+ * Use around the inline widget so the script loads before initInlineWidget runs.
  */
-export function CalendlyWhenVisible({ children }: { children: ReactNode }) {
+export function CalendlyWhenVisible({ children, loadOnMount }: CalendlyWhenVisibleProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { loadCalendly, isLoaded } = useCalendly()
 
   useEffect(() => {
     if (isLoaded) return
+    if (loadOnMount) {
+      loadCalendly()
+      return
+    }
     const el = ref.current
     if (!el) return
     const obs = new IntersectionObserver(
@@ -23,7 +33,7 @@ export function CalendlyWhenVisible({ children }: { children: ReactNode }) {
     )
     obs.observe(el)
     return () => obs.disconnect()
-  }, [loadCalendly, isLoaded])
+  }, [loadCalendly, isLoaded, loadOnMount])
 
   return <div ref={ref}>{children}</div>
 }

@@ -12,8 +12,7 @@ export function HomeFinder() {
               Browse Cadence Henderson Homes for Sale
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
-              New construction and resale homes in Cadence Henderson NV 89011.
-              Search above or browse listings below.
+              New homes Cadence Henderson NV 89011. New construction Henderson NV free agent — Dr. Jan Duffy represents buyers. Search above or browse listings below.
             </p>
           </div>
           <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />

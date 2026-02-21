@@ -6,8 +6,8 @@ export function GeoMeta() {
     <>
       <meta name="geo.region" content="US-NV" />
       <meta name="geo.placename" content="Henderson" />
-      <meta name="geo.position" content="36.0051;-115.0100" />
-      <meta name="ICBM" content="36.0051, -115.0100" />
+      <meta name="geo.position" content="36.0175;-114.9607" />
+      <meta name="ICBM" content="36.0175, -114.9607" />
     </>
   )
 }
