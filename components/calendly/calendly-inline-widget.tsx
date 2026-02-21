@@ -43,8 +43,10 @@ export function CalendlyInlineWidget({
   return (
     <div
       ref={containerRef}
-      className={`calendly-inline-widget ${className ?? ''}`.trim()}
+      className={`calendly-inline-widget bg-slate-50 border border-slate-200 rounded-lg overflow-hidden ${className ?? ''}`.trim()}
       style={combinedStyle}
+      aria-busy={!isLoaded ? 'true' : 'false'}
+      aria-label="Schedule a consultation – Calendly"
     />
   )
 }

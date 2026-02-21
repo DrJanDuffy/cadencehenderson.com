@@ -76,11 +76,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://cadencenv.com" />
         {/* LCP image preload so browser discovers it from initial HTML */}
         <link rel="preload" as="image" href={heroImageUrl} />
-        {/* Calendly CSS: media=print so non-blocking; CalendlyStyles sets media=all after hydration */}
+        {/* Calendly CSS: load for screen to avoid whited-out widget appearance */}
         <link
           href="https://assets.calendly.com/assets/external/widget.css"
           rel="stylesheet"
-          media="print"
+          media="all"
         />
       </head>
       <body
