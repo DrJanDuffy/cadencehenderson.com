@@ -300,6 +300,79 @@ export default function LifestylePage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white" aria-labelledby="lifestyle-faq-heading">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 id="lifestyle-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Cadence Henderson community and lifestyle – Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'What amenities does Cadence Henderson have?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson NV 89011 has a 50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What events happen in Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson hosts summer concerts, farmers market, movie nights, food trucks, and yoga in the park. Events are held at Central Park and are free for residents.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What schools serve Cadence Henderson NV 89011?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson is served by Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School and Henderson middle schools are nearby.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Is there shopping near Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are near Cadence Henderson NV 89011. Grocery, dining, and retail are 5–10 minutes away.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                { q: 'What amenities does Cadence Henderson have?', a: '50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.' },
+                { q: 'What events happen in Cadence Henderson?', a: 'Summer concerts, farmers market, movie nights, food trucks, and yoga in the park at Central Park. Free for residents.' },
+                { q: 'What schools serve Cadence Henderson NV 89011?', a: 'Cadence Elementary (on-site), Legacy Traditional, and Clark County schools. Green Valley High School nearby.' },
+                { q: 'Is there shopping near Cadence Henderson?', a: 'Yes. Galleria at Sunset, Cadence Marketplace, and Sunset Station are 5–10 minutes from Cadence Henderson NV 89011.' },
+              ].map(({ q, a }) => (
+                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-gray-50">
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-green-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

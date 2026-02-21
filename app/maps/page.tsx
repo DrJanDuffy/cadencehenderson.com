@@ -223,6 +223,79 @@ export default function MapsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50" aria-labelledby="maps-faq-heading">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 id="maps-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Cadence Henderson location and directions – Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'Where is Cadence Henderson located?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The real estate office is at 1170 E Sunset Rd, 2nd Floor, Henderson NV 89011.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'How do I get directions to Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Get directions by clicking Get Directions on this page or searching 1170 E Sunset Rd, Henderson NV 89011 in Google Maps. About 20 minutes from the Las Vegas Strip.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What landmarks are near Cadence Henderson NV 89011?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson NV 89011 is 15 minutes from Harry Reid Airport, 20 minutes from the Las Vegas Strip, and 15 minutes from Lake Mead. Galleria at Sunset mall is 5 minutes away.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What are the Cadence Henderson office hours?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'The Cadence Henderson real estate office at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily. Call 702-930-8672 before visiting.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                { q: 'Where is Cadence Henderson located?', a: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The office is at 1170 E Sunset Rd, 2nd Floor.' },
+                { q: 'How do I get directions to Cadence Henderson?', a: 'Click Get Directions above or search 1170 E Sunset Rd, Henderson NV 89011 in Google Maps. About 20 minutes from the Las Vegas Strip.' },
+                { q: 'What landmarks are near Cadence Henderson NV 89011?', a: '15 min from Harry Reid Airport, 20 min from the Strip, 15 min from Lake Mead. Galleria at Sunset mall is 5 minutes away.' },
+                { q: 'What are the Cadence Henderson office hours?', a: 'Open 10AM–6PM daily at 1170 E Sunset Rd, Henderson NV 89011. Call 702-930-8672 before visiting.' },
+              ].map(({ q, a }) => (
+                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-teal-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

@@ -1,5 +1,6 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
@@ -92,6 +93,7 @@ export default function NewHomesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <HowToBuySchema />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 py-20">

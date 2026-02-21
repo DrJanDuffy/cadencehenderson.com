@@ -15,7 +15,7 @@ export function FAQPageSchema() {
         name: 'What new homes are for sale in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'New homes for sale in Cadence Henderson NV 89011 are offered by 8 builders: Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Prices start from $300K for townhomes and reach $650K+ for estate homes. Tours available 7 days at the Welcome Center, 1170 E Sunset Rd, Henderson NV 89011.',
+          text: 'Cadence Henderson NV 89011 has 8 builders: Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside. Prices $300K–$650K+. Tours 7 days at 1170 E Sunset Rd, Henderson NV 89011. Call 702-930-8672.',
         },
       },
       {
@@ -39,7 +39,7 @@ export function FAQPageSchema() {
         name: 'What amenities does Cadence Henderson have?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson NV 89011 features a 50-acre Central Park, multiple resort-style pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking and biking trails, and resident clubhouses. Most Cadence Henderson amenities are free for residents.',
+          text: 'Cadence Henderson NV 89011 has a 50-acre Central Park, resort pools, fitness centers, pickleball courts, dog parks, 30+ miles of trails, and clubhouses. Most amenities are free for residents.',
         },
       },
       {
@@ -55,7 +55,7 @@ export function FAQPageSchema() {
         name: 'Where is Cadence Henderson located?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson is a master-planned community located at Bicentennial Pkwy & Paseo Verde Parkway, Henderson, Nevada 89011. The Welcome Center is at 1170 E Sunset Rd, Henderson NV 89011. Cadence Henderson is approximately 20 minutes from the Las Vegas Strip and 15 minutes from Harry Reid International Airport.',
+          text: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. Office: 1170 E Sunset Rd. 20 min from the Strip, 15 min from Harry Reid Airport.',
         },
       },
     ],

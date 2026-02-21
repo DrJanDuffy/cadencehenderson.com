@@ -172,6 +172,79 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-gray-50" aria-labelledby="contact-faq-heading">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 id="contact-faq-heading" className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Contact Cadence Henderson Real Estate – Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'How do I schedule a Cadence Henderson home tour?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Schedule a Cadence Henderson home tour by calling 702-930-8672 or booking online at calendly.com. The Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What are the Cadence Henderson office hours?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'The Cadence Henderson real estate office at 1170 E Sunset Rd, Henderson NV 89011 is open Monday through Sunday, 10:00 AM to 6:00 PM.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Where is the Cadence Henderson real estate office?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'The Cadence Henderson real estate office is at 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011, near Bicentennial Pkwy and Paseo Verde.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'How can I get a free home value estimate for my Cadence Henderson home?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Use the free home value widget on the contact page or call 702-930-8672. Get an instant estimate for your Cadence Henderson NV 89011 property.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                { q: 'How do I schedule a Cadence Henderson home tour?', a: 'Schedule by calling 702-930-8672 or booking online. The Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily.' },
+                { q: 'What are the Cadence Henderson office hours?', a: 'Open Monday through Sunday, 10:00 AM to 6:00 PM at 1170 E Sunset Rd, Henderson NV 89011.' },
+                { q: 'Where is the Cadence Henderson real estate office?', a: '1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011, near Bicentennial Pkwy and Paseo Verde.' },
+                { q: 'How can I get a free home value estimate for my Cadence Henderson home?', a: 'Use the home value widget on this page or call 702-930-8672 for an instant estimate.' },
+              ].map(({ q, a }) => (
+                <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )
