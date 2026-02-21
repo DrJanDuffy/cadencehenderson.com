@@ -213,12 +213,14 @@ export function Navigation() {
             <CalendlyLink>Find a Realtor</CalendlyLink>
           </Button>
 
-          <button
-            className="hidden lg:block p-2 text-gray-700 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30"
-            aria-label="Search"
+          <Link
+            href="/#home-search"
+            className="hidden lg:flex p-2 text-gray-700 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30 items-center gap-1"
+            aria-label="Search Henderson homes for sale"
           >
             <Search size={24} aria-hidden />
-          </button>
+            <span className="text-sm font-medium">Open Home Search</span>
+          </Link>
 
           <button
             className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30"
@@ -233,13 +235,22 @@ export function Navigation() {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="lg:hidden border-t border-gray-200 py-4" aria-label="Mobile navigation">
-            <div className="px-4 pb-4">
+            <div className="px-4 pb-4 space-y-2">
               <Button
                 className="w-full bg-blue-900 hover:bg-blue-800 text-white focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
                 asChild
               >
                 <CalendlyLink>Find a Realtor</CalendlyLink>
               </Button>
+              <Link
+                href="/#home-search"
+                className="flex items-center justify-center gap-2 w-full py-2 text-sm font-medium text-blue-900 hover:bg-blue-50 rounded"
+                onClick={() => setIsOpen(false)}
+                aria-label="Search Henderson homes for sale"
+              >
+                <Search size={18} aria-hidden />
+                Open Home Search
+              </Link>
             </div>
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">

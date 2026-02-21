@@ -66,7 +66,7 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Curious what your home is worth? Get a free market analysis
               </p>
-              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Home Value Request">
+              <a href={`mailto:${CONTACT_INFO.email}?subject=Home Value Request`}>
                 <Button
                   size="sm"
                   variant="outline"
@@ -85,7 +85,7 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Know someone looking in Cadence? Earn rewards for referrals
               </p>
-              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Referral">
+              <a href={`mailto:${CONTACT_INFO.email}?subject=Referral`}>
                 <Button
                   size="sm"
                   variant="outline"
@@ -104,7 +104,7 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Ready to upgrade or relocate? Let's discuss your options
               </p>
-              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Selling My Home">
+              <a href={`mailto:${CONTACT_INFO.email}?subject=Selling My Home`}>
                 <Button
                   size="sm"
                   variant="outline"
@@ -123,7 +123,7 @@ export default function ResidentsPage() {
               <p className="text-sm text-gray-600 mb-4">
                 Looking to invest in more Cadence properties? I can help
               </p>
-              <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Investment Inquiry">
+              <a href={`mailto:${CONTACT_INFO.email}?subject=Investment Inquiry`}>
                 <Button
                   size="sm"
                   variant="outline"
@@ -233,10 +233,10 @@ export default function ResidentsPage() {
                   <div className="flex items-center">
                     <Mail size={18} className="mr-2 text-emerald-900" />
                     <a
-                      href="mailto:DrJanSells@CadenceHenderson.com"
+                      href={`mailto:${CONTACT_INFO.email}`}
                       className="text-emerald-900 font-bold hover:underline text-sm"
                     >
-                      DrJanSells@CadenceHenderson.com
+                      {CONTACT_INFO.email}
                     </a>
                   </div>
                   <div className="flex items-start">

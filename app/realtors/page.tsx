@@ -59,7 +59,7 @@ export default function RealtorsPage() {
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href="mailto:DrJanSells@CadenceHenderson.com">
+              <a href={`mailto:${CONTACT_INFO.email}`}>
                 <Button
                   size="lg"
                   variant="outline"
@@ -141,10 +141,10 @@ export default function RealtorsPage() {
                     <div>
                       <p className="text-sm text-gray-600">Email:</p>
                       <a
-                        href="mailto:DrJanSells@CadenceHenderson.com"
+                        href={`mailto:${CONTACT_INFO.email}`}
                         className="text-purple-900 font-bold hover:underline"
                       >
-                        DrJanSells@CadenceHenderson.com
+                        {CONTACT_INFO.email}
                       </a>
                     </div>
                     <div>
@@ -381,7 +381,7 @@ export default function RealtorsPage() {
                   Free comprehensive guides on buying in Cadence, including
                   floor plans, pricing, and step-by-step purchase process.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Request Buyer Guide">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Request Buyer Guide`}>
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -431,7 +431,7 @@ export default function RealtorsPage() {
                   Stay informed with monthly market updates, pricing trends, and
                   investment insights for Cadence and Henderson.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Subscribe to Market Reports">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Subscribe to Market Reports`}>
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -450,7 +450,7 @@ export default function RealtorsPage() {
                   Looking for investment opportunities? Get expert guidance on
                   rental properties and ROI analysis.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Investment Properties">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Investment Properties`}>
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -469,7 +469,7 @@ export default function RealtorsPage() {
                   Moving to Las Vegas? I'll help you navigate neighborhoods,
                   schools, and find the perfect home for your family.
                 </p>
-                <a href="mailto:DrJanSells@CadenceHenderson.com?subject=Relocation Assistance">
+                <a href={`mailto:${CONTACT_INFO.email}?subject=Relocation Assistance`}>
                   <Button
                     variant="outline"
                     className="border-purple-900 text-purple-900 hover:bg-purple-900 hover:text-white"
@@ -511,7 +511,7 @@ export default function RealtorsPage() {
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href="mailto:DrJanSells@CadenceHenderson.com">
+              <a href={`mailto:${CONTACT_INFO.email}`}>
                 <Button
                   size="lg"
                   variant="outline"

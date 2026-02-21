@@ -5,6 +5,7 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 
 export function Footer() {
   const footerLinks = [
+    { title: 'Search Henderson Homes for Sale', href: CONTACT_INFO.realScoutSearchUrl, external: true },
     { title: 'New Homes in Cadence Henderson 89011', href: '/new-homes' },
     { title: 'Rentals in Cadence Henderson', href: '/rentals' },
     { title: 'Cadence Henderson Amenities & Central Park', href: '/lifestyle/amenities' },
@@ -15,6 +16,7 @@ export function Footer() {
     { title: 'Cadence Henderson Community Life', href: '/lifestyle/community' },
     { title: 'Cadence Henderson Location & Directions', href: '/maps' },
     { title: 'Cadence Henderson FAQ', href: '/faqs' },
+    { title: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
     { title: 'Cadence Henderson News', href: '/news' },
     { title: 'Contact Cadence Henderson Real Estate', href: '/contact' },
     { title: 'Gallery', href: '/gallery' },

@@ -419,7 +419,7 @@ export default async function RentalCommunityPage({
                   Call: {CONTACT_INFO.phone}
                 </Button>
               </a>
-              <a href={`mailto:DrJanSells@CadenceHenderson.com?subject=${community.name} Rental Inquiry`}>
+              <a href={`mailto:${CONTACT_INFO.email}?subject=${community.name} Rental Inquiry`}>
                 <Button
                   size="lg"
                   variant="outline"
