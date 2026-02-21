@@ -441,7 +441,7 @@ export default function AmenitiesPage() {
                       name: 'What are the HOA fees in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, which covers access to community amenities. Some sub-associations within Cadence Henderson 89011 may charge additional fees. Call 702-500-1955 for current fee information.',
+                        text: 'Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, which covers access to community amenities. Some sub-associations within Cadence Henderson 89011 may charge additional fees. Call 702-930-8672 for current fee information.',
                       },
                     },
                     {
@@ -449,7 +449,7 @@ export default function AmenitiesPage() {
                       name: 'Can I reserve Cadence Henderson amenities for private events?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and other amenity spaces for private events through the resident online portal. Reservation fees may apply for private use. Contact the Cadence HOA or call 702-500-1955 for booking details.',
+                        text: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and other amenity spaces for private events through the resident online portal. Reservation fees may apply for private use. Contact the Cadence HOA or call 702-930-8672 for booking details.',
                       },
                     },
                   ],
@@ -468,11 +468,11 @@ export default function AmenitiesPage() {
                 },
                 {
                   q: 'What are the HOA fees in Cadence Henderson?',
-                  a: 'Cadence Henderson HOA fees typically range from $50–$150/month for the master association, covering access to community amenities. Some sub-associations may charge additional fees. Call 702-500-1955 for current fee information.',
+                  a: 'Cadence Henderson HOA fees typically range from $50–$150/month for the master association, covering access to community amenities. Some sub-associations may charge additional fees. Call 702-930-8672 for current fee information.',
                 },
                 {
                   q: 'Can I reserve Cadence Henderson amenities for private events?',
-                  a: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and amenity spaces for private events through the resident online portal. Reservation fees may apply. Call 702-500-1955 for booking details.',
+                  a: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and amenity spaces for private events through the resident online portal. Reservation fees may apply. Call 702-930-8672 for booking details.',
                 },
               ].map(({ q, a }) => (
                 <details

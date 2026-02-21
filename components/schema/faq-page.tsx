@@ -23,7 +23,7 @@ export function FAQPageSchema() {
         name: 'How much does it cost to buy a home in Cadence Henderson 89011?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Home prices in Cadence Henderson 89011 range from approximately $300,000 to $650,000+. New construction townhomes start in the mid-$300s; single-family homes range from $380K to $650K+. Resale homes typically price between $400K–$575K. Call 702-500-1955 for current Cadence Henderson pricing.',
+          text: 'Home prices in Cadence Henderson 89011 range from approximately $300,000 to $650,000+. New construction townhomes start in the mid-$300s; single-family homes range from $380K to $650K+. Resale homes typically price between $400K–$575K. Call 702-930-8672 for current Cadence Henderson pricing.',
         },
       },
       {
@@ -31,7 +31,7 @@ export function FAQPageSchema() {
         name: 'Are there rentals available in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, rental homes and apartments are available in Cadence Henderson NV 89011. Single-family rental options include AMH (American Homes 4 Rent), Element 12, and Adler communities, typically ranging from $1,500–$2,800/month. Call 702-500-1955 to find current Cadence Henderson rental availability.',
+          text: 'Yes, rental homes and apartments are available in Cadence Henderson NV 89011. Single-family rental options include AMH (American Homes 4 Rent), Element 12, and Adler communities, typically ranging from $1,500–$2,800/month. Call 702-930-8672 to find current Cadence Henderson rental availability.',
         },
       },
       {

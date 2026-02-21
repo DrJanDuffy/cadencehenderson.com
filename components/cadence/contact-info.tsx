@@ -19,7 +19,7 @@ export function getCloudflareImageUrl(imageId: string, variant: string = 'public
 
 export const CONTACT_INFO = {
   email: 'DrJanSells@CadenceHenderson.com',
-  phone: '702-500-1955',
+  phone: '702-930-8672',
   licenseNumber: 'S.0197614.LLC',
   address: {
     street: '1170 E Sunset Rd, 2nd Floor',
