@@ -18,7 +18,7 @@ export function KeyFactsSection() {
           <li>9 active builders in Cadence Henderson</li>
           <li>Homes from $300Ks to $700K+</li>
           <li>Buyer representation 100% free — builder pays</li>
-          <li>Located in Henderson NV 89011</li>
+          <li>Located at Henderson NV 89011</li>
           <li>
             Contact: Dr. Jan Duffy {CONTACT_INFO.phone}
           </li>

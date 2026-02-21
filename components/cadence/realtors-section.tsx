@@ -36,6 +36,16 @@ export function RealtorsSection() {
               className="ml-4 border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
               asChild
             >
+              <Link href="/contact" aria-label="Contact Dr. Jan Duffy – Cadence Henderson real estate">
+                Contact Dr. Jan
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="ml-4 border-blue-900 text-blue-900 hover:bg-blue-50 text-lg px-8"
+              asChild
+            >
               <Link href="/realtors">Realtor Resources</Link>
             </Button>
           </div>

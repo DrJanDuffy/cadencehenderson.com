@@ -22,11 +22,11 @@ const SERVICES: ServiceItem[] = [
     external: false,
   },
   {
-    title: 'Sell Your Henderson Home',
-    description: 'List and sell your Cadence or Henderson property with a local expert.',
-    href: '/contact',
+    title: 'New Homes by Builder',
+    description: 'Browse all 9 Cadence Henderson builders. New construction Henderson NV — free agent; builder pays.',
+    href: '/new-homes',
     icon: Key,
-    ariaLabel: 'List your home for sale in Cadence Henderson',
+    ariaLabel: 'New homes by builder in Cadence Henderson NV 89011',
     external: false,
   },
   {

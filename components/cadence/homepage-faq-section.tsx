@@ -38,7 +38,7 @@ export function HomepageFAQSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h2 id="homepage-faq-heading" className="text-4xl font-bold text-gray-900 mb-10 text-center">
-            New Home Buyer Questions — Cadence Henderson NV
+            Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>
           <dl className="space-y-8">
             {FAQ_ITEMS.map((item, i) => (

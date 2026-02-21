@@ -18,6 +18,9 @@ import { WebPageSchema } from '@/components/schema/web-page'
 
 const BASE = 'https://www.cadencehenderson.com'
 
+// ISR: fresh builder/data hourly for GEO and indexing
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
   description:

@@ -1,26 +1,25 @@
 'use client'
 
-import Link from 'next/link'
+import Image from 'next/image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
-import { Calendar, Home } from 'lucide-react'
+import { Calendar } from 'lucide-react'
 import { getHeroImage } from '@/lib/cloudflare-images'
 
 const HERO_IMAGE = getHeroImage('homepage')
 
 export function Hero() {
   return (
-    <section className="relative h-[600px] bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
-      {/* LCP image: in-DOM and high priority so the browser discovers it early */}
-      <img
+    <section className="relative min-h-[720px] flex flex-col bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden">
+      {/* LCP: next/image with priority for under 2.5s target */}
+      <Image
         src={HERO_IMAGE}
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
         width={1920}
         height={1080}
-        fetchPriority="high"
-        decoding="async"
+        priority
         className="absolute inset-0 h-full w-full object-cover object-center opacity-40"
       />
       {/* Dark overlay for text readability (especially bottom area) */}
@@ -29,8 +28,8 @@ export function Hero() {
         aria-hidden
       />
 
-      {/* Content */}
-      <div className="relative container mx-auto px-4 h-full flex items-center">
+      {/* Content: padded above wave so text is never clipped */}
+      <div className="relative container mx-auto px-4 flex-1 flex items-center pb-32">
         <div className="max-w-3xl text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             New Home Buyer&apos;s Agent in Cadence Henderson NV 89011
