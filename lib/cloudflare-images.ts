@@ -50,9 +50,9 @@ export function isCloudflareImage(url: string): boolean {
 // ============================================================================
 
 export const SITE_IMAGES = {
-  // Hero/Banner Images
+  // Hero/Banner Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
   hero: {
-    homepage: 'lonemountaineights/hero/hero-las-vegas.png',
+    homepage: 'CendenceDrJanDuffy', // CendenceDrJanDuffy.png
     newHomes: 'centennialhillshomes/photos/modern-home-exterior.jpg',
     lifestyle: 'centennialhillshomes/photos/community-lounge.jpg',
     contact: 'lonemountaineights/agents/dr-jan-duffy.jpg',
@@ -80,9 +80,9 @@ export const SITE_IMAGES = {
     woodside: 'centennialhillshomes/photos/modern-home-exterior.jpg',
   },
 
-  // Amenities Images
+  // Amenities Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
   amenities: {
-    centralPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    centralPark: 'cadence_008_resized', // cadence_008_resized.jpg
     pool: 'centennialhillshomes/photos/swimming-pool.jpg',
     splashPad: 'centennialhillshomes/photos/swimming-pool-2.jpg',
     fitness: 'centennialhillshomes/photos/fitness-center.jpg',
@@ -93,9 +93,9 @@ export const SITE_IMAGES = {
     clubhouse: 'centennialhillshomes/photos/clubhouse-exterior.jpg',
   },
 
-  // Lifestyle/Community Images
+  // Lifestyle/Community Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
   lifestyle: {
-    community: 'centennialhillshomes/photos/community-lounge.jpg',
+    community: 'Workout-Area-at-Cadence-CentralPark', // Workout-Area-at-Cadence-CentralPark.jpg
     families: 'centennialhillshomes/photos/outdoor-patio.jpg',
     events: 'centennialhillshomes/photos/community-lounge-2.jpg',
     concert: 'centennialhillshomes/photos/outdoor-patio.jpg',

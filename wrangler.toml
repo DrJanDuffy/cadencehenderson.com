@@ -1,0 +1,21 @@
+# Markdown for AI Agents — single Worker for multiple domains (Free plan compatible)
+name = "markdown-for-agents"
+main = "src/index.ts"
+compatibility_date = "2025-02-21"
+
+# Workers AI binding: env.AI.toMarkdown() for HTML → markdown conversion
+[ai]
+binding = "AI"
+
+# ------------------------------------------------------------------------------
+# Attach this Worker to multiple hostnames (one script, many routes):
+#
+# (A) Dashboard: Workers & Pages → this Worker → Settings → Routes → Add route
+#     e.g. *example.com/*, *another.com/* (one route per domain).
+#
+# (B) In wrangler.toml, uncomment and set routes (zone must be in same account):
+#     routes = [
+#       { pattern = "example.com/*", zone_name = "example.com" },
+#       { pattern = "another.com/*", zone_name = "another.com" },
+#     ]
+# ------------------------------------------------------------------------------

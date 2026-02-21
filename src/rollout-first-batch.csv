@@ -1,0 +1,11 @@
+Domain,Cloudflare Zone,Worker Route,Route Added? (Y/N),curl Test OK? (Y/N),Agent Test OK? (Y/N),Notes
+cadencehenderson.com,cadencehenderson.com,*cadencehenderson.com/*,,,,"Core Cadence master-plan brand; California move-ups, families."
+summerlinhomesLV.com,summerlinhomesLV.com,*summerlinhomesLV.com/*,,,,"Flagship Summerlin; relo and investor traffic."
+northlasvegashomes.com,northlasvegashomes.com,*northlasvegashomes.com/*,,,,"NLV growth corridor; first-time and investor buyers."
+suncitysummerlin55.com,suncitysummerlin55.com,*suncitysummerlin55.com/*,,,,"55+ Summerlin; high-equity, often cash buyers."
+centennialhillsLV.com,centennialhillsLV.com,*centennialhillsLV.com/*,,,,"Centennial Hills / NW Las Vegas; family and value buyers."
+providenceLV.com,providenceLV.com,*providenceLV.com/*,,,,"Providence master-plan; schools, parks, relo draw."
+aliantehomes.com,aliantehomes.com,*aliantehomes.com/*,,,,"Aliante NLV; first-time and investor demand."
+downtownsummerlin.com,downtownsummerlin.com,*downtownsummerlin.com/*,,,,"Downtown Summerlin lifestyle; Summerlin living."
+lasvegas55plus.com,lasvegas55plus.com,*lasvegas55plus.com/*,,,,"Umbrella 55+ / active-adult; 55+ Las Vegas."
+hendersonnewhomes.com,hendersonnewhomes.com,*hendersonnewhomes.com/*,,,,"Henderson new construction; California equity, investors."

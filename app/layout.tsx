@@ -12,9 +12,10 @@ import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
 import { FAQPageSchema } from '../components/schema/faq-page'
 import { GeoMeta } from '../components/schema/geo-meta'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
 
-const HERO_IMAGE = '/images/hero/CendenceDrJanDuffy.png'
+const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

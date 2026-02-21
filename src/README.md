@@ -121,6 +121,33 @@ Track multiple community or neighborhood domains in one place. Use the table bel
 |                       |                        |                             |                    |                     |                      |              |
 |                       |                        |                             |                    |                     |                      |              |
 
+#### First rollout batch (10 domains)
+
+Use this table for the first batch; fill Route Added?, curl Test OK?, and Agent Test OK? as you complete each domain. Map placeholders to your real domains if names differ. A CSV copy for spreadsheets: [rollout-first-batch.csv](rollout-first-batch.csv).
+
+| Domain | Cloudflare Zone | Worker Route | Route Added? (Y/N) | curl Test OK? (Y/N) | Agent Test OK? (Y/N) | Notes |
+|--------|-----------------|--------------|--------------------|---------------------|----------------------|-------|
+| cadencehenderson.com | cadencehenderson.com | *cadencehenderson.com/* | | | | Core Cadence master-plan brand; California move-ups, families. |
+| summerlinhomesLV.com | summerlinhomesLV.com | *summerlinhomesLV.com/* | | | | Flagship Summerlin; relo and investor traffic. |
+| northlasvegashomes.com | northlasvegashomes.com | *northlasvegashomes.com/* | | | | NLV growth corridor; first-time and investor buyers. |
+| suncitysummerlin55.com | suncitysummerlin55.com | *suncitysummerlin55.com/* | | | | 55+ Summerlin; high-equity, often cash buyers. |
+| centennialhillsLV.com | centennialhillsLV.com | *centennialhillsLV.com/* | | | | Centennial Hills / NW Las Vegas; family and value buyers. |
+| providenceLV.com | providenceLV.com | *providenceLV.com/* | | | | Providence master-plan; schools, parks, relo draw. |
+| aliantehomes.com | aliantehomes.com | *aliantehomes.com/* | | | | Aliante NLV; first-time and investor demand. |
+| downtownsummerlin.com | downtownsummerlin.com | *downtownsummerlin.com/* | | | | Downtown Summerlin lifestyle; Summerlin living. |
+| lasvegas55plus.com | lasvegas55plus.com | *lasvegas55plus.com/* | | | | Umbrella 55+ / active-adult; 55+ Las Vegas. |
+| hendersonnewhomes.com | hendersonnewhomes.com | *hendersonnewhomes.com/* | | | | Henderson new construction; California equity, investors. |
+
 - **Add each new domain as a row** — fill Domain and Cloudflare Zone (the zone that owns the domain in your Cloudflare account).
 - **Add a route in the Dashboard** — Workers & Pages → markdown-for-agents → Settings → Routes. Use the Worker Route value (e.g. `*domain.com/*` or `domain.com/*`) for that zone, then set Route Added? to Y.
 - **Test and mark status** — run `curl -H "Accept: text/markdown" https://<domain>/` and optionally test with an LLM/agent; set curl Test OK? and Agent Test OK? to Y when verified, and use Notes for any issues.
+
+#### Per-domain rollout checklist
+
+Use this for each new domain you add (e.g. your next 3 priority sites). Repeat for every domain.
+
+1. **Add the domain to the rollout table** — In the table above, add a new row. Fill in **Domain** (e.g. `yourdomain.com`) and **Cloudflare Zone** (the zone name for that domain in your Cloudflare account).
+2. **Add a Worker route in the Cloudflare Dashboard** — Go to **Workers & Pages** → **markdown-for-agents** → **Settings** → **Routes** → **Add route**. Enter a route pattern such as `*yourdomain.com/*` (or `yourdomain.com/*` if your zone uses that form). Choose the zone for this domain and save.
+3. **Run the curl test** — In a terminal: `curl -H "Accept: text/markdown" https://yourdomain.com/`. Confirm the response is markdown (readable text), not raw HTML.
+4. **Update the table** — Set **Route Added?** to **Y**. If the curl response looks like clean markdown, set **curl Test OK?** to **Y**. If you've tested with an AI agent or LLM that sends `Accept: text/markdown`, set **Agent Test OK?** to **Y**. Use **Notes** for any issues or reminders.
+5. **Optional: check Workers Analytics** — In the Dashboard, go to **Workers & Pages** → **markdown-for-agents** → **Metrics** (or **Analytics**). Confirm requests are coming through and errors are 0 or near-zero for the new domain.

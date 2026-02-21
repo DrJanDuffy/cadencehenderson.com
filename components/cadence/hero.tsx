@@ -5,8 +5,9 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
 import { Calendar } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
-const HERO_IMAGE = '/images/hero/CendenceDrJanDuffy.png'
+const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 
 export function Hero() {
   return (
