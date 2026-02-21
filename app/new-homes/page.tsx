@@ -9,7 +9,17 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Home, MapPin, Bed, Bath, Ruler } from 'lucide-react'
 import Link from 'next/link'
-import { getBuilderImage } from '@/lib/cloudflare-images'
+/** Builder logos from cadencenv.com - same source as BuildersShowcase */
+const BUILDER_LOGOS: Record<string, string> = {
+  'beazer-homes': 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',
+  'century-communities': 'https://cadencenv.com/wp-content/uploads/2021/03/Century-Communities-Logo_Horz_RGB-300x91.jpg',
+  'dr-horton': 'https://cadencenv.com/wp-content/uploads/2021/03/DR_Horton_Logo_Red-Blue-300x100.png',
+  'lennar': 'https://cadencenv.com/wp-content/uploads/2020/11/lennar-logo.png',
+  'richmond-american': 'https://cadencenv.com/wp-content/uploads/2020/12/Richmond-Amer-Home-logo-365x100-1-300x82.png',
+  'storybook-homes': 'https://cadencenv.com/wp-content/uploads/2022/10/SBHomes_Logo2022-300x146.png',
+  'taylor-morrison': 'https://cadencenv.com/wp-content/uploads/2024/05/TM_Logo_Hor-300x75.jpg',
+  'woodside-homes': 'https://cadencenv.com/wp-content/uploads/2022/08/Woodside-logo_color-200x67-1.png',
+}
 
 const builders = [
   {
@@ -19,7 +29,6 @@ const builders = [
       'Quality craftsmanship and energy-efficient homes with flexible floor plans.',
     homes: 15,
     priceRange: '$350,000 - $550,000',
-    image: getBuilderImage('beazer'),
   },
   {
     name: 'Century Communities',
@@ -28,7 +37,6 @@ const builders = [
       'Innovative designs with modern amenities and smart home technology.',
     homes: 22,
     priceRange: '$320,000 - $480,000',
-    image: getBuilderImage('century'),
   },
   {
     name: 'D.R. Horton',
@@ -37,7 +45,6 @@ const builders = [
       "America's Builder - offering exceptional value and quality homes.",
     homes: 35,
     priceRange: '$300,000 - $525,000',
-    image: getBuilderImage('drHorton'),
   },
   {
     name: 'Lennar',
@@ -46,7 +53,6 @@ const builders = [
       'Everything\'s Included® homes with the latest technology and features.',
     homes: 28,
     priceRange: '$380,000 - $600,000',
-    image: getBuilderImage('lennar'),
   },
   {
     name: 'Richmond American Homes',
@@ -55,7 +61,6 @@ const builders = [
       'Personalized homes with flexible floor plans and premium upgrades.',
     homes: 18,
     priceRange: '$340,000 - $520,000',
-    image: getBuilderImage('richmond'),
   },
   {
     name: 'StoryBook Homes',
@@ -64,7 +69,6 @@ const builders = [
       'Locally built homes with attention to detail and community focus.',
     homes: 12,
     priceRange: '$330,000 - $490,000',
-    image: getBuilderImage('storybook'),
   },
   {
     name: 'Taylor Morrison',
@@ -73,7 +77,6 @@ const builders = [
       'Luxury living with resort-style amenities and premium finishes.',
     homes: 16,
     priceRange: '$420,000 - $650,000',
-    image: getBuilderImage('taylorMorrison'),
   },
   {
     name: 'Woodside Homes',
@@ -82,7 +85,6 @@ const builders = [
       'Award-winning designs with energy efficiency and modern style.',
     homes: 20,
     priceRange: '$360,000 - $540,000',
-    image: getBuilderImage('woodside'),
   },
 ]
 
@@ -197,19 +199,18 @@ export default function NewHomesPage() {
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
-                  <div className="relative h-64 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundImage: `url('${builder.image}')` }}
+                  <div className="relative h-40 overflow-hidden bg-gray-50 flex items-center justify-center p-6 transition-transform duration-300 group-hover:scale-[1.02]">
+                    <img
+                      src={BUILDER_LOGOS[builder.slug]}
+                      alt={`${builder.name} - New homes at Cadence Henderson`}
+                      className="max-h-full max-w-full object-contain"
+                      loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white">
-                        {builder.name}
-                      </h3>
-                    </div>
                   </div>
                   <div className="p-6">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {builder.name}
+                    </h3>
                     <p className="text-gray-700 mb-4">{builder.description}</p>
                     <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
                       <span className="flex items-center">
