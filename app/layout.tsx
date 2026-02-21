@@ -27,22 +27,22 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
+  title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
   description:
-    'Cadence Henderson homes for sale, new construction & townhomes in 89011. Master-planned community Henderson NV. Dr. Jan Duffy, REALTOR®.',
+    'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community. Licensed REALTOR® on-site.',
   metadataBase: new URL('https://www.cadencehenderson.com'),
   openGraph: {
-    siteName: 'Cadence Henderson | Homes By Dr Jan Duffy',
-    title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
+    siteName: 'Cadence Henderson Real Estate',
+    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
     description:
-      'Cadence Henderson homes for sale and new construction in Henderson NV 89011. Master-planned community. Dr. Jan Duffy, REALTOR®.',
+      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community.',
     url: 'https://www.cadencehenderson.com',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'Cadence Henderson - Homes By Dr Jan Duffy',
+        alt: 'New homes for sale in Cadence Henderson 89011 Henderson NV',
       },
     ],
     locale: 'en_US',
@@ -50,9 +50,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Cadence Henderson | Homes for Sale 89011 - Dr Jan Duffy',
+    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
     description:
-      'Cadence Henderson homes for sale and new construction in Henderson NV 89011. Dr. Jan Duffy, REALTOR®.',
+      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011.',
     images: ['/og-image.png'],
     creator: '@CadenceHenderson',
   },

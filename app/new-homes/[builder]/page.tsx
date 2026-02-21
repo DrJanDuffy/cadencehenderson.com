@@ -8,6 +8,7 @@ import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucid
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getHomeImage, getBuilderImage } from '@/lib/cloudflare-images'
+import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
   'beazer-homes': CONTACT_INFO.realScoutBeazerHomesUrl,
@@ -498,12 +499,12 @@ export async function generateMetadata({
     builder.longDescription.slice(0, 155) +
     (builder.longDescription.length > 155 ? '…' : '')
   return {
-    title: `${builder.name} | New Homes at Cadence Henderson`,
-    description,
+    title: `${builder.name} New Homes – Cadence Henderson NV 89011`,
+    description: `${builder.name} new homes for sale in Cadence Henderson NV 89011. ${description}`,
     alternates: { canonical: url },
     openGraph: {
-      title: `${builder.name} | New Homes at Cadence Henderson`,
-      description,
+      title: `${builder.name} New Homes – Cadence Henderson NV 89011`,
+      description: `${builder.name} new homes for sale in Cadence Henderson NV 89011. ${description}`,
       url,
       type: 'website',
     },
@@ -526,6 +527,12 @@ export default async function BuilderPage({
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <BreadcrumbSchema
+        items={[
+          { name: 'New Homes in Cadence Henderson', href: 'https://www.cadencehenderson.com/new-homes' },
+          { name: `${builder.name} – Cadence Henderson NV 89011` },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-blue-900 to-blue-700 py-16">

@@ -5,20 +5,20 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 
 export function Footer() {
   const footerLinks = [
-    { title: 'Builders', href: '/new-homes' },
-    { title: 'Rentals', href: CONTACT_INFO.realScoutRentalsUrl, external: true },
-    { title: 'News', href: '/news' },
-    { title: 'Events', href: '/lifestyle/events' },
-    { title: 'Amenities', href: '/lifestyle/amenities' },
-    { title: 'Community', href: '/lifestyle/community' },
-    { title: 'Realtors', href: '/realtors' },
-    { title: 'Residents', href: '/residents' },
-    { title: 'Past Home Sales', href: '/past-homesales' },
-    { title: 'Maps', href: '/maps' },
-    { title: 'Lifestyle', href: '/lifestyle' },
-    { title: 'Contact Us', href: '/contact' },
+    { title: 'New Homes in Cadence Henderson 89011', href: '/new-homes' },
+    { title: 'Rentals in Cadence Henderson', href: '/rentals' },
+    { title: 'Cadence Henderson Amenities & Central Park', href: '/lifestyle/amenities' },
+    { title: 'Community Events in Cadence Henderson', href: '/lifestyle/events' },
+    { title: 'Parks & Trails in Cadence Henderson', href: '/lifestyle/parks-trails' },
+    { title: 'Cadence Henderson Schools & Education', href: '/lifestyle/schools' },
+    { title: 'Shopping Near Cadence Henderson', href: '/lifestyle/shopping' },
+    { title: 'Cadence Henderson Community Life', href: '/lifestyle/community' },
+    { title: 'Cadence Henderson Location & Directions', href: '/maps' },
+    { title: 'Cadence Henderson FAQ', href: '/faqs' },
+    { title: 'Cadence Henderson News', href: '/news' },
+    { title: 'Contact Cadence Henderson Real Estate', href: '/contact' },
     { title: 'Gallery', href: '/gallery' },
-    { title: 'FAQs', href: '/faqs' },
+    { title: 'Realtors', href: '/realtors' },
   ]
 
   return (

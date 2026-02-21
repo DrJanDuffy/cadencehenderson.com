@@ -9,8 +9,6 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
@@ -66,12 +64,17 @@ export default function ContactPage() {
                     <h3 className="font-bold text-gray-900 mb-1">
                       Visit Our Office
                     </h3>
-                    <p className="text-gray-700">
-                      {CONTACT_INFO.address.street}
+                    <address
+                      className="text-gray-700 not-italic"
+                      itemScope
+                      itemType="https://schema.org/PostalAddress"
+                    >
+                      <span itemProp="streetAddress">{CONTACT_INFO.address.street}</span>
                       <br />
-                      {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state}{' '}
-                      {CONTACT_INFO.address.zip}
-                    </p>
+                      <span itemProp="addressLocality">{CONTACT_INFO.address.city}</span>,{' '}
+                      <span itemProp="addressRegion">{CONTACT_INFO.address.state}</span>{' '}
+                      <span itemProp="postalCode">{CONTACT_INFO.address.zip}</span>
+                    </address>
                   </div>
                 </div>
 
@@ -126,25 +129,29 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Map placeholder */}
-              <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('${cfImage(SITE_IMAGES.location.mapOverview, 'card')}')`,
-                  }}
+              {/* Google Map embed */}
+              <div className="rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                  src={`https://www.google.com/maps?q=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}&output=embed`}
+                  width="100%"
+                  height="300"
+                  className="border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Cadence Henderson Real Estate Office Location – Henderson NV 89011"
                 />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20">
-                  <a
-                    href={`https://maps.google.com/?q=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="bg-white text-gray-900 hover:bg-gray-100">
-                      Open in Maps
-                    </Button>
-                  </a>
-                </div>
+              </div>
+              <div className="mt-3 text-center">
+                <a
+                  href={`https://www.google.com/maps/dir//${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" className="border-blue-900 text-blue-900 hover:bg-blue-900 hover:text-white">
+                    Get Directions
+                  </Button>
+                </a>
               </div>
             </div>
 

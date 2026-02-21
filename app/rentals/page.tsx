@@ -259,6 +259,94 @@ export default function RentalsPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Rentals in Cadence Henderson, Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'What rentals are available in Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson NV 89011 offers single-family rental homes and apartment rentals through several operators. American Homes 4 Rent (AMH) offers single-family homes, Element 12 offers apartment-style rentals, and Adler provides additional options. Prices typically range from $1,500–$2,800/month. Call 702-500-1955 for current Cadence Henderson rental availability.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'How much is rent in Cadence Henderson 89011?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Rental prices in Cadence Henderson NV 89011 vary by property type and size. Apartment rentals start around $1,500/month; single-family rental homes typically range from $1,800–$2,800/month. Contact us at 702-500-1955 for current Cadence Henderson rental listings and pricing.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Are there pet-friendly rentals in Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly. American Homes 4 Rent (AMH) offers pet-friendly options, and the community features dedicated dog parks throughout Cadence Henderson. Contact 702-500-1955 for specific pet policy details.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Do rental homes in Cadence Henderson include community amenities?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes! All residents in Cadence Henderson 89011, including renters, have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, depending on your rental agreement and HOA access terms.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What rentals are available in Cadence Henderson?',
+                  a: 'Cadence Henderson NV 89011 offers single-family rental homes and apartment rentals through AMH (American Homes 4 Rent), Element 12, and Adler. Prices typically range from $1,500–$2,800/month. Call 702-500-1955 for current rental availability.',
+                },
+                {
+                  q: 'How much is rent in Cadence Henderson 89011?',
+                  a: 'Rental prices in Cadence Henderson NV 89011 range from about $1,500/month for apartments to $1,800–$2,800/month for single-family homes. Contact us at 702-500-1955 for current listings.',
+                },
+                {
+                  q: 'Are there pet-friendly rentals in Cadence Henderson?',
+                  a: 'Yes, several Cadence Henderson NV 89011 rental communities are pet-friendly, including AMH options. The community has dedicated dog parks throughout. Contact 702-500-1955 for specific pet policy details.',
+                },
+                {
+                  q: 'Do rental homes in Cadence Henderson include community amenities?',
+                  a: 'Yes! All Cadence Henderson 89011 residents — including renters — have access to community amenities including the 50-acre Central Park, pools, fitness centers, trails, and dog parks, subject to rental agreement and HOA access terms.',
+                },
+              ].map(({ q, a }) => (
+                <details
+                  key={q}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer"
+                >
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )

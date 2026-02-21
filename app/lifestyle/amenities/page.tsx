@@ -16,6 +16,7 @@ import {
   Heart,
 } from 'lucide-react'
 import { getAmenityImage } from '@/lib/cloudflare-images'
+import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const amenities = [
   {
@@ -81,11 +82,14 @@ const amenities = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson Amenities | Central Park 89011',
+  title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
   description:
-    'Cadence Henderson amenities: Central Park, pools, fitness, sports park. Cadence master-planned community Henderson NV 89011.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/amenities',
+    '50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/amenities' },
+  openGraph: {
+    title: 'Cadence Henderson Amenities – Central Park, Pools & Trails',
+    description: '50-acre Central Park, resort pools, fitness centers, pickleball courts & trails in Cadence Henderson NV 89011.',
+    url: 'https://www.cadencehenderson.com/lifestyle/amenities',
   },
 }
 
@@ -140,6 +144,12 @@ export default function AmenitiesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
+          { name: 'Cadence Henderson Amenities – Central Park, Pools & Trails' },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-cyan-900 to-cyan-700 py-20">
@@ -388,6 +398,94 @@ export default function AmenitiesPage() {
                   Schedule Tour
                 </Button>
               </CalendlyLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              Amenities at Cadence Henderson, Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'What amenities does Cadence Henderson have?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson NV 89011 features a 50-acre Central Park, multiple resort-style pools and heated spas, fully equipped fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking and biking trails, and resident clubhouses. Most amenities in Cadence Henderson are free for all residents.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Is Cadence Henderson Central Park open to residents?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: "Yes! Cadence Henderson's 50-acre Central Park is open daily to all Cadence Henderson NV 89011 residents and their guests. It features event lawns, splash pads, playgrounds, picnic areas, mountain views, and trails. No admission fee for residents.",
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What are the HOA fees in Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, which covers access to community amenities. Some sub-associations within Cadence Henderson 89011 may charge additional fees. Call 702-500-1955 for current fee information.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Can I reserve Cadence Henderson amenities for private events?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and other amenity spaces for private events through the resident online portal. Reservation fees may apply for private use. Contact the Cadence HOA or call 702-500-1955 for booking details.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What amenities does Cadence Henderson have?',
+                  a: 'Cadence Henderson NV 89011 features a 50-acre Central Park, resort-style pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of trails, and resident clubhouses. Most amenities are free for all residents.',
+                },
+                {
+                  q: 'Is Cadence Henderson Central Park open to residents?',
+                  a: "Yes! Cadence Henderson's 50-acre Central Park is open daily to all residents and guests. It features event lawns, splash pads, playgrounds, picnic areas, mountain views, and trails — at no admission fee for residents.",
+                },
+                {
+                  q: 'What are the HOA fees in Cadence Henderson?',
+                  a: 'Cadence Henderson HOA fees typically range from $50–$150/month for the master association, covering access to community amenities. Some sub-associations may charge additional fees. Call 702-500-1955 for current fee information.',
+                },
+                {
+                  q: 'Can I reserve Cadence Henderson amenities for private events?',
+                  a: 'Yes, Cadence Henderson NV 89011 residents can reserve clubhouses and amenity spaces for private events through the resident online portal. Reservation fees may apply. Call 702-500-1955 for booking details.',
+                },
+              ].map(({ q, a }) => (
+                <details
+                  key={q}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer"
+                >
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
             </div>
           </div>
         </div>

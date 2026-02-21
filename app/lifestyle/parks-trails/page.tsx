@@ -5,6 +5,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
 import { getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
+import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const parks = [
   {
@@ -57,11 +58,14 @@ const parks = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Parks & Trails | Cadence Henderson 89011',
+  title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
   description:
-    'Cadence Henderson parks, dog park, trails. Central Park, 30+ miles of trails. Cadence Henderson sports park Henderson NV 89011.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
+    '50-acre Central Park, 30+ miles of trails, dog parks & sports park in Cadence Henderson NV 89011. Walking, biking, jogging & outdoor recreation for residents.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/parks-trails' },
+  openGraph: {
+    title: 'Parks & Trails in Cadence Henderson 89011 | Henderson NV',
+    description: '50-acre Central Park, 30+ miles of trails & dog parks in Cadence Henderson NV 89011.',
+    url: 'https://www.cadencehenderson.com/lifestyle/parks-trails',
   },
 }
 
@@ -100,6 +104,12 @@ export default function ParksTrailsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
+          { name: 'Parks & Trails in Cadence Henderson 89011' },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-green-900 to-green-700 py-20">

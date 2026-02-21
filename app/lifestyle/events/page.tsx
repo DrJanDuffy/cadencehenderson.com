@@ -9,13 +9,17 @@ import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Clock, MapPin, Music, Users, Phone, Mail } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 export const metadata: Metadata = {
-  title: 'Events | Cadence Henderson Community 89011',
+  title: 'Community Events in Cadence Henderson NV | 89011',
   description:
-    'Cadence Henderson events: concerts, farmers market, community gatherings. Central Park Henderson NV 89011.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/events',
+    'Summer concerts, farmers market, movie nights, food trucks & yoga at Cadence Henderson Central Park, Henderson NV 89011. Free events for residents.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/events' },
+  openGraph: {
+    title: 'Community Events in Cadence Henderson NV | 89011',
+    description: 'Summer concerts, farmers market, movie nights & food trucks at Cadence Henderson Central Park, Henderson NV 89011.',
+    url: 'https://www.cadencehenderson.com/lifestyle/events',
   },
 }
 
@@ -89,6 +93,12 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
+          { name: 'Community Events in Cadence Henderson NV' },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-orange-900 to-orange-700 py-20">

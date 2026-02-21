@@ -15,10 +15,15 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Maps & Directions | Cadence Henderson 89011',
+  title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
   description:
-    `Find Cadence Henderson office. Dr. Jan Duffy, REALTOR® – ${CONTACT_INFO.address.street}, Henderson NV 89011. Maps and directions.`,
+    `Find Cadence Henderson real estate at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. ${CONTACT_INFO.address.street}. Maps, directions & nearby landmarks.`,
   alternates: { canonical: 'https://www.cadencehenderson.com/maps' },
+  openGraph: {
+    title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
+    description: `Cadence Henderson real estate office at ${CONTACT_INFO.address.street}, Henderson NV 89011. Open 7 days 10AM–6PM.`,
+    url: 'https://www.cadencehenderson.com/maps',
+  },
 }
 
 export default function MapsPage() {

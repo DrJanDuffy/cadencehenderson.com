@@ -9,14 +9,13 @@ import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-reac
 const BASE = 'https://www.cadencehenderson.com'
 
 export const metadata: Metadata = {
-  title: 'Community | Cadence Henderson 89011',
+  title: 'Cadence Henderson Community Life – Henderson NV 89011',
   description:
-    'Cadence Henderson community: clubs, events, volunteering. Living in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club.',
+    'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Book Club, Running Club, Garden Club, Wine & Dine and more. Active community life.',
   alternates: { canonical: `${BASE}/lifestyle/community` },
   openGraph: {
-    title: 'Community Life at Cadence Henderson | Clubs & Events',
-    description:
-      'Join clubs, events, and volunteer at Cadence. Connect with neighbors in Henderson, NV.',
+    title: 'Cadence Henderson Community Life – Henderson NV 89011',
+    description: 'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Active community life for residents.',
     url: `${BASE}/lifestyle/community`,
   },
 }

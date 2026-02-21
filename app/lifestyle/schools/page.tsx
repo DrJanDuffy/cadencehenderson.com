@@ -5,6 +5,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { GraduationCap, Award, Users, BookOpen, Bus } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const schools = [
   {
@@ -73,11 +74,14 @@ const privateSchools = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson Schools | Legacy Traditional 89011',
+  title: 'Schools Near Cadence Henderson | Henderson NV 89011',
   description:
-    'Cadence Henderson schools: Legacy Traditional, Cadence Elementary. Henderson NV 89011. Dr. Jan Duffy, REALTOR®.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/schools',
+    'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional, Henderson middle & high schools. On-site school within the community.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/schools' },
+  openGraph: {
+    title: 'Schools Near Cadence Henderson | Henderson NV 89011',
+    description: 'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional & Henderson schools.',
+    url: 'https://www.cadencehenderson.com/lifestyle/schools',
   },
 }
 
@@ -85,6 +89,12 @@ export default function SchoolsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
+      <BreadcrumbSchema
+        items={[
+          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
+          { name: 'Schools Near Cadence Henderson NV 89011' },
+        ]}
+      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-indigo-900 to-indigo-700 py-20">

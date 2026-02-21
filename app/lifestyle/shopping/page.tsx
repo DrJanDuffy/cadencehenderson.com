@@ -34,11 +34,14 @@ const shoppingCenters = [
 ]
 
 export const metadata: Metadata = {
-  title: 'Shopping | Cadence Henderson NV 89011',
+  title: 'Shopping & Dining Near Cadence Henderson NV | 89011',
   description:
-    'Cadence Henderson shopping: Galleria at Sunset, Cadence Marketplace. Henderson NV 89011 dining and retail.',
-  alternates: {
-    canonical: 'https://www.cadencehenderson.com/lifestyle/shopping',
+    'Galleria at Sunset, Cadence Marketplace, Sunset Station & more near Cadence Henderson NV 89011. Grocery, dining, retail and entertainment minutes from your home.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/shopping' },
+  openGraph: {
+    title: 'Shopping & Dining Near Cadence Henderson NV | 89011',
+    description: 'Galleria at Sunset, Cadence Marketplace & more near Cadence Henderson NV 89011. Dining, retail and entertainment nearby.',
+    url: 'https://www.cadencehenderson.com/lifestyle/shopping',
   },
 }
 

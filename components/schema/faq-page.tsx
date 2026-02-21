@@ -2,6 +2,7 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 /**
  * FAQPage JSON-LD schema targeting "People Also Ask" queries.
+ * Service-first, hyperlocal questions for Cadence Henderson NV 89011.
  * Renders in root layout for site-wide FAQ rich results.
  */
 export function FAQPageSchema() {
@@ -11,50 +12,50 @@ export function FAQPageSchema() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Is Cadence in Henderson a good place to live?',
+        name: 'What new homes are for sale in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence is one of Henderson\'s top-rated master-planned communities, featuring a 50-acre Central Park, 30+ miles of trails, Legacy Traditional School, and a 100-acre sports park. Median home prices around $475K make it one of the best values in the Las Vegas Valley.',
+          text: 'New homes for sale in Cadence Henderson NV 89011 are offered by 8 builders: Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Prices start from $300K for townhomes and reach $650K+ for estate homes. Tours available 7 days at the Welcome Center, 1170 E Sunset Rd, Henderson NV 89011.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What is the median home price in Cadence Henderson?',
+        name: 'How much does it cost to buy a home in Cadence Henderson 89011?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson median home prices are approximately $475,000 for single-family homes, with townhomes starting in the mid-$300s. New construction from builders like Lennar, Richmond American, and Woodside Homes ranges from $379K to $550K+.',
+          text: 'Home prices in Cadence Henderson 89011 range from approximately $300,000 to $650,000+. New construction townhomes start in the mid-$300s; single-family homes range from $380K to $650K+. Resale homes typically price between $400K–$575K. Call 702-500-1955 for current Cadence Henderson pricing.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What are Cadence Henderson HOA fees?',
+        name: 'Are there rentals available in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50-$150/month for the master association, with some sub-associations charging additional fees. Contact Dr. Jan Duffy at ${CONTACT_INFO.phone} for current fee schedules.`,
+          text: 'Yes, rental homes and apartments are available in Cadence Henderson NV 89011. Single-family rental options include AMH (American Homes 4 Rent), Element 12, and Adler communities, typically ranging from $1,500–$2,800/month. Call 702-500-1955 to find current Cadence Henderson rental availability.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What is the history of the Cadence Henderson site?',
+        name: 'What amenities does Cadence Henderson have?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence was formerly the BMI industrial complex. The 2,200-acre site underwent extensive environmental remediation before development. The community has been thoroughly cleaned and certified, and is now one of the top-10 best-selling master-planned communities in the nation.',
+          text: 'Cadence Henderson NV 89011 features a 50-acre Central Park, multiple resort-style pools and spas, fitness centers, pickleball and sports courts, dog parks, playgrounds, 30+ miles of walking and biking trails, and resident clubhouses. Most Cadence Henderson amenities are free for residents.',
         },
       },
       {
         '@type': 'Question',
-        name: 'What builders are in Cadence Henderson?',
+        name: 'Which builders are building homes in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Active builders in Cadence Henderson include Lennar, Richmond American Homes, Woodside Homes, and others offering townhomes, single-story, and two-story floor plans from the mid-$300s to $550K+.',
+          text: `Active homebuilders in Cadence Henderson NV 89011 include Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Call ${CONTACT_INFO.phone} or visit the Cadence Henderson Welcome Center to tour model homes from all builders.`,
         },
       },
       {
         '@type': 'Question',
-        name: 'What zip code is Cadence Henderson NV?',
+        name: 'Where is Cadence Henderson located?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence master-planned community in Henderson, Nevada is located in zip code 89011.',
+          text: 'Cadence Henderson is a master-planned community located at Bicentennial Pkwy & Paseo Verde Parkway, Henderson, Nevada 89011. The Welcome Center is at 1170 E Sunset Rd, Henderson NV 89011. Cadence Henderson is approximately 20 minutes from the Las Vegas Strip and 15 minutes from Harry Reid International Airport.',
         },
       },
     ],

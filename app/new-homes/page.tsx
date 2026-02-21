@@ -273,6 +273,94 @@ export default function NewHomesPage() {
         </div>
       </section>
 
+      {/* FAQ Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-center text-gray-600 mb-8">
+              New homes in Cadence Henderson, Henderson NV 89011
+            </p>
+            <script
+              type="application/ld+json"
+              dangerouslySetInnerHTML={{
+                __html: JSON.stringify({
+                  '@context': 'https://schema.org',
+                  '@type': 'FAQPage',
+                  mainEntity: [
+                    {
+                      '@type': 'Question',
+                      name: 'What new homes are available in Cadence Henderson?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call 702-500-1955 for current availability.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Which builders are in Cadence Henderson 89011?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Cadence Henderson 89011 features 8 award-winning builders: Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Each offers unique floor plans, design options, and price ranges in Cadence Henderson NV.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'What is the price range for new homes in Cadence Henderson NV?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'New home prices in Cadence Henderson range from approximately $300,000 for townhomes to $650,000+ for larger single-family and estate homes. Most new construction in Cadence Henderson 89011 prices between $380K and $550K. Visit the Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 to tour model homes.',
+                      },
+                    },
+                    {
+                      '@type': 'Question',
+                      name: 'Can I tour model homes in Cadence Henderson 7 days a week?',
+                      acceptedAnswer: {
+                        '@type': 'Answer',
+                        text: 'Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call 702-500-1955 or schedule online.',
+                      },
+                    },
+                  ],
+                }),
+              }}
+            />
+            <div className="space-y-4">
+              {[
+                {
+                  q: 'What new homes are available in Cadence Henderson?',
+                  a: 'Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call 702-500-1955 for current availability.',
+                },
+                {
+                  q: 'Which builders are in Cadence Henderson 89011?',
+                  a: 'Cadence Henderson 89011 features 8 award-winning builders: Beazer Homes, Century Communities, D.R. Horton, Lennar, Richmond American Homes, StoryBook Homes, Taylor Morrison, and Woodside Homes. Each offers unique floor plans, design options, and price ranges.',
+                },
+                {
+                  q: 'What is the price range for new homes in Cadence Henderson NV?',
+                  a: 'New home prices in Cadence Henderson range from approximately $300,000 for townhomes to $650,000+ for larger single-family and estate homes. Most new construction in Cadence Henderson 89011 prices between $380K and $550K.',
+                },
+                {
+                  q: 'Can I tour model homes in Cadence Henderson 7 days a week?',
+                  a: 'Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call 702-500-1955 or schedule online.',
+                },
+              ].map(({ q, a }) => (
+                <details
+                  key={q}
+                  className="group border border-gray-200 rounded-lg p-5 cursor-pointer"
+                >
+                  <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">
+                    {q}
+                    <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
+                  </summary>
+                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   )
