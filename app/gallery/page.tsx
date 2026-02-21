@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
+import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -115,6 +116,8 @@ export default function GalleryPage() {
       </section>
 
       <RealScoutOfficeListings />
+
+      <HomeSearchSection compact />
 
       {/* Category Filter */}
       <section className="py-8 bg-gray-50 sticky top-20 z-40 border-b">

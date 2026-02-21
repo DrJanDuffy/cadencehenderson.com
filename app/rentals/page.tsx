@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -95,6 +96,8 @@ export default function RentalsPage() {
       </section>
 
       <RealScoutOfficeListings />
+
+      <HomeSearchSection variant="rentals" compact />
 
       {/* Why Rent in Cadence */}
       <section className="py-16 bg-white">

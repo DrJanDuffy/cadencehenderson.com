@@ -1,19 +1,30 @@
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { Search } from 'lucide-react'
 
 export function HomeFinder() {
   return (
-    <section className="py-20 bg-gray-50" aria-labelledby="homefinder-heading">
+    <section id="home-search" className="py-20 bg-gray-50" aria-labelledby="homefinder-heading">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h2 id="homefinder-heading" className="text-4xl font-bold text-gray-900 mb-6">
-              Browse Cadence Henderson Homes for Sale
+              Search Henderson Homes for Sale
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
               New homes Cadence Henderson NV 89011. New construction Henderson NV free agent — Dr. Jan Duffy represents buyers. Search above or browse listings below.
             </p>
+            <a
+              href={CONTACT_INFO.realScoutSearchUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-blue-900 font-semibold hover:underline"
+            >
+              <Search size={18} />
+              Open Home Search
+            </a>
           </div>
           <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
           <div className="text-center mt-8">

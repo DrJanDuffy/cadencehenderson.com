@@ -3,6 +3,7 @@
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
+import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { Navigation } from '@/components/cadence/navigation'
@@ -28,6 +29,8 @@ export default function ContactPage() {
       </section>
 
       <RealScoutOfficeListings />
+
+      <HomeSearchSection compact />
 
       {/* Home Value Widget for Sellers */}
       <section className="py-12 bg-gray-50">

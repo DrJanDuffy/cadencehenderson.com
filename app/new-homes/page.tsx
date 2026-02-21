@@ -8,7 +8,7 @@ import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, MapPin, Bed, Bath, Ruler } from 'lucide-react'
+import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
 /** Builder logos from cadencenv.com - same source as BuildersShowcase */
 const BUILDER_LOGOS: Record<string, string> = {
@@ -142,9 +142,20 @@ export default function NewHomesPage() {
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center">
               Search Henderson Homes for Sale
             </h2>
+            <div className="flex justify-center mb-6">
+              <a
+                href={CONTACT_INFO.realScoutSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-blue-900 font-semibold hover:underline"
+              >
+                <Search size={18} />
+                Open Home Search
+              </a>
+            </div>
             <div className="flex justify-center mb-8">
               <RealScoutAdvancedSearch />
             </div>

@@ -1,5 +1,6 @@
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
@@ -589,6 +590,8 @@ export default async function BuilderPage({
       </section>
 
       <RealScoutOfficeListings />
+
+      <HomeSearchSection compact />
 
       {/* About Builder */}
       <section className="py-16 bg-gray-50">

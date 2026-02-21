@@ -1,5 +1,6 @@
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutHomeValue } from '@/components/idx/realscout-home-value'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
@@ -74,6 +75,8 @@ export default function RealtorsPage() {
       </section>
 
       <RealScoutOfficeListings />
+
+      <HomeSearchSection compact />
 
       {/* About Dr. Jan */}
       <section className="py-16 bg-white">
