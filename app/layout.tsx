@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
 import { CalendlyProvider } from '../components/calendly/calendly-loader'
+import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
 import { SkipToContent } from '../components/cadence/skip-to-content'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -86,13 +87,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-          onLoad={() => {
-            window.dispatchEvent(new CustomEvent('calendly-loaded'))
-          }}
-        />
+        <CalendlyScriptLoader />
         <Script
           src="https://em.realscout.com/widgets/realscout-web-components.umd.js"
           type="module"
