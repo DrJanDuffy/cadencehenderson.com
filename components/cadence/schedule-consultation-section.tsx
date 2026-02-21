@@ -6,81 +6,74 @@ import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Mail, Phone } from 'lucide-react'
 
 /**
- * Single consultation + CTA section: Buy/Sell actions, inline Calendly widget,
- * and contact strip. Replaces duplicate ScheduleConsultationSection + CTABanner.
+ * Consultation CTA: high-contrast layout, primary "book a call" for home buyers.
+ * Calendly on white card for readability; section copy for SEO/AEO/GEO.
  */
 export function ScheduleConsultationSection() {
   return (
     <section
-      className="py-16 bg-gradient-to-r from-blue-900 to-blue-700 text-white"
+      className="py-16 bg-gradient-to-r from-blue-900 to-blue-800 text-white"
       aria-labelledby="schedule-consultation-heading"
     >
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 id="schedule-consultation-heading" className="text-4xl font-bold mb-4">
+          <h2 id="schedule-consultation-heading" className="text-3xl md:text-4xl font-bold mb-3 text-white">
             Ready to Buy New Homes at Cadence Henderson?
           </h2>
-          <p className="text-xl opacity-95 mb-6">
-            Schedule your free Cadence Henderson buyer consultation with Dr. Jan Duffy. Get personalized guidance and tour new homes Cadence Henderson NV 89011.
+          <p className="text-lg md:text-xl text-white mb-6 max-w-2xl mx-auto">
+            Schedule your free 15-minute buyer consultation with Dr. Jan Duffy. New homes Cadence Henderson NV 89011 — builder pays her fee; free to you.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+          <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
               size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
+              className="bg-white text-blue-900 hover:bg-gray-100 font-semibold shadow-lg"
               asChild
             >
-              <CalendlyLink>I Want To Buy</CalendlyLink>
-            </Button>
-            <Button
-              size="lg"
-              className="bg-white text-blue-900 hover:bg-gray-100 text-lg px-8 w-full sm:w-auto"
-              asChild
-            >
-              <CalendlyLink>I Want To Sell</CalendlyLink>
-            </Button>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900" asChild>
               <CalendlyLink>
                 <Calendar className="mr-2" size={20} aria-hidden />
-                Schedule Free Call
+                Schedule your free 15-min call
               </CalendlyLink>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900" asChild>
-              <a href={`mailto:${CONTACT_INFO.email}`} aria-label="Email Dr. Jan Duffy">
-                <Mail className="mr-2" size={20} aria-hidden />
-                Email Dr. Jan
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-900" asChild>
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`} aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}>
-                <Phone className="mr-2" size={20} aria-hidden />
-                {CONTACT_INFO.phone}
-              </a>
-            </Button>
+            <a
+              href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-blue-900 transition-colors"
+              aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
+            >
+              <Phone size={20} aria-hidden />
+              Call {CONTACT_INFO.phone}
+            </a>
+            <a
+              href={`mailto:${CONTACT_INFO.email}`}
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 text-base font-medium text-white hover:bg-white hover:text-blue-900 transition-colors"
+              aria-label="Email Dr. Jan Duffy"
+            >
+              <Mail size={20} aria-hidden />
+              Email Dr. Jan
+            </a>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto rounded-lg overflow-hidden bg-white/5 backdrop-blur-sm">
+        {/* Calendly on white card so text is readable (no white-on-blue) */}
+        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-xl p-4 md:p-6">
           <CalendlyWhenVisible loadOnMount>
             <CalendlyInlineWidget
               className="rounded-lg overflow-hidden"
               style={{ minWidth: 320, height: 700 }}
             />
           </CalendlyWhenVisible>
-          <p className="text-center text-sm opacity-80 mt-4">
+          <p className="text-center text-sm text-gray-600 mt-4">
             <a
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:no-underline"
+              className="underline hover:no-underline text-blue-900"
             >
               Open scheduler in a new tab
             </a>
             {' '}if the calendar doesn’t load.
           </p>
         </div>
-        <p className="text-center text-sm opacity-90 mt-6">
-          Licensed Real Estate Professional specializing in Cadence Henderson
+        <p className="text-center text-sm text-white mt-6">
+          Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer’s agent. License {CONTACT_INFO.licenseNumber}.
         </p>
       </div>
     </section>

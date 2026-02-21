@@ -33,14 +33,24 @@ export function MarketSnapshotSection() {
             <li><strong>Recognition:</strong> Top 10 Best-Selling Master Planned Community nationally</li>
             <li><strong>Location:</strong> Henderson NV {MARKET_SNAPSHOT.zipCode}</li>
           </ul>
-          <p className="text-center">
+          <p className="text-center text-gray-700">
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
               className="text-blue-900 font-medium hover:underline"
+              aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
             >
               Call Dr. Jan Duffy {CONTACT_INFO.phone}
             </a>
-            {' '}for current inventory and incentives.
+            {' '}or{' '}
+            <a
+              href={CONTACT_INFO.calendlyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-900 font-medium hover:underline"
+            >
+              book a free 15-min call
+            </a>
+            {' '}for current inventory and incentives — Cadence Henderson NV 89011.
           </p>
         </div>
       </div>

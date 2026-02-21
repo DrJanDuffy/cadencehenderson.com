@@ -46,12 +46,12 @@ export function Hero() {
           <div className="flex flex-wrap gap-3">
             <Button
               size="default"
-              className="bg-white text-blue-900 hover:bg-gray-100"
+              className="bg-white text-blue-900 hover:bg-gray-100 font-medium"
               asChild
             >
               <CalendlyLink>
                 <Calendar className="mr-2" size={18} aria-hidden />
-                Schedule a Call
+                Schedule your free 15-min call
               </CalendlyLink>
             </Button>
             <Button

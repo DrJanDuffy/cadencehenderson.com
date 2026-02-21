@@ -28,7 +28,7 @@ export function RealtorsSection() {
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
               asChild
             >
-              <CalendlyLink>Schedule a Call with Dr. Jan</CalendlyLink>
+              <CalendlyLink>Schedule your free 15-min call</CalendlyLink>
             </Button>
             <Button
               size="lg"

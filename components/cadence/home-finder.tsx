@@ -14,7 +14,7 @@ export function HomeFinder() {
               Search Henderson Homes for Sale
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
-              New homes Cadence Henderson NV 89011. New construction Henderson NV free agent — Dr. Jan Duffy represents buyers. Search above or browse listings below.
+              New homes Cadence Henderson NV 89011. Dr. Jan Duffy is your free buyer’s agent — builder pays her fee. Search above or open full search below.
             </p>
             <a
               href={CONTACT_INFO.realScoutSearchUrl}
@@ -29,11 +29,10 @@ export function HomeFinder() {
           <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
           <div className="text-center mt-8">
             <p className="text-lg text-gray-700 mb-4">
-              Want a personalized tour or buyer consultation? Get expert guidance
-              from Dr. Jan Duffy.
+              Want a free 15-minute buyer call or in-person tour? Dr. Jan Duffy — Cadence Henderson NV 89011.
             </p>
             <Button size="lg" className="bg-blue-900 hover:bg-blue-800" asChild>
-              <CalendlyLink>Schedule a call with Dr. Jan</CalendlyLink>
+              <CalendlyLink>Schedule your free 15-min call</CalendlyLink>
             </Button>
           </div>
         </div>

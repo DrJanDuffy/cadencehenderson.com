@@ -1,8 +1,9 @@
+import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { Phone } from 'lucide-react'
 
 /**
- * Key Facts block for AEO extraction. Short, scannable bullets.
- * Placed after Hero to support AI and snippet parsing.
+ * Key Facts block for AEO extraction. Short, scannable bullets + CTA for appointments.
  */
 export function KeyFactsSection() {
   return (
@@ -19,10 +20,21 @@ export function KeyFactsSection() {
           <li>Homes from $300Ks to $700K+</li>
           <li>Buyer representation 100% free — builder pays</li>
           <li>Located at Henderson NV 89011</li>
-          <li>
-            Contact: Dr. Jan Duffy {CONTACT_INFO.phone}
-          </li>
         </ul>
+        <p className="text-center mt-4">
+          <a
+            href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
+            className="inline-flex items-center gap-2 text-blue-900 font-semibold hover:underline"
+            aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
+          >
+            <Phone size={18} aria-hidden />
+            Book a free 15-min call — {CONTACT_INFO.phone}
+          </a>
+          {' · '}
+          <Link href="/contact" className="text-blue-900 font-semibold hover:underline">
+            Contact Dr. Jan
+          </Link>
+        </p>
       </div>
     </section>
   )
