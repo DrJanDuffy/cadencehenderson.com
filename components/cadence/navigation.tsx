@@ -7,29 +7,55 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Menu, X, Search } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
-const navigationItems = [
-  { title: 'Home', href: '/' },
+type NavItemBase = {
+  title: string
+  /** SEO: Descriptive anchor text for link equity */
+  ariaLabel?: string
+  /** GEO: Tooltip for accessibility and context */
+  titleAttr?: string
+}
+
+type NavItemLink = NavItemBase & {
+  href: string
+  external?: boolean
+  items?: never
+}
+
+type NavItemDropdown = NavItemBase & {
+  href: string
+  external?: never
+  items: Array<{
+    label: string
+    href: string
+    external?: boolean
+  }>
+}
+
+type NavItem = NavItemLink | NavItemDropdown
+
+const navigationItems: NavItem[] = [
+  {
+    title: 'Home',
+    href: '/',
+    ariaLabel: 'Cadence Henderson home',
+    titleAttr: 'Cadence Henderson real estate home page',
+  },
   {
     title: 'New Homes',
     href: '/new-homes',
+    ariaLabel: 'New homes for sale in Cadence Henderson',
+    titleAttr: 'Browse new homes and builders in Cadence Henderson, NV',
     items: [
       {
         label: 'Start Your Search',
         href: CONTACT_INFO.realScoutSearchUrl,
         external: true,
       },
-      {
-        label: 'Beazer Homes',
-        href: CONTACT_INFO.realScoutBeazerHomesUrl,
-        external: true,
-      },
+      { label: 'Beazer Homes', href: CONTACT_INFO.realScoutBeazerHomesUrl, external: true },
       { label: 'Century Communities', href: '/new-homes/century-communities' },
       { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
       { label: 'Lennar', href: '/new-homes/lennar' },
-      {
-        label: 'Richmond American Homes',
-        href: '/new-homes/richmond-american',
-      },
+      { label: 'Richmond American Homes', href: '/new-homes/richmond-american' },
       { label: 'StoryBook Homes', href: '/new-homes/storybook-homes' },
       { label: 'Taylor Morrison', href: '/new-homes/taylor-morrison' },
       { label: 'Woodside Homes', href: '/new-homes/woodside-homes' },
@@ -37,95 +63,153 @@ const navigationItems = [
   },
   {
     title: 'Rentals',
-    href: CONTACT_INFO.realScoutRentalsUrl,
-    external: true,
+    href: '/rentals',
+    ariaLabel: 'Rentals in Cadence Henderson',
+    titleAttr: 'Rental homes and apartments in Cadence Henderson community',
+    items: [
+      {
+        label: 'Search Available Rentals',
+        href: CONTACT_INFO.realScoutRentalsUrl,
+        external: true,
+      },
+    ],
   },
   {
     title: 'Lifestyle',
     href: '/lifestyle',
+    ariaLabel: 'Cadence Henderson lifestyle and community',
+    titleAttr: 'Events, amenities, schools and community life in Cadence Henderson',
     items: [
       { label: 'Events', href: '/lifestyle/events' },
       { label: 'Parks & Trails', href: '/lifestyle/parks-trails' },
-      {
-        label: 'Shopping & Entertainment',
-        href: '/lifestyle/shopping',
-      },
+      { label: 'Shopping & Entertainment', href: '/lifestyle/shopping' },
       { label: 'Schools', href: '/lifestyle/schools' },
       { label: 'Amenities', href: '/lifestyle/amenities' },
       { label: 'Community', href: '/lifestyle/community' },
-      {
-        label: 'Cadence Animal Hospital',
-        href: '/lifestyle/animal-hospital',
-      },
+      { label: 'Cadence Animal Hospital', href: '/lifestyle/animal-hospital' },
     ],
   },
   {
     title: 'News',
     href: '/news',
-    items: [
-      { label: 'Media', href: '/news' },
-    ],
+    ariaLabel: 'Cadence Henderson news and updates',
+    titleAttr: 'Latest news and community updates for Cadence Henderson',
+    items: [{ label: 'Media', href: '/news' }],
   },
-  { title: 'Gallery', href: '/gallery' },
-  { title: "FAQ's", href: '/faqs' },
-  { title: 'Realtors', href: '/realtors' },
-  { title: 'Past Home Sales', href: '/past-homesales' },
-  { title: 'Residents', href: '/residents' },
-  { title: 'Contact Us', href: '/contact' },
-  { title: 'Maps', href: '/maps' },
+  {
+    title: 'Gallery',
+    href: '/gallery',
+    ariaLabel: 'Cadence Henderson photo gallery',
+    titleAttr: 'Photos of Cadence Henderson community and homes',
+  },
+  {
+    title: "FAQ's",
+    href: '/faqs',
+    ariaLabel: 'Frequently asked questions about Cadence Henderson',
+    titleAttr: 'Common questions about Cadence Henderson real estate',
+  },
+  {
+    title: 'Realtors',
+    href: '/realtors',
+    ariaLabel: 'Realtors serving Cadence Henderson',
+    titleAttr: 'Realtor resources and team at Cadence Henderson',
+  },
+  {
+    title: 'Past Home Sales',
+    href: '/past-homesales',
+    ariaLabel: 'Past home sales in Cadence Henderson',
+    titleAttr: 'Sold homes and market history in Cadence Henderson',
+  },
+  {
+    title: 'Residents',
+    href: '/residents',
+    ariaLabel: 'Resources for Cadence Henderson residents',
+    titleAttr: 'Resident resources and information for Cadence Henderson',
+  },
+  {
+    title: 'Contact Us',
+    href: '/contact',
+    ariaLabel: 'Contact Cadence Henderson real estate',
+    titleAttr: 'Contact Dr. Jan Duffy for Cadence Henderson real estate',
+  },
+  {
+    title: 'Maps',
+    href: '/maps',
+    ariaLabel: 'Cadence Henderson maps and location',
+    titleAttr: 'Maps and directions to Cadence Henderson, Henderson NV',
+  },
 ]
+
+const linkBaseClasses =
+  'text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:ring-offset-2 rounded'
+const dropdownItemClasses =
+  'block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30 rounded'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
+    <nav
+      className="sticky top-0 z-50 bg-white shadow-md"
+      role="navigation"
+      aria-label="Main site navigation"
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="text-2xl font-bold text-blue-900">CADENCE</div>
+          {/* Logo - GEO: Site identity */}
+          <Link
+            href="/"
+            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:ring-offset-2 rounded"
+            aria-label="Cadence Henderson - Home"
+            title="Cadence Henderson real estate by Dr. Jan Duffy"
+          >
+            <span className="text-2xl font-bold text-blue-900">CADENCE</span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-6">
+          <div className="hidden lg:flex items-center gap-6">
             {navigationItems.map((item) => (
               <div
                 key={item.title}
                 className="relative group"
-                onMouseEnter={() =>
-                  item.items && setActiveDropdown(item.title)
-                }
+                onMouseEnter={() => item.items && setActiveDropdown(item.title)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {(item as { external?: boolean }).external ? (
+                {item.external ? (
                   <a
-                    href={item.href || '#'}
+                    href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
+                    className={linkBaseClasses}
+                    aria-label={item.ariaLabel ?? item.title}
+                    title={item.titleAttr ?? item.title}
                   >
                     {item.title}
                   </a>
                 ) : (
                   <Link
-                    href={item.href || '#'}
-                    className="text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block"
+                    href={item.href}
+                    className={linkBaseClasses}
+                    aria-label={item.ariaLabel ?? item.title}
+                    title={item.titleAttr ?? item.title}
                   >
                     {item.title}
                   </Link>
                 )}
                 {item.items && activeDropdown === item.title && (
-                  <div className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50">
+                  <div
+                    className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50 border border-gray-100"
+                    aria-label={`${item.title} submenu`}
+                  >
                     {item.items.map((subItem) =>
-                      (subItem as { external?: boolean }).external ? (
+                      subItem.external ? (
                         <a
                           key={subItem.label}
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+                          className={dropdownItemClasses}
                         >
                           {subItem.label}
                         </a>
@@ -133,11 +217,11 @@ export function Navigation() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors"
+                          className={dropdownItemClasses}
                         >
                           {subItem.label}
                         </Link>
-                      )
+                      ),
                     )}
                   </div>
                 )}
@@ -147,36 +231,35 @@ export function Navigation() {
 
           <Button
             size="sm"
-            className="hidden lg:inline-flex bg-blue-900 hover:bg-blue-800 text-white shrink-0"
+            className="hidden lg:inline-flex bg-blue-900 hover:bg-blue-800 text-white shrink-0 focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
             asChild
           >
             <CalendlyLink>Find a Realtor</CalendlyLink>
           </Button>
 
-          {/* Search Icon */}
           <button
-            className="hidden lg:block p-2 text-gray-700 hover:text-blue-900"
+            className="hidden lg:block p-2 text-gray-700 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30"
             aria-label="Search"
           >
-            <Search size={24} />
+            <Search size={24} aria-hidden />
           </button>
 
-          {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30"
             onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
+            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isOpen ? 'true' : 'false'}
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={28} aria-hidden /> : <Menu size={28} aria-hidden />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4">
+          <div className="lg:hidden border-t border-gray-200 py-4" aria-label="Mobile navigation">
             <div className="px-4 pb-4">
               <Button
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white"
+                className="w-full bg-blue-900 hover:bg-blue-800 text-white focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
                 asChild
               >
                 <CalendlyLink>Find a Realtor</CalendlyLink>
@@ -184,26 +267,24 @@ export function Navigation() {
             </div>
             {navigationItems.map((item) => (
               <div key={item.title} className="mb-2">
-                {(item as { external?: boolean }).external ? (
+                {item.external ? (
                   <a
-                    href={item.href || '#'}
+                    href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
+                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block rounded hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
                   </a>
                 ) : (
                   <Link
-                    href={item.href || '#'}
-                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block"
+                    href={item.items ? '#' : item.href}
+                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block rounded hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
                     onClick={(e) => {
                       if (item.items) {
                         e.preventDefault()
-                        setActiveDropdown(
-                          activeDropdown === item.title ? null : item.title,
-                        )
+                        setActiveDropdown(activeDropdown === item.title ? null : item.title)
                       } else {
                         setIsOpen(false)
                       }
@@ -213,15 +294,15 @@ export function Navigation() {
                   </Link>
                 )}
                 {item.items && activeDropdown === item.title && (
-                  <div className="pl-4">
+                  <div className="pl-4" role="group" aria-label={`${item.title} submenu`}>
                     {item.items.map((subItem) =>
-                      (subItem as { external?: boolean }).external ? (
+                      subItem.external ? (
                         <a
                           key={subItem.label}
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-gray-600 hover:text-blue-900"
+                          className="block px-4 py-2 text-gray-600 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
@@ -230,12 +311,12 @@ export function Navigation() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-gray-600 hover:text-blue-900"
+                          className="block px-4 py-2 text-gray-600 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
                         </Link>
-                      )
+                      ),
                     )}
                   </div>
                 )}
@@ -247,4 +328,3 @@ export function Navigation() {
     </nav>
   )
 }
-
