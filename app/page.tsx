@@ -6,7 +6,6 @@ import { HomeFinder } from '@/components/cadence/home-finder'
 import { AmenitiesSection } from '@/components/cadence/amenities-section'
 import { LifestyleSection } from '@/components/cadence/lifestyle-section'
 import { ServicesSection } from '@/components/cadence/services-section'
-import { LocationSection } from '@/components/cadence/location-section'
 import { RealtorsSection } from '@/components/cadence/realtors-section'
 import { NewsSection } from '@/components/cadence/news-section'
 import { BuildersShowcase } from '@/components/cadence/builders-showcase'
@@ -17,14 +16,14 @@ import { WebPageSchema } from '@/components/schema/web-page'
 const BASE = 'https://www.cadencehenderson.com'
 
 export const metadata: Metadata = {
-  title: 'Cadence Henderson | Homes for Sale & New Homes 89011',
+  title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
   description:
-    'Cadence Henderson homes for sale, new construction, townhomes in Henderson NV 89011. Dr. Jan Duffy, REALTOR®. Master-planned community.',
+    'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011. Master-planned community. Licensed REALTOR® on-site.',
   alternates: { canonical: BASE },
   openGraph: {
-    title: 'Cadence Henderson | Homes for Sale & New Homes – Dr. Jan Duffy',
+    title: 'New Homes in Cadence Henderson 89011 | Henderson NV Real Estate',
     description:
-      'Find new and resale homes in Cadence, Henderson NV. Master-planned community. Dr. Jan Duffy, REALTOR®.',
+      'Cadence Henderson homes for sale from $300K. New construction, rentals & community in Henderson NV 89011.',
     url: BASE,
     type: 'website',
   },
@@ -44,9 +43,7 @@ export default function HomePage() {
         <HomeFinder />
         <AmenitiesSection />
         <LifestyleSection />
-        <LocationSection />
         <RealtorsSection />
-        <NewsSection />
         <BuildersShowcase />
         <ScheduleConsultationSection />
       </main>

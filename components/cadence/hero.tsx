@@ -28,7 +28,7 @@ export function Hero() {
       <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-3xl text-white">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Let's Address Your Future.
+            New Homes for Sale in Cadence Henderson, NV 89011
           </h1>
           <p className="text-lg text-white/90 mb-2">
             Cadence Henderson, Nevada

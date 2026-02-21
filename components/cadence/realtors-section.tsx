@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
-import { cfImage, SITE_IMAGES, getHomeImage } from '@/lib/cloudflare-images'
+import { getHomeImage } from '@/lib/cloudflare-images'
 
 export function RealtorsSection() {
   return (
@@ -17,30 +17,21 @@ export function RealtorsSection() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src={cfImage(SITE_IMAGES.agent.logo, 'thumbnail')}
-                width={96}
-                height={100}
-                loading="lazy"
-                alt="Cadence Henderson NV real estate - Realtors"
-                className="w-24 h-24 object-contain"
-              />
-            </div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              Cadence Las Vegas Realtors
+              Cadence Henderson Real Estate Team
             </h2>
             <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Cadence is one of the Top 10 Best Selling Master Planned
-              Communities in the nation. With a variety of home styles to choose
-              from, your clients are sure to find the home of their dreams.
+              Cadence Henderson is one of the Top 10 Best Selling Master Planned
+              Communities in the nation. Whether you’re buying a new home,
+              resale, or rental—our team helps you find the right fit in Cadence
+              Henderson NV 89011.
             </p>
             <Button
               size="lg"
               className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
               asChild
             >
-              <CalendlyLink>Meet a Realtor</CalendlyLink>
+              <CalendlyLink>Schedule a Call with Dr. Jan</CalendlyLink>
             </Button>
             <Button
               size="lg"

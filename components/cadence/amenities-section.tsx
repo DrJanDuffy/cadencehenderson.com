@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
+import { getAmenityImage } from '@/lib/cloudflare-images'
 
 export function AmenitiesSection() {
   return (
@@ -8,16 +8,6 @@ export function AmenitiesSection() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src={cfImage(SITE_IMAGES.icons.amenitiesBox, 'thumbnail')}
-                alt="Cadence Central Park Henderson Nevada amenities"
-                width={96}
-                height={100}
-                loading="lazy"
-                className="w-24 h-24 object-contain"
-              />
-            </div>
             <h2 id="amenities-heading" className="text-4xl font-bold text-gray-900 mb-6">
               Cadence Henderson Homes Amenities
             </h2>
