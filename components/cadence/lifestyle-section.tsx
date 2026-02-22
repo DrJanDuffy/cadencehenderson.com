@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
