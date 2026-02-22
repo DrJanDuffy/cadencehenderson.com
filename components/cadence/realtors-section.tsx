@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
+import { CloudflareImage } from '@/components/cadence/cloudflare-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export function RealtorsSection() {
@@ -11,7 +11,7 @@ export function RealtorsSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
-            <Image
+            <CloudflareImage
               src={cfImage(SITE_IMAGES.homes.exterior1, 'card')}
               alt="New homes for sale Cadence Henderson NV 89011"
               fill
@@ -26,7 +26,7 @@ export function RealtorsSection() {
             </h2>
             <div className="flex items-center gap-4 mb-6">
               <div className="relative h-20 w-20 flex-shrink-0 rounded-full overflow-hidden border-2 border-blue-900/20 shadow-md">
-                <Image
+                <CloudflareImage
                   src={cfImage(SITE_IMAGES.agent.headshot, 'avatar')}
                   alt="Dr. Jan Duffy, REALTOR® — Cadence Henderson new home buyer's agent"
                   fill

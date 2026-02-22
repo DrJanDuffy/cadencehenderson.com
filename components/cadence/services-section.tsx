@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import type { LucideIcon } from 'lucide-react'
 import { Home, Key, Building2, Calendar, MapPin } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CloudflareImage } from '@/components/cadence/cloudflare-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 type ServiceItem = {
@@ -57,7 +57,7 @@ export function ServicesSection() {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative h-[200px] sm:h-[240px] rounded-xl overflow-hidden mb-12 bg-gray-200">
-          <Image
+          <CloudflareImage
             src={cfImage(SITE_IMAGES.gallery.newHome, 'hero')}
             alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
             fill

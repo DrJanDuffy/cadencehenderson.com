@@ -5,7 +5,7 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
 import { Calendar } from 'lucide-react'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 
@@ -22,7 +22,7 @@ export function Hero() {
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
         onError={(e) => {
-          e.currentTarget.style.display = 'none'
+          e.currentTarget.src = PLACEHOLDER_IMAGE
         }}
       />
       {/* Light overlay so photo shows; keeps white text readable */}

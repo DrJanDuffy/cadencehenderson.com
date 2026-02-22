@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`
 
@@ -19,6 +19,7 @@ export function LocationSection() {
                 height={100}
                 loading="lazy"
                 className="w-24 h-24 object-contain"
+                onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
               />
             </div>
             <h2 id="location-heading" className="text-4xl font-bold text-gray-900 mb-6">
@@ -63,6 +64,7 @@ export function LocationSection() {
               alt="Cadence Henderson NV 89011 community and surrounding area"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
+              onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
             />
           </div>
         </div>

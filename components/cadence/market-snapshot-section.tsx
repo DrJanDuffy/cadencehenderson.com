@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CloudflareImage } from '@/components/cadence/cloudflare-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 // Update monthly — specific data = AI citation magnet
@@ -37,7 +37,7 @@ export function MarketSnapshotSection() {
             <li><strong>Location:</strong> Henderson NV {MARKET_SNAPSHOT.zipCode}</li>
           </ul>
             <div className="relative h-[320px] lg:h-[360px] rounded-xl overflow-hidden shadow-lg bg-gray-200">
-              <Image
+              <CloudflareImage
                 src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
                 alt="Cadence Henderson NV 89011 master planned community aerial view"
                 fill

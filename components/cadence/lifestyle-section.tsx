@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export function LifestyleSection() {
   return (
@@ -13,6 +13,7 @@ export function LifestyleSection() {
               alt="Cadence Henderson NV 89011 lifestyle and community"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
+              onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
             />
           </div>
           <div className="order-1 md:order-2">

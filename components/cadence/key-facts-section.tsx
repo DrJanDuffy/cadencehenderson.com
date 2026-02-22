@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { CloudflareImage } from '@/components/cadence/cloudflare-image'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Phone } from 'lucide-react'
 
@@ -15,7 +15,7 @@ export function KeyFactsSection() {
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="relative h-[140px] sm:h-[160px] rounded-lg overflow-hidden mb-6 max-w-4xl mx-auto bg-gray-200">
-          <Image
+          <CloudflareImage
             src={cfImage(SITE_IMAGES.gallery.parkVista, 'card')}
             alt="Cadence Henderson NV 89011 community and homes"
             fill

@@ -24,17 +24,20 @@ const BASE_URL = `https://imagedelivery.net/${CLOUDFLARE_ACCOUNT_HASH}`
 export type ImageVariant = 'public' | 'hero' | 'card' | 'thumbnail' | 'avatar' | 'og' | 'gallery'
 
 /**
- * Placeholder image for missing/unset images
- * Using a solid color data URL to prevent build errors
+ * Placeholder image for missing/unset images (e.g. Cloudflare 404).
+ * Use in img onError: e.currentTarget.src = PLACEHOLDER_IMAGE
  */
-const PLACEHOLDER_IMAGE = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3C/svg%3E'
+export const PLACEHOLDER_IMAGE =
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3C/svg%3E'
 
 /**
- * Generate Cloudflare Image delivery URL
+ * Generate Cloudflare Image delivery URL.
+ * Uses the default "public" variant so images load without custom variants in the Cloudflare dashboard.
+ * Add custom variants (hero, card, etc.) in Dashboard > Images > Variants to use the variant parameter.
  */
-export function cfImage(imageId: string, variant: ImageVariant = 'public'): string {
+export function cfImage(imageId: string, _variant: ImageVariant = 'public'): string {
   if (!imageId) return PLACEHOLDER_IMAGE
-  return `${BASE_URL}/${imageId}/${variant}`
+  return `${BASE_URL}/${imageId}/public`
 }
 
 /**
@@ -46,8 +49,9 @@ export function isCloudflareImage(url: string): boolean {
 
 // ============================================================================
 // SITE IMAGES CATALOG — Cadence Henderson
-// Uses Cadence-specific Cloudflare Images: CendenceDrJanDuffy, cadence_008_resized, Workout-Area-at-Cadence-CentralPark
-// To add more: upload to Cloudflare, copy Image ID from dashboard, replace IDs below
+// Image IDs must match exactly what appears in Cloudflare Dashboard > Images.
+// URL format: https://imagedelivery.net/{accountHash}/{imageId}/public
+// If images don't load: verify image IDs in Cloudflare Dashboard > Images
 // ============================================================================
 
 export const SITE_IMAGES = {
