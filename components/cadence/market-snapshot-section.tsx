@@ -1,4 +1,6 @@
+import Image from 'next/image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 // Update monthly — specific data = AI citation magnet
 const MARKET_SNAPSHOT = {
@@ -21,11 +23,12 @@ export function MarketSnapshotSection() {
       aria-labelledby="market-snapshot-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="max-w-4xl mx-auto">
-          <h2 id="market-snapshot-heading" className="text-4xl font-bold text-gray-900 mb-6 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 id="market-snapshot-heading" className="text-4xl font-bold text-gray-900 mb-8 text-center">
             Cadence Henderson Market Snapshot
           </h2>
-          <ul className="space-y-3 text-lg text-gray-700 mb-8">
+          <div className="grid lg:grid-cols-2 gap-10 items-center mb-8">
+            <ul className="space-y-3 text-lg text-gray-700">
             <li><strong>Active builders:</strong> {MARKET_SNAPSHOT.activeBuilders}</li>
             <li><strong>Price range:</strong> {MARKET_SNAPSHOT.priceRange}</li>
             <li><strong>Community size:</strong> {MARKET_SNAPSHOT.communityAcres} acres, {MARKET_SNAPSHOT.homesPlanned} homes planned</li>
@@ -33,6 +36,17 @@ export function MarketSnapshotSection() {
             <li><strong>Recognition:</strong> Top 10 Best-Selling Master Planned Community nationally</li>
             <li><strong>Location:</strong> Henderson NV {MARKET_SNAPSHOT.zipCode}</li>
           </ul>
+            <div className="relative h-[320px] lg:h-[360px] rounded-xl overflow-hidden shadow-lg bg-gray-200">
+              <Image
+                src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
+                alt="Cadence Henderson NV 89011 master planned community aerial view"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+                loading="lazy"
+              />
+            </div>
+          </div>
           <p className="text-center text-gray-700">
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
