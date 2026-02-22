@@ -19,7 +19,7 @@ function injectBefore(bodyOrHead: '</body>' | '</head>', html: string, snippet: 
 }
 
 export default {
-  async fetch(request: Request, env: Env, _ctx: ExecutionContext): Promise<Response> {
+  async fetch(request: Request, env: Env): Promise<Response> {
     const response = await fetch(request);
 
     const contentType = response.headers.get('Content-Type') ?? '';
