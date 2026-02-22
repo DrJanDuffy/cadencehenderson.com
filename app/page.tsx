@@ -53,6 +53,7 @@ export default function HomePage() {
         <LifestyleSection />
         <RealtorsSection />
         <BuildersShowcase />
+        <NewsSection />
         <HomepageFAQSection />
         <ScheduleConsultationSection />
       </main>

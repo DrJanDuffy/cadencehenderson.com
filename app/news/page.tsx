@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
@@ -7,26 +9,33 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Newspaper, Calendar, Image as ImageIcon, Phone, Mail } from 'lucide-react'
-import { cfImage, SITE_IMAGES, getHomeImage, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { fetchNews, type NewsArticle } from '@/lib/fetch-news'
 
-const newsArticles = [
+const FALLBACK_ARTICLES: NewsArticle[] = [
   {
+    id: 0,
     title: 'Cadence Named Top 10 Best-Selling Community in the Nation',
     date: 'October 5, 2025',
     category: 'Awards',
     excerpt:
       'Cadence has been recognized as one of the top 10 best-selling master-planned communities in the United States for the third consecutive year.',
-    image: getHomeImage('exterior1', 'card'),
+    link: 'https://cadencenv.com/',
+    image: cfImage(SITE_IMAGES.homes.exterior1, 'card'),
   },
   {
+    id: 1,
+    link: 'https://cadencenv.com/',
     title: 'New Central Park Expansion Opens This Fall',
     date: 'September 28, 2025',
     category: 'Community',
     excerpt:
       'Experience even more outdoor recreation with the opening of the new Central Park expansion featuring additional trails, picnic areas, and a new adventure playground.',
-    image: getGalleryImage('parkVista', 'card'),
+    image: cfImage(SITE_IMAGES.gallery.parkVista, 'card'),
   },
   {
+    id: 2,
+    link: 'https://cadencenv.com/',
     title: 'Summer Concert Series Returns to Cadence',
     date: 'September 15, 2025',
     category: 'Events',
@@ -35,6 +44,8 @@ const newsArticles = [
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {
+    id: 3,
+    link: 'https://cadencenv.com/',
     title: 'Cadence Schools Receive High Academic Ratings',
     date: 'August 22, 2025',
     category: 'Education',
@@ -43,14 +54,18 @@ const newsArticles = [
     image: cfImage(SITE_IMAGES.hero.schools, 'card'),
   },
   {
+    id: 4,
+    link: 'https://cadencenv.com/',
     title: 'New Home Builders Join Cadence Community',
     date: 'August 10, 2025',
     category: 'New Homes',
     excerpt:
       'We\'re excited to welcome two new home builders to Cadence, expanding our selection of quality homes and architectural styles.',
-    image: getHomeImage('exterior2', 'card'),
+    image: cfImage(SITE_IMAGES.homes.exterior2, 'card'),
   },
   {
+    id: 5,
+    link: 'https://cadencenv.com/',
     title: 'Cadence Residents Celebrate Community Garden Harvest',
     date: 'July 28, 2025',
     category: 'Community',
@@ -60,7 +75,14 @@ const newsArticles = [
   },
 ]
 
-export default function NewsPage() {
+export default async function NewsPage() {
+  let articles: NewsArticle[]
+  try {
+    articles = await fetchNews(6)
+  } catch {
+    articles = FALLBACK_ARTICLES
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
@@ -101,17 +123,36 @@ export default function NewsPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {newsArticles.map((article, index) => (
+            {articles.map((article) => (
               <article
-                key={index}
+                key={article.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
-                <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${article.image}')` }}
-                  />
-                </div>
+                <Link
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <div className="relative h-56 overflow-hidden bg-gray-200">
+                    {article.image ? (
+                      <Image
+                        src={article.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{
+                          backgroundImage: `url('${cfImage(SITE_IMAGES.hero.news, 'card')}')`,
+                        }}
+                      />
+                    )}
+                  </div>
+                </Link>
                 <div className="p-6">
                   <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
                     <span className="inline-flex items-center">
@@ -131,8 +172,11 @@ export default function NewsPage() {
                   <Button
                     variant="outline"
                     className="border-indigo-900 text-indigo-900 hover:bg-indigo-900 hover:text-white"
+                    asChild
                   >
-                    Read More
+                    <Link href={article.link} target="_blank" rel="noopener noreferrer">
+                      Read More
+                    </Link>
                   </Button>
                 </div>
               </article>

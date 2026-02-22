@@ -1,9 +1,20 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { fetchNews } from '@/lib/fetch-news'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { Calendar } from 'lucide-react'
 
-export function NewsSection() {
+export async function NewsSection() {
+  let articles: Awaited<ReturnType<typeof fetchNews>>
+  try {
+    articles = await fetchNews(3)
+  } catch {
+    articles = []
+  }
+
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-white" aria-labelledby="news-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center mb-6">
@@ -16,12 +27,54 @@ export function NewsSection() {
               className="w-24 h-24 object-contain"
             />
           </div>
-          <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <h2 id="news-heading" className="text-4xl font-bold text-gray-900 mb-6">
             Cadence Henderson News
           </h2>
           <p className="text-xl text-gray-700 mb-8 leading-relaxed">
             For announcements, updates, offers and tips, check out our newsroom.
           </p>
+          {articles.length > 0 && (
+            <div className="grid sm:grid-cols-3 gap-6 mb-10 text-left">
+              {articles.map((article) => (
+                <Link
+                  key={article.id}
+                  href={article.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow bg-white"
+                >
+                  <div className="relative h-40 bg-gray-200">
+                    {article.image ? (
+                      <Image
+                        src={article.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 100vw, 33vw"
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center"
+                        style={{ backgroundImage: `url('${cfImage(SITE_IMAGES.hero.news, 'card')}')` }}
+                      />
+                    )}
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs text-gray-500 flex items-center gap-1">
+                      <Calendar size={12} />
+                      {article.date}
+                    </span>
+                    <h3 className="font-semibold text-gray-900 line-clamp-2 mt-1">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 line-clamp-2 mt-1">
+                      {article.excerpt}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          )}
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
               size="lg"
