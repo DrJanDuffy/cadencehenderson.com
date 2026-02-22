@@ -137,8 +137,8 @@ export function Navigation() {
           <Link
             href="/"
             className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:ring-offset-2 rounded"
-            aria-label="Cadence Henderson - Home"
-            title="Cadence Henderson real estate by Dr. Jan Duffy"
+            aria-label={`${CONTACT_INFO.siteName} - Home`}
+            title={CONTACT_INFO.siteName}
           >
             <span className="text-2xl font-bold text-blue-900">CADENCE</span>
           </Link>

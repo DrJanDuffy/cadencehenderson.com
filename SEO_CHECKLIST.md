@@ -57,7 +57,7 @@ Based on Google's Official SEO Starter Guide
 
 ### **4. Write Good Title Tags**
 - ✅ **Unique titles for each page**
-  - Homepage: "Cadence Henderson | Homes By Dr Jan Duffy"
+  - Homepage: "Cadence Henderson Homes By Dr. Jan Duffy"
   - Builder pages: "{Builder Name} | Cadence Henderson"
   - Descriptive and accurate
 
@@ -265,7 +265,7 @@ Call 702-500-1955
 **2. Google Business Profile** (Free, 15 minutes)
    - Visit: https://business.google.com
    - Create/claim listing
-   - Business name: "Cadence Henderson | Homes By Dr Jan Duffy"
+   - Business name: "Cadence Henderson Homes By Dr. Jan Duffy"
    - Category: Real Estate Agent
    - Complete all fields
    - Verify (postcard or phone)
@@ -372,7 +372,7 @@ Based on Google's guidelines:
 
 **Critical Information to Enter:**
 
-**Business Name:** Cadence Henderson | Homes By Dr Jan Duffy
+**Business Name:** Cadence Henderson Homes By Dr. Jan Duffy
 
 **Category:** 
 - Primary: Real Estate Agent

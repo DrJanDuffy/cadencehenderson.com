@@ -31,8 +31,10 @@ export const CONTACT_INFO = {
   welcomeCenter: '1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
   mainOffice: '8850 W Sunset Road Suite 200, Las Vegas, NV 89148',
-  brandName: 'Cadence Henderson | Homes By Dr Jan Duffy',
-  shortBrandName: 'Homes By Dr Jan Duffy',
+  /** Canonical site name for SEO, GEO, AEO — must match GBP. */
+  siteName: 'Cadence Henderson Homes By Dr. Jan Duffy',
+  brandName: 'Cadence Henderson Homes By Dr. Jan Duffy',
+  shortBrandName: 'Homes By Dr. Jan Duffy',
   realScoutSearchUrl:
     'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM0Mw==',
   realScoutRentalsUrl:

@@ -5,7 +5,7 @@ export function LocalBusinessSchema() {
   const schema = {
     '@context': 'https://schema.org',
     '@type': 'RealEstateAgent',
-    name: "Dr. Jan Duffy — Cadence Henderson New Home Buyer's Agent",
+    name: CONTACT_INFO.siteName,
     description:
       "Free new home buyer representation at Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across all 9 builders. Builder pays the fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties.",
     image: 'https://www.cadencehenderson.com/og-image.png',

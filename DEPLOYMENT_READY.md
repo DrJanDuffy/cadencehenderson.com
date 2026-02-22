@@ -6,7 +6,7 @@
 
 ## 🏆 **COMPLETE WEBSITE OVERVIEW**
 
-**Business:** Cadence Henderson | Homes By Dr Jan Duffy  
+**Business:** Cadence Henderson Homes By Dr. Jan Duffy  
 **Agent:** Dr. Jan Duffy, REALTOR®  
 **License:** S.0197614  
 **Brokerage:** Berkshire Hathaway HomeServices Nevada Properties  
@@ -109,7 +109,7 @@
 
 ### **Step 2: Google Business Profile** (CRITICAL)
 1. Go to: https://business.google.com
-2. Create listing with exact name: "Cadence Henderson | Homes By Dr Jan Duffy"
+2. Create listing with exact name: "Cadence Henderson Homes By Dr. Jan Duffy"
 3. Add all information (see SEO_CHECKLIST.md for details)
 4. Verify ownership
 5. Upload photos
@@ -200,7 +200,7 @@
 
 ## 🎉 **CONGRATULATIONS!**
 
-Your **Cadence Henderson | Homes By Dr Jan Duffy** website is:
+Your **Cadence Henderson Homes By Dr. Jan Duffy** website is:
 
 ✅ Fully functional  
 ✅ Google-optimized  

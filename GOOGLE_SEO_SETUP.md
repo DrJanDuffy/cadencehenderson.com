@@ -50,7 +50,7 @@ Sitemap: https://www.cadencehenderson.com/sitemap.xml
 ```json
 {
   "@type": "RealEstateAgent",
-  "name": "Cadence Henderson | Homes By Dr Jan Duffy",
+  "name": "Cadence Henderson Homes By Dr. Jan Duffy",
   "telephone": "+1-702-500-1955",
   "email": "DrJanSells@CadenceHenderson.com",
   "address": {
@@ -109,7 +109,7 @@ Sitemap: https://www.cadencehenderson.com/sitemap.xml
 
 **Page Title:**
 ```
-Cadence Henderson | Homes By Dr Jan Duffy - Master Planned Community
+Cadence Henderson Homes By Dr. Jan Duffy - Master Planned Community
 ```
 
 **Description:**
@@ -148,7 +148,7 @@ Call 702-500-1955
 
 1. Go to https://business.google.com
 2. Create/claim business listing
-3. Use exact name: **"Cadence Henderson | Homes By Dr Jan Duffy"**
+3. Use exact name: **"Cadence Henderson Homes By Dr. Jan Duffy"**
 4. Category: Real Estate Agent
 5. Address: 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011
 6. Phone: 702-500-1955
@@ -269,7 +269,7 @@ Once indexed, your site should appear for:
 ## 📱 **GOOGLE MY BUSINESS OPTIMIZATION**
 
 **When Setting Up:**
-- Business Name: Cadence Henderson | Homes By Dr Jan Duffy
+- Business Name: Cadence Henderson Homes By Dr. Jan Duffy
 - Category: Real Estate Agent
 - Secondary: Real Estate Consultant
 - Description: Specializing in Cadence Henderson master-planned community. Expert in luxury homes, investment properties, and first-time buyers. REALTOR® with Berkshire Hathaway HomeServices Nevada Properties.

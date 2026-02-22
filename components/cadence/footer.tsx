@@ -44,7 +44,7 @@ export function Footer() {
             CADENCE HENDERSON
           </div>
           <div className="text-base text-gray-200 mb-1">
-            Homes By Dr Jan Duffy
+            {CONTACT_INFO.shortBrandName}
           </div>
           <div className="text-sm text-gray-200 mb-1">
             Dr. Jan Duffy, REALTOR® | License {CONTACT_INFO.licenseNumber}
@@ -132,7 +132,7 @@ export function Footer() {
         </div>
         <div className="border-t border-gray-700 pt-8 text-center text-gray-300">
           <p className="text-sm">
-            Copyright 2025 Cadence Henderson | Homes By Dr Jan Duffy {CONTACT_INFO.licenseNumber}
+            Copyright 2025 {CONTACT_INFO.siteName} | License {CONTACT_INFO.licenseNumber}
           </p>
           <p className="text-xs mt-2">All Rights Reserved</p>
         </div>

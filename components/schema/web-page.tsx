@@ -1,3 +1,5 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+
 /**
  * WebPage JSON-LD for homepage. Supports indexing and E-E-A-T (author, publisher).
  * Use on the root page only.
@@ -14,7 +16,7 @@ export function WebPageSchema() {
     isPartOf: {
       '@type': 'WebSite',
       '@id': 'https://www.cadencehenderson.com/#website',
-      name: 'Cadence Henderson',
+      name: CONTACT_INFO.siteName,
       url: 'https://www.cadencehenderson.com',
     },
     about: {
