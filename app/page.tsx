@@ -3,7 +3,6 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Hero } from '@/components/cadence/hero'
 import { KeyFactsSection } from '@/components/cadence/key-facts-section'
 import { MarketSnapshotSection } from '@/components/cadence/market-snapshot-section'
-import { FeaturedListingsSection } from '@/components/cadence/featured-listings-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { HomeFinder } from '@/components/cadence/home-finder'
 import { AmenitiesSection } from '@/components/cadence/amenities-section'
@@ -44,7 +43,6 @@ export default function HomePage() {
       <Navigation />
       <Hero />
       <KeyFactsSection />
-      <FeaturedListingsSection />
       <RealScoutOfficeListings />
 
       <main id="homepage-content" className="scroll-mt-20" role="main">
