@@ -1,0 +1,8 @@
+name = "realscout-global-injector"
+main = "src/index.ts"
+compatibility_date = "2025-02-21"
+
+# Attach via Dashboard Routes or add here, e.g.:
+# routes = [
+#   { pattern = "example.com/*", zone_name = "example.com" },
+# ]
