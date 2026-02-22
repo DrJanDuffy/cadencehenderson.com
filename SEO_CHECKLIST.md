@@ -73,7 +73,7 @@ Based on Google's Official SEO Starter Guide
 - ✅ **Meta descriptions on all pages**
   - 150-160 characters
   - Includes keywords naturally
-  - Call to action (Call 702-500-1955)
+  - Call to action (Call 702-930-8672)
   - Unique for each page
 
 **Example:**
@@ -81,7 +81,7 @@ Based on Google's Official SEO Starter Guide
 Discover Cadence, a premier master-planned community in Henderson, Nevada. 
 Featuring new homes, exceptional amenities, and stunning views. 
 Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices. 
-Call 702-500-1955
+Call 702-930-8672
 ```
 
 ---
@@ -121,7 +121,7 @@ Call 702-500-1955
 - ✅ **Descriptive anchor text**
   - "View Homes" (not "click here")
   - "Schedule Tour" (not "learn more")
-  - "Call: 702-500-1955" (action-oriented)
+  - "Call: 702-930-8672" (action-oriented)
 
 - ✅ **Internal links**
   - Navigation menu
@@ -389,7 +389,7 @@ Based on Google's guidelines:
 
 **Hours:** Monday-Sunday: 10:00 AM - 6:00 PM
 
-**Phone:** 702-500-1955
+**Phone:** 702-930-8672
 
 **Website:** https://www.cadencehenderson.com
 

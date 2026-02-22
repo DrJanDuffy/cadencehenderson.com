@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson FAQ – Homes, Prices & Community | 89011',
@@ -56,7 +57,7 @@ function FaqsPageSchema() {
         name: 'Can I tour model homes in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes! Cadence Henderson model homes are open daily from 10 AM to 6 PM. You can tour multiple builders in one visit to compare floor plans and features. Call 702-930-8672 to schedule a personal tour or visit our Welcome Center at 1170 E Sunset Rd, Henderson NV 89011.',
+          text: `Yes! Cadence Henderson model homes are open daily from 10 AM to 6 PM. You can tour multiple builders in one visit to compare floor plans and features. Call ${CONTACT_INFO.phone} to schedule a personal tour or visit our Welcome Center at ${CONTACT_INFO.welcomeCenter}.`,
         },
       },
       {
@@ -64,7 +65,7 @@ function FaqsPageSchema() {
         name: 'Are there move-in ready homes available in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, many builders in Cadence Henderson 89011 have quick move-in homes available. These homes are either completed or nearing completion and can close in 30–60 days. Check with individual builders or call 702-930-8672 for current Cadence Henderson inventory.',
+          text: `Yes, many builders in Cadence Henderson 89011 have quick move-in homes available. These homes are either completed or nearing completion and can close in 30–60 days. Check with individual builders or call ${CONTACT_INFO.phone} for current Cadence Henderson inventory.`,
         },
       },
       {
@@ -88,7 +89,7 @@ function FaqsPageSchema() {
         name: 'What are the HOA fees in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, with some sub-associations charging additional fees. Call 702-930-8672 for current Cadence Henderson HOA fee schedules.',
+          text: `Cadence Henderson HOA fees vary by neighborhood and builder but typically range from $50–$150/month for the master association, with some sub-associations charging additional fees. Call ${CONTACT_INFO.phone} for current Cadence Henderson HOA fee schedules.`,
         },
       },
       {

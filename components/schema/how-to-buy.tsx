@@ -28,7 +28,7 @@ export function HowToBuySchema() {
         '@type': 'HowToStep',
         position: 2,
         name: 'Tour model homes',
-        text: 'Visit the Cadence Henderson Welcome Center at 1170 E Sunset Rd, Henderson NV 89011. Tour model homes from 8 builders daily 10AM–6PM.',
+        text: `Visit the Cadence Henderson Welcome Center at ${CONTACT_INFO.welcomeCenter}. Tour model homes from 8 builders daily 10AM–6PM.`,
       },
       {
         '@type': 'HowToStep',

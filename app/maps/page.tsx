@@ -245,7 +245,7 @@ export default function MapsPage() {
                       name: 'Where is Cadence Henderson located?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The real estate office is at 1170 E Sunset Rd, 2nd Floor, Henderson NV 89011.',
+                        text: `Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The real estate office is at ${CONTACT_INFO.welcomeCenter}.`,
                       },
                     },
                     {
@@ -253,7 +253,7 @@ export default function MapsPage() {
                       name: 'How do I get directions to Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Get directions by clicking Get Directions on this page or searching 1170 E Sunset Rd, Henderson NV 89011 in Google Maps. About 20 minutes from the Las Vegas Strip.',
+                        text: `Get directions by clicking Get Directions on this page or searching ${CONTACT_INFO.welcomeCenter} in Google Maps. About 20 minutes from the Las Vegas Strip.`,
                       },
                     },
                     {
@@ -269,7 +269,7 @@ export default function MapsPage() {
                       name: 'What are the Cadence Henderson office hours?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'The Cadence Henderson real estate office at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily. Call 702-930-8672 before visiting.',
+                        text: `The Cadence Henderson real estate office at ${CONTACT_INFO.welcomeCenter} is open 10AM–6PM daily. Call ${CONTACT_INFO.phone} before visiting.`,
                       },
                     },
                   ],
@@ -278,10 +278,10 @@ export default function MapsPage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'Where is Cadence Henderson located?', a: 'Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The office is at 1170 E Sunset Rd, 2nd Floor.' },
-                { q: 'How do I get directions to Cadence Henderson?', a: 'Click Get Directions above or search 1170 E Sunset Rd, Henderson NV 89011 in Google Maps. About 20 minutes from the Las Vegas Strip.' },
+                { q: 'Where is Cadence Henderson located?', a: `Cadence Henderson is at Bicentennial Pkwy & Paseo Verde, Henderson NV 89011. The office is at ${CONTACT_INFO.welcomeCenter}.` },
+                { q: 'How do I get directions to Cadence Henderson?', a: `Click Get Directions above or search ${CONTACT_INFO.welcomeCenter} in Google Maps. About 20 minutes from the Las Vegas Strip.` },
                 { q: 'What landmarks are near Cadence Henderson NV 89011?', a: '15 min from Harry Reid Airport, 20 min from the Strip, 15 min from Lake Mead. Galleria at Sunset mall is 5 minutes away.' },
-                { q: 'What are the Cadence Henderson office hours?', a: 'Open 10AM–6PM daily at 1170 E Sunset Rd, Henderson NV 89011. Call 702-930-8672 before visiting.' },
+                { q: 'What are the Cadence Henderson office hours?', a: `Open 10AM–6PM daily at ${CONTACT_INFO.welcomeCenter}. Call ${CONTACT_INFO.phone} before visiting.` },
               ].map(({ q, a }) => (
                 <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">

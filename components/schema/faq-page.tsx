@@ -1,3 +1,5 @@
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
+
 /**
  * FAQPage JSON-LD schema targeting "People Also Ask" and AEO.
  * Mirrors on-page HomepageFAQSection. Buyer-focused, Cadence Henderson NV 89011.
@@ -12,7 +14,7 @@ export function FAQPageSchema() {
         name: 'Do I need a realtor to buy a new home in Cadence Henderson?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes — and it costs you nothing. Dr. Jan Duffy represents new home buyers at Cadence Henderson and her fee is paid entirely by the builder. She negotiates upgrades, lot premiums, and closing costs on your behalf across all 9 builders. Call 702-930-8672 before your first model home visit.',
+          text: `Yes — and it costs you nothing. Dr. Jan Duffy represents new home buyers at Cadence Henderson and her fee is paid entirely by the builder. She negotiates upgrades, lot premiums, and closing costs on your behalf across all 9 builders. Call ${CONTACT_INFO.phone} before your first model home visit.`,
         },
       },
       {
@@ -20,7 +22,7 @@ export function FAQPageSchema() {
         name: 'Which builders are in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Cadence Henderson has 9 active builders: Century Communities, D.R. Horton, Lennar, Richmond American, Taylor Morrison, Beazer Homes, Woodside Homes, StoryBook Homes, and American Homes 4 Rent. Availability and incentives change weekly — call Dr. Jan at 702-930-8672 for current inventory.',
+          text: `Cadence Henderson has 9 active builders: Century Communities, D.R. Horton, Lennar, Richmond American, Taylor Morrison, Beazer Homes, Woodside Homes, StoryBook Homes, and American Homes 4 Rent. Availability and incentives change weekly — call Dr. Jan at ${CONTACT_INFO.phone} for current inventory.`,
         },
       },
       {
@@ -28,7 +30,7 @@ export function FAQPageSchema() {
         name: 'How much do new homes cost in Cadence Henderson NV?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'New homes in Cadence Henderson range from the $300Ks to $700K+, depending on the builder, floor plan, and lot. Rate buydown incentives and closing cost contributions are often available. Call Dr. Jan Duffy at 702-930-8672 for this week\'s pricing.',
+          text: `New homes in Cadence Henderson range from the $300Ks to $700K+, depending on the builder, floor plan, and lot. Rate buydown incentives and closing cost contributions are often available. Call Dr. Jan Duffy at ${CONTACT_INFO.phone} for this week's pricing.`,
         },
       },
       {

@@ -142,7 +142,7 @@ export default function ContactPage() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Cadence Henderson Real Estate Office Location – Henderson NV 89011"
+                  title={`${CONTACT_INFO.siteName} Office Location – Henderson NV 89011`}
                 />
               </div>
               <div className="mt-3 text-center">
@@ -183,7 +183,7 @@ export default function ContactPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-center text-gray-700 mb-8">
-              Contact Cadence Henderson Real Estate – Henderson NV 89011
+              {CONTACT_INFO.siteName} – Henderson NV 89011
             </p>
             <script
               type="application/ld+json"
@@ -197,7 +197,7 @@ export default function ContactPage() {
                       name: 'How do I schedule a Cadence Henderson home tour?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Schedule a Cadence Henderson home tour by calling 702-930-8672 or booking online at calendly.com. The Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily.',
+                        text: `Schedule a Cadence Henderson home tour by calling ${CONTACT_INFO.phone} or booking online at calendly.com. The Welcome Center at ${CONTACT_INFO.welcomeCenter} is open 10AM–6PM daily.`,
                       },
                     },
                     {
@@ -205,7 +205,7 @@ export default function ContactPage() {
                       name: 'What are the Cadence Henderson office hours?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'The Cadence Henderson real estate office at 1170 E Sunset Rd, Henderson NV 89011 is open Monday through Sunday, 10:00 AM to 6:00 PM.',
+                        text: `The Cadence Henderson real estate office at ${CONTACT_INFO.welcomeCenter} is open Monday through Sunday, 10:00 AM to 6:00 PM.`,
                       },
                     },
                     {
@@ -213,7 +213,7 @@ export default function ContactPage() {
                       name: 'Where is the Cadence Henderson real estate office?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'The Cadence Henderson real estate office is at 1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011, near Bicentennial Pkwy and Paseo Verde.',
+                        text: `The Cadence Henderson real estate office is at ${CONTACT_INFO.welcomeCenter}, near Bicentennial Pkwy and Paseo Verde.`,
                       },
                     },
                     {
@@ -221,7 +221,7 @@ export default function ContactPage() {
                       name: 'How can I get a free home value estimate for my Cadence Henderson home?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Use the free home value widget on the contact page or call 702-930-8672. Get an instant estimate for your Cadence Henderson NV 89011 property.',
+                        text: `Use the free home value widget on the contact page or call ${CONTACT_INFO.phone}. Get an instant estimate for your Cadence Henderson NV 89011 property.`,
                       },
                     },
                   ],
@@ -230,10 +230,10 @@ export default function ContactPage() {
             />
             <div className="space-y-4">
               {[
-                { q: 'How do I schedule a Cadence Henderson home tour?', a: 'Schedule by calling 702-930-8672 or booking online. The Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 is open 10AM–6PM daily.' },
-                { q: 'What are the Cadence Henderson office hours?', a: 'Open Monday through Sunday, 10:00 AM to 6:00 PM at 1170 E Sunset Rd, Henderson NV 89011.' },
-                { q: 'Where is the Cadence Henderson real estate office?', a: '1170 E Sunset Rd, 2nd Floor, Henderson, NV 89011, near Bicentennial Pkwy and Paseo Verde.' },
-                { q: 'How can I get a free home value estimate for my Cadence Henderson home?', a: 'Use the home value widget on this page or call 702-930-8672 for an instant estimate.' },
+                { q: 'How do I schedule a Cadence Henderson home tour?', a: `Schedule by calling ${CONTACT_INFO.phone} or booking online. The Welcome Center at ${CONTACT_INFO.welcomeCenter} is open 10AM–6PM daily.` },
+                { q: 'What are the Cadence Henderson office hours?', a: `Open Monday through Sunday, 10:00 AM to 6:00 PM at ${CONTACT_INFO.welcomeCenter}.` },
+                { q: 'Where is the Cadence Henderson real estate office?', a: `${CONTACT_INFO.welcomeCenter}, near Bicentennial Pkwy and Paseo Verde.` },
+                { q: 'How can I get a free home value estimate for my Cadence Henderson home?', a: `Use the home value widget on this page or call ${CONTACT_INFO.phone} for an instant estimate.` },
               ].map(({ q, a }) => (
                 <details key={q} className="group border border-gray-200 rounded-lg p-5 cursor-pointer bg-white">
                   <summary className="font-semibold text-gray-900 list-none flex justify-between items-center gap-4">

@@ -308,7 +308,7 @@ export default function NewHomesPage() {
                       name: 'What new homes are available in Cadence Henderson?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call 702-930-8672 for current availability.',
+                        text: `Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call ${CONTACT_INFO.phone} for current availability.`,
                       },
                     },
                     {
@@ -324,7 +324,7 @@ export default function NewHomesPage() {
                       name: 'What is the price range for new homes in Cadence Henderson NV?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'New home prices in Cadence Henderson range from approximately $300,000 for townhomes to $650,000+ for larger single-family and estate homes. Most new construction in Cadence Henderson 89011 prices between $380K and $550K. Visit the Welcome Center at 1170 E Sunset Rd, Henderson NV 89011 to tour model homes.',
+                        text: `New home prices in Cadence Henderson range from approximately $300,000 for townhomes to $650,000+ for larger single-family and estate homes. Most new construction in Cadence Henderson 89011 prices between $380K and $550K. Visit the Welcome Center at ${CONTACT_INFO.welcomeCenter} to tour model homes.`,
                       },
                     },
                     {
@@ -332,7 +332,7 @@ export default function NewHomesPage() {
                       name: 'Can I tour model homes in Cadence Henderson 7 days a week?',
                       acceptedAnswer: {
                         '@type': 'Answer',
-                        text: 'Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call 702-930-8672 or schedule online.',
+                        text: `Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call ${CONTACT_INFO.phone} or schedule online.`,
                       },
                     },
                   ],
@@ -343,7 +343,7 @@ export default function NewHomesPage() {
               {[
                 {
                   q: 'What new homes are available in Cadence Henderson?',
-                  a: 'Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call 702-930-8672 for current availability.',
+                  a: `Cadence Henderson NV 89011 has 8 active homebuilders offering new construction ranging from townhomes to estate homes. Current builders include Beazer, Century Communities, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, and Woodside Homes. Call ${CONTACT_INFO.phone} for current availability.`,
                 },
                 {
                   q: 'Which builders are in Cadence Henderson 89011?',
@@ -355,7 +355,7 @@ export default function NewHomesPage() {
                 },
                 {
                   q: 'Can I tour model homes in Cadence Henderson 7 days a week?',
-                  a: 'Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call 702-930-8672 or schedule online.',
+                  a: `Yes! New home model tours in Cadence Henderson are available every day from 10 AM to 6 PM. Our REALTOR® on-site can guide you through all 8 builders in one visit. Call ${CONTACT_INFO.phone} or schedule online.`,
                 },
               ].map(({ q, a }) => (
                 <details

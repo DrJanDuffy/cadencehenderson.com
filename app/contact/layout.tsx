@@ -1,14 +1,13 @@
 import type { Metadata } from 'next'
+import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 export const metadata: Metadata = {
-  title: 'Contact Cadence Henderson Real Estate | 702-930-8672',
-  description:
-    'Schedule a Cadence Henderson home tour. Call 702-930-8672 or visit 1170 E Sunset Rd, Henderson NV 89011. Open 7 days 10AM–6PM. Licensed REALTOR® on-site.',
+  title: `Contact ${CONTACT_INFO.siteName} | ${CONTACT_INFO.phone}`,
+  description: `Schedule a Cadence Henderson home tour. Call ${CONTACT_INFO.phone} or visit ${CONTACT_INFO.welcomeCenter}. Open 7 days 10AM–6PM. Licensed REALTOR® on-site.`,
   alternates: { canonical: 'https://www.cadencehenderson.com/contact' },
   openGraph: {
-    title: 'Contact Cadence Henderson Real Estate | 702-930-8672',
-    description:
-      'Schedule a Cadence Henderson home tour. Call 702-930-8672 or visit 1170 E Sunset Rd, Henderson NV 89011. Open 7 days 10AM–6PM.',
+    title: `Contact ${CONTACT_INFO.siteName} | ${CONTACT_INFO.phone}`,
+    description: `Schedule a Cadence Henderson home tour. Call ${CONTACT_INFO.phone} or visit ${CONTACT_INFO.welcomeCenter}. Open 7 days 10AM–6PM.`,
     url: 'https://www.cadencehenderson.com/contact',
   },
 }
