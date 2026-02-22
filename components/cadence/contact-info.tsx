@@ -45,8 +45,8 @@ export const CONTACT_INFO = {
 }
 
 export const SOCIAL_MEDIA = {
-  facebook: 'https://facebook.com/CadenceHenderson',
-  instagram: 'https://instagram.com/CadenceHenderson',
+  facebook: 'https://www.facebook.com/CadenceHendersonHomes',
+  instagram: 'https://www.instagram.com/cadencehendersonhomes/',
   twitter: 'https://twitter.com/CadenceHenderson',
 }
 
