@@ -20,7 +20,7 @@ interface Env {
     ): Promise<ConversionResult | ConversionResult[]>;
   };
   /** Optional: use env.ASSETS.fetch(request) for Workers Sites / static assets instead of fetch(request). */
-  ASSETS?: Fetcher;
+  ASSETS?: { fetch(request: Request | string, init?: RequestInit): Promise<Response> };
 }
 
 /**
