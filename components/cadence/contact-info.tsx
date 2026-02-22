@@ -49,7 +49,7 @@ export const CONTACT_INFO = {
 export const SOCIAL_MEDIA = {
   facebook: 'https://www.facebook.com/CadenceHendersonHomes',
   instagram: 'https://www.instagram.com/cadencehendersonhomes/',
-  twitter: 'https://twitter.com/CadenceHenderson',
+  twitter: 'https://x.com/DrJanDuffy',
 }
 
 export const HOA_CONTACT = {

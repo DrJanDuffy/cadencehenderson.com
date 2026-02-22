@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     description:
       `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
     images: ['/og-image.png'],
-    creator: '@CadenceHenderson',
+    creator: '@DrJanDuffy',
   },
 }
 

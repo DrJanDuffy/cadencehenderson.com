@@ -45,120 +45,121 @@ export function isCloudflareImage(url: string): boolean {
 }
 
 // ============================================================================
-// SITE IMAGES CATALOG
-// Replace placeholder IDs with actual Cloudflare Image IDs after upload
+// SITE IMAGES CATALOG — Cadence Henderson
+// Uses Cadence-specific Cloudflare Images: CendenceDrJanDuffy, cadence_008_resized, Workout-Area-at-Cadence-CentralPark
+// To add more: upload to Cloudflare, copy Image ID from dashboard, replace IDs below
 // ============================================================================
 
 export const SITE_IMAGES = {
   // Hero/Banner Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
   hero: {
     homepage: 'CendenceDrJanDuffy', // CendenceDrJanDuffy.png
-    newHomes: 'centennialhillshomes/photos/modern-home-exterior.jpg',
-    lifestyle: 'centennialhillshomes/photos/community-lounge.jpg',
-    contact: 'lonemountaineights/agents/dr-jan-duffy.jpg',
-    rentals: 'lonemountaineights/photos/home-featured-2.jpg',
-    gallery: 'centennialhillshomes/photos/clubhouse-exterior.jpg',
-    news: 'centennialhillshomes/og/blog-default.jpg',
-    faqs: 'centennialhillshomes/photos/community-lounge-2.jpg',
-    realtors: 'lonemountaineights/agents/dr-jan-duffy.jpg',
-    events: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    amenities: 'centennialhillshomes/photos/swimming-pool.jpg',
-    schools: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    parksTrails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    shopping: 'centennialhillshomes/photos/community-kitchen.jpg',
+    newHomes: 'cadence_008_resized',
+    lifestyle: 'Workout-Area-at-Cadence-CentralPark',
+    contact: 'CendenceDrJanDuffy',
+    rentals: 'cadence_008_resized',
+    gallery: 'Workout-Area-at-Cadence-CentralPark',
+    news: 'cadence_008_resized',
+    faqs: 'Workout-Area-at-Cadence-CentralPark',
+    realtors: 'CendenceDrJanDuffy',
+    events: 'Workout-Area-at-Cadence-CentralPark',
+    amenities: 'cadence_008_resized',
+    schools: 'cadence_008_resized',
+    parksTrails: 'Workout-Area-at-Cadence-CentralPark',
+    shopping: 'cadence_008_resized',
   },
 
-  // Builder Images (8 builders) - using home exteriors as placeholders
+  // Builder Images (8 builders) — Cadence Henderson community
   builders: {
-    beazer: 'lonemountaineights/photos/home-featured-1.jpg',
-    century: 'lonemountaineights/photos/home-featured-2.jpg',
-    drHorton: 'lonemountaineights/photos/home-featured-3.jpg',
-    lennar: 'centennialhillshomes/photos/modern-home-exterior.jpg',
-    richmond: 'lonemountaineights/photos/home-featured-1.jpg',
-    storybook: 'lonemountaineights/photos/home-featured-2.jpg',
-    taylorMorrison: 'lonemountaineights/photos/home-featured-3.jpg',
-    woodside: 'centennialhillshomes/photos/modern-home-exterior.jpg',
+    beazer: 'cadence_008_resized',
+    century: 'cadence_008_resized',
+    drHorton: 'cadence_008_resized',
+    lennar: 'cadence_008_resized',
+    richmond: 'Workout-Area-at-Cadence-CentralPark',
+    storybook: 'cadence_008_resized',
+    taylorMorrison: 'cadence_008_resized',
+    woodside: 'Workout-Area-at-Cadence-CentralPark',
   },
 
-  // Amenities Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
+  // Amenities Images — Cadence Henderson (use Cadence IDs from Cloudflare dashboard)
   amenities: {
-    centralPark: 'cadence_008_resized', // cadence_008_resized.jpg
-    pool: 'centennialhillshomes/photos/swimming-pool.jpg',
-    splashPad: 'centennialhillshomes/photos/swimming-pool-2.jpg',
-    fitness: 'centennialhillshomes/photos/fitness-center.jpg',
-    dogPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    playground: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    trails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    sportsCourts: 'centennialhillshomes/photos/pickleball-courts.jpg',
-    clubhouse: 'centennialhillshomes/photos/clubhouse-exterior.jpg',
+    centralPark: 'cadence_008_resized',
+    pool: 'cadence_008_resized',
+    splashPad: 'cadence_008_resized',
+    fitness: 'Workout-Area-at-Cadence-CentralPark',
+    dogPark: 'cadence_008_resized',
+    playground: 'cadence_008_resized',
+    trails: 'Workout-Area-at-Cadence-CentralPark',
+    sportsCourts: 'Workout-Area-at-Cadence-CentralPark',
+    clubhouse: 'cadence_008_resized',
   },
 
-  // Lifestyle/Community Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
+  // Lifestyle/Community Images — Cadence Central Park & community
   lifestyle: {
-    community: 'Workout-Area-at-Cadence-CentralPark', // Workout-Area-at-Cadence-CentralPark.jpg
-    families: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    events: 'centennialhillshomes/photos/community-lounge-2.jpg',
-    concert: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    farmersMarket: 'centennialhillshomes/photos/community-kitchen.jpg',
-    movieNight: 'centennialhillshomes/photos/community-lounge.jpg',
-    yoga: 'centennialhillshomes/photos/fitness-center.jpg',
-    foodTruck: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    community: 'Workout-Area-at-Cadence-CentralPark',
+    families: 'cadence_008_resized',
+    events: 'Workout-Area-at-Cadence-CentralPark',
+    concert: 'Workout-Area-at-Cadence-CentralPark',
+    farmersMarket: 'cadence_008_resized',
+    movieNight: 'Workout-Area-at-Cadence-CentralPark',
+    yoga: 'Workout-Area-at-Cadence-CentralPark',
+    foodTruck: 'Workout-Area-at-Cadence-CentralPark',
   },
 
-  // Home Exterior/Interior Images
+  // Home Exterior/Interior Images — Cadence Henderson
   homes: {
-    exterior1: 'lonemountaineights/photos/home-featured-1.jpg',
-    exterior2: 'lonemountaineights/photos/home-featured-2.jpg',
-    exterior3: 'lonemountaineights/photos/home-featured-3.jpg',
-    interior1: 'centennialhillshomes/photos/community-lounge.jpg',
-    interior2: 'centennialhillshomes/photos/community-lounge-2.jpg',
-    kitchen: 'centennialhillshomes/photos/community-kitchen.jpg',
-    livingRoom: 'centennialhillshomes/photos/community-lounge.jpg',
-    backyard: 'centennialhillshomes/photos/outdoor-patio.jpg',
+    exterior1: 'cadence_008_resized',
+    exterior2: 'cadence_008_resized',
+    exterior3: 'Workout-Area-at-Cadence-CentralPark',
+    interior1: 'Workout-Area-at-Cadence-CentralPark',
+    interior2: 'cadence_008_resized',
+    kitchen: 'cadence_008_resized',
+    livingRoom: 'cadence_008_resized',
+    backyard: 'Workout-Area-at-Cadence-CentralPark',
   },
 
-  // Rental Communities
+  // Rental Communities — Cadence Henderson
   rentals: {
-    americanHomes: 'lonemountaineights/photos/home-featured-1.jpg',
-    element12: 'lonemountaineights/photos/home-featured-2.jpg',
-    adler: 'lonemountaineights/photos/home-featured-3.jpg',
+    americanHomes: 'cadence_008_resized',
+    element12: 'cadence_008_resized',
+    adler: 'Workout-Area-at-Cadence-CentralPark',
   },
 
-  // Gallery Images (full set)
+  // Gallery Images — Cadence Central Park & community
   gallery: {
-    parkVista: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    newHome: 'centennialhillshomes/photos/modern-home-exterior.jpg',
-    resortPool: 'centennialhillshomes/photos/swimming-pool.jpg',
-    concert: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    communityGathering: 'centennialhillshomes/photos/community-lounge.jpg',
-    playground: 'centennialhillshomes/photos/outdoor-patio.jpg',
-    fitnessCenter: 'centennialhillshomes/photos/fitness-center.jpg',
-    modernExterior: 'lonemountaineights/photos/home-featured-1.jpg',
-    walkingTrails: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
-    communityEvent: 'centennialhillshomes/photos/community-lounge-2.jpg',
-    luxuryInterior: 'centennialhillshomes/photos/community-kitchen.jpg',
-    dogPark: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    parkVista: 'cadence_008_resized',
+    newHome: 'cadence_008_resized',
+    resortPool: 'cadence_008_resized',
+    concert: 'Workout-Area-at-Cadence-CentralPark',
+    communityGathering: 'Workout-Area-at-Cadence-CentralPark',
+    playground: 'cadence_008_resized',
+    fitnessCenter: 'Workout-Area-at-Cadence-CentralPark',
+    modernExterior: 'cadence_008_resized',
+    walkingTrails: 'Workout-Area-at-Cadence-CentralPark',
+    communityEvent: 'Workout-Area-at-Cadence-CentralPark',
+    luxuryInterior: 'cadence_008_resized',
+    dogPark: 'cadence_008_resized',
   },
 
-  // Location/Map Images
+  // Location/Map Images — Cadence Henderson
   location: {
-    mapOverview: 'centennialhillshomes/og/centennial-hills-map.jpg',
-    welcomeCenter: 'centennialhillshomes/photos/entrance-guardhouse.jpg',
-    aerialView: 'lonemountaineights/photos/las-vegas-neighborhood.jpg',
+    mapOverview: 'cadence_008_resized',
+    welcomeCenter: 'cadence_008_resized',
+    aerialView: 'cadence_008_resized',
   },
 
-  // Agent/Branding
+  // Agent/Branding — Dr. Jan Duffy
   agent: {
-    headshot: 'lonemountaineights/agents/dr-jan-duffy.jpg',
-    logo: 'centennialhillshomes/branding/logo.png',
-    bhhs: 'centennialhillshomes/branding/logo.png',
+    headshot: 'CendenceDrJanDuffy',
+    logo: 'cadence_008_resized', // replace with logo ID if uploaded
+    bhhs: 'cadence_008_resized', // replace with BHH logo ID if uploaded
   },
 
-  // Icons/Graphics - using logo as placeholder
+  // Icons/Graphics — Cadence community thumbnails
   icons: {
-    amenitiesBox: 'centennialhillshomes/branding/logo.png',
-    lifestyleBox: 'centennialhillshomes/branding/logo.png',
-    homesBox: 'centennialhillshomes/branding/logo.png',
+    amenitiesBox: 'cadence_008_resized',
+    lifestyleBox: 'Workout-Area-at-Cadence-CentralPark',
+    homesBox: 'cadence_008_resized',
   },
 } as const
 
