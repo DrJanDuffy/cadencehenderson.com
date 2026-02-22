@@ -1,0 +1,68 @@
+# Workflow Principles
+
+Structured approach to workflow orchestration, task management, and core development principles for this project.
+
+---
+
+## Workflow Orchestration
+
+### 1. Plan node default
+
+- Enter plan mode for any non-trivial task (3+ steps or architectural decisions).
+- If issues arise, stop and re-plan immediately; do not push forward blindly.
+- Use plan mode for verification steps as well as building.
+- Write detailed specifications upfront to reduce ambiguity.
+
+### 2. Subagent strategy
+
+- Use subagents to keep the main context window clean.
+- Offload research, exploration, and parallel analysis to subagents.
+- For complex problems, dedicate more resources via subagents.
+- One clear tack per subagent for focused execution.
+
+### 3. Self-improvement loop
+
+- After any user correction, update `tasks/lessons.md` with the identified pattern.
+- Write personal rules to prevent repeating the same mistakes.
+- Iterate on lessons until mistake rate decreases.
+- Review lessons at the start of each relevant project session.
+
+### 4. Verification before done
+
+- Never mark a task complete without proving it works.
+- When relevant, distinguish main behavior from the user's changes.
+- Self-check: "Would a staff engineer approve this?"
+- Run tests, check logs, and demonstrate correctness.
+
+### 5. Demand elegance (balanced)
+
+- For non-trivial changes, pause to consider a more elegant solution.
+- If a fix feels hacky, implement the elegant solution with current knowledge.
+- Skip for simple, obvious fixes; avoid over-engineering.
+- Challenge your own work before presenting it.
+
+### 6. Autonomous bug fixing
+
+- When a bug is reported, fix it immediately without hand-holding.
+- Use logs, errors, and failing tests to pinpoint and resolve.
+- Require zero context switching from the user.
+- Fix failing CI tests without explicit prompting.
+
+---
+
+## Task management
+
+1. **Plan first**: Write a plan in `tasks/todo.md` with checkable items.
+2. **Verify plan**: Check the plan before starting implementation.
+3. **Track progress**: Mark items complete as work progresses.
+4. **Explain changes**: Provide a high-level summary at each step.
+5. **Document results**: Add a review section to `tasks/todo.md`.
+6. **Capture lessons**: Update `tasks/lessons.md` after corrections.
+
+---
+
+## Core principles
+
+- **Simplicity first**: Make every change as simple as possible; minimal code impact.
+- **No laziness**: Find root causes instead of temporary fixes; senior developer standards.
+- **Minimal impact**: Changes affect only what is necessary; avoid introducing new bugs.
