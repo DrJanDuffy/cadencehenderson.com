@@ -1,5 +1,5 @@
 # Markdown for AI Agents — single Worker for multiple domains (Free plan compatible)
-name = "markdown-for-agents"
+name = "cadencehenderson"
 main = "src/index.ts"
 compatibility_date = "2025-02-21"
 
