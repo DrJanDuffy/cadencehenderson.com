@@ -9,6 +9,8 @@ const DEFAULT_STYLE: React.CSSProperties = { minWidth: 320, height: 700 }
 export type CalendlyInlineWidgetProps = {
   className?: string
   style?: React.CSSProperties
+  /** Called when the Calendly iframe has been inited (so parent can hide loading state). */
+  onReady?: () => void
 }
 
 /**
@@ -20,9 +22,12 @@ export type CalendlyInlineWidgetProps = {
 export function CalendlyInlineWidget({
   className,
   style,
+  onReady,
 }: CalendlyInlineWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const initedRef = useRef(false)
+  const onReadyRef = useRef(onReady)
+  onReadyRef.current = onReady
   const { isLoaded } = useCalendly()
   const combinedStyle = style
     ? { ...DEFAULT_STYLE, ...style }
@@ -48,6 +53,7 @@ export function CalendlyInlineWidget({
           parentElement: containerRef.current,
         })
         initedRef.current = true
+        onReadyRef.current?.()
         cleanup()
       }
     }
@@ -65,7 +71,7 @@ export function CalendlyInlineWidget({
       ref={containerRef}
       className={`calendly-inline-widget bg-slate-50 border border-slate-200 rounded-lg overflow-hidden ${className ?? ''}`.trim()}
       style={combinedStyle}
-      aria-busy={!isLoaded}
+      aria-busy={!isLoaded ? 'true' : 'false'}
       aria-label="Schedule a consultation – Calendly"
     />
   )

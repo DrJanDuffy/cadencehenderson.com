@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { NewsPlaceholderImage } from '@/components/cadence/news-placeholder-image'
 import { fetchNews } from '@/lib/fetch-news'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { Calendar } from 'lucide-react'
@@ -53,10 +54,7 @@ export async function NewsSection() {
                         className="object-cover"
                       />
                     ) : (
-                      <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url('${cfImage(SITE_IMAGES.hero.news, 'card')}')` }}
-                      />
+                      <NewsPlaceholderImage src={cfImage(SITE_IMAGES.hero.news, 'card')} />
                     )}
                   </div>
                   <div className="p-4">

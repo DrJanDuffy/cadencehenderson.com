@@ -1,3 +1,6 @@
+'use client'
+
+import { useState, useEffect } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
@@ -10,6 +13,14 @@ import { Calendar, Mail, Phone } from 'lucide-react'
  * Calendly on white card for readability; section copy for SEO/AEO/GEO.
  */
 export function ScheduleConsultationSection() {
+  const [calendarReady, setCalendarReady] = useState(false)
+  const [showLoadingFallback, setShowLoadingFallback] = useState(true)
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowLoadingFallback(false), 8000)
+    return () => clearTimeout(t)
+  }, [])
+
   return (
     <section
       className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white"
@@ -54,10 +65,16 @@ export function ScheduleConsultationSection() {
         </div>
         {/* Calendly on white card so text is readable (no white-on-blue) */}
         <div className="max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-xl p-4 md:p-6">
+          {showLoadingFallback && !calendarReady && (
+            <p className="text-center text-gray-500 py-4 text-sm" aria-live="polite">
+              Loading calendar…
+            </p>
+          )}
           <CalendlyWhenVisible loadOnMount>
             <CalendlyInlineWidget
               className="rounded-lg overflow-hidden w-full"
               style={{ minWidth: 280, height: 630 }}
+              onReady={() => setCalendarReady(true)}
             />
           </CalendlyWhenVisible>
           <p className="text-center text-sm text-gray-600 mt-4">
