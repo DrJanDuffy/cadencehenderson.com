@@ -20,7 +20,7 @@ export function CalendlyScriptLoader() {
           if (cal?.initBadgeWidget) {
             cal.initBadgeWidget({
               url: CONTACT_INFO.calendlyUrl,
-              text: 'Call Your Cadence Consultant Today',
+              text: 'Tour Cadence Homes Today',
               color: '#0069ff',
               textColor: '#ffffff',
               branding: false,
