@@ -12,6 +12,14 @@
 const CLOUDFLARE_ACCOUNT_HASH = 'byE6BTe9lNqo21V57n4aPQ'
 const BASE_URL = `https://imagedelivery.net/${CLOUDFLARE_ACCOUNT_HASH}`
 
+/** Known-working Cadence images (cadencenv.com) so photos appear until Cloudflare IDs are set. */
+const CADENCE_PHOTOS = {
+  hero:
+    'https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png',
+  community:
+    'https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png',
+} as const
+
 /**
  * Image variants - configure these in Cloudflare Dashboard > Images > Variants
  * Recommended settings:
@@ -33,12 +41,12 @@ export const PLACEHOLDER_IMAGE =
   'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3C/svg%3E'
 
 /**
- * Generate Cloudflare Image delivery URL.
- * Uses the default "public" variant so images load without custom variants in the Cloudflare dashboard.
- * Add custom variants (hero, card, etc.) in Dashboard > Images > Variants to use the variant parameter.
+ * Resolve image URL: Cloudflare delivery URL or full URL (e.g. cadencenv.com) as-is.
+ * Use full URLs in SITE_IMAGES when Cloudflare IDs are not set up so photos still appear.
  */
 export function cfImage(imageId: string, _variant: ImageVariant = 'public'): string {
   if (!imageId) return PLACEHOLDER_IMAGE
+  if (imageId.startsWith('http://') || imageId.startsWith('https://')) return imageId
   return `${BASE_URL}/${imageId}/public`
 }
 
@@ -52,120 +60,121 @@ export function isCloudflareImage(url: string): boolean {
 // ============================================================================
 // SITE IMAGES CATALOG — Cadence Henderson
 // Image IDs must match exactly what appears in Cloudflare Dashboard > Images.
-// URL format: https://imagedelivery.net/{accountHash}/{imageId}/public
-// If images don't load: verify image IDs in Cloudflare Dashboard > Images
+// URL format: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<imageId>/public
+// If photos don't appear: open docs/cloudflare-images-setup.md and follow the
+// steps to get the correct IDs from the dashboard and update the values below.
 // ============================================================================
 
 export const SITE_IMAGES = {
-  // Hero/Banner Images (Cloudflare Images: replace with actual Image ID from dashboard if different)
+  // Hero/Banner — use cadencenv.com URLs so photos appear; replace with Cloudflare IDs when set up
   hero: {
-    homepage: 'CendenceDrJanDuffy', // CendenceDrJanDuffy.png
-    newHomes: 'cadence_008_resized',
-    lifestyle: 'Workout-Area-at-Cadence-CentralPark',
-    contact: 'CendenceDrJanDuffy',
-    rentals: 'cadence_008_resized',
-    gallery: 'Workout-Area-at-Cadence-CentralPark',
-    news: 'cadence_008_resized',
-    faqs: 'Workout-Area-at-Cadence-CentralPark',
-    realtors: 'CendenceDrJanDuffy',
-    events: 'Workout-Area-at-Cadence-CentralPark',
-    amenities: 'cadence_008_resized',
-    schools: 'cadence_008_resized',
-    parksTrails: 'Workout-Area-at-Cadence-CentralPark',
-    shopping: 'cadence_008_resized',
+    homepage: CADENCE_PHOTOS.hero,
+    newHomes: CADENCE_PHOTOS.community,
+    lifestyle: CADENCE_PHOTOS.community,
+    contact: CADENCE_PHOTOS.hero,
+    rentals: CADENCE_PHOTOS.community,
+    gallery: CADENCE_PHOTOS.community,
+    news: CADENCE_PHOTOS.hero,
+    faqs: CADENCE_PHOTOS.community,
+    realtors: CADENCE_PHOTOS.hero,
+    events: CADENCE_PHOTOS.community,
+    amenities: CADENCE_PHOTOS.community,
+    schools: CADENCE_PHOTOS.community,
+    parksTrails: CADENCE_PHOTOS.community,
+    shopping: CADENCE_PHOTOS.community,
   },
 
-  // Builder Images (8 builders) — Cadence Henderson community
+  // Builder Images (8 builders)
   builders: {
-    beazer: 'cadence_008_resized',
-    century: 'cadence_008_resized',
-    drHorton: 'cadence_008_resized',
-    lennar: 'cadence_008_resized',
-    richmond: 'Workout-Area-at-Cadence-CentralPark',
-    storybook: 'cadence_008_resized',
-    taylorMorrison: 'cadence_008_resized',
-    woodside: 'Workout-Area-at-Cadence-CentralPark',
+    beazer: CADENCE_PHOTOS.community,
+    century: CADENCE_PHOTOS.community,
+    drHorton: CADENCE_PHOTOS.community,
+    lennar: CADENCE_PHOTOS.community,
+    richmond: CADENCE_PHOTOS.community,
+    storybook: CADENCE_PHOTOS.community,
+    taylorMorrison: CADENCE_PHOTOS.community,
+    woodside: CADENCE_PHOTOS.community,
   },
 
-  // Amenities Images — Cadence Henderson (use Cadence IDs from Cloudflare dashboard)
+  // Amenities Images
   amenities: {
-    centralPark: 'cadence_008_resized',
-    pool: 'cadence_008_resized',
-    splashPad: 'cadence_008_resized',
-    fitness: 'Workout-Area-at-Cadence-CentralPark',
-    dogPark: 'cadence_008_resized',
-    playground: 'cadence_008_resized',
-    trails: 'Workout-Area-at-Cadence-CentralPark',
-    sportsCourts: 'Workout-Area-at-Cadence-CentralPark',
-    clubhouse: 'cadence_008_resized',
+    centralPark: CADENCE_PHOTOS.community,
+    pool: CADENCE_PHOTOS.community,
+    splashPad: CADENCE_PHOTOS.community,
+    fitness: CADENCE_PHOTOS.community,
+    dogPark: CADENCE_PHOTOS.community,
+    playground: CADENCE_PHOTOS.community,
+    trails: CADENCE_PHOTOS.community,
+    sportsCourts: CADENCE_PHOTOS.community,
+    clubhouse: CADENCE_PHOTOS.community,
   },
 
-  // Lifestyle/Community Images — Cadence Central Park & community
+  // Lifestyle/Community Images
   lifestyle: {
-    community: 'Workout-Area-at-Cadence-CentralPark',
-    families: 'cadence_008_resized',
-    events: 'Workout-Area-at-Cadence-CentralPark',
-    concert: 'Workout-Area-at-Cadence-CentralPark',
-    farmersMarket: 'cadence_008_resized',
-    movieNight: 'Workout-Area-at-Cadence-CentralPark',
-    yoga: 'Workout-Area-at-Cadence-CentralPark',
-    foodTruck: 'Workout-Area-at-Cadence-CentralPark',
+    community: CADENCE_PHOTOS.community,
+    families: CADENCE_PHOTOS.community,
+    events: CADENCE_PHOTOS.community,
+    concert: CADENCE_PHOTOS.community,
+    farmersMarket: CADENCE_PHOTOS.community,
+    movieNight: CADENCE_PHOTOS.community,
+    yoga: CADENCE_PHOTOS.community,
+    foodTruck: CADENCE_PHOTOS.community,
   },
 
-  // Home Exterior/Interior Images — Cadence Henderson
+  // Home Exterior/Interior Images
   homes: {
-    exterior1: 'cadence_008_resized',
-    exterior2: 'cadence_008_resized',
-    exterior3: 'Workout-Area-at-Cadence-CentralPark',
-    interior1: 'Workout-Area-at-Cadence-CentralPark',
-    interior2: 'cadence_008_resized',
-    kitchen: 'cadence_008_resized',
-    livingRoom: 'cadence_008_resized',
-    backyard: 'Workout-Area-at-Cadence-CentralPark',
+    exterior1: CADENCE_PHOTOS.community,
+    exterior2: CADENCE_PHOTOS.community,
+    exterior3: CADENCE_PHOTOS.community,
+    interior1: CADENCE_PHOTOS.community,
+    interior2: CADENCE_PHOTOS.community,
+    kitchen: CADENCE_PHOTOS.community,
+    livingRoom: CADENCE_PHOTOS.community,
+    backyard: CADENCE_PHOTOS.community,
   },
 
-  // Rental Communities — Cadence Henderson
+  // Rental Communities
   rentals: {
-    americanHomes: 'cadence_008_resized',
-    element12: 'cadence_008_resized',
-    adler: 'Workout-Area-at-Cadence-CentralPark',
+    americanHomes: CADENCE_PHOTOS.community,
+    element12: CADENCE_PHOTOS.community,
+    adler: CADENCE_PHOTOS.community,
   },
 
-  // Gallery Images — Cadence Central Park & community
+  // Gallery Images
   gallery: {
-    parkVista: 'cadence_008_resized',
-    newHome: 'cadence_008_resized',
-    resortPool: 'cadence_008_resized',
-    concert: 'Workout-Area-at-Cadence-CentralPark',
-    communityGathering: 'Workout-Area-at-Cadence-CentralPark',
-    playground: 'cadence_008_resized',
-    fitnessCenter: 'Workout-Area-at-Cadence-CentralPark',
-    modernExterior: 'cadence_008_resized',
-    walkingTrails: 'Workout-Area-at-Cadence-CentralPark',
-    communityEvent: 'Workout-Area-at-Cadence-CentralPark',
-    luxuryInterior: 'cadence_008_resized',
-    dogPark: 'cadence_008_resized',
+    parkVista: CADENCE_PHOTOS.community,
+    newHome: CADENCE_PHOTOS.hero,
+    resortPool: CADENCE_PHOTOS.community,
+    concert: CADENCE_PHOTOS.community,
+    communityGathering: CADENCE_PHOTOS.community,
+    playground: CADENCE_PHOTOS.community,
+    fitnessCenter: CADENCE_PHOTOS.community,
+    modernExterior: CADENCE_PHOTOS.community,
+    walkingTrails: CADENCE_PHOTOS.community,
+    communityEvent: CADENCE_PHOTOS.community,
+    luxuryInterior: CADENCE_PHOTOS.community,
+    dogPark: CADENCE_PHOTOS.community,
   },
 
-  // Location/Map Images — Cadence Henderson
+  // Location/Map Images
   location: {
-    mapOverview: 'cadence_008_resized',
-    welcomeCenter: 'cadence_008_resized',
-    aerialView: 'cadence_008_resized',
+    mapOverview: CADENCE_PHOTOS.community,
+    welcomeCenter: CADENCE_PHOTOS.community,
+    aerialView: CADENCE_PHOTOS.community,
   },
 
   // Agent/Branding — Dr. Jan Duffy
   agent: {
-    headshot: 'CendenceDrJanDuffy',
-    logo: 'cadence_008_resized', // replace with logo ID if uploaded
-    bhhs: 'cadence_008_resized', // replace with BHH logo ID if uploaded
+    headshot: CADENCE_PHOTOS.hero,
+    logo: CADENCE_PHOTOS.community,
+    bhhs: CADENCE_PHOTOS.community,
   },
 
-  // Icons/Graphics — Cadence community thumbnails
+  // Icons/Graphics
   icons: {
-    amenitiesBox: 'cadence_008_resized',
-    lifestyleBox: 'Workout-Area-at-Cadence-CentralPark',
-    homesBox: 'cadence_008_resized',
+    amenitiesBox: CADENCE_PHOTOS.community,
+    lifestyleBox: CADENCE_PHOTOS.community,
+    homesBox: CADENCE_PHOTOS.community,
   },
 } as const
 
