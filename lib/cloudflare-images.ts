@@ -1,10 +1,12 @@
 /**
  * Cloudflare Images utility functions
  * Account: Cadence Henderson
- * Delivery URL: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/<variant_name>
- * 
- * SETUP: Replace placeholder IDs below with actual Cloudflare Image IDs from your dashboard.
- * Upload images at: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
+ * Account ID: 2cc579c1ec9e426ed585e933ebf4753b
+ * Account hash: byE6BTe9lNqo21V57n4aPQ
+ * Image Delivery URL: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/<variant_name>
+ *
+ * Dashboard: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
+ * Image IDs in SITE_IMAGES must match exactly what appears in the dashboard.
  */
 
 const CLOUDFLARE_ACCOUNT_HASH = 'byE6BTe9lNqo21V57n4aPQ'
