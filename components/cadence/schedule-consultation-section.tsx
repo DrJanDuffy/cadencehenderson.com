@@ -8,16 +8,28 @@ import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Calendar, Mail, Phone } from 'lucide-react'
 
+/** If the JS widget does not load within this time, show iframe fallback. */
+const IFRAME_FALLBACK_MS = 5000
+
 /**
  * Consultation CTA: high-contrast layout, primary "book a call" for home buyers.
  * Calendly on white card for readability; section copy for SEO/AEO/GEO.
+ * Uses iframe fallback so the scheduler (https://calendly.com/drjanduffy/15min) always appears.
  */
 export function ScheduleConsultationSection() {
   const [calendarReady, setCalendarReady] = useState(false)
   const [showLoadingFallback, setShowLoadingFallback] = useState(true)
+  const [showIframeFallback, setShowIframeFallback] = useState(false)
 
   useEffect(() => {
-    const t = setTimeout(() => setShowLoadingFallback(false), 8000)
+    const hideLoading = setTimeout(() => setShowLoadingFallback(false), 8000)
+    return () => clearTimeout(hideLoading)
+  }, [])
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setShowIframeFallback(true)
+    }, IFRAME_FALLBACK_MS)
     return () => clearTimeout(t)
   }, [])
 
@@ -65,18 +77,29 @@ export function ScheduleConsultationSection() {
         </div>
         {/* Calendly on white card so text is readable (no white-on-blue) */}
         <div className="max-w-4xl mx-auto rounded-xl overflow-hidden bg-white shadow-xl p-4 md:p-6">
-          {showLoadingFallback && !calendarReady && (
+          {showLoadingFallback && !calendarReady && !showIframeFallback && (
             <p className="text-center text-gray-500 py-4 text-sm" aria-live="polite">
               Loading calendar…
             </p>
           )}
-          <CalendlyWhenVisible loadOnMount>
-            <CalendlyInlineWidget
+          {showIframeFallback && !calendarReady ? (
+            <iframe
+              title="Schedule a 15-minute call with Dr. Jan Duffy"
+              src={`${CONTACT_INFO.calendlyUrl}?embed_domain=www.cadencehenderson.com`}
+              width="100%"
+              height={630}
+              style={{ minWidth: 280, border: 0 }}
               className="rounded-lg overflow-hidden w-full"
-              style={{ minWidth: 280, height: 630 }}
-              onReady={() => setCalendarReady(true)}
             />
-          </CalendlyWhenVisible>
+          ) : (
+            <CalendlyWhenVisible loadOnMount>
+              <CalendlyInlineWidget
+                className="rounded-lg overflow-hidden w-full"
+                style={{ minWidth: 280, height: 630 }}
+                onReady={() => setCalendarReady(true)}
+              />
+            </CalendlyWhenVisible>
+          )}
           <p className="text-center text-sm text-gray-600 mt-4">
             <a
               href={CONTACT_INFO.calendlyUrl}
