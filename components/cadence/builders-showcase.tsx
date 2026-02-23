@@ -1,5 +1,25 @@
+'use client'
+
 import Link from 'next/link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+
+function BuilderLogo({ src, alt, width, height }: { src: string; alt: string; width: number; height: number }) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading="lazy"
+      className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform"
+      onError={(e) => {
+        e.currentTarget.style.display = 'none'
+        const fallback = e.currentTarget.nextElementSibling
+        if (fallback) (fallback as HTMLElement).style.display = 'flex'
+      }}
+    />
+  )
+}
 
 export function BuildersShowcase() {
   const builders: Array<{
@@ -90,14 +110,18 @@ export function BuildersShowcase() {
             const content = (
               <>
                 <div className="relative w-full h-20 mb-3 flex items-center justify-center">
-                  <img
+                  <BuilderLogo
                     src={builder.logo}
                     alt={`Cadence Henderson NV 89011 new homes by ${builder.name}`}
                     width={builder.width}
                     height={builder.height}
-                    loading="lazy"
-                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform"
                   />
+                  <span
+                    className="hidden items-center justify-center text-sm font-semibold text-gray-600 bg-gray-50 rounded px-3 py-2 w-full h-full"
+                    aria-hidden="true"
+                  >
+                    {builder.name}
+                  </span>
                 </div>
                 <h3 className="font-semibold text-gray-800 text-sm">
                   {builder.name}

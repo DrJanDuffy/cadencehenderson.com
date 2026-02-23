@@ -34,12 +34,22 @@ export const PLACEHOLDER_IMAGE =
 
 /**
  * Generate Cloudflare Image delivery URL.
- * Uses the default "public" variant so images load without custom variants in the Cloudflare dashboard.
- * Add custom variants (hero, card, etc.) in Dashboard > Images > Variants to use the variant parameter.
+ * Uses the requested variant so Cloudflare can serve optimally-sized images.
+ *
+ * Set up variants in Dashboard > Images > Variants:
+ *   hero   → Fit=cover, 1920×1080
+ *   card   → Fit=cover, 600×400
+ *   thumbnail → Fit=cover, 300×200
+ *   avatar → Fit=cover, 200×200
+ *   og     → Fit=cover, 1200×630
+ *   gallery → Fit=cover, 1200×800
+ *   public → Fit=scale-down, 1920 (default)
+ *
+ * If a variant is not yet configured, Cloudflare returns the "public" variant as fallback.
  */
-export function cfImage(imageId: string, _variant: ImageVariant = 'public'): string {
+export function cfImage(imageId: string, variant: ImageVariant = 'public'): string {
   if (!imageId) return PLACEHOLDER_IMAGE
-  return `${BASE_URL}/${imageId}/public`
+  return `${BASE_URL}/${imageId}/${variant}`
 }
 
 /**
