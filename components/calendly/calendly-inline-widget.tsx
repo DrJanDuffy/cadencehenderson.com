@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from 'react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { useCalendly } from './calendly-loader'
 
 const DEFAULT_STYLE: React.CSSProperties = { minWidth: 320, height: 700 }
 
@@ -14,10 +13,9 @@ export type CalendlyInlineWidgetProps = {
 }
 
 /**
- * Renders the Calendly inline scheduling widget. Requires Calendly script
- * to be loaded (e.g. via CalendlyWhenVisible or a prior CalendlyLink click).
- * Explicitly calls initInlineWidget after script load so the widget works
- * when script is loaded lazily.
+ * Renders the Calendly inline widget using the official embed pattern:
+ * div.calendly-inline-widget with data-url. The script from layout
+ * (assets.calendly.com/assets/external/widget.js) auto-inits these elements.
  */
 export function CalendlyInlineWidget({
   className,
@@ -25,53 +23,30 @@ export function CalendlyInlineWidget({
   onReady,
 }: CalendlyInlineWidgetProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const initedRef = useRef(false)
   const onReadyRef = useRef(onReady)
   onReadyRef.current = onReady
-  const { isLoaded } = useCalendly()
   const combinedStyle = style
     ? { ...DEFAULT_STYLE, ...style }
     : DEFAULT_STYLE
 
   useEffect(() => {
-    if (!isLoaded || initedRef.current || !containerRef.current) return
-    let intervalId: ReturnType<typeof setInterval> | null = null
-    let timeoutId: ReturnType<typeof setTimeout> | null = null
-    const cleanup = () => {
-      if (intervalId) {
-        clearInterval(intervalId)
-        intervalId = null
-      }
-      if (typeof window !== 'undefined') window.removeEventListener('calendly-loaded', tryInit)
-      if (timeoutId) clearTimeout(timeoutId)
-    }
-    const tryInit = () => {
-      const cal = typeof window !== 'undefined' ? window.Calendly : undefined
-      if (cal?.initInlineWidget && containerRef.current && !initedRef.current) {
-        cal.initInlineWidget({
-          url: CONTACT_INFO.calendlyUrl,
-          parentElement: containerRef.current,
-        })
-        initedRef.current = true
+    const el = containerRef.current
+    if (!el || !onReadyRef.current) return
+    const observer = new MutationObserver(() => {
+      if (el.querySelector('iframe')) {
         onReadyRef.current?.()
-        cleanup()
       }
-    }
-    tryInit()
-    if (!initedRef.current && typeof window !== 'undefined') {
-      window.addEventListener('calendly-loaded', tryInit)
-      intervalId = setInterval(tryInit, 300)
-      timeoutId = setTimeout(cleanup, 12000)
-    }
-    return cleanup
-  }, [isLoaded])
+    })
+    observer.observe(el, { childList: true, subtree: true })
+    return () => observer.disconnect()
+  }, [])
 
   return (
     <div
       ref={containerRef}
       className={`calendly-inline-widget bg-slate-50 border border-slate-200 rounded-lg overflow-hidden ${className ?? ''}`.trim()}
+      data-url={CONTACT_INFO.calendlyUrl}
       style={combinedStyle}
-      aria-busy={!isLoaded ? 'true' : 'false'}
       aria-label="Schedule a consultation – Calendly"
     />
   )
