@@ -12,6 +12,7 @@ import { ScrollToTop } from '../components/cadence/scroll-to-top'
 import { LocalBusinessSchema } from '../components/schema/local-business'
 import { FAQPageSchema } from '../components/schema/faq-page'
 import { GeoMeta } from '../components/schema/geo-meta'
+import { OrganizationSchema } from '../components/schema/organization'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
 
@@ -70,12 +71,13 @@ export default function RootLayout({
       <head>
         <LocalBusinessSchema />
         <FAQPageSchema />
+        <OrganizationSchema />
         <GeoMeta />
         {/* Preconnect to critical LCP and third-party origins (max 4) */}
         <link rel="preconnect" href="https://imagedelivery.net" />
         <link rel="preconnect" href="https://em.realscout.com" crossOrigin="" />
         <link rel="preconnect" href="https://assets.calendly.com" />
-        <link rel="preconnect" href="https://cadencenv.com" />
+        {/* cadencenv.com preconnect removed — logos now self-hosted */}
         {/* LCP image preload so browser discovers it from initial HTML */}
         <link rel="preload" as="image" href={HERO_IMAGE} />
         {/* Calendly CSS: load for screen to avoid whited-out widget appearance */}

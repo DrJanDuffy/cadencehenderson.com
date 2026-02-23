@@ -33,8 +33,20 @@ export function WebPageSchema() {
       '@type': 'ImageObject',
       url: 'https://www.cadencehenderson.com/og-image.png',
     },
+    author: {
+      '@type': 'Person',
+      '@id': 'https://www.cadencehenderson.com/#agent',
+      name: 'Dr. Jan Duffy',
+      jobTitle: 'REALTOR®, New Home Buyer Specialist',
+      url: 'https://www.cadencehenderson.com',
+    },
     datePublished: '2024-01-01',
+    dateModified: '2026-02-23',
     inLanguage: 'en-US',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '[data-speakable]'],
+    },
   }
 
   return (

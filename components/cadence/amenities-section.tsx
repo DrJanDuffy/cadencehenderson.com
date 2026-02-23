@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { getAmenityImage } from '@/lib/cloudflare-images'
+import { getAmenityImage, PLACEHOLDER_IMAGE } from '@/lib/cloudflare-images'
 
 export function AmenitiesSection() {
   return (
@@ -28,6 +28,7 @@ export function AmenitiesSection() {
               alt="Cadence Henderson NV 89011 amenities and Central Park"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
+              onError={(e) => { (e.target as HTMLImageElement).src = PLACEHOLDER_IMAGE }}
             />
           </div>
         </div>

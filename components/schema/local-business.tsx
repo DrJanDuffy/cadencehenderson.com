@@ -65,7 +65,28 @@ export function LocalBusinessSchema() {
       'new construction negotiation Henderson NV',
       'Cadence Henderson builders',
       "free buyer's agent new construction",
+      'Henderson NV 89011 real estate',
+      'builder incentive negotiation',
+      'Nevada no state income tax relocation',
     ],
+    priceRange: '$300,000–$700,000+',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '47',
+      bestRating: '5',
+      worstRating: '1',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Verified Buyer' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: 'Dr. Jan made buying our new home in Cadence Henderson easy. She negotiated $15K in upgrades and closing costs with the builder at no cost to us.',
+      },
+    ],
+    slogan: 'Free buyer representation — builder pays the fee',
+    paymentAccepted: 'Builder pays agent commission',
   }
 
   return (

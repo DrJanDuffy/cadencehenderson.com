@@ -16,6 +16,8 @@ import { HomepageFAQSection } from '@/components/cadence/homepage-faq-section'
 import { ScheduleConsultationSection } from '@/components/cadence/schedule-consultation-section'
 import { Footer } from '@/components/cadence/footer'
 import { WebPageSchema } from '@/components/schema/web-page'
+import { ItemListBuildersSchema } from '@/components/schema/item-list-builders'
+import { SpeakableSchema } from '@/components/schema/speakable'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -41,6 +43,8 @@ export default function HomePage() {
   return (
     <div id="main-content" className="min-h-screen bg-white" tabIndex={-1}>
       <WebPageSchema />
+      <ItemListBuildersSchema />
+      <SpeakableSchema />
       <Navigation />
       <Hero />
       <KeyFactsSection />

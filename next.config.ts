@@ -17,11 +17,7 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'images.unsplash.com',
       },
-      {
-        protocol: 'https',
-        hostname: 'cadencenv.com',
-        pathname: '/wp-content/**',
-      },
+      /* cadencenv.com removed — builder logos now self-hosted as SVGs */
     ],
   },
   async redirects() {
