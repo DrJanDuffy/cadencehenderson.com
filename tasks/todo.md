@@ -9,7 +9,7 @@ Quiet luxury / barely-there UI for Cadence Henderson: restraint, negative space,
 - [x] Shared chrome: nav, footer, hero, page-hero, buttons, CTAs
 - [x] Remove Calendly floating badge and DeployBanner
 - [x] RealScout/Calendly widgets in monochrome, no heavy shadows
-- [ ] Verify homepage + an inner page in the browser (or local render)
+- [x] Verify homepage + an inner page in the browser (or local render)
 
 ## Review
 
@@ -20,3 +20,7 @@ Quiet luxury is applied at the token layer so inner pages inherit grayscale, squ
 - **Chrome:** Hairline nav, no decorative hero wave, solid black CTAs, square buttons, more section padding.
 - **Pop-ups:** Calendly floating badge and DeployBanner removed; badge CSS hidden as a failsafe.
 - **Widgets:** RealScout/Calendly styled monochrome with hairline borders; `components/idx/*` untouched.
+
+### Verification (2026-09-08)
+
+Local `npm run dev` on `:3000`. Homepage, `/lifestyle`, and `/contact` return 200. HTML uses Sora (`sora_*` class on body), no `initBadgeWidget`, no hero wave SVG, no DeployBanner. Computer-use pass: hairline CADENCE nav, square CTAs, B&W palette, Calendly opens on click (not a floating badge). Mobile hamburger opens/closes. Next.js dev “N” overlay is dev-only, not production.
