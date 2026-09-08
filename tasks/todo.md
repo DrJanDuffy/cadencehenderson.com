@@ -1,20 +1,22 @@
 # Task plan
 
-Replace placeholder images with unique, heading-appropriate photos for H1, H2, and H3 on each public page. Standardize Cloudflare Images as primary storage with git as backup for all domains and projects.
+Quiet luxury / barely-there UI for Cadence Henderson: restraint, negative space, monochrome, skinny sans-serifs. No flashy motion or aggressive pop-ups.
 
 ## Current plan
 
-- [x] Inventory pages, heading levels, and current placeholder slots
-- [x] Generate unique photorealistic images (Cadence Henderson / desert Southwest)
-- [x] Store images under `public/images/` and map them in `SITE_IMAGES`
-- [x] Add `PageHero` so every inner-page H1 has a unique photo
-- [x] Wire unique H2 section photos and H3 card photos (no shared placeholder)
-- [x] SOP: Cloudflare Images primary, git fallback, global settings, Vercel sync
-- [x] Verify pages render images (dev server / curl)
-- [ ] Commit, push, open PR
+- [x] Design tokens: B&W palette, near-zero radius, more page padding
+- [x] Skinny sans (Sora 200–400); stop using mono as the site face
+- [x] Shared chrome: nav, footer, hero, page-hero, buttons, CTAs
+- [x] Remove Calendly floating badge and DeployBanner
+- [x] RealScout/Calendly widgets in monochrome, no heavy shadows
+- [ ] Verify homepage + an inner page in the browser (or local render)
 
 ## Review
 
-- **Summary:** Cloudflare Images is primary (`imagedelivery.net` / hash `byE6BTe9lNqo21V57n4aPQ`). Git `public/images/` is the backup. Custom IDs `{prefix}-{folder}-{slug}`. Vercel build runs `npm run cloudflare:images:sync`. SOP: `docs/sop/cloudflare-images-git-fallback.md`. Global settings JSON for reuse on other domains.
-- **Verification:** Dev server HTML emits `cadence-*` delivery URLs. Git files return 200 (`/images/hero/homepage.jpg`, `/og-image.jpg`). Cloudflare HEAD for `cadence-hero-homepage` is 404 until `CLOUDFLARE_API_TOKEN` is set on the Vercel project and production deploys. `SiteImage` / `CloudflareImage` swap to git on 404.
-- **Notes:** Set token on every Vercel project (Production), then `vercel --prod`. Prefix other domains with a unique `CLOUDFLARE_IMAGES_PREFIX`.
+Quiet luxury is applied at the token layer so inner pages inherit grayscale, square corners, and thin type without a page-by-page rewrite.
+
+- **Palette:** Tailwind blues/indigos/ambers/greens/teals/purples remap to Compass-like grayscale in `app/globals.css`.
+- **Type:** Sora 200–600 via `next/font`; headings 200–300; `font-bold` utilities soften to 300.
+- **Chrome:** Hairline nav, no decorative hero wave, solid black CTAs, square buttons, more section padding.
+- **Pop-ups:** Calendly floating badge and DeployBanner removed; badge CSS hidden as a failsafe.
+- **Widgets:** RealScout/Calendly styled monochrome with hairline borders; `components/idx/*` untouched.

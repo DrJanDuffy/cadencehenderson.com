@@ -23,7 +23,7 @@ export function LocationSection() {
                 className="h-24 w-24 object-contain"
               />
             </div>
-            <h2 id="location-heading" className="text-4xl font-bold text-gray-900 mb-6">
+            <h2 id="location-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8">
               Cadence Henderson Location
             </h2>
             <p className="text-xl text-gray-700 mb-4 leading-relaxed">
@@ -35,7 +35,7 @@ export function LocationSection() {
             <div className="flex flex-wrap gap-3">
               <Button
                 size="lg"
-                className="bg-blue-900 hover:bg-blue-800 text-lg px-8"
+                className="bg-black hover:bg-neutral-800 text-lg px-8"
                 asChild
               >
                 <Link href="/maps" aria-label="Maps and directions in Cadence Henderson">
@@ -59,7 +59,7 @@ export function LocationSection() {
               </Button>
             </div>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
+          <div className="relative h-[400px] overflow-hidden bg-neutral-200">
             <SiteImage
               src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
               alt="Cadence Henderson NV 89011 community and surrounding area"

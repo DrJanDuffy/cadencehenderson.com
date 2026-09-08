@@ -24,23 +24,23 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-gray-900 text-white py-12">
+    <footer className="bg-black text-white py-24">
       <div className="container mx-auto px-4">
         {/* Schedule Consultation CTA */}
-        <div className="text-center mb-10 pb-8 border-b border-gray-700">
-          <h3 className="text-lg font-semibold mb-3 text-white">Ready to Find Your Dream Home?</h3>
-          <p className="text-gray-200 text-sm mb-4 max-w-md mx-auto">
+        <div className="text-center mb-16 pb-12 border-b border-white/15">
+          <h3 className="text-lg font-light tracking-[0.16em] uppercase mb-4 text-white">Tour Cadence with Dr. Jan</h3>
+          <p className="text-white/75 text-sm font-light mb-6 max-w-md mx-auto">
             Schedule a free 15-minute consultation with Dr. Jan Duffy — Cadence Henderson NV 89011.
           </p>
           <CalendlyLink>
-            <button className="inline-flex items-center gap-2 px-6 py-3 rounded-md bg-blue-700 hover:bg-blue-600 font-medium transition-colors">
-              <Calendar size={18} />
+            <button className="inline-flex items-center gap-2 px-8 py-3 border border-white/70 bg-transparent text-xs font-light tracking-[0.18em] uppercase hover:bg-white hover:text-black transition-colors">
+              <Calendar size={16} />
               Schedule a Call
             </button>
           </CalendlyLink>
         </div>
-        <div className="text-center mb-8">
-          <div className="text-3xl font-bold mb-2">
+        <div className="text-center mb-12">
+          <div className="text-sm font-light tracking-[0.4em] mb-6">
             CADENCE HENDERSON
           </div>
           <div className="text-base text-gray-200 mb-1">
@@ -55,21 +55,21 @@ export function Footer() {
           <div className="text-xs text-gray-200 mb-6">
             {CONTACT_INFO.welcomeCenter} | {CONTACT_INFO.phone}
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-4 text-blue-400">
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-white/80 text-sm font-light">
             <a
               href={CONTACT_INFO.calendlyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors font-medium"
+              className="inline-flex items-center gap-2 hover:text-white transition-colors"
               aria-label="Schedule a consultation with Dr. Jan Duffy"
             >
               <Calendar size={16} aria-hidden />
               Schedule a consultation
             </a>
-            <span className="text-gray-400" aria-hidden>|</span>
+            <span className="text-white/40" aria-hidden>|</span>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="inline-flex items-center gap-2 hover:text-blue-300 transition-colors"
+              className="inline-flex items-center gap-2 hover:text-white transition-colors"
             >
               <Mail size={16} />
               {CONTACT_INFO.email}
@@ -80,7 +80,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-200 hover:text-white hover:bg-gray-700 transition-colors"
+              className="p-2 text-white/70 hover:text-white transition-colors"
               aria-label="Facebook"
             >
               <Facebook size={20} />
@@ -89,7 +89,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-200 hover:text-white hover:bg-gray-700 transition-colors"
+              className="p-2 text-white/70 hover:text-white transition-colors"
               aria-label="Instagram"
             >
               <Instagram size={20} />
@@ -98,7 +98,7 @@ export function Footer() {
               href={SOCIAL_MEDIA.twitter}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-full text-gray-200 hover:text-white hover:bg-gray-700 transition-colors"
+              className="p-2 text-white/70 hover:text-white transition-colors"
               aria-label="X (Twitter)"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current" aria-hidden>
@@ -114,7 +114,7 @@ export function Footer() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-blue-400 transition-colors"
+                  className="text-sm font-light text-white/70 hover:text-white transition-colors"
                 >
                   {link.title}
                 </a>
@@ -122,7 +122,7 @@ export function Footer() {
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="hover:text-blue-400 transition-colors"
+                  className="text-sm font-light text-white/70 hover:text-white transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -130,7 +130,7 @@ export function Footer() {
             )}
           </div>
         </div>
-        <div className="border-t border-gray-700 pt-8 text-center text-gray-300">
+        <div className="border-t border-white/15 pt-10 text-center text-white/60">
           <p className="text-sm">
             Copyright 2025 {CONTACT_INFO.siteName} | License {CONTACT_INFO.licenseNumber}
           </p>

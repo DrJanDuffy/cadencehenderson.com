@@ -78,28 +78,28 @@ export function BuildersShowcase() {
   ]
 
   return (
-    <section className="py-20 bg-gray-100" aria-labelledby="builders-heading">
+    <section className="py-24 bg-neutral-50" aria-labelledby="builders-heading">
       <div className="container mx-auto px-4 sm:px-6">
-        <h2 id="builders-heading" className="text-4xl font-bold text-center text-gray-900 mb-12">
+        <h2 id="builders-heading" className="text-4xl font-extralight tracking-[0.06em] text-center text-neutral-900 mb-16">
           New Home Builders in Cadence Henderson
         </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-px bg-neutral-200">
           {builders.map((builder) => {
             const className =
-              'bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 p-6 flex flex-col items-center justify-center text-center group'
+              'bg-white p-8 flex flex-col items-center justify-center text-center'
             const content = (
               <>
-                <div className="relative w-full h-20 mb-3 flex items-center justify-center">
+                <div className="relative w-full h-20 mb-4 flex items-center justify-center">
                   <img
                     src={builder.logo}
                     alt={`Cadence Henderson NV 89011 new homes by ${builder.name}`}
                     width={builder.width}
                     height={builder.height}
                     loading="lazy"
-                    className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
-                <h3 className="font-semibold text-gray-800 text-sm">
+                <h3 className="font-light tracking-[0.08em] uppercase text-neutral-700 text-xs">
                   {builder.name}
                 </h3>
               </>

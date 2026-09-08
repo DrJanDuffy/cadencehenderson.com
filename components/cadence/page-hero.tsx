@@ -23,7 +23,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="relative min-h-[280px] overflow-hidden bg-slate-900 py-20"
+      className="relative min-h-[360px] overflow-hidden bg-black py-28 md:py-36"
       aria-label="Page heading"
     >
       <SiteImage
@@ -31,17 +31,17 @@ export function PageHero({
         alt={imageAlt}
         fill
         priority
-        className="opacity-90"
+        className="opacity-70"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/25"
+        className="absolute inset-0 bg-black/40"
         aria-hidden
       />
       <div className="relative container mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center text-white">
-          {Icon ? <Icon size={64} className="mx-auto mb-6" aria-hidden /> : null}
-          <h1 className="mb-6 text-5xl font-bold">{title}</h1>
-          {subtitle ? <div className="mb-8 text-xl">{subtitle}</div> : null}
+          {Icon ? <Icon size={40} className="mx-auto mb-8 opacity-80" aria-hidden /> : null}
+          <h1 className="mb-6 text-4xl md:text-5xl font-extralight tracking-[0.08em]">{title}</h1>
+          {subtitle ? <div className="mb-10 text-lg font-light text-white/90">{subtitle}</div> : null}
           {children}
         </div>
       </div>
