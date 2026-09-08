@@ -6,8 +6,56 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
+  /* Quiet luxury: map brand blues/accents to a Compass-like grayscale */
+  --color-blue-50: oklch(0.985 0 0);
+  --color-blue-100: oklch(0.97 0 0);
+  --color-blue-200: oklch(0.922 0 0);
+  --color-blue-300: oklch(0.84 0 0);
+  --color-blue-400: oklch(0.708 0 0);
+  --color-blue-500: oklch(0.556 0 0);
+  --color-blue-600: oklch(0.439 0 0);
+  --color-blue-700: oklch(0.32 0 0);
+  --color-blue-800: oklch(0.22 0 0);
+  --color-blue-900: oklch(0.145 0 0);
+  --color-blue-950: oklch(0.1 0 0);
+  --color-indigo-50: oklch(0.985 0 0);
+  --color-indigo-100: oklch(0.97 0 0);
+  --color-indigo-200: oklch(0.922 0 0);
+  --color-indigo-600: oklch(0.439 0 0);
+  --color-indigo-700: oklch(0.32 0 0);
+  --color-indigo-800: oklch(0.22 0 0);
+  --color-indigo-900: oklch(0.145 0 0);
+  --color-amber-50: oklch(0.985 0 0);
+  --color-amber-100: oklch(0.97 0 0);
+  --color-amber-200: oklch(0.922 0 0);
+  --color-amber-800: oklch(0.22 0 0);
+  --color-amber-900: oklch(0.145 0 0);
+  --color-emerald-50: oklch(0.985 0 0);
+  --color-emerald-700: oklch(0.32 0 0);
+  --color-emerald-800: oklch(0.22 0 0);
+  --color-sky-50: oklch(0.985 0 0);
+  --color-sky-800: oklch(0.22 0 0);
+  --color-sky-900: oklch(0.145 0 0);
+  --color-green-50: oklch(0.985 0 0);
+  --color-green-100: oklch(0.97 0 0);
+  --color-green-800: oklch(0.22 0 0);
+  --color-green-900: oklch(0.145 0 0);
+  --color-teal-50: oklch(0.985 0 0);
+  --color-teal-800: oklch(0.22 0 0);
+  --color-teal-900: oklch(0.145 0 0);
+  --color-purple-50: oklch(0.985 0 0);
+  --color-purple-100: oklch(0.97 0 0);
+  --color-purple-800: oklch(0.22 0 0);
+  --color-purple-900: oklch(0.145 0 0);
+  --color-orange-50: oklch(0.985 0 0);
+  --color-orange-100: oklch(0.97 0 0);
+  --color-orange-800: oklch(0.22 0 0);
+  --color-orange-900: oklch(0.145 0 0);
+  --color-rose-50: oklch(0.985 0 0);
+  --color-rose-800: oklch(0.22 0 0);
+  --color-rose-900: oklch(0.145 0 0);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -103,7 +151,7 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0px;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
@@ -175,11 +223,60 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground font-mono;
-  }
   html {
-    font-family: var(--font-geist-mono), ui-monospace, monospace;
+    font-family: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  }
+  body {
+    @apply bg-background text-foreground font-sans font-normal antialiased;
+    letter-spacing: 0.01em;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    text-wrap: balance;
+  }
+  h1 {
+    font-weight: 200;
+    letter-spacing: 0.05em;
+  }
+  p {
+    font-weight: 300;
+    letter-spacing: 0.02em;
+  }
+  .font-bold,
+  .font-semibold,
+  .font-extrabold,
+  .font-black {
+    font-weight: 300;
+  }
+  .font-medium {
+    font-weight: 400;
+  }
+  .rounded,
+  .rounded-sm,
+  .rounded-md,
+  .rounded-lg,
+  .rounded-xl,
+  .rounded-2xl,
+  .rounded-3xl,
+  .rounded-full {
+    border-radius: 0;
+  }
+  .shadow-xs,
+  .shadow-sm,
+  .shadow,
+  .shadow-md,
+  .shadow-lg,
+  .shadow-xl,
+  .shadow-2xl {
+    --tw-shadow: 0 0 #0000;
+    box-shadow: none;
+  }
+  .container {
+    @apply px-6 sm:px-10 lg:px-16;
   }
   /* Visible focus for keyboard users; minimal impact for mouse */
   :focus-visible {
@@ -187,91 +284,101 @@
   }
 }
 
-/* RealScout office listings widget – prevent whited-out appearance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* RealScout / Calendly — monochrome, no rounded chrome, no drop shadows */
 realscout-office-listings {
-  --rs-listing-divider-color: #0e64c8;
+  --rs-listing-divider-color: #111111;
   width: 100%;
   min-height: 280px;
   display: block;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 1rem;
 }
 
-/* RealScout your listings widget (past homesales) */
 realscout-your-listings {
-  --rs-listing-divider-color: rgb(101, 141, 172);
+  --rs-listing-divider-color: #111111;
   width: 100%;
   min-height: 200px;
   display: block;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 1rem;
 }
 
-/* RealScout advanced search widget */
 realscout-advanced-search {
   --rs-as-button-text-color: #ffffff;
   --rs-as-background-color: #ffffff;
-  --rs-as-button-color: #4a90e2;
+  --rs-as-button-color: #111111;
   --rs-as-widget-width: 500px !important;
   min-height: 120px;
   display: block;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 1rem;
 }
 
-/* RealScout simple search widget */
 realscout-simple-search {
-  --rs-ss-font-primary-color: #000000;
-  --rs-ss-searchbar-border-color: #1e3a5f;
-  --rs-ss-box-shadow: 0 10px 15px -3px #0000001a;
+  --rs-ss-font-primary-color: #111111;
+  --rs-ss-searchbar-border-color: #111111;
+  --rs-ss-box-shadow: none;
   --rs-ss-widget-width: min(500px, 100%) !important;
   width: 100%;
   max-width: 500px;
   min-height: 80px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 0.5rem;
 }
 
-/* RealScout home value widget */
 realscout-home-value {
-  --rs-hvw-background-color: #f8fafc;
-  --rs-hvw-title-color: #0f172a;
-  --rs-hvw-subtitle-color: rgba(28, 30, 38, 0.6);
+  --rs-hvw-background-color: #ffffff;
+  --rs-hvw-title-color: #111111;
+  --rs-hvw-subtitle-color: rgba(17, 17, 17, 0.55);
   --rs-hvw-primary-button-text-color: #ffffff;
-  --rs-hvw-primary-button-color: rgb(30, 64, 175);
-  --rs-hvw-secondary-button-text-color: rgb(30, 64, 175);
+  --rs-hvw-primary-button-color: #111111;
+  --rs-hvw-secondary-button-text-color: #111111;
   --rs-hvw-secondary-button-color: #ffffff;
   --rs-hvw-widget-width: auto;
   min-height: 180px;
   display: block;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
   padding: 1rem;
 }
 
-/* Calendly inline widget – prevent whited-out container */
 .calendly-inline-widget {
-  background-color: #f8fafc !important;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff !important;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
 }
 
-/* RealScout embed container (rs-embed) – visible before script loads */
 [id^='rs-embed-'] {
   min-height: 400px;
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 0;
+}
+
+/* Hide the Calendly floating badge if a prior session injected it */
+.calendly-badge-widget {
+  display: none !important;
 }
 
 /* Stack mobile deploy buttons vertically on very small screens */

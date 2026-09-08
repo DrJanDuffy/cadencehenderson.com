@@ -6,32 +6,32 @@ import { Search } from 'lucide-react'
 
 export function HomeFinder() {
   return (
-    <section id="home-search" className="py-20 bg-gray-50" aria-labelledby="homefinder-heading">
+    <section id="home-search" className="py-24 bg-neutral-50" aria-labelledby="homefinder-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 id="homefinder-heading" className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-center mb-14">
+            <h2 id="homefinder-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-6">
               Search Henderson Homes for Sale
             </h2>
-            <p className="text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl font-light text-neutral-600 leading-relaxed max-w-2xl mx-auto">
               New homes Cadence Henderson NV 89011. Dr. Jan Duffy is your free buyer’s agent — builder pays her fee. Search above or open full search below.
             </p>
             <a
               href={CONTACT_INFO.realScoutSearchUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-4 text-blue-900 font-semibold hover:underline"
+              className="inline-flex items-center gap-2 mt-6 text-sm font-light tracking-[0.12em] uppercase text-neutral-900 hover:underline"
             >
-              <Search size={18} />
+              <Search size={16} />
               Open Home Search
             </a>
           </div>
-          <RealScoutWidget className="min-h-[400px] rounded-lg overflow-hidden bg-white shadow-sm" />
-          <div className="text-center mt-8">
-            <p className="text-lg text-gray-700 mb-4">
+          <RealScoutWidget className="min-h-[400px] overflow-hidden bg-white border border-neutral-200" />
+          <div className="text-center mt-12">
+            <p className="text-lg font-light text-neutral-600 mb-6">
               Want a free 15-minute buyer call or in-person tour? Dr. Jan Duffy — Cadence Henderson NV 89011.
             </p>
-            <Button size="lg" className="bg-blue-900 hover:bg-blue-800" asChild>
+            <Button size="lg" className="bg-black hover:bg-neutral-800" asChild>
               <CalendlyLink>Schedule your free 15-min call</CalendlyLink>
             </Button>
           </div>

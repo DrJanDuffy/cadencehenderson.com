@@ -117,9 +117,9 @@ const navigationItems: NavItem[] = [
 ]
 
 const linkBaseClasses =
-  'text-gray-700 hover:text-blue-900 font-medium transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:ring-offset-2 rounded'
+  'text-[11px] font-light tracking-[0.2em] uppercase text-neutral-600 hover:text-black transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-neutral-900/20 focus:ring-offset-2'
 const dropdownItemClasses =
-  'block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-900 transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30 rounded'
+  'block px-4 py-2.5 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-600 hover:bg-neutral-50 hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -127,20 +127,20 @@ export function Navigation() {
 
   return (
     <nav
-      className="sticky top-0 z-50 bg-white shadow-md"
+      className="sticky top-0 z-50 border-b border-neutral-200 bg-white/95 backdrop-blur-sm"
       role="navigation"
       aria-label="Main site navigation"
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo - GEO: Site identity */}
           <Link
             href="/"
-            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-blue-900/30 focus:ring-offset-2 rounded"
+            className="flex items-center focus:outline-none focus:ring-2 focus:ring-neutral-900/20 focus:ring-offset-2"
             aria-label={`${CONTACT_INFO.siteName} - Home`}
             title={CONTACT_INFO.siteName}
           >
-            <span className="text-2xl font-bold text-blue-900">CADENCE</span>
+            <span className="text-sm font-light tracking-[0.4em] text-black">CADENCE</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -175,7 +175,7 @@ export function Navigation() {
                 )}
                 {item.items && activeDropdown === item.title && (
                   <div
-                    className="absolute top-full left-0 mt-2 w-64 bg-white shadow-lg rounded-md py-2 z-50 border border-gray-100"
+                    className="absolute top-full left-0 mt-1 w-72 border border-neutral-200 bg-white py-3 z-50"
                     aria-label={`${item.title} submenu`}
                   >
                     {item.items.map((subItem) =>
@@ -207,7 +207,7 @@ export function Navigation() {
 
           <Button
             size="sm"
-            className="hidden lg:inline-flex bg-blue-900 hover:bg-blue-800 text-white shrink-0 focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
+            className="hidden lg:inline-flex bg-black hover:bg-neutral-800 text-white shrink-0 tracking-[0.18em] uppercase"
             asChild
           >
             <CalendlyLink>Find a Realtor</CalendlyLink>
@@ -215,15 +215,15 @@ export function Navigation() {
 
           <Link
             href="/#home-search"
-            className="hidden lg:flex p-2 text-gray-700 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30 items-center gap-1"
+            className="hidden lg:flex items-center gap-2 p-2 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-600 hover:text-black focus:outline-none focus:ring-2 focus:ring-neutral-900/20"
             aria-label="Search Henderson homes for sale"
           >
-            <Search size={24} aria-hidden />
-            <span className="text-sm font-medium">Open Home Search</span>
+            <Search size={16} aria-hidden />
+            <span>Search</span>
           </Link>
 
           <button
-            className="lg:hidden p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-900/30"
+            className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-neutral-900/20"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen ? 'true' : 'false'}
@@ -234,17 +234,17 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden border-t border-gray-200 py-4" aria-label="Mobile navigation">
+          <div className="lg:hidden border-t border-neutral-200 py-6" aria-label="Mobile navigation">
             <div className="px-4 pb-4 space-y-2">
               <Button
-                className="w-full bg-blue-900 hover:bg-blue-800 text-white focus:ring-2 focus:ring-blue-900 focus:ring-offset-2"
+                className="w-full bg-black hover:bg-neutral-800 text-white tracking-[0.18em] uppercase"
                 asChild
               >
                 <CalendlyLink>Find a Realtor</CalendlyLink>
               </Button>
               <Link
                 href="/#home-search"
-                className="flex items-center justify-center gap-2 w-full py-2 text-sm font-medium text-blue-900 hover:bg-blue-50 rounded"
+                className="flex items-center justify-center gap-2 w-full py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 hover:bg-neutral-50"
                 onClick={() => setIsOpen(false)}
                 aria-label="Search Henderson homes for sale"
               >
@@ -259,7 +259,7 @@ export function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block rounded hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
+                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
@@ -267,7 +267,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.items ? '#' : item.href}
-                    className="w-full text-left px-4 py-2 text-gray-700 font-medium block rounded hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
+                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
                     onClick={(e) => {
                       if (item.items) {
                         e.preventDefault()
@@ -289,7 +289,7 @@ export function Navigation() {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-gray-600 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
+                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
@@ -298,7 +298,7 @@ export function Navigation() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-gray-600 hover:text-blue-900 rounded focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-900/30"
+                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}

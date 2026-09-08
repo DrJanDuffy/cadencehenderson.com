@@ -32,18 +32,18 @@ const FAQ_ITEMS = [
 export function HomepageFAQSection() {
   return (
     <section
-      className="py-16 bg-white"
+      className="py-24 bg-white"
       aria-labelledby="homepage-faq-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 id="homepage-faq-heading" className="text-4xl font-bold text-gray-900 mb-10 text-center">
+          <h2 id="homepage-faq-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-16 text-center">
             Frequently Asked Questions — New Homes in Cadence Henderson NV
           </h2>
-          <dl className="space-y-8">
+          <dl className="space-y-10">
             {FAQ_ITEMS.map((item, i) => (
-              <div key={i} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
-                <dt className="text-lg font-semibold text-gray-900 mb-3">
+              <div key={i} className="border-b border-neutral-200 pb-8 last:border-0 last:pb-0">
+                <dt className="text-lg font-light tracking-[0.04em] text-neutral-900 mb-4">
                   {item.question}
                 </dt>
                 <dd className="text-gray-800 leading-relaxed">{item.answer}</dd>
