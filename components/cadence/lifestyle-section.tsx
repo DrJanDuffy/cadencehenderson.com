@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export function LifestyleSection() {
   return (
@@ -10,12 +11,10 @@ export function LifestyleSection() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
-            <img
+            <SiteImage
               src={cfImage(SITE_IMAGES.lifestyle.community, 'card')}
               alt="Cadence Henderson NV 89011 lifestyle and community"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
+              fill
             />
           </div>
           <div className="order-1 md:order-2">

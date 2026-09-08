@@ -8,7 +8,7 @@ export function LocalBusinessSchema() {
     name: CONTACT_INFO.siteName,
     description:
       "Free new home buyer representation at Cadence Henderson NV 89011. Dr. Jan Duffy represents buyers across all 9 builders. Builder pays the fee — free to buyers. Berkshire Hathaway HomeServices Nevada Properties.",
-    image: 'https://www.cadencehenderson.com/og-image.png',
+    image: 'https://www.cadencehenderson.com/og-image.jpg',
     '@id': 'https://www.cadencehenderson.com',
     url: 'https://www.cadencehenderson.com',
     telephone: `+1-${CONTACT_INFO.phone}`,

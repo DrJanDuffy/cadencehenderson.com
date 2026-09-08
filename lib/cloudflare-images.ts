@@ -1,186 +1,155 @@
 /**
- * Cloudflare Images utility functions
- * Account: Cadence Henderson
- * Account ID: 2cc579c1ec9e426ed585e933ebf4753b
- * Account hash: byE6BTe9lNqo21V57n4aPQ
- * Image Delivery URL: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/<variant_name>
+ * Cloudflare Images catalog — Cadence Henderson
+ *
+ * SOP: Cloudflare hosted Images is primary; git files under public/images/ are fallback.
+ * Custom IDs: cadence-{group}-{slug}
+ * Delivery: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/<variant>
  *
  * Dashboard: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
- * Image IDs in SITE_IMAGES must match exactly what appears in the dashboard.
  */
 
-const CLOUDFLARE_ACCOUNT_HASH = 'byE6BTe9lNqo21V57n4aPQ'
-const BASE_URL = `https://imagedelivery.net/${CLOUDFLARE_ACCOUNT_HASH}`
+import {
+  CLOUDFLARE_IMAGES_DELIVERY_BASE,
+  type CloudflareImageVariant,
+} from '@/lib/cloudflare-images-config'
 
-/** Known-working Cadence images (cadencenv.com) so photos appear until Cloudflare IDs are set. */
-const CADENCE_PHOTOS = {
-  hero:
-    'https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png',
-  community:
-    'https://cadencenv.com/wp-content/uploads/2021/01/news-home-box-288x300.png',
-} as const
+export type ImageVariant = CloudflareImageVariant
 
-/**
- * Image variants - configure these in Cloudflare Dashboard > Images > Variants
- * Recommended settings:
- * - public: Fit=scale-down, Width=1920 (default, full quality)
- * - hero: Fit=cover, Width=1920, Height=1080 (hero sections)
- * - card: Fit=cover, Width=600, Height=400 (cards/grids)
- * - thumbnail: Fit=cover, Width=300, Height=200 (small thumbnails)
- * - avatar: Fit=cover, Width=200, Height=200 (profile images)
- * - og: Fit=cover, Width=1200, Height=630 (social sharing)
- * - gallery: Fit=cover, Width=1200, Height=800 (gallery lightbox)
- */
-export type ImageVariant = 'public' | 'hero' | 'card' | 'thumbnail' | 'avatar' | 'og' | 'gallery'
+const BASE_URL = CLOUDFLARE_IMAGES_DELIVERY_BASE
 
-/**
- * Placeholder image for missing/unset images (e.g. Cloudflare 404).
- * Use in img onError: e.currentTarget.src = PLACEHOLDER_IMAGE
- */
 export const PLACEHOLDER_IMAGE =
-  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"/%3E%3C/svg%3E'
+  'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="800" height="600"%3E%3Crect fill="%23e5e7eb" width="800" height="600"%3E%3C/rect%3E%3C/svg%3E'
 
-/**
- * Resolve image URL: Cloudflare delivery URL or full URL (e.g. cadencenv.com) as-is.
- * Use full URLs in SITE_IMAGES when Cloudflare IDs are not set up so photos still appear.
- */
-export function cfImage(imageId: string, _variant: ImageVariant = 'public'): string {
-  if (!imageId) return PLACEHOLDER_IMAGE
-  if (imageId.startsWith('http://') || imageId.startsWith('https://')) return imageId
-  return `${BASE_URL}/${imageId}/public`
+/** Custom Cloudflare Image ID → git-tracked public path */
+export const LOCAL_IMAGES: Record<string, string> = {}
+
+function img(id: string, local: string): string {
+  LOCAL_IMAGES[id] = local
+  return id
 }
-
-/**
- * Check if a URL is a Cloudflare Images URL
- */
-export function isCloudflareImage(url: string): boolean {
-  return url.startsWith(BASE_URL)
-}
-
-// ============================================================================
-// SITE IMAGES CATALOG — Cadence Henderson
-// Image IDs must match exactly what appears in Cloudflare Dashboard > Images.
-// URL format: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<imageId>/public
-// If photos don't appear: open docs/cloudflare-images-setup.md and follow the
-// steps to get the correct IDs from the dashboard and update the values below.
-// ============================================================================
 
 export const SITE_IMAGES = {
-  // Hero/Banner — use cadencenv.com URLs so photos appear; replace with Cloudflare IDs when set up
   hero: {
-    homepage: CADENCE_PHOTOS.hero,
-    newHomes: CADENCE_PHOTOS.community,
-    lifestyle: CADENCE_PHOTOS.community,
-    contact: CADENCE_PHOTOS.hero,
-    rentals: CADENCE_PHOTOS.community,
-    gallery: CADENCE_PHOTOS.community,
-    news: CADENCE_PHOTOS.hero,
-    faqs: CADENCE_PHOTOS.community,
-    realtors: CADENCE_PHOTOS.hero,
-    events: CADENCE_PHOTOS.community,
-    amenities: CADENCE_PHOTOS.community,
-    schools: CADENCE_PHOTOS.community,
-    parksTrails: CADENCE_PHOTOS.community,
-    shopping: CADENCE_PHOTOS.community,
+    homepage: img('cadence-hero-homepage', '/images/hero/homepage.jpg'),
+    newHomes: img('cadence-hero-new-homes', '/images/hero/new-homes.jpg'),
+    lifestyle: img('cadence-hero-lifestyle', '/images/hero/lifestyle.jpg'),
+    contact: img('cadence-hero-contact', '/images/hero/contact.jpg'),
+    rentals: img('cadence-hero-rentals', '/images/hero/rentals.jpg'),
+    gallery: img('cadence-hero-gallery', '/images/hero/gallery.jpg'),
+    news: img('cadence-hero-news', '/images/hero/news.jpg'),
+    faqs: img('cadence-hero-faqs', '/images/hero/faqs.jpg'),
+    realtors: img('cadence-hero-realtors', '/images/hero/realtors.jpg'),
+    events: img('cadence-hero-events', '/images/hero/events.jpg'),
+    amenities: img('cadence-hero-amenities', '/images/hero/amenities.jpg'),
+    schools: img('cadence-hero-schools', '/images/hero/schools.jpg'),
+    parksTrails: img('cadence-hero-parks-trails', '/images/hero/parks-trails.jpg'),
+    shopping: img('cadence-hero-shopping', '/images/hero/shopping.jpg'),
+    maps: img('cadence-hero-maps', '/images/hero/maps.jpg'),
+    residents: img('cadence-hero-residents', '/images/hero/residents.jpg'),
+    pastHomesales: img('cadence-hero-past-homesales', '/images/hero/past-homesales.jpg'),
+    animalHospital: img('cadence-hero-animal-hospital', '/images/hero/animal-hospital.jpg'),
+    community: img('cadence-hero-community', '/images/hero/community.jpg'),
   },
 
-  // Builder Images (8 builders)
   builders: {
-    beazer: CADENCE_PHOTOS.community,
-    century: CADENCE_PHOTOS.community,
-    drHorton: CADENCE_PHOTOS.community,
-    lennar: CADENCE_PHOTOS.community,
-    richmond: CADENCE_PHOTOS.community,
-    storybook: CADENCE_PHOTOS.community,
-    taylorMorrison: CADENCE_PHOTOS.community,
-    woodside: CADENCE_PHOTOS.community,
+    beazer: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    century: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
+    drHorton: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
+    lennar: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    richmond: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
+    storybook: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
+    taylorMorrison: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    woodside: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
   },
 
-  // Amenities Images
   amenities: {
-    centralPark: CADENCE_PHOTOS.community,
-    pool: CADENCE_PHOTOS.community,
-    splashPad: CADENCE_PHOTOS.community,
-    fitness: CADENCE_PHOTOS.community,
-    dogPark: CADENCE_PHOTOS.community,
-    playground: CADENCE_PHOTOS.community,
-    trails: CADENCE_PHOTOS.community,
-    sportsCourts: CADENCE_PHOTOS.community,
-    clubhouse: CADENCE_PHOTOS.community,
+    centralPark: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
+    pool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
+    splashPad: img('cadence-amenities-splash-pad', '/images/amenities/splash-pad.jpg'),
+    fitness: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
+    dogPark: img('cadence-amenities-dog-park', '/images/amenities/dog-park.jpg'),
+    playground: img('cadence-amenities-playground', '/images/amenities/playground.jpg'),
+    trails: img('cadence-amenities-trails', '/images/amenities/trails.jpg'),
+    sportsCourts: img('cadence-amenities-sports-courts', '/images/amenities/sports-courts.jpg'),
+    clubhouse: img('cadence-amenities-clubhouse', '/images/amenities/clubhouse.jpg'),
   },
 
-  // Lifestyle/Community Images
   lifestyle: {
-    community: CADENCE_PHOTOS.community,
-    families: CADENCE_PHOTOS.community,
-    events: CADENCE_PHOTOS.community,
-    concert: CADENCE_PHOTOS.community,
-    farmersMarket: CADENCE_PHOTOS.community,
-    movieNight: CADENCE_PHOTOS.community,
-    yoga: CADENCE_PHOTOS.community,
-    foodTruck: CADENCE_PHOTOS.community,
+    community: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
+    families: img('cadence-lifestyle-families', '/images/lifestyle/families.jpg'),
+    events: img('cadence-lifestyle-events', '/images/lifestyle/events.jpg'),
+    concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
+    farmersMarket: img('cadence-lifestyle-farmers-market', '/images/lifestyle/farmers-market.jpg'),
+    movieNight: img('cadence-lifestyle-movie-night', '/images/lifestyle/movie-night.jpg'),
+    yoga: img('cadence-lifestyle-yoga', '/images/lifestyle/yoga.jpg'),
+    foodTruck: img('cadence-lifestyle-food-truck', '/images/lifestyle/food-truck.jpg'),
   },
 
-  // Home Exterior/Interior Images
   homes: {
-    exterior1: CADENCE_PHOTOS.community,
-    exterior2: CADENCE_PHOTOS.community,
-    exterior3: CADENCE_PHOTOS.community,
-    interior1: CADENCE_PHOTOS.community,
-    interior2: CADENCE_PHOTOS.community,
-    kitchen: CADENCE_PHOTOS.community,
-    livingRoom: CADENCE_PHOTOS.community,
-    backyard: CADENCE_PHOTOS.community,
+    exterior1: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    exterior2: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
+    exterior3: img('cadence-homes-exterior-3', '/images/homes/exterior-3.jpg'),
+    interior1: img('cadence-homes-interior-1', '/images/homes/interior-1.jpg'),
+    interior2: img('cadence-homes-interior-2', '/images/homes/interior-2.jpg'),
+    kitchen: img('cadence-homes-kitchen', '/images/homes/kitchen.jpg'),
+    livingRoom: img('cadence-homes-living-room', '/images/homes/living-room.jpg'),
+    backyard: img('cadence-homes-backyard', '/images/homes/backyard.jpg'),
   },
 
-  // Rental Communities
   rentals: {
-    americanHomes: CADENCE_PHOTOS.community,
-    element12: CADENCE_PHOTOS.community,
-    adler: CADENCE_PHOTOS.community,
+    americanHomes: img('cadence-rentals-american-homes', '/images/rentals/american-homes.jpg'),
+    element12: img('cadence-rentals-element-12', '/images/rentals/element-12.jpg'),
+    adler: img('cadence-rentals-adler', '/images/rentals/adler.jpg'),
   },
 
-  // Gallery Images
   gallery: {
-    parkVista: CADENCE_PHOTOS.community,
-    newHome: CADENCE_PHOTOS.hero,
-    resortPool: CADENCE_PHOTOS.community,
-    concert: CADENCE_PHOTOS.community,
-    communityGathering: CADENCE_PHOTOS.community,
-    playground: CADENCE_PHOTOS.community,
-    fitnessCenter: CADENCE_PHOTOS.community,
-    modernExterior: CADENCE_PHOTOS.community,
-    walkingTrails: CADENCE_PHOTOS.community,
-    communityEvent: CADENCE_PHOTOS.community,
-    luxuryInterior: CADENCE_PHOTOS.community,
-    dogPark: CADENCE_PHOTOS.community,
+    parkVista: img('cadence-amenities-central-park', '/images/amenities/central-park.jpg'),
+    newHome: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+    resortPool: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
+    concert: img('cadence-lifestyle-concert', '/images/lifestyle/concert.jpg'),
+    communityGathering: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
+    playground: img('cadence-amenities-playground', '/images/amenities/playground.jpg'),
+    fitnessCenter: img('cadence-amenities-fitness', '/images/amenities/fitness.jpg'),
+    modernExterior: img('cadence-homes-exterior-2', '/images/homes/exterior-2.jpg'),
+    walkingTrails: img('cadence-amenities-trails', '/images/amenities/trails.jpg'),
+    communityEvent: img('cadence-lifestyle-events', '/images/lifestyle/events.jpg'),
+    luxuryInterior: img('cadence-homes-living-room', '/images/homes/living-room.jpg'),
+    dogPark: img('cadence-amenities-dog-park', '/images/amenities/dog-park.jpg'),
   },
 
-  // Location/Map Images
   location: {
-    mapOverview: CADENCE_PHOTOS.community,
-    welcomeCenter: CADENCE_PHOTOS.community,
-    aerialView: CADENCE_PHOTOS.community,
+    mapOverview: img('cadence-location-map-overview', '/images/location/map-overview.jpg'),
+    welcomeCenter: img('cadence-location-welcome-center', '/images/location/welcome-center.jpg'),
+    aerialView: img('cadence-location-aerial', '/images/location/aerial.jpg'),
   },
 
-  // Agent/Branding — Dr. Jan Duffy
   agent: {
-    headshot: CADENCE_PHOTOS.hero,
-    logo: CADENCE_PHOTOS.community,
-    bhhs: CADENCE_PHOTOS.community,
+    headshot: img('cadence-agent-headshot', '/images/agent/headshot.png'),
+    logo: img('cadence-og-share', '/images/og/share.jpg'),
+    bhhs: img('cadence-hero-realtors', '/images/hero/realtors.jpg'),
   },
 
-  // Icons/Graphics
   icons: {
-    amenitiesBox: CADENCE_PHOTOS.community,
-    lifestyleBox: CADENCE_PHOTOS.community,
-    homesBox: CADENCE_PHOTOS.community,
+    amenitiesBox: img('cadence-amenities-pool', '/images/amenities/pool.jpg'),
+    lifestyleBox: img('cadence-lifestyle-community', '/images/lifestyle/community.jpg'),
+    homesBox: img('cadence-homes-exterior-1', '/images/homes/exterior-1.jpg'),
+  },
+
+  schools: {
+    elementary: img('cadence-schools-elementary', '/images/schools/elementary.jpg'),
+    middle: img('cadence-schools-middle', '/images/schools/middle.jpg'),
+    high: img('cadence-schools-high', '/images/schools/high.jpg'),
+  },
+
+  shopping: {
+    galleria: img('cadence-shopping-galleria', '/images/shopping/galleria.jpg'),
+    district: img('cadence-shopping-district', '/images/shopping/district.jpg'),
+    marketplace: img('cadence-shopping-marketplace', '/images/shopping/marketplace.jpg'),
   },
 
   /**
    * Las Vegas high-rise condo towers — cloned from lasvegashighrisecondoliving.com/condo/
    * Upload via: npm run cloudflare:condo-images
-   * Dashboard: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
    */
   condos: {
     allure: 'lv-condo-allure',
@@ -209,51 +178,66 @@ export const SITE_IMAGES = {
   },
 } as const
 
-// ============================================================================
-// HELPER FUNCTIONS FOR COMMON USE CASES
-// ============================================================================
+export function cfImage(imageId: string, variant: ImageVariant = 'public'): string {
+  if (!imageId) return PLACEHOLDER_IMAGE
+  if (imageId.startsWith('/') || imageId.startsWith('http://') || imageId.startsWith('https://')) {
+    return imageId
+  }
+  return `${BASE_URL}/${imageId}/${variant}`
+}
 
-/**
- * Get hero image URL for a specific page
- */
+export function gitFallback(imageId: string): string {
+  if (!imageId) return PLACEHOLDER_IMAGE
+  if (imageId.startsWith('/') && !imageId.startsWith('//')) return imageId
+  if (imageId.startsWith('data:')) return PLACEHOLDER_IMAGE
+  return LOCAL_IMAGES[imageId] ?? PLACEHOLDER_IMAGE
+}
+
+/** Resolve git fallback from a Cloudflare delivery URL or custom ID. */
+export function gitFallbackFromSrc(src: string): string {
+  if (!src) return PLACEHOLDER_IMAGE
+  if (src.startsWith('data:')) return PLACEHOLDER_IMAGE
+  if (src.startsWith('/') && !src.startsWith('//')) return src
+  if (src.includes('imagedelivery.net')) {
+    const parts = src.split('/').filter(Boolean)
+    const id = parts[3] ? decodeURIComponent(parts[3]) : ''
+    return gitFallback(id)
+  }
+  return gitFallback(src)
+}
+
+export function isCloudflareImage(url: string): boolean {
+  return url.startsWith(BASE_URL)
+}
+
 export function getHeroImage(page: keyof typeof SITE_IMAGES.hero, variant: ImageVariant = 'hero'): string {
   return cfImage(SITE_IMAGES.hero[page], variant)
 }
 
-/**
- * Get builder image URL
- */
 export function getBuilderImage(builder: keyof typeof SITE_IMAGES.builders, variant: ImageVariant = 'card'): string {
   return cfImage(SITE_IMAGES.builders[builder], variant)
 }
 
-/**
- * Get amenity image URL
- */
 export function getAmenityImage(amenity: keyof typeof SITE_IMAGES.amenities, variant: ImageVariant = 'card'): string {
   return cfImage(SITE_IMAGES.amenities[amenity], variant)
 }
 
-/**
- * Get gallery image URL
- */
 export function getGalleryImage(image: keyof typeof SITE_IMAGES.gallery, variant: ImageVariant = 'gallery'): string {
   return cfImage(SITE_IMAGES.gallery[image], variant)
 }
 
-/**
- * Get home image URL
- */
 export function getHomeImage(image: keyof typeof SITE_IMAGES.homes, variant: ImageVariant = 'card'): string {
   return cfImage(SITE_IMAGES.homes[image], variant)
 }
 
-/**
- * Get Las Vegas high-rise condo tower image URL (Cloudflare Images).
- */
 export function getCondoImage(
   tower: keyof typeof SITE_IMAGES.condos,
   variant: ImageVariant = 'card',
 ): string {
   return cfImage(SITE_IMAGES.condos[tower], variant)
+}
+
+/** Flat list of git-backed images for upload scripts (excludes condos). */
+export function listGitBackedImages(): Array<{ id: string; local: string }> {
+  return Object.entries(LOCAL_IMAGES).map(([id, local]) => ({ id, local }))
 }

@@ -1,4 +1,6 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { HowToBuySchema } from '@/components/schema/how-to-buy'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
@@ -95,17 +97,12 @@ export default function NewHomesPage() {
       <Navigation />
       <HowToBuySchema />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">New Homes in Cadence</h1>
-            <p className="text-xl mb-8">
-              Discover your dream home from our collection of new builds by
-              award-winning builders. From cozy townhomes to spacious estates,
-              find the perfect fit for your lifestyle.
-            </p>
-            {/* Quick Search */}
+      <PageHero
+        title="New Homes in Cadence"
+        subtitle="Discover your dream home from our collection of new builds by award-winning builders. From cozy townhomes to spacious estates, find the perfect fit for your lifestyle."
+        imageSrc={cfImage(SITE_IMAGES.hero.newHomes, 'hero')}
+        imageAlt="New homes for sale in Cadence Henderson NV 89011"
+      >
             <div className="flex justify-center mb-8">
               <RealScoutSimpleSearch />
             </div>
@@ -132,9 +129,7 @@ export default function NewHomesPage() {
                 View Community Map
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
+      </PageHero>
 
       <RealScoutOfficeListings />
 

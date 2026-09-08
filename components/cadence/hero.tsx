@@ -5,7 +5,8 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { Button } from '@/components/ui/button'
 import { Calendar } from 'lucide-react'
-import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
 
@@ -13,17 +14,12 @@ export function Hero() {
   return (
     <section className="relative min-h-[480px] sm:min-h-[520px] md:min-h-[560px] lg:min-h-[600px] flex flex-col bg-gradient-to-r from-slate-900 to-slate-800 overflow-hidden" aria-label="Hero">
       {/* LCP: native img; on error hide so gradient shows and alt text is not displayed */}
-      <img
+      <SiteImage
         src={HERO_IMAGE}
         alt="New homes for sale Cadence Henderson NV 89011 — Dr. Jan Duffy buyer's agent"
-        width={1920}
-        height={1080}
-        fetchPriority="high"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover object-center opacity-90"
-        onError={(e) => {
-          e.currentTarget.src = PLACEHOLDER_IMAGE
-        }}
+        fill
+        priority
+        className="object-center opacity-90"
       />
       {/* Light overlay so photo shows; keeps white text readable */}
       <div

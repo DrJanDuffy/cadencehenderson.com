@@ -1,90 +1,73 @@
-# Cloudflare Images – Fix photos not appearing
+# Cloudflare Images setup
 
-If Cloudflare photos don’t show on the site (grey placeholders or broken images), the **image IDs in code don’t match** the IDs in your Cloudflare Images account.
+Canonical SOP (all domains, projects, global settings):
 
-## 1. Test the URLs
+**[docs/sop/cloudflare-images-git-fallback.md](./sop/cloudflare-images-git-fallback.md)**  
+Machine-readable: [docs/sop/cloudflare-images-global-settings.json](./sop/cloudflare-images-global-settings.json)
 
-Open these in your browser. If you get **404**, the ID is wrong.
+**Primary:** Cloudflare hosted Images (`imagedelivery.net`)  
+**Backup:** git-tracked `public/images/`  
+**Account:** `2cc579c1ec9e426ed585e933ebf4753b` · hash `byE6BTe9lNqo21V57n4aPQ`
 
-| Image ID used in code | Test URL |
-|------------------------|----------|
-| `CendenceDrJanDuffy` | https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/CendenceDrJanDuffy/public |
-| `cadence_008_resized` | https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/cadence_008_resized/public |
-| `Workout-Area-at-Cadence-CentralPark` | https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/Workout-Area-at-Cadence-CentralPark/public |
+Delivery URL:
 
-- If a URL **loads** → that ID is correct; keep it.
-- If a URL **404s** → get the correct ID from the dashboard (step 2) and update the code (step 3).
+`https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/<variant>`
 
-## 2. Get the correct Image IDs from Cloudflare
+Example: `cadence-hero-homepage` ↔ `/images/hero/homepage.jpg`
 
-1. Open **Dashboard**: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images  
-2. Go to **Images**.
-3. For each image you use on the site, click it and copy the **Image ID** (or the value shown as the image identifier).  
-   - It might look like `CendenceDrJanDuffy`, `cadence_008_resized`, or a UUID.  
-   - Use the **exact** string (case-sensitive).
+---
 
-## 3. Update the code
+## Sync on production deploy
 
-Edit **`lib/cloudflare-images.ts`** and update the `SITE_IMAGES` object so every value is an Image ID that exists in your dashboard.
+`vercel.json` runs `npm run cloudflare:images:sync` before `npm run build`:
 
-- The catalog uses only **three** image IDs for the whole site:  
-  `CendenceDrJanDuffy`, `cadence_008_resized`, `Workout-Area-at-Cadence-CentralPark`.  
-- Replace each of these with the **exact** ID from the dashboard for the image you want (e.g. hero, amenities, lifestyle).  
-- If you only have one image uploaded, use that ID for every entry in `SITE_IMAGES` until you upload more.
+1. Create standard variants (`public`, `hero`, `card`, `thumbnail`, `avatar`, `og`, `gallery`)
+2. Upload git files from `public/images` with custom IDs
+3. Upload condo tower photos (`lv-condo-*`)
 
-## 4. Redeploy
+If `CLOUDFLARE_API_TOKEN` is missing, the sync **skips uploads** and the site still ships git fallbacks.
 
-After saving `lib/cloudflare-images.ts`, commit, push, and deploy to production (e.g. `vercel --prod`).  
-Photos will appear once the IDs in code match the dashboard.
+### Vercel env (every project)
 
-## 5. Las Vegas high-rise condo photos (cloned source)
+| Name | Value |
+|------|--------|
+| `CLOUDFLARE_API_TOKEN` | Account → Cloudflare Images → Edit |
+| `CLOUDFLARE_ACCOUNT_ID` | `2cc579c1ec9e426ed585e933ebf4753b` |
+| `CLOUDFLARE_IMAGES_ACCOUNT_HASH` | `byE6BTe9lNqo21V57n4aPQ` |
+| `CLOUDFLARE_IMAGES_PREFIX` | `cadence` (unique slug on other domains) |
 
-23 tower header images from [lasvegashighrisecondoliving.com/condo/](https://lasvegashighrisecondoliving.com/condo/) are cataloged in `lib/cloudflare-images.ts` under `SITE_IMAGES.condos` with IDs like `lv-condo-allure`, `lv-condo-panorama-towers`, etc.
+Scope: **Production**. Then **redeploy** (`vercel --prod`).
 
-### Upload to Cloudflare Images
+---
 
-**Option A — automatic on Vercel deploy** (recommended): `vercel.json` runs the upload script before `npm run build` when `CLOUDFLARE_API_TOKEN` is set in Vercel project env.
-
-#### After adding the token in Vercel
-
-1. **Vercel → Project `cadencehenderson.com` → Settings → Environment Variables**
-   - Variable name: `CLOUDFLARE_API_TOKEN` (also accepts `CF_API_TOKEN` or `CLOUDFLARE_IMAGES_API_TOKEN`)
-   - Permission: Cloudflare **Account → Cloudflare Images → Edit**
-   - Scope: **Production** (and Preview if you want preview uploads)
-2. **Redeploy production** — pushes to `main` may not auto-deploy; use **Deployments → … → Redeploy** on the latest `main` commit, or run `vercel --prod` locally.
-3. **Check build logs** for `CLOUDFLARE_API_TOKEN: set — condo image upload enabled` and lines like `Uploaded: Panorama Towers → https://imagedelivery.net/...`
-4. **Verify** a sample URL returns 200, e.g.  
-   https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/lv-condo-panorama-towers/public
-
-If build logs show `not set`, the env var name or Production scope is wrong.
-
-**Option B — manual CLI**:
-
-1. Create an API token with **Account → Cloudflare Images → Edit**.
-2. Run:
+## Local commands
 
 ```bash
 export CLOUDFLARE_API_TOKEN="your_token"
-export CLOUDFLARE_ACCOUNT_ID="2cc579c1ec9e426ed585e933ebf4753b"  # optional; this is the default
-npm run cloudflare:condo-images
+npm run cloudflare:image-variants
+npm run cloudflare:images:upload -- --skip-existing
+npm run cloudflare:images:upload:dry
+npm run cloudflare:condo-images -- --skip-existing
 ```
 
-**Option C — admin API** (uses Vercel env at runtime):
+---
 
-```bash
-curl -X POST https://www.cadencehenderson.com/api/admin/upload-condo-images \
-  -H "Authorization: Bearer $CRON_SECRET"
-```
+## App catalog
 
-Set `CRON_SECRET` in Vercel if using Option C.
+Edit `lib/cloudflare-images.ts`. Each git-backed photo uses `img(id, localPath)` so `SiteImage` can fall back.
 
-3. Verify a sample URL loads, e.g.  
-   https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/lv-condo-panorama-towers/public
+On-page: `cfImage(SITE_IMAGES.hero.homepage, 'hero')` + `<SiteImage />`.  
+Open Graph / JSON-LD: git `/og-image.jpg` (crawlers do not run the JS fallback).
 
-Manifest output: `lib/condo-images-manifest.json` (updated after each run).
+Dashboard: https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images
 
-Download only (no upload):
+---
 
-```bash
-npm run cloudflare:condo-images:download
-```
+## Las Vegas high-rise condo photos
+
+Catalog: `SITE_IMAGES.condos` (`lv-condo-allure`, …). Not git-backed.
+
+Manual: `npm run cloudflare:condo-images`  
+Admin: `POST /api/admin/upload-condo-images` with `Authorization: Bearer $CRON_SECRET`
+
+Verify: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/lv-condo-panorama-towers/public

@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { cfImage, PLACEHOLDER_IMAGE, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const MAPS_DIRECTIONS_URL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONTACT_INFO.welcomeCenter)}`
 
@@ -14,14 +15,12 @@ export function LocationSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <div className="inline-flex items-center justify-center mb-6">
-              <img
+              <SiteImage
                 src={cfImage(SITE_IMAGES.icons.homesBox, 'thumbnail')}
                 alt="Cadence Henderson NV 89011 location — master-planned community"
                 width={96}
                 height={100}
-                loading="lazy"
-                className="w-24 h-24 object-contain"
-                onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
+                className="h-24 w-24 object-contain"
               />
             </div>
             <h2 id="location-heading" className="text-4xl font-bold text-gray-900 mb-6">
@@ -61,12 +60,10 @@ export function LocationSection() {
             </div>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
-            <img
+            <SiteImage
               src={cfImage(SITE_IMAGES.location.aerialView, 'card')}
               alt="Cadence Henderson NV 89011 community and surrounding area"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
+              fill
             />
           </div>
         </div>

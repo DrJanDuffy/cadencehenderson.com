@@ -1,20 +1,10 @@
 'use client'
 
-import { PLACEHOLDER_IMAGE } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
 
 /**
- * Client-only image for news cards when article.image is missing.
- * Shows Cloudflare fallback or placeholder on 404.
+ * News card image: Cloudflare primary, git public/images fallback.
  */
 export function NewsPlaceholderImage({ src }: { src: string }) {
-  return (
-    <img
-      src={src}
-      alt=""
-      className="absolute inset-0 h-full w-full object-cover"
-      onError={(e) => {
-        e.currentTarget.src = PLACEHOLDER_IMAGE
-      }}
-    />
-  )
+  return <SiteImage src={src} alt="" fill className="object-cover" />
 }

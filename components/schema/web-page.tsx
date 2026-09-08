@@ -31,7 +31,7 @@ export function WebPageSchema() {
     },
     primaryImageOfPage: {
       '@type': 'ImageObject',
-      url: 'https://www.cadencehenderson.com/og-image.png',
+      url: 'https://www.cadencehenderson.com/og-image.jpg',
     },
     datePublished: '2024-01-01',
     inLanguage: 'en-US',

@@ -1,6 +1,10 @@
 # Cloudflare domains → Git repos
 
-Creates a **local git repo** (and optionally a **GitHub repo** + `origin` remote) for every Cloudflare zone that has a website (A/AAAA/CNAME records or Pages custom domain).
+This script creates **a git repo per Cloudflare zone** (websites). It is **not** the image SOP.
+
+**Photos:** Cloudflare Images is primary; git `public/images/` is the fallback. See `docs/sop/cloudflare-images-git-fallback.md`.
+
+---
 
 ## 1. Cloudflare API token
 

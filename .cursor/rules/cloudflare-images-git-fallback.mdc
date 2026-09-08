@@ -1,0 +1,32 @@
+---
+description: Cloudflare Images is primary storage; git-tracked public/images is the fallback. Applies to all domains and Vercel projects.
+globs: "{lib/cloudflare-images*.ts,components/cadence/*image*.tsx,components/cadence/page-hero.tsx,scripts/*cloudflare*image*,public/images/**,docs/sop/cloudflare-images*,next.config.ts,vercel.json}"
+alwaysApply: false
+---
+
+# Cloudflare Images + Git fallback
+
+**SOP:** `docs/sop/cloudflare-images-git-fallback.md`  
+**Global settings:** `docs/sop/cloudflare-images-global-settings.json`
+
+## Always
+
+- Deliver photos from Cloudflare Images: `https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<id>/<variant>`.
+- Keep the same bytes in git under `public/images/` as backup.
+- Custom IDs: `{CLOUDFLARE_IMAGES_PREFIX}-{folder}-{slug}` (this repo: `cadence-hero-homepage` ↔ `/images/hero/homepage.jpg`).
+- Render with `SiteImage` or `CloudflareImage` + `cfImage()` so a Cloudflare 404 falls back to git, then the SVG placeholder.
+- Open Graph and JSON-LD `image` use git-tracked `/og-image.jpg` (crawlers do not run JS fallback).
+- Use `CONTACT_INFO` for NAP. Do not modify `components/idx/*`.
+
+## Do not
+
+- Hardcode random Cloudflare UUIDs for site photos.
+- Point every heading at one master PNG.
+- Skip git files because “Cloudflare will have it.”
+- Use Fair Housing proxies in alt text.
+
+## New files
+
+1. Add the file under `public/images/<folder>/<slug>.<ext>`.
+2. Register it in `lib/cloudflare-images.ts` with `img('cadence-folder-slug', '/images/folder/slug.jpg')`.
+3. Upload with `npm run cloudflare:images:upload` (or the next production build if `CLOUDFLARE_API_TOKEN` is set).

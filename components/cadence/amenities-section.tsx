@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { getAmenityImage, PLACEHOLDER_IMAGE } from '@/lib/cloudflare-images'
+import { SiteImage } from '@/components/cadence/site-image'
+import { getAmenityImage } from '@/lib/cloudflare-images'
 
 export function AmenitiesSection() {
   return (
@@ -25,12 +26,10 @@ export function AmenitiesSection() {
             </Button>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl bg-gray-200">
-            <img
+            <SiteImage
               src={getAmenityImage('centralPark', 'card')}
               alt="Cadence Henderson NV 89011 amenities and Central Park"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-              onError={(e) => { e.currentTarget.src = PLACEHOLDER_IMAGE }}
+              fill
             />
           </div>
         </div>

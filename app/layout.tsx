@@ -16,6 +16,8 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import './globals.css'
 
 const HERO_IMAGE = cfImage(SITE_IMAGES.hero.homepage, 'hero')
+/** Crawlers do not run the JS git fallback — keep a stable git URL for OG/schema. */
+const OG_IMAGE = '/og-image.jpg'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
     url: 'https://www.cadencehenderson.com',
     images: [
       {
-        url: '/og-image.png',
+        url: OG_IMAGE,
         width: 1200,
         height: 630,
         alt: 'New homes for sale in Cadence Henderson 89011 Henderson NV',
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     title: "New Home Buyer's Agent Cadence Henderson NV 89011 | Free — Dr. Jan Duffy",
     description:
       `Free buyer representation for new homes in Cadence Henderson NV 89011. 9 builders, $300K–$700K+. Builder pays the fee. Call Dr. Jan Duffy ${CONTACT_INFO.phone}.`,
-    images: ['/og-image.png'],
+    images: [OG_IMAGE],
     creator: '@DrJanDuffy',
   },
 }

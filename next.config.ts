@@ -1,5 +1,8 @@
 import type { NextConfig } from 'next'
 
+const CLOUDFLARE_IMAGES_HASH =
+  process.env.CLOUDFLARE_IMAGES_ACCOUNT_HASH || 'byE6BTe9lNqo21V57n4aPQ'
+
 const REALSCOUT_RENTALS_URL =
   'https://drjanduffy.realscout.com/homesearch/shared-searches/U2hhcmVhYmxlU2VhcmNoTGluay0xODM5Nw=='
 const REALSCOUT_BEAZER_HOMES_URL =
@@ -11,7 +14,7 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'imagedelivery.net',
-        pathname: '/byE6BTe9lNqo21V57n4aPQ/**',
+        pathname: `/${CLOUDFLARE_IMAGES_HASH}/**`,
       },
       {
         protocol: 'https',

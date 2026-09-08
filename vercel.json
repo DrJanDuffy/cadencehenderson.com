@@ -1,5 +1,4 @@
 {
-  "buildCommand": "node scripts/clone-condo-images-to-cloudflare.mjs --skip-existing --allow-missing-token && npm run build",
+  "buildCommand": "npm run cloudflare:images:sync && npm run build",
   "installCommand": "npm install"
 }
-

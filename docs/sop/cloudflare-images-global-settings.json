@@ -1,0 +1,31 @@
+{
+  "name": "Dr. Jan Duffy — Cloudflare Images (global)",
+  "accountId": "2cc579c1ec9e426ed585e933ebf4753b",
+  "accountHash": "byE6BTe9lNqo21V57n4aPQ",
+  "deliveryBase": "https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ",
+  "dashboard": "https://dash.cloudflare.com/2cc579c1ec9e426ed585e933ebf4753b/images",
+  "primary": "cloudflare-hosted-images",
+  "fallback": "git-tracked-public-images",
+  "idPattern": "{CLOUDFLARE_IMAGES_PREFIX}-{folder}-{slug}",
+  "exampleId": "cadence-hero-homepage",
+  "exampleGitPath": "/images/hero/homepage.jpg",
+  "variants": {
+    "public": { "width": 1920, "fit": "scale-down" },
+    "hero": { "width": 1920, "height": 1080, "fit": "cover" },
+    "card": { "width": 800, "height": 600, "fit": "cover" },
+    "thumbnail": { "width": 400, "height": 300, "fit": "cover" },
+    "avatar": { "width": 200, "height": 200, "fit": "cover" },
+    "og": { "width": 1200, "height": 630, "fit": "cover" },
+    "gallery": { "width": 1200, "height": 800, "fit": "cover" }
+  },
+  "env": {
+    "CLOUDFLARE_API_TOKEN": "Account → Cloudflare Images → Edit (required to upload)",
+    "CLOUDFLARE_ACCOUNT_ID": "2cc579c1ec9e426ed585e933ebf4753b",
+    "CLOUDFLARE_IMAGES_ACCOUNT_HASH": "byE6BTe9lNqo21V57n4aPQ",
+    "CLOUDFLARE_IMAGES_PREFIX": "per-project slug, e.g. cadence, heritage, summerlin"
+  },
+  "vercel": {
+    "scope": "Production (and Preview if you want preview uploads)",
+    "buildCommand": "npm run cloudflare:images:sync && npm run build"
+  }
+}
