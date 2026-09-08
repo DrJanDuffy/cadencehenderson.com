@@ -32,7 +32,7 @@ const upcomingEvents = [
     location: 'Central Park Event Lawn',
     category: 'Music',
     description:
-      'Join us for live music under the stars every Friday evening throughout the summer. Bring your blankets and lawn chairs for a family-friendly evening of entertainment.',
+      'Join us for live music under the stars every Friday evening throughout the summer. Bring blankets and lawn chairs for an evening of entertainment.',
     image: cfImage(SITE_IMAGES.lifestyle.concert, 'card'),
   },
   {

@@ -57,7 +57,7 @@ const navigationItems: NavItem[] = [
         href: CONTACT_INFO.realScoutRentalsUrl,
         external: true,
       },
-      { label: 'Beazer Homes', href: CONTACT_INFO.realScoutBeazerHomesUrl, external: true },
+      { label: 'Beazer Homes', href: '/new-homes/beazer-homes' },
       { label: 'Century Communities', href: '/new-homes/century-communities' },
       { label: 'D.R. Horton', href: '/new-homes/dr-horton' },
       { label: 'Lennar', href: '/new-homes/lennar' },

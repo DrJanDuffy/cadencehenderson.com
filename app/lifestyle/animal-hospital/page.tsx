@@ -50,6 +50,7 @@ export const metadata: Metadata = {
     description: 'Full-service veterinary care in Cadence Henderson NV 89011. Wellness, vaccines, dental, surgery & emergency services.',
     url: 'https://www.cadencehenderson.com/lifestyle/animal-hospital',
   },
+  robots: { index: true, follow: true },
 }
 
 export default function AnimalHospitalPage() {

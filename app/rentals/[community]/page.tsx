@@ -221,6 +221,7 @@ export async function generateMetadata({
     title: `${community.name} Rentals | Cadence Henderson 89011`,
     description: `${community.description} Cadence Henderson rental homes in Henderson NV 89011. Dr. Jan Duffy, REALTOR®.`,
     alternates: { canonical: url },
+    robots: { index: true, follow: true },
     openGraph: {
       title: `${community.name} Rentals | Cadence Henderson 89011`,
       description: `${community.description} Henderson NV 89011.`,
