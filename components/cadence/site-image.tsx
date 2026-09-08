@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { gitFallbackFromSrc, PLACEHOLDER_IMAGE } from '@/lib/cloudflare-images'
 
 type SiteImageProps = {
@@ -16,8 +16,9 @@ type SiteImageProps = {
 }
 
 /**
- * Cloudflare Images primary URL with git-tracked public/images fallback.
- * Use for H1/H2/H3 photos. One error swap only — no retry loops.
+ * Git-tracked public/images first when a local file exists (reliable H1 paint).
+ * Cloudflare URL is used when there is no git mapping (e.g. condo IDs).
+ * One error swap only — no retry loops.
  */
 export function SiteImage({
   src,
@@ -30,11 +31,23 @@ export function SiteImage({
   loading,
 }: SiteImageProps) {
   const [failed, setFailed] = useState(false)
-  const resolved = failed ? gitFallbackFromSrc(src) : src
+  const imgRef = useRef<HTMLImageElement>(null)
+  const gitSrc = gitFallbackFromSrc(src)
+  const hasGitFile = gitSrc.startsWith('/')
+  const resolved = failed ? PLACEHOLDER_IMAGE : hasGitFile ? gitSrc : src
   const fillClass = fill ? 'absolute inset-0 h-full w-full object-cover' : ''
+
+  useEffect(() => {
+    const el = imgRef.current
+    if (!el || failed) return
+    if (el.complete && el.naturalWidth === 0) {
+      setFailed(true)
+    }
+  }, [resolved, failed])
 
   return (
     <img
+      ref={imgRef}
       src={resolved || PLACEHOLDER_IMAGE}
       alt={alt}
       width={fill ? undefined : width}

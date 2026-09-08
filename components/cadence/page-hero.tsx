@@ -23,7 +23,7 @@ export function PageHero({
 }: PageHeroProps) {
   return (
     <section
-      className="relative min-h-[360px] overflow-hidden bg-black py-28 md:py-36"
+      className="relative min-h-[420px] overflow-hidden bg-black py-28 md:py-36"
       aria-label="Page heading"
     >
       <SiteImage
@@ -31,10 +31,10 @@ export function PageHero({
         alt={imageAlt}
         fill
         priority
-        className="opacity-70"
+        className="opacity-80"
       />
       <div
-        className="absolute inset-0 bg-black/40"
+        className="absolute inset-0 bg-black/35"
         aria-hidden
       />
       <div className="relative container mx-auto px-4">

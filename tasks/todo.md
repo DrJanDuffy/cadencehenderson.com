@@ -1,26 +1,24 @@
 # Task plan
 
-Quiet luxury / barely-there UI for Cadence Henderson: restraint, negative space, monochrome, skinny sans-serifs. No flashy motion or aggressive pop-ups.
+Luxury real-estate hero photograph on every public page. Unique image per route (no shared builder/rental hero). Quiet luxury, 16:9, Cadence Henderson desert.
 
 ## Current plan
 
-- [x] Design tokens: B&W palette, near-zero radius, more page padding
-- [x] Skinny sans (Sora 200–400); stop using mono as the site face
-- [x] Shared chrome: nav, footer, hero, page-hero, buttons, CTAs
-- [x] Remove Calendly floating badge and DeployBanner
-- [x] RealScout/Calendly widgets in monochrome, no heavy shadows
-- [x] Verify homepage + an inner page in the browser (or local render)
+- [x] Branch from quiet-luxury UI; inventory pages that share a hero
+- [x] Generate unique 16:9 luxury heroes (8 builders + 3 rentals)
+- [x] Map in `SITE_IMAGES`, wire builder and rental `PageHero`
+- [x] Lighten PageHero overlay so photos read; verify pages
+- [x] Commit, push, open PR
 
 ## Review
 
-Quiet luxury is applied at the token layer so inner pages inherit grayscale, square corners, and thin type without a page-by-page rewrite.
+Unique luxury 16:9 heroes now cover every public `PageHero` route. Homepage keeps `hero.homepage`. Inner pages keep their existing unique files. Builder and rental sub-pages no longer share `new-homes.jpg` / `rentals.jpg`.
 
-- **Palette:** Tailwind blues/indigos/ambers/greens/teals/purples remap to Compass-like grayscale in `app/globals.css`.
-- **Type:** Sora 200–600 via `next/font`; headings 200–300; `font-bold` utilities soften to 300.
-- **Chrome:** Hairline nav, no decorative hero wave, solid black CTAs, square buttons, more section padding.
-- **Pop-ups:** Calendly floating badge and DeployBanner removed; badge CSS hidden as a failsafe.
-- **Widgets:** RealScout/Calendly styled monochrome with hairline borders; `components/idx/*` untouched.
+New git-backed files under `public/images/hero/`:
 
-### Verification (2026-09-08)
+- Builders: `beazer-homes`, `century-communities`, `dr-horton`, `lennar`, `richmond-american`, `storybook-homes`, `taylor-morrison`, `woodside-homes`
+- Rentals: `american-homes`, `element-12`, `adler`
 
-Local `npm run dev` on `:3000`. Homepage, `/lifestyle`, and `/contact` return 200. HTML uses Sora (`sora_*` class on body), no `initBadgeWidget`, no hero wave SVG, no DeployBanner. Computer-use pass: hairline CADENCE nav, square CTAs, B&W palette, Calendly opens on click (not a floating badge). Mobile hamburger opens/closes. Next.js dev “N” overlay is dev-only, not production.
+Helpers: `getBuilderHeroImage(slug)`, `getRentalHeroImage(slug)` in `lib/cloudflare-images.ts`. Cloudflare IDs follow `cadence-hero-*`. `SiteImage` paints the git JPEG when mapped so first paint is the photo. PageHero overlay matches homepage (`opacity-80`, `bg-black/35`). Alt text uses location/service, no Fair Housing proxies.
+
+Verified locally: homepage, `/lifestyle`, `/new-homes/lennar`, `/new-homes/century-communities`, `/new-homes/woodside-homes`, `/contact` each show a distinct photographic hero. `/rentals` and `/new-homes/beazer-homes` still 307 to RealScout until PR #5.
