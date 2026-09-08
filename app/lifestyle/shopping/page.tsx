@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -13,7 +15,7 @@ const shoppingCenters = [
     description:
       'Major shopping mall featuring department stores, specialty retailers, dining, and entertainment options.',
     stores: ['Macy\'s', 'JCPenney', 'Dillard\'s', '140+ stores'],
-    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
+    image: cfImage(SITE_IMAGES.shopping.galleria, 'card'),
   },
   {
     name: 'District at Green Valley Ranch',
@@ -21,7 +23,7 @@ const shoppingCenters = [
     description:
       'Open-air lifestyle center with upscale shops, restaurants, and a movie theater.',
     stores: ['Whole Foods', 'REI', 'Anthropologie', '40+ stores'],
-    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
+    image: cfImage(SITE_IMAGES.shopping.district, 'card'),
   },
   {
     name: 'Cadence Marketplace',
@@ -29,7 +31,7 @@ const shoppingCenters = [
     description:
       'Neighborhood shopping with grocery stores, restaurants, and essential services.',
     stores: ['Smith\'s', 'CVS', 'Starbucks', '25+ stores'],
-    image: cfImage(SITE_IMAGES.hero.shopping, 'card'),
+    image: cfImage(SITE_IMAGES.shopping.marketplace, 'card'),
   },
 ]
 
@@ -110,22 +112,13 @@ export default function ShoppingPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <ShoppingBag size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">
-              Shopping & Entertainment
-            </h1>
-            <p className="text-xl mb-8">
-              From everyday essentials to upscale boutiques, Cadence residents
-              enjoy convenient access to premier shopping, dining, and
-              entertainment options throughout Henderson and Las Vegas.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Shopping & Entertainment"
+        subtitle="From everyday essentials to upscale boutiques, Cadence residents enjoy convenient access to premier shopping, dining, and entertainment options throughout Henderson and Las Vegas."
+        imageSrc={cfImage(SITE_IMAGES.hero.shopping, 'hero')}
+        imageAlt="Shopping and entertainment near Cadence Henderson NV 89011"
+        icon={ShoppingBag}
+      />
 
       <RealScoutOfficeListings />
 
@@ -142,9 +135,11 @@ export default function ShoppingPage() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${center.image}')` }}
+                  <SiteImage
+                    src={center.image}
+                    alt={`${center.name} near Cadence Henderson NV 89011`}
+                    fill
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute top-4 right-4 bg-pink-900 text-white px-3 py-1 rounded-full text-sm font-bold">
                     {center.distance}

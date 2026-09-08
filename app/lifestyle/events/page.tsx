@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
@@ -100,25 +102,20 @@ export default function EventsPage() {
         ]}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Calendar size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Community Events</h1>
-            <p className="text-xl mb-8">
-              Experience the vibrant community spirit at Cadence with year-round
-              events, activities, and celebrations that bring neighbors together.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-orange-900 hover:bg-gray-100"
-            >
-              Download Calendar
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Community Events"
+        subtitle="Experience the vibrant community spirit at Cadence with year-round events, activities, and celebrations that bring neighbors together."
+        imageSrc={cfImage(SITE_IMAGES.hero.events, 'hero')}
+        imageAlt="Community events at Cadence Henderson NV 89011"
+        icon={Calendar}
+      >
+        <Button
+          size="lg"
+          className="bg-white text-orange-900 hover:bg-gray-100"
+        >
+          Download Calendar
+        </Button>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -143,9 +140,11 @@ export default function EventsPage() {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                 >
                   <div className="relative h-56 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                      style={{ backgroundImage: `url('${event.image}')` }}
+                    <SiteImage
+                      src={event.image}
+                      alt={`${event.title} at Cadence Henderson NV 89011`}
+                      fill
+                      className="hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
                       <span className="inline-flex items-center px-3 py-1 bg-orange-900 text-white rounded-full text-sm font-medium">

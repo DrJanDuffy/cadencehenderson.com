@@ -1,5 +1,7 @@
 'use client'
 
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
@@ -11,7 +13,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
-import { getGalleryImage } from '@/lib/cloudflare-images'
+import { getGalleryImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const galleryCategories = [
   'All',
@@ -101,19 +103,13 @@ export default function GalleryPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <ImageIcon size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Photo Gallery</h1>
-            <p className="text-xl">
-              Explore life in Cadence through stunning photos of our community,
-              homes, amenities, and events. See what makes Cadence special.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Photo Gallery"
+        subtitle="Explore life in Cadence through stunning photos of our community, homes, amenities, and events. See what makes Cadence special."
+        imageSrc={cfImage(SITE_IMAGES.hero.gallery, 'hero')}
+        imageAlt="Photo gallery of Cadence Henderson NV 89011"
+        icon={ImageIcon}
+      />
 
       <RealScoutOfficeListings />
 
@@ -150,9 +146,11 @@ export default function GalleryPage() {
                 className="relative aspect-square bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
                 onClick={() => setLightboxImage({ url: image.url, title: image.title })}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-300"
-                  style={{ backgroundImage: `url('${image.url}')` }}
+                <SiteImage
+                  src={image.url}
+                  alt={`${image.title} - Cadence Henderson NV 89011`}
+                  fill
+                  className="group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-end">
                   <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">

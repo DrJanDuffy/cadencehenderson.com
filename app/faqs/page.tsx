@@ -1,5 +1,6 @@
 'use client'
 
+import { PageHero } from '@/components/cadence/page-hero'
 import { useState } from 'react'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
@@ -9,6 +10,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { ChevronDown, ChevronUp, HelpCircle, Calendar, Phone, Mail } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const faqCategories = [
   {
@@ -114,21 +116,13 @@ export default function FAQsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <HelpCircle size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">
-              Frequently Asked Questions
-            </h1>
-            <p className="text-xl">
-              Find answers to common questions about living in Cadence, our
-              homes, amenities, and community.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Frequently Asked Questions"
+        subtitle="Find answers to common questions about living in Cadence, our homes, amenities, and community."
+        imageSrc={cfImage(SITE_IMAGES.hero.faqs, 'hero')}
+        imageAlt="Frequently asked questions about Cadence Henderson NV 89011"
+        icon={HelpCircle}
+      />
 
       <RealScoutOfficeListings />
 

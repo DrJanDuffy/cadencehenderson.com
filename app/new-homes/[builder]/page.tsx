@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
@@ -8,7 +10,7 @@ import { Button } from '@/components/ui/button'
 import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucide-react'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { getHomeImage, getBuilderImage } from '@/lib/cloudflare-images'
+import { getHomeImage, getBuilderImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
@@ -535,59 +537,57 @@ export default async function BuilderPage({
         ]}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <div className="text-6xl mb-4">{builder.logo}</div>
-            <h1 className="text-5xl font-bold mb-4">{builder.name}</h1>
-            <p className="text-xl mb-6">{builder.description}</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {builderRealScoutUrl && (
-                <a
-                  href={builderRealScoutUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button
-                    size="lg"
-                    className="bg-green-600 text-white hover:bg-green-700"
-                  >
-                    <Search className="mr-2 h-5 w-5" />
-                    View {builder.name} Homes for Sale
-                  </Button>
-                </a>
-              )}
-              <CalendlyLink>
-                <Button
-                  size="lg"
-                  className="bg-white text-blue-900 hover:bg-gray-100"
-                >
-                  Schedule with Cadence Expert
-                </Button>
-              </CalendlyLink>
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-900"
-                >
-                  Call: {CONTACT_INFO.phone}
-                </Button>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Information`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-blue-900"
-                >
-                  Email Dr. Jan
-                </Button>
-              </a>
-            </div>
-          </div>
+      <PageHero
+        title={builder.name}
+        subtitle={builder.description}
+        imageSrc={cfImage(SITE_IMAGES.hero.newHomes, 'hero')}
+        imageAlt={`${builder.name} new homes at Cadence Henderson NV 89011`}
+      >
+        <div className="text-6xl mb-4">{builder.logo}</div>
+        <div className="flex flex-wrap gap-4 justify-center">
+          {builderRealScoutUrl && (
+            <a
+              href={builderRealScoutUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="lg"
+                className="bg-green-600 text-white hover:bg-green-700"
+              >
+                <Search className="mr-2 h-5 w-5" />
+                View {builder.name} Homes for Sale
+              </Button>
+            </a>
+          )}
+          <CalendlyLink>
+            <Button
+              size="lg"
+              className="bg-white text-blue-900 hover:bg-gray-100"
+            >
+              Schedule with Cadence Expert
+            </Button>
+          </CalendlyLink>
+          <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
+              Call: {CONTACT_INFO.phone}
+            </Button>
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email}?subject=${builder.name} Information`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-blue-900"
+            >
+              Email Dr. Jan
+            </Button>
+          </a>
         </div>
-      </section>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -657,9 +657,11 @@ export default async function BuilderPage({
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${model.image}')` }}
+                  <SiteImage
+                    src={model.image}
+                    alt={`${model.name} by ${builder.name} at Cadence Henderson NV 89011`}
+                    fill
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6">

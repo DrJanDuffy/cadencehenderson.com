@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -21,7 +23,7 @@ const schools = [
       'Music and arts programs',
       'Walking distance from most homes',
     ],
-    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
+    image: cfImage(SITE_IMAGES.schools.elementary, 'card'),
   },
   {
     name: 'Henderson Middle School',
@@ -36,7 +38,7 @@ const schools = [
       'Student clubs and organizations',
       'Dedicated counseling staff',
     ],
-    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
+    image: cfImage(SITE_IMAGES.schools.middle, 'card'),
   },
   {
     name: 'Green Valley High School',
@@ -51,7 +53,7 @@ const schools = [
       'Fine arts programs',
       'Career and technical education',
     ],
-    image: cfImage(SITE_IMAGES.hero.schools, 'card'),
+    image: cfImage(SITE_IMAGES.schools.high, 'card'),
   },
 ]
 
@@ -96,28 +98,20 @@ export default function SchoolsPage() {
         ]}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <GraduationCap size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">
-              Schools in Cadence
-            </h1>
-            <p className="text-xl mb-8">
-              Access to top-rated Clark County schools and excellent educational
-              opportunities for students of all ages. From elementary through
-              high school, Cadence students thrive.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-indigo-900 hover:bg-gray-100"
-            >
-              View School District Map
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Schools in Cadence"
+        subtitle="Access to top-rated Clark County schools and excellent educational opportunities for students of all ages. From elementary through high school, Cadence students thrive."
+        imageSrc={cfImage(SITE_IMAGES.hero.schools, 'hero')}
+        imageAlt="Schools serving Cadence Henderson NV 89011"
+        icon={GraduationCap}
+      >
+        <Button
+          size="lg"
+          className="bg-white text-indigo-900 hover:bg-gray-100"
+        >
+          View School District Map
+        </Button>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -168,9 +162,10 @@ export default function SchoolsPage() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-48 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('${school.image}')` }}
+                  <SiteImage
+                    src={school.image}
+                    alt={`${school.name} near Cadence Henderson NV 89011`}
+                    fill
                   />
                   <div className="absolute top-4 right-4 bg-indigo-900 text-white px-3 py-1 rounded-full text-sm font-bold">
                     {school.rating}

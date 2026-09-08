@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
@@ -244,32 +246,30 @@ export default async function RentalCommunityPage({
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-4">{community.name}</h1>
-            <p className="text-xl mb-6">{community.description}</p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <CalendlyLink>
-                <Button
-                  size="lg"
-                  className="bg-white text-purple-900 hover:bg-gray-100"
-                >
-                  Schedule a Tour
-                </Button>
-              </CalendlyLink>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-purple-900"
-              >
-                Check Availability
-              </Button>
-            </div>
-          </div>
+      <PageHero
+        title={community.name}
+        subtitle={community.description}
+        imageSrc={cfImage(SITE_IMAGES.hero.rentals, 'hero')}
+        imageAlt={`${community.name} rentals at Cadence Henderson NV 89011`}
+      >
+        <div className="flex flex-wrap gap-4 justify-center">
+          <CalendlyLink>
+            <Button
+              size="lg"
+              className="bg-white text-purple-900 hover:bg-gray-100"
+            >
+              Schedule a Tour
+            </Button>
+          </CalendlyLink>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white text-white hover:bg-white hover:text-purple-900"
+          >
+            Check Availability
+          </Button>
         </div>
-      </section>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -327,9 +327,11 @@ export default async function RentalCommunityPage({
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-64 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${plan.image}')` }}
+                  <SiteImage
+                    src={plan.image}
+                    alt={`${plan.name} floor plan at Cadence Henderson NV 89011`}
+                    fill
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                   {plan.available > 0 && (
                     <div className="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-bold">

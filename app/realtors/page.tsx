@@ -1,3 +1,4 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
@@ -18,61 +19,64 @@ import {
   DollarSign,
   Phone,
 } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export default function RealtorsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Work with Dr. Jan Duffy</h1>
+      <PageHero
+        title="Work with Dr. Jan Duffy"
+        subtitle={
+          <>
             <p className="text-lg mb-4 font-medium">
               REALTOR® | Las Vegas Luxury Home Specialist
             </p>
             <p className="text-lg mb-2">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
-            <p className="text-xl mb-8">
-              Specializing in Cadence Henderson - one of the nation's top 10
-              best-selling master-planned communities. Let's find your dream home
+            <p>
+              Specializing in Cadence Henderson - one of the nation&apos;s top 10
+              best-selling master-planned communities. Let&apos;s find your dream home
               together.
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <CalendlyLink>
-                <Button
-                  size="lg"
-                  className="bg-white text-purple-900 hover:bg-gray-100"
-                >
-                  Schedule with Cadence Expert
-                </Button>
-              </CalendlyLink>
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-purple-900"
-                >
-                  <Phone className="mr-2" size={20} />
-                  Call: {CONTACT_INFO.phone}
-                </Button>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-purple-900"
-                >
-                  <Download className="mr-2" size={20} />
-                  Email Dr. Jan
-                </Button>
-              </a>
-            </div>
-          </div>
+          </>
+        }
+        imageSrc={cfImage(SITE_IMAGES.hero.realtors, 'hero')}
+        imageAlt="Work with Dr. Jan Duffy, REALTOR® at Cadence Henderson NV 89011"
+      >
+        <div className="flex flex-wrap gap-4 justify-center">
+          <CalendlyLink>
+            <Button
+              size="lg"
+              className="bg-white text-purple-900 hover:bg-gray-100"
+            >
+              Schedule with Cadence Expert
+            </Button>
+          </CalendlyLink>
+          <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-purple-900"
+            >
+              <Phone className="mr-2" size={20} />
+              Call: {CONTACT_INFO.phone}
+            </Button>
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-purple-900"
+            >
+              <Download className="mr-2" size={20} />
+              Email Dr. Jan
+            </Button>
+          </a>
         </div>
-      </section>
+      </PageHero>
 
       <RealScoutOfficeListings />
 

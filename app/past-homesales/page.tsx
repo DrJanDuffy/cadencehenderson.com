@@ -1,3 +1,4 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
@@ -7,6 +8,7 @@ import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listi
 import { RealScoutYourListings } from '@/components/idx/realscout-your-listings'
 import { Button } from '@/components/ui/button'
 import { Calendar, Home, Phone, Mail } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export const metadata = {
   title: 'Past Home Sales | Cadence Henderson 89011',
@@ -19,52 +21,44 @@ export default function PastHomesalesPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">
-              Dr. Jan Duffy Past Home Sales
-            </h1>
-            <p className="text-xl mb-8">
-              Browse my sales history—sold homes, properties in contract, and
-              current listings. See the results that have helped families find
-              their perfect home in Henderson and Cadence.
-            </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <CalendlyLink>
-                <Button
-                  size="lg"
-                  className="bg-white text-slate-800 hover:bg-gray-100"
-                >
-                  <Calendar className="mr-2" size={20} />
-                  Schedule with Cadence Expert
-                </Button>
-              </CalendlyLink>
-              <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-slate-800"
-                >
-                  <Phone className="mr-2" size={20} />
-                  Call: {CONTACT_INFO.phone}
-                </Button>
-              </a>
-              <a href={`mailto:${CONTACT_INFO.email}`}>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-slate-800"
-                >
-                  <Mail className="mr-2" size={20} />
-                  Email Dr. Jan
-                </Button>
-              </a>
-            </div>
-          </div>
+      <PageHero
+        title="Dr. Jan Duffy Past Home Sales"
+        subtitle="Browse my sales history—sold homes, properties in contract, and current listings. See the results that have helped families find their perfect home in Henderson and Cadence."
+        imageSrc={cfImage(SITE_IMAGES.hero.pastHomesales, 'hero')}
+        imageAlt="Past home sales by Dr. Jan Duffy at Cadence Henderson NV 89011"
+      >
+        <div className="flex flex-wrap gap-4 justify-center">
+          <CalendlyLink>
+            <Button
+              size="lg"
+              className="bg-white text-slate-800 hover:bg-gray-100"
+            >
+              <Calendar className="mr-2" size={20} />
+              Schedule with Cadence Expert
+            </Button>
+          </CalendlyLink>
+          <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-slate-800"
+            >
+              <Phone className="mr-2" size={20} />
+              Call: {CONTACT_INFO.phone}
+            </Button>
+          </a>
+          <a href={`mailto:${CONTACT_INFO.email}`}>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:text-slate-800"
+            >
+              <Mail className="mr-2" size={20} />
+              Email Dr. Jan
+            </Button>
+          </a>
         </div>
-      </section>
+      </PageHero>
 
       <RealScoutOfficeListings />
 

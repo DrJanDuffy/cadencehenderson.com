@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
@@ -78,26 +80,20 @@ export default function LifestylePage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Live the Cadence Lifestyle</h1>
-            <p className="text-xl mb-8">
-              More than just a place to live, Cadence is a vibrant community
-              where neighbors become friends and every day brings new
-              opportunities for connection, recreation, and joy.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-green-900 hover:bg-gray-100"
-            >
-              <Calendar className="mr-2" size={20} />
-              View Community Calendar
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Live the Cadence Lifestyle"
+        subtitle="More than just a place to live, Cadence is a vibrant community where neighbors become friends and every day brings new opportunities for connection, recreation, and joy."
+        imageSrc={cfImage(SITE_IMAGES.hero.lifestyle, 'hero')}
+        imageAlt="Cadence Henderson lifestyle and community in Henderson NV 89011"
+      >
+        <Button
+          size="lg"
+          className="bg-white text-green-900 hover:bg-gray-100"
+        >
+          <Calendar className="mr-2" size={20} />
+          View Community Calendar
+        </Button>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -125,9 +121,11 @@ export default function LifestylePage() {
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
                   <div className="relative h-56 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-110"
-                      style={{ backgroundImage: `url('${feature.image}')` }}
+                    <SiteImage
+                      src={feature.image}
+                      alt={`${feature.title} at Cadence Henderson NV 89011`}
+                      fill
+                      className="transition-transform duration-300 group-hover:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
@@ -203,11 +201,10 @@ export default function LifestylePage() {
               </Button>
             </div>
             <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
-              <div
-                className="absolute inset-0 bg-cover bg-center"
-                style={{
-                  backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
-                }}
+              <SiteImage
+                src={getAmenityImage('centralPark', 'hero')}
+                alt="Central Park at Cadence Henderson NV 89011"
+                fill
               />
             </div>
           </div>

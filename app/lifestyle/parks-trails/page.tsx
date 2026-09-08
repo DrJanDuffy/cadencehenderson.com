@@ -1,10 +1,12 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
-import { getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
+import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const parks = [
@@ -111,27 +113,21 @@ export default function ParksTrailsPage() {
         ]}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Trees size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Parks & Trails</h1>
-            <p className="text-xl mb-8">
-              Discover over 50 acres of parks and miles of scenic trails
-              throughout Cadence. From Central Park to neighborhood green
-              spaces, enjoy outdoor recreation right in your backyard.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-green-900 hover:bg-gray-100"
-            >
-              <MapPin className="mr-2" size={20} />
-              View Parks Map
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Parks & Trails"
+        subtitle="Discover over 50 acres of parks and miles of scenic trails throughout Cadence. From Central Park to neighborhood green spaces, enjoy outdoor recreation right in your backyard."
+        imageSrc={cfImage(SITE_IMAGES.hero.parksTrails, 'hero')}
+        imageAlt="Parks and trails at Cadence Henderson NV 89011"
+        icon={Trees}
+      >
+        <Button
+          size="lg"
+          className="bg-white text-green-900 hover:bg-gray-100"
+        >
+          <MapPin className="mr-2" size={20} />
+          View Parks Map
+        </Button>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -151,11 +147,10 @@ export default function ParksTrailsPage() {
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <div className="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
-                  }}
+                <SiteImage
+                  src={getAmenityImage('centralPark', 'hero')}
+                  alt="Central Park at Cadence Henderson NV 89011"
+                  fill
                 />
               </div>
               <div className="flex flex-col justify-center">
@@ -213,9 +208,11 @@ export default function ParksTrailsPage() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url('${park.image}')` }}
+                  <SiteImage
+                    src={park.image}
+                    alt={`${park.name} at Cadence Henderson NV 89011`}
+                    fill
+                    className="hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <div className="p-6">

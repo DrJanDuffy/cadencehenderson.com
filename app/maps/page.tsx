@@ -1,3 +1,4 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -13,6 +14,7 @@ import {
   ShoppingBag,
   Plane,
 } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export const metadata: Metadata = {
   title: 'Cadence Henderson Location & Directions | Henderson NV 89011',
@@ -31,23 +33,22 @@ export default function MapsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <MapPin size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Find Us in Henderson</h1>
-            <p className="text-2xl font-bold mb-4">
-              {CONTACT_INFO.siteName}
-            </p>
-            <p className="text-xl mb-8">
+      <PageHero
+        title="Find Us in Henderson"
+        subtitle={
+          <>
+            <p className="text-2xl font-bold mb-4">{CONTACT_INFO.siteName}</p>
+            <p>
               Visit our office to learn about Cadence Henderson homes, schedule
               tours, and get expert guidance from Dr. Jan Duffy, REALTOR® with
               Berkshire Hathaway HomeServices.
             </p>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+        imageSrc={cfImage(SITE_IMAGES.hero.maps, 'hero')}
+        imageAlt="Cadence Henderson location and directions in Henderson NV 89011"
+        icon={MapPin}
+      />
 
       <RealScoutOfficeListings />
 

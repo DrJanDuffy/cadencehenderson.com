@@ -1,3 +1,4 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
@@ -5,6 +6,7 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Users, Heart, Calendar, MessageSquare, Award, Smile } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -95,28 +97,22 @@ export default function CommunityPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Users size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Community Life</h1>
-            <p className="text-xl mb-8">
-              At Cadence, community is more than just a place to live—it's a
-              lifestyle. Connect with neighbors, join clubs, participate in
-              events, and create lasting friendships in our vibrant community.
-            </p>
-            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-              <Button
-                size="lg"
-                className="bg-white text-amber-900 hover:bg-gray-100"
-              >
-                Call: {CONTACT_INFO.phone}
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Community Life"
+        subtitle="At Cadence, community is more than just a place to live—it's a lifestyle. Connect with neighbors, join clubs, participate in events, and create lasting friendships in our vibrant community."
+        imageSrc={cfImage(SITE_IMAGES.hero.community, 'hero')}
+        imageAlt="Community life at Cadence Henderson NV 89011"
+        icon={Users}
+      >
+        <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+          <Button
+            size="lg"
+            className="bg-white text-amber-900 hover:bg-gray-100"
+          >
+            Call: {CONTACT_INFO.phone}
+          </Button>
+        </a>
+      </PageHero>
 
       <RealScoutOfficeListings />
 

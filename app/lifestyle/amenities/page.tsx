@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import type { Metadata } from 'next'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
@@ -15,7 +17,7 @@ import {
   Paintbrush,
   Heart,
 } from 'lucide-react'
-import { getAmenityImage } from '@/lib/cloudflare-images'
+import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 
 const amenities = [
@@ -151,30 +153,22 @@ export default function AmenitiesPage() {
         ]}
       />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Waves size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">
-              World-Class Amenities
-            </h1>
-            <p className="text-xl mb-8">
-              Experience resort-style living every day at Cadence. From multiple
-              pools and fitness centers to sports courts and clubhouses, our
-              amenities are designed to enhance your lifestyle.
-            </p>
-            <CalendlyLink>
-              <Button
-                size="lg"
-                className="bg-white text-cyan-900 hover:bg-gray-100"
-              >
-                Schedule a Tour
-              </Button>
-            </CalendlyLink>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="World-Class Amenities"
+        subtitle="Experience resort-style living every day at Cadence. From multiple pools and fitness centers to sports courts and clubhouses, our amenities are designed to enhance your lifestyle."
+        imageSrc={cfImage(SITE_IMAGES.hero.amenities, 'hero')}
+        imageAlt="Resort-style amenities at Cadence Henderson NV 89011"
+        icon={Waves}
+      >
+        <CalendlyLink>
+          <Button
+            size="lg"
+            className="bg-white text-cyan-900 hover:bg-gray-100"
+          >
+            Schedule a Tour
+          </Button>
+        </CalendlyLink>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -193,9 +187,11 @@ export default function AmenitiesPage() {
                   className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
                 >
                   <div className="relative h-64 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center hover:scale-105 transition-transform duration-300"
-                      style={{ backgroundImage: `url('${amenity.image}')` }}
+                    <SiteImage
+                      src={amenity.image}
+                      alt={`${amenity.name} at Cadence Henderson NV 89011`}
+                      fill
+                      className="hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
@@ -273,11 +269,10 @@ export default function AmenitiesPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative h-[500px] rounded-lg overflow-hidden shadow-xl">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url('${getAmenityImage('centralPark', 'hero')}')`,
-                  }}
+                <SiteImage
+                  src={getAmenityImage('centralPark', 'hero')}
+                  alt="Central Park at Cadence Henderson NV 89011"
+                  fill
                 />
               </div>
               <div>

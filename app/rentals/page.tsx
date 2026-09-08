@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
@@ -64,36 +66,29 @@ export default function RentalsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Rentals in Cadence</h1>
-            <p className="text-xl mb-8">
-              Experience the Cadence lifestyle with flexible rental options.
-              From single-family homes to luxury apartments, find your perfect
-              rental in our vibrant community.
-            </p>
-            {/* Quick Search */}
-            <div className="flex justify-center mb-8">
-              <RealScoutSimpleSearch />
-            </div>
-            <a
-              href={CONTACT_INFO.realScoutRentalsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size="lg"
-                className="bg-white text-purple-900 hover:bg-gray-100"
-              >
-                <Building2 className="mr-2" size={20} />
-                View Available Rentals
-              </Button>
-            </a>
-          </div>
+      <PageHero
+        title="Rentals in Cadence"
+        subtitle="Experience the Cadence lifestyle with flexible rental options. From single-family homes to luxury apartments, find your perfect rental in our vibrant community."
+        imageSrc={cfImage(SITE_IMAGES.hero.rentals, 'hero')}
+        imageAlt="Rental homes and apartments in Cadence Henderson NV 89011"
+      >
+        <div className="flex justify-center mb-8">
+          <RealScoutSimpleSearch />
         </div>
-      </section>
+        <a
+          href={CONTACT_INFO.realScoutRentalsUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            size="lg"
+            className="bg-white text-purple-900 hover:bg-gray-100"
+          >
+            <Building2 className="mr-2" size={20} />
+            View Available Rentals
+          </Button>
+        </a>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
@@ -173,9 +168,10 @@ export default function RentalsPage() {
                 className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url('${community.image}')` }}
+                  <SiteImage
+                    src={community.image}
+                    alt={`${community.name} rentals at Cadence Henderson NV 89011`}
+                    fill
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 right-4">

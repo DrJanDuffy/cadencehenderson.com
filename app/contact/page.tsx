@@ -1,5 +1,6 @@
 'use client'
 
+import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { CalendlyInlineWidget } from '@/components/calendly/calendly-inline-widget'
 import { CalendlyWhenVisible } from '@/components/calendly/calendly-when-visible'
@@ -10,23 +11,18 @@ import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
-            <p className="text-xl">
-              Have questions about Cadence? We're here to help you find your
-              perfect home in our community.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Contact Us"
+        subtitle="Have questions about Cadence? We're here to help you find your perfect home in our community."
+        imageSrc={cfImage(SITE_IMAGES.hero.contact, 'hero')}
+        imageAlt="Contact Cadence Henderson real estate office in Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 

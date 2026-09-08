@@ -1,3 +1,4 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
@@ -17,33 +18,29 @@ import {
   HelpCircle,
 } from 'lucide-react'
 import Link from 'next/link'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export default function ResidentsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Users size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">Living in Cadence</h1>
-            <p className="text-xl mb-8">
-              Welcome home! Your guide to community resources, HOA information,
-              and how I can help you as a current Cadence resident.
-            </p>
-            <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
-              <Button
-                size="lg"
-                className="bg-white text-emerald-900 hover:bg-gray-100"
-              >
-                Contact Dr. Jan
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Living in Cadence"
+        subtitle="Welcome home! Your guide to community resources, HOA information, and how I can help you as a current Cadence resident."
+        imageSrc={cfImage(SITE_IMAGES.hero.residents, 'hero')}
+        imageAlt="Cadence Henderson resident resources in Henderson NV 89011"
+        icon={Users}
+      >
+        <a href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}>
+          <Button
+            size="lg"
+            className="bg-white text-emerald-900 hover:bg-gray-100"
+          >
+            Contact Dr. Jan
+          </Button>
+        </a>
+      </PageHero>
 
       <RealScoutOfficeListings />
 

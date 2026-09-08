@@ -1,3 +1,5 @@
+import { PageHero } from '@/components/cadence/page-hero'
+import { SiteImage } from '@/components/cadence/site-image'
 import Image from 'next/image'
 import Link from 'next/link'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
@@ -87,19 +89,12 @@ export default async function NewsPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <h1 className="text-5xl font-bold mb-6">Cadence News</h1>
-            <p className="text-xl mb-8">
-              Stay up to date with the latest news, events, and announcements
-              from the Cadence community. From new home openings to community
-              celebrations, there's always something happening here.
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Cadence News"
+        subtitle="Stay up to date with the latest news, events, and announcements from the Cadence community. From new home openings to community celebrations, there's always something happening here."
+        imageSrc={cfImage(SITE_IMAGES.hero.news, 'hero')}
+        imageAlt="Cadence Henderson community news in Henderson NV 89011"
+      />
 
       <RealScoutOfficeListings />
 
@@ -144,11 +139,10 @@ export default async function NewsPage() {
                         className="object-cover hover:scale-105 transition-transform duration-300"
                       />
                     ) : (
-                      <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{
-                          backgroundImage: `url('${cfImage(SITE_IMAGES.hero.news, 'card')}')`,
-                        }}
+                      <SiteImage
+                        src={cfImage(SITE_IMAGES.hero.news, 'card')}
+                        alt={`${article.title} - Cadence Henderson NV 89011`}
+                        fill
                       />
                     )}
                   </div>
@@ -203,11 +197,11 @@ export default async function NewsPage() {
                 key={i}
                 className="relative h-48 bg-gray-200 rounded-lg overflow-hidden group cursor-pointer"
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-300"
-                  style={{
-                    backgroundImage: `url('${cfImage(imageId, 'thumbnail')}')`,
-                  }}
+                <SiteImage
+                  src={cfImage(imageId, 'thumbnail')}
+                  alt={`Cadence Henderson NV 89011 community gallery photo ${i + 1}`}
+                  fill
+                  className="group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>

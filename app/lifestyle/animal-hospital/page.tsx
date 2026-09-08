@@ -1,9 +1,11 @@
+import { PageHero } from '@/components/cadence/page-hero'
 import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Heart, Phone, Clock, MapPin, Stethoscope, Syringe } from 'lucide-react'
+import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 const services = [
   {
@@ -55,27 +57,20 @@ export default function AnimalHospitalPage() {
     <div className="min-h-screen bg-white">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Heart size={64} className="mx-auto mb-6" />
-            <h1 className="text-5xl font-bold mb-6">
-              Cadence Animal Hospital
-            </h1>
-            <p className="text-xl mb-8">
-              Providing compassionate, quality veterinary care right in your
-              community. Your pet's health and happiness are our top priorities.
-            </p>
-            <Button
-              size="lg"
-              className="bg-white text-teal-900 hover:bg-gray-100"
-            >
-              Schedule Appointment
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        title="Cadence Animal Hospital"
+        subtitle="Providing compassionate, quality veterinary care right in your community. Your pet's health and happiness are our top priorities."
+        imageSrc={cfImage(SITE_IMAGES.hero.animalHospital, 'hero')}
+        imageAlt="Cadence Animal Hospital in Henderson NV 89011"
+        icon={Heart}
+      >
+        <Button
+          size="lg"
+          className="bg-white text-teal-900 hover:bg-gray-100"
+        >
+          Schedule Appointment
+        </Button>
+      </PageHero>
 
       <RealScoutOfficeListings />
 
