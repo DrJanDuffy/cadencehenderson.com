@@ -5,6 +5,9 @@
 
 export const SITEMAP_BASE_URL = 'https://www.cadencehenderson.com'
 
+/** Bump only when public page content actually changes. `new Date()` every request makes Google distrust lastmod. */
+export const SITEMAP_LASTMOD = new Date('2026-09-08T00:00:00.000Z')
+
 const BUILDERS = [
   'beazer-homes',
   'century-communities',
@@ -35,7 +38,7 @@ export type SitemapEntry = {
 
 export function getSitemapEntries(): SitemapEntry[] {
   const base = SITEMAP_BASE_URL
-  const now = new Date()
+  const now = SITEMAP_LASTMOD
 
   const RENTAL_COMMUNITIES = ['american-homes', 'element-12', 'adler'] as const
 

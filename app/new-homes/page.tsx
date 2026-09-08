@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { PageHero } from '@/components/cadence/page-hero'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
@@ -12,6 +13,15 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'New Homes for Sale – Cadence Henderson NV 89011',
+  description:
+    '8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Beazer, Lennar, Richmond American, Woodside & more. Browse floor plans, prices & availability. Tours 7 days.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/new-homes' },
+  robots: { index: true, follow: true },
+}
+
 /** Builder logos from cadencenv.com - same source as BuildersShowcase */
 const BUILDER_LOGOS: Record<string, string> = {
   'beazer-homes': 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',

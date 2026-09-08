@@ -46,7 +46,7 @@ const builderData: Record<
     description:
       'Quality craftsmanship and energy-efficient homes with flexible floor plans.',
     longDescription:
-      'Beazer Homes has been building quality new homes for over 60 years. At Cadence, we offer a variety of thoughtfully designed floor plans featuring energy-efficient construction, modern amenities, and flexible living spaces perfect for today\'s families.',
+      'Beazer Homes has been building quality new homes for over 60 years. At Cadence, we offer a variety of thoughtfully designed floor plans featuring energy-efficient construction, modern amenities, and flexible living spaces.',
     logo: '🏠',
     contact: {
       phone: '(702) 555-0101',
@@ -505,6 +505,7 @@ export async function generateMetadata({
     title: `${builder.name} New Homes – Cadence Henderson NV 89011`,
     description: `${builder.name} new homes for sale in Cadence Henderson NV 89011. ${description}`,
     alternates: { canonical: url },
+    robots: { index: true, follow: true },
     openGraph: {
       title: `${builder.name} New Homes – Cadence Henderson NV 89011`,
       description: `${builder.name} new homes for sale in Cadence Henderson NV 89011. ${description}`,

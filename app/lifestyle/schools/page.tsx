@@ -13,9 +13,8 @@ const schools = [
   {
     name: 'Cadence Elementary School',
     level: 'Elementary (K-5)',
-    rating: '9/10',
     description:
-      'A state-of-the-art elementary school located within the community, offering innovative programs and experienced teachers dedicated to student success.',
+      'An elementary school located in Cadence Henderson, with STEM, music, arts, and after-school programs.',
     features: [
       'STEM-focused curriculum',
       'Small class sizes',
@@ -28,9 +27,8 @@ const schools = [
   {
     name: 'Henderson Middle School',
     level: 'Middle School (6-8)',
-    rating: '8/10',
     description:
-      'Comprehensive middle school program preparing students for high school with advanced courses and extracurricular activities.',
+      'Middle school serving Cadence Henderson with advanced courses, athletics, and student clubs.',
     features: [
       'Advanced placement courses',
       'Athletics programs',
@@ -43,9 +41,8 @@ const schools = [
   {
     name: 'Green Valley High School',
     level: 'High School (9-12)',
-    rating: '9/10',
     description:
-      'Top-rated high school offering college preparatory programs, AP courses, and diverse extracurricular activities.',
+      'Green Valley High School offers AP courses, college counseling, athletics, fine arts, and career and technical education.',
     features: [
       'AP and honors courses',
       'College counseling',
@@ -78,11 +75,12 @@ const privateSchools = [
 export const metadata: Metadata = {
   title: 'Schools Near Cadence Henderson | Henderson NV 89011',
   description:
-    'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional, Henderson middle & high schools. On-site school within the community.',
+    'Schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional, and Henderson middle and high schools. On-site school within the community.',
   alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle/schools' },
+  robots: { index: true, follow: true },
   openGraph: {
     title: 'Schools Near Cadence Henderson | Henderson NV 89011',
-    description: 'Top-rated schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional & Henderson schools.',
+    description: 'Schools serving Cadence Henderson 89011: Cadence Elementary, Legacy Traditional, and Henderson schools.',
     url: 'https://www.cadencehenderson.com/lifestyle/schools',
   },
 }
@@ -100,7 +98,7 @@ export default function SchoolsPage() {
 
       <PageHero
         title="Schools in Cadence"
-        subtitle="Access to top-rated Clark County schools and excellent educational opportunities for students of all ages. From elementary through high school, Cadence students thrive."
+        subtitle="Cadence Elementary is on-site in Cadence Henderson NV 89011. Nearby options include Henderson Middle School and Green Valley High School, plus listed private schools."
         imageSrc={cfImage(SITE_IMAGES.hero.schools, 'hero')}
         imageAlt="Schools serving Cadence Henderson NV 89011"
         icon={GraduationCap}
@@ -168,7 +166,7 @@ export default function SchoolsPage() {
                     fill
                   />
                   <div className="absolute top-4 right-4 bg-indigo-900 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    {school.rating}
+                    {school.level}
                   </div>
                 </div>
                 <div className="p-6">

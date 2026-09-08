@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { PageHero } from '@/components/cadence/page-hero'
 import { SiteImage } from '@/components/cadence/site-image'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
@@ -23,6 +24,14 @@ import {
 } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
+
+export const metadata: Metadata = {
+  title: 'Cadence Henderson Community & Amenities | Henderson NV 89011',
+  description:
+    '50-acre Central Park, resort pools, fitness centers, Cadence K-8, and 30+ miles of trails. Discover the Cadence Henderson lifestyle in Henderson NV 89011.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/lifestyle' },
+  robots: { index: true, follow: true },
+}
 
 const lifestyleFeatures = [
   {
@@ -53,7 +62,7 @@ const lifestyleFeatures = [
     icon: GraduationCap,
     title: 'Schools',
     description:
-      'Top-rated Clark County schools including elementary, middle, and high schools.',
+      'Cadence Elementary, Henderson Middle School, Green Valley High School, and listed private schools nearby.',
     image: cfImage(SITE_IMAGES.hero.schools, 'card'),
     link: '/lifestyle/schools',
   },

@@ -1,20 +1,19 @@
 # Task plan
 
-Replace placeholder images with unique, heading-appropriate photos for H1, H2, and H3 on each public page. Standardize Cloudflare Images as primary storage with git as backup for all domains and projects.
+Fix Google Search Console indexing for Cadence Henderson: robots blocks, redirects, discovered-not-indexed URLs, and favicon.ico.
 
 ## Current plan
 
-- [x] Inventory pages, heading levels, and current placeholder slots
-- [x] Generate unique photorealistic images (Cadence Henderson / desert Southwest)
-- [x] Store images under `public/images/` and map them in `SITE_IMAGES`
-- [x] Add `PageHero` so every inner-page H1 has a unique photo
-- [x] Wire unique H2 section photos and H3 card photos (no shared placeholder)
-- [x] SOP: Cloudflare Images primary, git fallback, global settings, Vercel sync
-- [x] Verify pages render images (dev server / curl)
-- [ ] Commit, push, open PR
+- [ ] Stop 307s from `/rentals*` and `/new-homes/beazer-homes` to RealScout (RealScout `Disallow: /homesearch/*`)
+- [ ] Keep RealScout as on-page search widgets / outbound links, not the page URL
+- [ ] Single-hop 301/308 to `https://www.cadencehenderson.com`
+- [ ] `X-Robots-Tag: noindex` on favicon/icon files (do not index `.ico`)
+- [ ] Stable sitemap lastmod; footer/nav/internal links to orphaned URLs
+- [ ] Fair Housing copy on community/events/lifestyle meta
+- [ ] Verify local 200s for affected paths; commit, push, PR
 
 ## Review
 
-- **Summary:** Cloudflare Images is primary (`imagedelivery.net` / hash `byE6BTe9lNqo21V57n4aPQ`). Git `public/images/` is the backup. Custom IDs `{prefix}-{folder}-{slug}`. Vercel build runs `npm run cloudflare:images:sync`. SOP: `docs/sop/cloudflare-images-git-fallback.md`. Global settings JSON for reuse on other domains.
-- **Verification:** Dev server HTML emits `cadence-*` delivery URLs. Git files return 200 (`/images/hero/homepage.jpg`, `/og-image.jpg`). Cloudflare HEAD for `cadence-hero-homepage` is 404 until `CLOUDFLARE_API_TOKEN` is set on the Vercel project and production deploys. `SiteImage` / `CloudflareImage` swap to git on 404.
-- **Notes:** Set token on every Vercel project (Production), then `vercel --prod`. Prefix other domains with a unique `CLOUDFLARE_IMAGES_PREFIX`.
+- **Summary:** `/rentals` and `/new-homes/beazer-homes` no longer 307 to RealScout `/homesearch/*` (that path is `Disallow` in RealScout robots.txt). On-site pages stay 200 with RealScout widgets/links. Apex host redirects in one hop to `https://www.cadencehenderson.com`. Favicon gets `X-Robots-Tag: noindex` so GSC stops treating `/favicon.ico` as a page. Sitemap lastmod is stable. Footer/nav now link the GSC-orphaned URLs. Fair Housing copy cleaned (no “family-friendly” / “top-rated schools”).
+- **GSC “Page with redirect”:** `http://` and apex URLs should keep redirecting. Google should index `https://www.cadencehenderson.com/` only. Marking that report “fixed” is incorrect if those hosts still 301/308 — that bucket is expected.
+- **Next for GSC:** After production deploy, request indexing on the listed URLs in Search Console. Do not add HTTP/apex URLs to the sitemap.

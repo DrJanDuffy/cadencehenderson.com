@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const CANONICAL_HOST = 'www.cadencehenderson.com'
+const CANONICAL_ORIGIN = 'https://www.cadencehenderson.com'
 
 export function middleware(request: NextRequest) {
   const host = request.headers.get('host') ?? ''
@@ -9,26 +9,17 @@ export function middleware(request: NextRequest) {
 
   // Only apply redirects for production domain (avoid breaking localhost / previews)
   const isProductionDomain =
-    host === 'cadencehenderson.com' || host === CANONICAL_HOST
+    host === 'cadencehenderson.com' || host === 'www.cadencehenderson.com'
 
   if (!isProductionDomain) {
     return NextResponse.next()
   }
 
-  // 1. Force HTTPS (http -> https)
-  if (proto !== 'https') {
+  // One hop to https://www — avoid http→https-apex→www chains that GSC reports.
+  if (proto !== 'https' || host === 'cadencehenderson.com') {
     const target = new URL(
       request.nextUrl.pathname + request.nextUrl.search,
-      `https://${host}`,
-    )
-    return NextResponse.redirect(target, 301)
-  }
-
-  // 2. Force www (apex -> www)
-  if (host === 'cadencehenderson.com') {
-    const target = new URL(
-      request.nextUrl.pathname + request.nextUrl.search,
-      `https://${CANONICAL_HOST}`,
+      CANONICAL_ORIGIN,
     )
     return NextResponse.redirect(target, 301)
   }

@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     description: 'Resident clubs, volunteering & neighborhood events in Cadence Henderson NV 89011. Active community life for residents.',
     url: `${BASE}/lifestyle/community`,
   },
+  robots: { index: true, follow: true },
 }
 
 const clubs = [
@@ -155,11 +156,11 @@ export default function CommunityPage() {
                   <Smile size={40} className="text-amber-900" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
-                  Family Friendly
+                  Parks, Pools, and Clubs
                 </h3>
                 <p className="text-gray-700">
-                  Safe, welcoming environment with activities for all ages, from
-                  young children to active retirees.
+                  Cadence Henderson includes a 50-acre Central Park, resort pools,
+                  and resident clubs such as Book Club, Running Club, and Garden Club.
                 </p>
               </div>
             </div>

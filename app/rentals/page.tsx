@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { PageHero } from '@/components/cadence/page-hero'
 import { SiteImage } from '@/components/cadence/site-image'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
@@ -12,6 +13,14 @@ import { Button } from '@/components/ui/button'
 import { Building2, MapPin, DollarSign, Calendar, Phone, Mail } from 'lucide-react'
 import Link from 'next/link'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+
+export const metadata: Metadata = {
+  title: 'Cadence Henderson Rentals | 89011',
+  description:
+    'Cadence Henderson rental homes and communities. Find rentals in Henderson NV 89011. Dr. Jan Duffy, REALTOR®. American Homes, Element 12, Adler.',
+  alternates: { canonical: 'https://www.cadencehenderson.com/rentals' },
+  robots: { index: true, follow: true },
+}
 
 const rentalCommunities = [
   {
@@ -102,8 +111,8 @@ export default function RentalsPage() {
               Why Rent in Cadence?
             </h2>
             <p className="text-xl text-gray-700">
-              Enjoy all the benefits of living in a top-rated master-planned
-              community without the commitment of home ownership.
+              Cadence Henderson includes a 50-acre Central Park, resort pools,
+              trails, and rental homes from AMH, Element 12, and Adler.
             </p>
           </div>
 
