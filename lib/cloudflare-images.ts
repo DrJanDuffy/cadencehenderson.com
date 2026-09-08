@@ -49,6 +49,17 @@ export const SITE_IMAGES = {
     pastHomesales: img('cadence-hero-past-homesales', '/images/hero/past-homesales.jpg'),
     animalHospital: img('cadence-hero-animal-hospital', '/images/hero/animal-hospital.jpg'),
     community: img('cadence-hero-community', '/images/hero/community.jpg'),
+    beazerHomes: img('cadence-hero-beazer-homes', '/images/hero/beazer-homes.jpg'),
+    centuryCommunities: img('cadence-hero-century-communities', '/images/hero/century-communities.jpg'),
+    drHorton: img('cadence-hero-dr-horton', '/images/hero/dr-horton.jpg'),
+    lennar: img('cadence-hero-lennar', '/images/hero/lennar.jpg'),
+    richmondAmerican: img('cadence-hero-richmond-american', '/images/hero/richmond-american.jpg'),
+    storybookHomes: img('cadence-hero-storybook-homes', '/images/hero/storybook-homes.jpg'),
+    taylorMorrison: img('cadence-hero-taylor-morrison', '/images/hero/taylor-morrison.jpg'),
+    woodsideHomes: img('cadence-hero-woodside-homes', '/images/hero/woodside-homes.jpg'),
+    rentalAmericanHomes: img('cadence-hero-american-homes', '/images/hero/american-homes.jpg'),
+    rentalElement12: img('cadence-hero-element-12', '/images/hero/element-12.jpg'),
+    rentalAdler: img('cadence-hero-adler', '/images/hero/adler.jpg'),
   },
 
   builders: {
@@ -212,6 +223,35 @@ export function isCloudflareImage(url: string): boolean {
 
 export function getHeroImage(page: keyof typeof SITE_IMAGES.hero, variant: ImageVariant = 'hero'): string {
   return cfImage(SITE_IMAGES.hero[page], variant)
+}
+
+const BUILDER_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
+  'beazer-homes': 'beazerHomes',
+  'century-communities': 'centuryCommunities',
+  'dr-horton': 'drHorton',
+  lennar: 'lennar',
+  'richmond-american': 'richmondAmerican',
+  'storybook-homes': 'storybookHomes',
+  'taylor-morrison': 'taylorMorrison',
+  'woodside-homes': 'woodsideHomes',
+}
+
+const RENTAL_HERO_KEYS: Record<string, keyof typeof SITE_IMAGES.hero> = {
+  'american-homes': 'rentalAmericanHomes',
+  'element-12': 'rentalElement12',
+  adler: 'rentalAdler',
+}
+
+/** Unique luxury hero per builder route; falls back to the new-homes hero. */
+export function getBuilderHeroImage(builderSlug: string, variant: ImageVariant = 'hero'): string {
+  const key = BUILDER_HERO_KEYS[builderSlug] ?? 'newHomes'
+  return cfImage(SITE_IMAGES.hero[key], variant)
+}
+
+/** Unique luxury hero per rental community; falls back to the rentals hero. */
+export function getRentalHeroImage(communitySlug: string, variant: ImageVariant = 'hero'): string {
+  const key = RENTAL_HERO_KEYS[communitySlug] ?? 'rentals'
+  return cfImage(SITE_IMAGES.hero[key], variant)
 }
 
 export function getBuilderImage(builder: keyof typeof SITE_IMAGES.builders, variant: ImageVariant = 'card'): string {
