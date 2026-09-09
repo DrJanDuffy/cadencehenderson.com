@@ -3,6 +3,11 @@
  * Single source of truth for URLs included in sitemap.xml.
  */
 
+import {
+  ALL_CADENCE_COMMUNITIES,
+  CADENCE_BUILDER_HUBS,
+} from './cadence-nv-catalog'
+
 export const SITEMAP_BASE_URL = 'https://www.cadencehenderson.com'
 
 const BUILDERS = [
@@ -37,10 +42,18 @@ const RESOURCE_PAGES = [
   '/ascend',
   '/avela-luxury-apartments',
   '/elysian',
+  '/american-homes-4-rent',
+  '/media',
   '/realtors/life-at-cadence',
   '/realtors/realtor-toolkit',
   '/disclaimer',
 ] as const
+
+const COMMUNITY_DIRECTORY_PAGES = [
+  '/communities',
+  ...CADENCE_BUILDER_HUBS.map((hub) => `/communities/${hub.slug}`),
+  ...ALL_CADENCE_COMMUNITIES.map((community) => community.cadencePath),
+]
 
 export type SitemapEntry = {
   url: string
@@ -98,5 +111,20 @@ export function getSitemapEntries(): SitemapEntry[] {
     priority: 0.8,
   }))
 
-  return [...mainPages, ...rentalPages, ...lifestyle, ...builderPages, ...resourcePages]
+  const uniqueCommunityPaths = [...new Set(COMMUNITY_DIRECTORY_PAGES)]
+  const communityPages: SitemapEntry[] = uniqueCommunityPaths.map((path) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [
+    ...mainPages,
+    ...rentalPages,
+    ...lifestyle,
+    ...builderPages,
+    ...resourcePages,
+    ...communityPages,
+  ]
 }

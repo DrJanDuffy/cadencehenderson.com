@@ -47,6 +47,7 @@ const navigationItems: NavItem[] = [
     titleAttr: 'Browse new homes and builders in Cadence Henderson, NV',
     items: [
       { label: 'Find Your Home in Cadence', href: '/find-your-home' },
+      { label: 'Cadence Neighborhoods', href: '/communities' },
       { label: 'Builder Incentives', href: '/incentives' },
       {
         label: 'Start Your Search',
@@ -55,6 +56,9 @@ const navigationItems: NavItem[] = [
       },
       { label: 'Rentals in Cadence Henderson', href: '/rentals' },
       { label: 'Apartments in Cadence Henderson', href: '/apartments' },
+      { label: 'American Homes 4 Rent', href: '/american-homes-4-rent' },
+      { label: 'Adler Apartments', href: '/adler' },
+      { label: 'Element 12', href: '/element12' },
       {
         label: 'Search Available Rentals',
         href: CONTACT_INFO.realScoutRentalsUrl,
@@ -109,6 +113,7 @@ const navigationItems: NavItem[] = [
       { label: 'Realtors', href: '/realtors' },
       { label: 'Life at Cadence', href: '/realtors/life-at-cadence' },
       { label: 'Realtor Toolkit', href: '/realtors/realtor-toolkit' },
+      { label: 'Media & Press', href: '/media' },
       { label: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
       { label: 'Residents', href: '/residents' },
     ],

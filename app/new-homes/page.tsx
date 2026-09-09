@@ -205,7 +205,11 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
-              150 homes
+              150 homes.{' '}
+              <Link href="/communities" className="font-semibold text-blue-900 hover:underline">
+                Browse every Cadence village
+              </Link>
+              .
             </p>
           </div>
 
@@ -213,7 +217,11 @@ export default function NewHomesPage() {
             {builders.map((builder) => (
               <Link
                 key={builder.slug}
-                href={`/new-homes/${builder.slug}`}
+                href={
+                  builder.slug === 'beazer-homes'
+                    ? '/communities/beazer'
+                    : `/new-homes/${builder.slug}`
+                }
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
@@ -259,8 +267,8 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700 mb-8">
               Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
-              I'll guide you through all builders and help you find the perfect
-              home for your family.
+              I'll guide you through Cadence builders and help you compare
+              floor plans, lot orientation, and net monthly cost.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>

@@ -8,9 +8,13 @@ export function Footer() {
     { title: 'Search Henderson Homes for Sale', href: CONTACT_INFO.realScoutSearchUrl, external: true },
     { title: 'New Homes in Cadence Henderson 89011', href: '/new-homes' },
     { title: 'Find Your Home in Cadence Henderson', href: '/find-your-home' },
+    { title: 'Cadence Henderson Neighborhoods', href: '/communities' },
     { title: 'Builder Incentives in Cadence Henderson', href: '/incentives' },
     { title: 'Rentals in Cadence Henderson', href: '/rentals' },
     { title: 'Apartments in Cadence Henderson', href: '/apartments' },
+    { title: 'American Homes 4 Rent in Cadence', href: '/american-homes-4-rent' },
+    { title: 'Adler Apartments in Cadence Henderson', href: '/adler' },
+    { title: 'Element 12 in Cadence Henderson', href: '/element12' },
     { title: 'Cadence Henderson Amenities & Central Park', href: '/lifestyle/amenities' },
     { title: 'Community Events in Cadence Henderson', href: '/lifestyle/events' },
     { title: 'Parks & Trails in Cadence Henderson', href: '/lifestyle/parks-trails' },
@@ -26,6 +30,7 @@ export function Footer() {
     { title: 'Contact Cadence Henderson Real Estate', href: '/contact' },
     { title: 'Gallery', href: '/gallery' },
     { title: 'Realtors', href: '/realtors' },
+    { title: 'Media & Press', href: '/media' },
     { title: 'Disclaimer', href: '/disclaimer' },
   ]
 

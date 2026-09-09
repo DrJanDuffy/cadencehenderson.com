@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { CONTACT_INFO } from '@/components/cadence/contact-info'
 
 export function BuildersShowcase() {
   const builders: Array<{
@@ -13,18 +12,16 @@ export function BuildersShowcase() {
     {
       name: 'American Homes 4 Rent',
       logo: 'https://cadencenv.com/wp-content/uploads/2023/08/AMH_Standard-Logo.jpg',
-      href: CONTACT_INFO.realScoutRentalsUrl,
-      external: true,
+      href: '/american-homes-4-rent',
       width: 200,
       height: 80,
     },
     {
       name: 'Beazer Homes',
       logo: 'https://cadencenv.com/wp-content/uploads/2024/05/BeazerHomes_Logo.jpg',
-      href: CONTACT_INFO.realScoutBeazerHomesUrl,
+      href: '/communities/beazer',
       width: 300,
       height: 80,
-      external: true,
     },
     {
       name: 'Century Communities',

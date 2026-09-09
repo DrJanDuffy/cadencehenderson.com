@@ -1,17 +1,20 @@
 # Task plan
 
-Create more public pages from CadenceNV.com information architecture. Original copy only (no verbatim CadenceNV paragraphs). Fair Housing: no school ratings or “family-friendly” proxies.
+Put CadenceNV.com information on cadencehenderson.com: every community, village, rental, and lifestyle topic that CadenceNV publishes, as original pages (no verbatim copy).
 
 ## Current plan
 
-- [x] Add Find Your Home, Incentives, pocket parks, shopping subpages, realtor resources, apartment communities, disclaimer
-- [x] Unique titles/canonicals, NAP from CONTACT_INFO, sitemap + nav/footer
-- [x] Verify routes render; commit; PR stacked on brand-colors branch
+- [x] Diff CadenceNV sitemap vs our routes; extract village/rental facts
+- [x] Data-driven builder village + remaining community pages
+- [x] URL aliases, sitemap, nav; fill homepage/content gaps
+- [x] Verify, commit, update PR
 
 ## Review
 
-Shipped 13 original routes covering CadenceNV IA gaps: `/find-your-home`, `/incentives`, `/lifestyle/parks-trails/pocket-parks`, `/lifestyle/shopping/restaurants`, `/entertainment`, `/activities`, `/realtors/life-at-cadence`, `/realtors/realtor-toolkit`, `/apartments`, `/ascend`, `/avela-luxury-apartments`, `/elysian`, `/disclaimer`.
+CadenceNV neighborhood IA now lives on cadencehenderson.com:
 
-Local Next 15.5.7 on :3010 returned 200 for every new path, unique `<title>`, and visible `702-930-8672` (CONTACT_INFO). Toll Brothers Everleigh noted as sold out rather than a sales page. Apartment leasing numbers are labeled as community offices, not Dr. Jan’s CTA.
-
-PR: https://github.com/LetMeHelpYouREALTY/cadencehenderson.com/pull/10
+- Village catalog in `lib/cadence-nv-catalog.ts` (plan names + sq ft/beds/baths, no asking prices)
+- Dynamic pages under `/communities/[builder]/[community]`
+- CadenceNV-style URLs via rewrites (`/beazer/aria-crossing`, `/lennar/carlton`, `/adler`, `/element12`, etc.)
+- Directory at `/communities`, AMH hub, Media page
+- Nav, footer, sitemap, Find Your Home, apartments, amenities, and builder pages link to the on-site villages

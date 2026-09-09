@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 }
 
 const builders = [
-  { name: 'Beazer Homes', href: '/new-homes/beazer-homes' },
+  { name: 'Beazer Homes', href: '/communities/beazer' },
   { name: 'Century Communities', href: '/new-homes/century-communities' },
   { name: 'D.R. Horton', href: '/new-homes/dr-horton' },
   { name: 'Lennar', href: '/new-homes/lennar' },
@@ -36,12 +36,14 @@ const builders = [
   { name: 'StoryBook Homes', href: '/new-homes/storybook-homes' },
   { name: 'Taylor Morrison', href: '/new-homes/taylor-morrison' },
   { name: 'Woodside Homes', href: '/new-homes/woodside-homes' },
+  { name: 'Harmony Homes', href: '/communities/harmony-homes' },
+  { name: 'Toll Brothers', href: '/communities/toll-brothers' },
 ]
 
 const rentals = [
-  { name: 'American Homes 4 Rent', href: '/rentals/american-homes' },
-  { name: 'Element 12', href: '/rentals/element-12' },
-  { name: 'Adler', href: '/rentals/adler' },
+  { name: 'American Homes 4 Rent', href: '/american-homes-4-rent' },
+  { name: 'Element 12', href: '/element12' },
+  { name: 'Adler', href: '/adler' },
   { name: 'Ascend Symmetry', href: '/ascend' },
   { name: 'Avela Luxury Apartments', href: '/avela-luxury-apartments' },
   { name: 'Elysian Homes', href: '/elysian' },
@@ -104,8 +106,12 @@ export default function FindYourHomePage() {
               ))}
             </ul>
             <p className="mt-6 text-center text-sm font-light text-neutral-500">
-              Toll Brothers previously built Everleigh at Cadence; that collection
-              is sold out. Ask Dr. Jan about resale homes in those villages.
+              Toll Brothers Concord and Everleigh at Cadence are sold out. Ask
+              Dr. Jan about resale homes on those streets.{' '}
+              <Link href="/communities" className="font-medium text-primary hover:underline">
+                Browse every Cadence village
+              </Link>
+              .
             </p>
           </div>
         </div>

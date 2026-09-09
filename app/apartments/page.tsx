@@ -50,19 +50,19 @@ const communities = [
   },
   {
     name: 'Element 12',
-    href: '/rentals/element-12',
+    href: '/element12',
     status: 'Apartments',
     summary: 'Apartment living with resort-style amenities inside Cadence.',
   },
   {
     name: 'Adler',
-    href: '/rentals/adler',
+    href: '/adler',
     status: 'Apartments',
     summary: 'Contemporary apartments with community spaces in Cadence.',
   },
   {
     name: 'American Homes 4 Rent',
-    href: '/rentals/american-homes',
+    href: '/american-homes-4-rent',
     status: 'Single-family rentals',
     summary: 'Detached rental homes with professional management in Cadence villages.',
   },
