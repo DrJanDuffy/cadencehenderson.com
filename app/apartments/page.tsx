@@ -5,11 +5,12 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -72,12 +73,6 @@ export default function ApartmentsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Rentals in Cadence Henderson', href: `${BASE}/rentals` },
-          { name: 'Apartments in Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Apartments & rentals"
@@ -122,6 +117,15 @@ export default function ApartmentsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/apartments"
+        name="Apartments in Cadence Henderson NV | Rentals 89011"
+        description="Apartment and built-to-rent communities in Cadence Henderson NV 89011: Ascend Symmetry, Avela, Elysian Homes, Element 12, Adler, and AMH. Call Dr. Jan Duffy."
+        faqs={defaultPageFaqs('apartments and rentals in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Apartments in Cadence Henderson' },
+        ]}
+      />
       <AgentContactCta
         heading="Buying later, leasing now?"
         body="Dr. Jan can match a Cadence rental for this year and keep you on a new-home shortlist when you are ready to purchase."

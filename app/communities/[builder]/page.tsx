@@ -6,13 +6,14 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import {
   CADENCE_BUILDER_HUBS,
   getVillagesByBuilder,
 } from '@/lib/cadence-nv-catalog'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -48,12 +49,6 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson communities', href: `${BASE}/communities` },
-          { name: hub.name },
-        ]}
-      />
       <PageHero
         title={hub.name}
         subtitle={`${villages.length} Cadence Henderson villages. Plan names and sizes from the developer listing — prices omitted because they change.`}
@@ -93,6 +88,16 @@ export default async function BuilderCommunitiesPage({ params }: PageProps) {
           </p>
         </div>
       </section>
+      <PageAeo
+        path={`/communities/${builder}`}
+        name={`${hub.name} in Cadence Henderson NV | Villages`}
+        description={`${hub.name} neighborhoods inside Cadence Henderson NV 89011. Village list, plan names, and square footage. Tour with Dr. Jan Duffy.`}
+        faqs={defaultPageFaqs(`${hub.name} villages in Cadence Henderson`)}
+        breadcrumbs={[
+          { name: 'Cadence Henderson neighborhoods', path: '/communities' },
+          { name: hub.name },
+        ]}
+      />
       <AgentContactCta
         heading={`Compare ${hub.name} villages`}
         body="Dr. Jan will sequence a model-home loop so you are not driving Cadence twice for the same floor plan."

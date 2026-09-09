@@ -18,7 +18,7 @@ import {
   Heart,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageAeo } from '@/components/cadence/page-aeo'
 
 const amenities = [
   {
@@ -150,12 +150,6 @@ export default function AmenitiesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle & Community', href: 'https://www.cadencehenderson.com/lifestyle' },
-          { name: 'Cadence Henderson Amenities – Central Park, Pools & Trails' },
-        ]}
-      />
 
       <PageHero
         title="World-Class Amenities"
@@ -180,7 +174,7 @@ export default function AmenitiesPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Premier Facilities
+            Cadence Henderson amenities in NV 89011
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {amenities.map((amenity) => {
@@ -421,7 +415,7 @@ export default function AmenitiesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson amenities FAQs
             </h2>
             <p className="text-center text-gray-600 mb-8">
               Amenities at Cadence Henderson, Henderson NV 89011
@@ -496,7 +490,7 @@ export default function AmenitiesPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -504,6 +498,15 @@ export default function AmenitiesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/amenities"
+        name="Cadence Henderson Amenities – Central Park, Pools & Trails"
+        description="50-acre Central Park, resort pools, splash pads, fitness centers, pickleball courts, dog parks & 30+ miles of trails in Cadence Henderson NV 89011."
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Amenities in Cadence Henderson NV 89011' },
+        ]}
+      />
       <Footer />
     </div>
   )

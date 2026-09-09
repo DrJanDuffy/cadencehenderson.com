@@ -5,10 +5,11 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -47,13 +48,6 @@ export default function EntertainmentPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle', href: `${BASE}/lifestyle` },
-          { name: 'Shopping Near Cadence Henderson', href: `${BASE}/lifestyle/shopping` },
-          { name: 'Entertainment Near Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Entertainment near Cadence"
@@ -94,6 +88,17 @@ export default function EntertainmentPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/shopping/entertainment"
+        name="Entertainment Near Cadence Henderson | Henderson NV"
+        description="Entertainment near Cadence Henderson NV 89011 — theaters, venues, and events. Tour with Dr. Jan Duffy."
+        faqs={defaultPageFaqs('entertainment near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Shopping and dining', path: '/lifestyle/shopping' },
+          { name: 'Entertainment near Cadence Henderson' },
+        ]}
+      />
       <AgentContactCta
         heading="See Cadence, then see a show"
         body="Dr. Jan Duffy maps commute times from specific Cadence villages to Sunset Station, Cowabunga Bay, and the Strip."

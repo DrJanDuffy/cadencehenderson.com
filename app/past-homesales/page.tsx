@@ -3,6 +3,8 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { RealScoutAdvancedSearch } from '@/components/idx/realscout-advanced-search'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { RealScoutYourListings } from '@/components/idx/realscout-your-listings'
@@ -23,7 +25,7 @@ export default function PastHomesalesPage() {
 
       <PageHero
         title="Dr. Jan Duffy Past Home Sales"
-        subtitle="Browse my sales history—sold homes, properties in contract, and current listings. See the results that have helped families find their perfect home in Henderson and Cadence."
+        subtitle="Browse sold homes, properties in contract, and current listings. See recent Cadence Henderson NV 89011 results from Dr. Jan Duffy."
         imageSrc={cfImage(SITE_IMAGES.hero.pastHomesales, 'hero')}
         imageAlt="Past home sales by Dr. Jan Duffy at Cadence Henderson NV 89011"
       >
@@ -122,6 +124,14 @@ export default function PastHomesalesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/past-homesales"
+        name="Past Home Sales | Cadence Henderson 89011"
+        description="Cadence Henderson market report. Dr. Jan Duffy past home sales, sold listings, market trends. Henderson NV 89011. Berkshire Hathaway."
+        faqs={defaultPageFaqs('past home sales in Cadence Henderson')}
+        breadcrumbs={[{ name: 'Past home sales in Cadence Henderson NV 89011' }]}
+        faqHeading="Cadence Henderson sold homes — questions"
+      />
       <Footer />
     </div>
   )

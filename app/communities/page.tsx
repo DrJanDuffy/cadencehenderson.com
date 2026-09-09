@@ -5,7 +5,6 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import {
@@ -13,6 +12,8 @@ import {
   CADENCE_VILLAGES,
   ROOT_COMMUNITIES,
 } from '@/lib/cadence-nv-catalog'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -33,7 +34,6 @@ export default function CommunitiesIndexPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema items={[{ name: 'Cadence Henderson communities' }]} />
       <PageHero
         title="Cadence neighborhoods"
         subtitle={`${CADENCE_VILLAGES.length} villages from the CadenceNV directory — for-sale, rental, and sold-out collections in Henderson NV 89011.`}
@@ -75,7 +75,7 @@ export default function CommunitiesIndexPage() {
           </div>
           <div className="mx-auto mt-16 max-w-5xl">
             <h2 className="mb-4 text-2xl font-medium text-neutral-900">
-              Apartments and rental communities
+              Apartments and rental communities in Cadence Henderson NV 89011
             </h2>
             <ul className="grid gap-2 sm:grid-cols-2">
               {ROOT_COMMUNITIES.map((community) => (
@@ -112,6 +112,14 @@ export default function CommunitiesIndexPage() {
           </div>
         </div>
       </section>
+      <PageAeo
+        path="/communities"
+        name="Cadence Henderson Neighborhoods | All Villages 89011"
+        description="Every Cadence Henderson village from the CadenceNV directory: Beazer, Century, D.R. Horton, Lennar, Richmond American, StoryBook, Taylor Morrison, Woodside, AMH, and more."
+        faqs={defaultPageFaqs('Cadence Henderson neighborhoods and builder villages')}
+        breadcrumbs={[{ name: 'Cadence Henderson neighborhoods' }]}
+        faqHeading="Cadence Henderson neighborhoods — questions"
+      />
       <AgentContactCta
         heading="Need a village shortlist?"
         body="Tell Dr. Jan your beds and budget. She will map Cadence villages that still have matching plans."

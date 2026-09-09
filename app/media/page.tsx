@@ -5,9 +5,10 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -37,7 +38,6 @@ export default function MediaPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema items={[{ name: 'Media & Press' }]} />
       <PageHero
         title="Media"
         subtitle="Brokerage press for Cadence Henderson Homes, and a factual recap of public Cadence community announcements."
@@ -105,6 +105,13 @@ export default function MediaPage() {
           </div>
         </div>
       </section>
+      <PageAeo
+        path="/media"
+        name="Media & Press | Cadence Henderson Homes"
+        description="Press contact for Cadence Henderson Homes by Dr. Jan Duffy, plus developer-side Cadence community news. Henderson NV 89011."
+        faqs={defaultPageFaqs('media and press inquiries about Cadence Henderson')}
+        breadcrumbs={[{ name: 'Media and press' }]}
+      />
       <AgentContactCta
         heading="Need a Cadence expert on camera or for a story?"
         body="Dr. Jan Duffy can speak to 89011 new construction, buyer representation, and how Cadence villages actually tour."

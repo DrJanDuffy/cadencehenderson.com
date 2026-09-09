@@ -4,6 +4,8 @@ import type { Metadata } from 'next'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag, Coffee, Utensils, Film, Heart } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
@@ -146,7 +148,7 @@ export default function ShoppingPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            Nearby Shopping Centers
+            Shopping near Cadence Henderson NV 89011
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {shoppingCenters.map((center) => (
@@ -327,6 +329,17 @@ export default function ShoppingPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/shopping"
+        name="Shopping & Dining Near Cadence Henderson NV | 89011"
+        description="Galleria at Sunset, Cadence Marketplace, and Henderson dining near Cadence Henderson NV 89011. Grocery, retail, and entertainment 5–10 minutes away."
+        faqs={defaultPageFaqs('shopping and dining near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Shopping near Cadence Henderson NV 89011' },
+        ]}
+        faqHeading="Cadence Henderson shopping — questions"
+      />
       <Footer />
     </div>
   )

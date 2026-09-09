@@ -4,12 +4,13 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -53,12 +54,6 @@ export default function IncentivesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'New Homes in Cadence Henderson', href: `${BASE}/new-homes` },
-          { name: 'Builder Incentives in Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Builder incentives"
@@ -121,6 +116,16 @@ export default function IncentivesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/incentives"
+        name="Builder Incentives in Cadence Henderson NV 89011"
+        description="How Cadence Henderson builders may help with rate buydowns, closing costs, and included upgrades. Confirm current offers with Dr. Jan Duffy."
+        faqs={defaultPageFaqs('builder incentives in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'New homes in Cadence Henderson', path: '/new-homes' },
+          { name: 'Builder incentives' },
+        ]}
+      />
       <AgentContactCta
         heading="Need the current incentive sheet?"
         body="Dr. Jan will check which Cadence lots still carry a buydown, closing credit, or included upgrade — then map the monthly payment."

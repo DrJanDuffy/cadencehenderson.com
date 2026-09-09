@@ -5,10 +5,11 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -56,13 +57,6 @@ export default function ActivitiesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle', href: `${BASE}/lifestyle` },
-          { name: 'Shopping Near Cadence Henderson', href: `${BASE}/lifestyle/shopping` },
-          { name: 'Outdoor Activities Near Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Activities near Cadence"
@@ -103,6 +97,17 @@ export default function ActivitiesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/shopping/activities"
+        name="Outdoor Activities Near Cadence Henderson NV"
+        description="Outdoor activities near Cadence Henderson NV 89011 — Lake Mead, trails, and parks. Tour with Dr. Jan Duffy."
+        faqs={defaultPageFaqs('outdoor activities near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Shopping and dining', path: '/lifestyle/shopping' },
+          { name: 'Outdoor activities near Cadence Henderson' },
+        ]}
+      />
       <AgentContactCta
         heading="Match a lot to the trail you actually use"
         body="Tell Dr. Jan whether you boat at Lake Mead, walk the wetlands, or play golf — she will point you to Cadence villages with the shortest drive."

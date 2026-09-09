@@ -11,8 +11,9 @@ import { Home, Bed, Bath, Ruler, DollarSign, MapPin, Phone, Search } from 'lucid
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getHomeImage, getBuilderImage, getBuilderHeroImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { getVillagesByBuilder, NEW_HOMES_SLUG_TO_CATALOG } from '@/lib/cadence-nv-catalog'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
   'beazer-homes': CONTACT_INFO.realScoutBeazerHomesUrl,
@@ -47,7 +48,7 @@ const builderData: Record<
     description:
       'Quality craftsmanship and energy-efficient homes with flexible floor plans.',
     longDescription:
-      'Beazer Homes has been building quality new homes for over 60 years. At Cadence, we offer a variety of thoughtfully designed floor plans featuring energy-efficient construction, modern amenities, and flexible living spaces perfect for today\'s families.',
+      'Beazer Homes has been building new homes for over 60 years. At Cadence Henderson NV 89011, floor plans include energy-efficient construction, modern amenities, and flexible living spaces.',
     logo: '🏠',
     contact: {
       phone: '(702) 555-0101',
@@ -533,12 +534,6 @@ export default async function BuilderPage({
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'New Homes in Cadence Henderson', href: 'https://www.cadencehenderson.com/new-homes' },
-          { name: `${builder.name} – Cadence Henderson NV 89011` },
-        ]}
-      />
 
       <PageHero
         title={builder.name}
@@ -645,7 +640,7 @@ export default async function BuilderPage({
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-              About {builder.name}
+              {builder.name} in Cadence Henderson NV 89011
             </h2>
             <p className="text-lg text-gray-700 mb-8 leading-relaxed">
               {builder.longDescription}
@@ -817,6 +812,17 @@ export default async function BuilderPage({
         </div>
       </section>
 
+      <PageAeo
+        path={`/new-homes/${builderSlug}`}
+        name={`${builder.name} New Homes – Cadence Henderson NV 89011`}
+        description={`${builder.name} new homes for sale in Cadence Henderson NV 89011. ${builder.description}`}
+        faqs={defaultPageFaqs(`${builder.name} new homes in Cadence Henderson`)}
+        breadcrumbs={[
+          { name: 'New homes', path: '/new-homes' },
+          { name: `${builder.name} in Cadence Henderson NV 89011` },
+        ]}
+        faqHeading={`${builder.name} at Cadence Henderson — questions`}
+      />
       <Footer />
     </div>
   )

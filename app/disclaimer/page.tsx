@@ -3,7 +3,8 @@ import { Scale } from 'lucide-react'
 import { PageHero } from '@/components/cadence/page-hero'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
@@ -26,7 +27,6 @@ export default function DisclaimerPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema items={[{ name: 'Website Disclaimer' }]} />
 
       <PageHero
         title="Disclaimer"
@@ -103,6 +103,14 @@ export default function DisclaimerPage() {
           </div>
         </div>
       </section>
+      <PageAeo
+        path="/disclaimer"
+        name="Website Disclaimer | Cadence Henderson Homes"
+        description="Legal, Fair Housing, MLS, and accuracy disclaimer for CadenceHenderson.com. Homes by Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
+        faqs={defaultPageFaqs('Cadence Henderson website disclaimer and Fair Housing')}
+        breadcrumbs={[{ name: 'Website disclaimer' }]}
+        faqHeading="Cadence Henderson disclaimer — questions"
+      />
       <Footer />
     </div>
   )

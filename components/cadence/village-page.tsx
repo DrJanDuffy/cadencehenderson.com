@@ -4,12 +4,13 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { getVillagesByBuilder, type Village } from '@/lib/cadence-nv-catalog'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { villageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -64,16 +65,12 @@ export function VillagePageView({ village }: VillagePageViewProps) {
   const displayPlans = village.plans.filter((plan) => plan.sqft !== '—')
   const namedOnly = village.plans.filter((plan) => plan.sqft === '—')
 
+  const faqs = villageFaqs(village)
+  const meta = villageMetadata(village)
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson communities', href: `${BASE}/communities` },
-          { name: village.builderName, href: `${BASE}${builderHubHref}` },
-          { name: village.name },
-        ]}
-      />
 
       <PageHero
         title={village.name}
@@ -103,13 +100,12 @@ export function VillagePageView({ village }: VillagePageViewProps) {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <h2 className="mb-2 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
-                Published floor plans
+                {village.name} floor plans in Cadence Henderson NV 89011
               </h2>
-              <p className="mb-8 font-light text-neutral-600">
+              <p className="aeo-lead mb-8 font-light text-neutral-600" data-speakable>
                 Names and sizes from the Cadence developer listing (checked
                 2026-09-09). Asking prices and lot numbers change — they are not
-                shown here. Call {CONTACT_INFO.phone} for what is actually
-                available.
+                shown here. Call {CONTACT_INFO.phone}. Office: {CONTACT_INFO.welcomeCenter}.
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-left text-sm">
@@ -155,7 +151,7 @@ export function VillagePageView({ village }: VillagePageViewProps) {
           <div className="container mx-auto px-4">
             <div className="mx-auto max-w-4xl">
               <h2 className="mb-6 text-2xl font-medium text-neutral-900">
-                Other {village.builderName} villages in Cadence
+                Other {village.builderName} villages in Cadence Henderson NV 89011
               </h2>
               <ul className="grid gap-3 sm:grid-cols-2">
                 {siblings.map((item) => (
@@ -164,16 +160,37 @@ export function VillagePageView({ village }: VillagePageViewProps) {
                       href={item.cadencePath}
                       className="font-medium text-primary hover:underline"
                     >
-                      {item.name}
+                      {item.name} in Cadence Henderson
                     </Link>
                   </li>
                 ))}
               </ul>
+              <p className="mt-6 text-sm">
+                <Link href="/lifestyle/amenities" className="text-primary hover:underline">
+                  Cadence Henderson amenities and Central Park
+                </Link>
+                {' · '}
+                <Link href="/find-your-home" className="text-primary hover:underline">
+                  Find your home in Cadence Henderson
+                </Link>
+              </p>
             </div>
           </div>
         </section>
       ) : null}
 
+      <PageAeo
+        path={village.cadencePath}
+        name={meta.title}
+        description={meta.description}
+        faqs={faqs}
+        breadcrumbs={[
+          { name: 'Cadence Henderson neighborhoods', path: '/communities' },
+          { name: village.builderName, path: builderHubHref },
+          { name: village.name },
+        ]}
+        faqHeading={`${village.name} in Cadence Henderson NV 89011 — questions`}
+      />
       <AgentContactCta
         heading={`Tour ${village.name} with a local agent`}
         body="Dr. Jan Duffy represents Cadence buyers at no extra cost on new construction — the builder typically pays the fee."

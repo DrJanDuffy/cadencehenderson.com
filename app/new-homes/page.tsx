@@ -9,6 +9,7 @@ import { RealScoutSimpleSearch } from '@/components/idx/realscout-simple-search'
 import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Home, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
@@ -201,7 +202,7 @@ export default function NewHomesPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Our Trusted Builders
+              New home builders in Cadence Henderson NV 89011
             </h2>
             <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
@@ -304,7 +305,7 @@ export default function NewHomesPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-              Frequently Asked Questions
+              Cadence Henderson new home FAQs
             </h2>
             <p className="text-center text-gray-700 mb-8">
               New homes in Cadence Henderson, Henderson NV 89011
@@ -379,7 +380,7 @@ export default function NewHomesPage() {
                     {q}
                     <span className="text-blue-900 shrink-0 group-open:rotate-180 transition-transform">▾</span>
                   </summary>
-                  <p className="mt-3 text-gray-700 leading-relaxed">{a}</p>
+                  <p className="faq-answer mt-3 text-gray-700 leading-relaxed">{a}</p>
                 </details>
               ))}
             </div>
@@ -387,6 +388,12 @@ export default function NewHomesPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/new-homes"
+        name="New Homes for Sale – Cadence Henderson NV 89011"
+        description="8 builders, 150+ homes from $300K–$650K in Cadence Henderson 89011. Beazer, Lennar, Richmond American, Woodside & more. Browse floor plans, prices & availability. Tours 7 days."
+        breadcrumbs={[{ name: 'New homes in Cadence Henderson NV 89011' }]}
+      />
       <Footer />
     </div>
   )

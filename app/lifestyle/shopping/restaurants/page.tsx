@@ -5,10 +5,11 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -72,13 +73,6 @@ export default function RestaurantsPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle', href: `${BASE}/lifestyle` },
-          { name: 'Shopping Near Cadence Henderson', href: `${BASE}/lifestyle/shopping` },
-          { name: 'Restaurants Near Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Restaurants near Cadence"
@@ -123,6 +117,17 @@ export default function RestaurantsPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/shopping/restaurants"
+        name="Restaurants Near Cadence Henderson NV 89011"
+        description="Dining near Cadence Henderson NV 89011 — Cadence Marketplace and nearby Henderson corridors. Tour homes with Dr. Jan Duffy."
+        faqs={defaultPageFaqs('restaurants near Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Shopping and dining', path: '/lifestyle/shopping' },
+          { name: 'Restaurants near Cadence Henderson' },
+        ]}
+      />
       <AgentContactCta
         heading="Tour Cadence, then stay for dinner"
         body="Schedule a model-home loop with Dr. Jan Duffy, then pick a table on Water Street or at The District."
