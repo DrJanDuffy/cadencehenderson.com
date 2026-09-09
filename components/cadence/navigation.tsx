@@ -117,9 +117,9 @@ const navigationItems: NavItem[] = [
 ]
 
 const linkBaseClasses =
-  'text-[11px] font-light tracking-[0.2em] uppercase text-neutral-600 hover:text-black transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-neutral-900/20 focus:ring-offset-2'
+  'text-[11px] font-light tracking-[0.2em] uppercase text-cadence-ink/70 hover:text-primary transition-colors py-2 block focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2'
 const dropdownItemClasses =
-  'block px-4 py-2.5 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-600 hover:bg-neutral-50 hover:text-black transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20'
+  'block px-4 py-2.5 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/70 hover:bg-blue-50 hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -136,11 +136,11 @@ export function Navigation() {
           {/* Logo - GEO: Site identity */}
           <Link
             href="/"
-            className="flex items-center focus:outline-none focus:ring-2 focus:ring-neutral-900/20 focus:ring-offset-2"
+            className="flex items-center focus:outline-none focus:ring-2 focus:ring-primary/30 focus:ring-offset-2"
             aria-label={`${CONTACT_INFO.siteName} - Home`}
             title={CONTACT_INFO.siteName}
           >
-            <span className="text-sm font-light tracking-[0.4em] text-black">CADENCE</span>
+            <span className="text-sm font-light tracking-[0.4em] text-cadence-ink">CADENCE</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -207,7 +207,7 @@ export function Navigation() {
 
           <Button
             size="sm"
-            className="hidden lg:inline-flex bg-black hover:bg-neutral-800 text-white shrink-0 tracking-[0.18em] uppercase"
+            className="hidden lg:inline-flex shrink-0"
             asChild
           >
             <CalendlyLink>Find a Realtor</CalendlyLink>
@@ -215,7 +215,7 @@ export function Navigation() {
 
           <Link
             href="/#home-search"
-            className="hidden lg:flex items-center gap-2 p-2 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-600 hover:text-black focus:outline-none focus:ring-2 focus:ring-neutral-900/20"
+            className="hidden lg:flex items-center gap-2 p-2 text-[11px] font-light tracking-[0.18em] uppercase text-cadence-ink/70 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
             aria-label="Search Henderson homes for sale"
           >
             <Search size={16} aria-hidden />
@@ -223,7 +223,7 @@ export function Navigation() {
           </Link>
 
           <button
-            className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-neutral-900/20"
+            className="lg:hidden p-2 focus:outline-none focus:ring-2 focus:ring-primary/30"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isOpen ? 'true' : 'false'}
@@ -237,14 +237,14 @@ export function Navigation() {
           <div className="lg:hidden border-t border-neutral-200 py-6" aria-label="Mobile navigation">
             <div className="px-4 pb-4 space-y-2">
               <Button
-                className="w-full bg-black hover:bg-neutral-800 text-white tracking-[0.18em] uppercase"
+                className="w-full"
                 asChild
               >
                 <CalendlyLink>Find a Realtor</CalendlyLink>
               </Button>
               <Link
                 href="/#home-search"
-                className="flex items-center justify-center gap-2 w-full py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 hover:bg-neutral-50"
+                className="flex items-center justify-center gap-2 w-full py-3 text-[11px] font-light tracking-[0.18em] uppercase text-cadence-ink hover:bg-blue-50"
                 onClick={() => setIsOpen(false)}
                 aria-label="Search Henderson homes for sale"
               >
@@ -259,7 +259,7 @@ export function Navigation() {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
+                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                     onClick={() => setIsOpen(false)}
                   >
                     {item.title}
@@ -267,7 +267,7 @@ export function Navigation() {
                 ) : (
                   <Link
                     href={item.items ? '#' : item.href}
-                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-neutral-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
+                    className="w-full text-left px-4 py-3 text-[11px] font-light tracking-[0.18em] uppercase text-neutral-700 block hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                     onClick={(e) => {
                       if (item.items) {
                         e.preventDefault()
@@ -289,7 +289,7 @@ export function Navigation() {
                           href={subItem.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
+                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/60 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}
@@ -298,7 +298,7 @@ export function Navigation() {
                         <Link
                           key={subItem.label}
                           href={subItem.href}
-                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-neutral-500 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neutral-900/20"
+                          className="block px-4 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-cadence-ink/60 hover:text-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary/30"
                           onClick={() => setIsOpen(false)}
                         >
                           {subItem.label}

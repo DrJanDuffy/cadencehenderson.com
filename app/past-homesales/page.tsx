@@ -90,7 +90,7 @@ export default function PastHomesalesPage() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>
-                <Button size="lg" className="bg-slate-800 hover:bg-slate-700">
+                <Button size="lg" className="bg-primary hover:bg-blue-600">
                   Schedule with Cadence Expert
                 </Button>
               </CalendlyLink>
@@ -102,7 +102,7 @@ export default function PastHomesalesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
                 >
                   <Home className="mr-2" size={20} />
                   Search Homes
@@ -112,7 +112,7 @@ export default function PastHomesalesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-slate-800 text-slate-800 hover:bg-slate-800 hover:text-white"
+                  className="border-primary text-primary hover:bg-primary hover:text-white"
                 >
                   Call Dr. Jan
                 </Button>

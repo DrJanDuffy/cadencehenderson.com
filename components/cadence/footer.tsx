@@ -24,7 +24,7 @@ export function Footer() {
   ]
 
   return (
-    <footer className="bg-black text-white py-24">
+    <footer className="bg-cadence-ink text-white py-24">
       <div className="container mx-auto px-4">
         {/* Schedule Consultation CTA */}
         <div className="text-center mb-16 pb-12 border-b border-white/15">
@@ -33,7 +33,7 @@ export function Footer() {
             Schedule a free 15-minute consultation with Dr. Jan Duffy — Cadence Henderson NV 89011.
           </p>
           <CalendlyLink>
-            <button className="inline-flex items-center gap-2 px-8 py-3 border border-white/70 bg-transparent text-xs font-light tracking-[0.18em] uppercase hover:bg-white hover:text-black transition-colors">
+            <button className="inline-flex items-center gap-2 px-8 py-3 rounded-sm border-2 border-white bg-white text-xs font-semibold tracking-[0.08em] uppercase text-primary hover:bg-blue-50 transition-colors">
               <Calendar size={16} />
               Schedule a Call
             </button>

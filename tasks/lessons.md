@@ -4,8 +4,7 @@ Update this file after user corrections or recurring mistakes. Review at the sta
 
 ## Patterns to avoid
 
-- _Example: "Always use CONTACT_INFO for phone/address; do not hardcode NAP."_
-- _Add entries as corrections occur_
+- CadenceNV.com brand colors: sky `#4da9d8`, ink `#212934`, green `#65bc7b`. Do not remap the site to grayscale; match cadencenv.com chrome.
 
 ## Patterns to prefer
 

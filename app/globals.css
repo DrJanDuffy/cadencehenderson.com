@@ -8,54 +8,61 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono);
-  /* Quiet luxury: map brand blues/accents to a Compass-like grayscale */
-  --color-blue-50: oklch(0.985 0 0);
-  --color-blue-100: oklch(0.97 0 0);
-  --color-blue-200: oklch(0.922 0 0);
-  --color-blue-300: oklch(0.84 0 0);
-  --color-blue-400: oklch(0.708 0 0);
-  --color-blue-500: oklch(0.556 0 0);
-  --color-blue-600: oklch(0.439 0 0);
-  --color-blue-700: oklch(0.32 0 0);
-  --color-blue-800: oklch(0.22 0 0);
-  --color-blue-900: oklch(0.145 0 0);
-  --color-blue-950: oklch(0.1 0 0);
-  --color-indigo-50: oklch(0.985 0 0);
-  --color-indigo-100: oklch(0.97 0 0);
-  --color-indigo-200: oklch(0.922 0 0);
-  --color-indigo-600: oklch(0.439 0 0);
-  --color-indigo-700: oklch(0.32 0 0);
-  --color-indigo-800: oklch(0.22 0 0);
-  --color-indigo-900: oklch(0.145 0 0);
-  --color-amber-50: oklch(0.985 0 0);
-  --color-amber-100: oklch(0.97 0 0);
-  --color-amber-200: oklch(0.922 0 0);
-  --color-amber-800: oklch(0.22 0 0);
-  --color-amber-900: oklch(0.145 0 0);
-  --color-emerald-50: oklch(0.985 0 0);
-  --color-emerald-700: oklch(0.32 0 0);
-  --color-emerald-800: oklch(0.22 0 0);
-  --color-sky-50: oklch(0.985 0 0);
-  --color-sky-800: oklch(0.22 0 0);
-  --color-sky-900: oklch(0.145 0 0);
-  --color-green-50: oklch(0.985 0 0);
-  --color-green-100: oklch(0.97 0 0);
-  --color-green-800: oklch(0.22 0 0);
-  --color-green-900: oklch(0.145 0 0);
-  --color-teal-50: oklch(0.985 0 0);
-  --color-teal-800: oklch(0.22 0 0);
-  --color-teal-900: oklch(0.145 0 0);
-  --color-purple-50: oklch(0.985 0 0);
-  --color-purple-100: oklch(0.97 0 0);
-  --color-purple-800: oklch(0.22 0 0);
-  --color-purple-900: oklch(0.145 0 0);
-  --color-orange-50: oklch(0.985 0 0);
-  --color-orange-100: oklch(0.97 0 0);
-  --color-orange-800: oklch(0.22 0 0);
-  --color-orange-900: oklch(0.145 0 0);
-  --color-rose-50: oklch(0.985 0 0);
-  --color-rose-800: oklch(0.22 0 0);
-  --color-rose-900: oklch(0.145 0 0);
+  /* CadenceNV.com brand (live 2026-09-09): sky #4da9d8, ink #212934, green #65bc7b, orange #ed752d */
+  --color-cadence-blue: #4da9d8;
+  --color-cadence-blue-dark: #489fd0;
+  --color-cadence-ink: #212934;
+  --color-cadence-green: #65bc7b;
+  --color-cadence-orange: #ed752d;
+  --color-blue-50: #f1f8fc;
+  --color-blue-100: #e3f1f9;
+  --color-blue-200: #c6e3f3;
+  --color-blue-300: #a6d4ec;
+  --color-blue-400: #7abee2;
+  --color-blue-500: #4da9d8;
+  --color-blue-600: #4592ba;
+  --color-blue-700: #3c789a;
+  --color-blue-800: #335f79;
+  --color-blue-900: #2b4558;
+  --color-blue-950: #253644;
+  --color-indigo-50: #f1f8fc;
+  --color-indigo-100: #e3f1f9;
+  --color-indigo-200: #c6e3f3;
+  --color-indigo-600: #4592ba;
+  --color-indigo-700: #3c789a;
+  --color-indigo-800: #335f79;
+  --color-indigo-900: #2b4558;
+  --color-amber-50: #fef4ee;
+  --color-amber-100: #fce9dd;
+  --color-amber-200: #f9d3bc;
+  --color-amber-800: #774931;
+  --color-amber-900: #4e3a32;
+  --color-emerald-50: #f3faf4;
+  --color-emerald-700: #4b8460;
+  --color-emerald-800: #3e6752;
+  --color-sky-50: #f1f8fc;
+  --color-sky-800: #335f79;
+  --color-sky-900: #2b4558;
+  --color-green-50: #f3faf4;
+  --color-green-100: #e6f4ea;
+  --color-green-600: #59a26e;
+  --color-green-700: #4b8460;
+  --color-green-800: #3e6752;
+  --color-green-900: #304944;
+  --color-teal-50: #f3faf4;
+  --color-teal-800: #3e6752;
+  --color-teal-900: #304944;
+  --color-purple-50: #f7f0f7;
+  --color-purple-100: #efe0ef;
+  --color-purple-800: #53325e;
+  --color-purple-900: #3b2e4a;
+  --color-orange-50: #fef4ee;
+  --color-orange-100: #fce9dd;
+  --color-orange-800: #774931;
+  --color-orange-900: #4e3a32;
+  --color-rose-50: #fef0ef;
+  --color-rose-800: #7a3435;
+  --color-rose-900: #4f2f34;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -151,38 +158,38 @@
 }
 
 :root {
-  --radius: 0px;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --radius: 4px;
+  --background: #ffffff;
+  --foreground: #212934;
+  --card: #ffffff;
+  --card-foreground: #212934;
+  --popover: #ffffff;
+  --popover-foreground: #212934;
+  --primary: #4da9d8;
+  --primary-foreground: #ffffff;
+  --secondary: #f2f3f5;
+  --secondary-foreground: #212934;
+  --muted: #f4f4f4;
+  --muted-foreground: #4a4e57;
+  --accent: #e3f1f9;
+  --accent-foreground: #212934;
+  --destructive: #f44336;
+  --border: #e2e2e2;
+  --input: #e2e2e2;
+  --ring: #4da9d8;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar: #f9f9fb;
+  --sidebar-foreground: #212934;
+  --sidebar-primary: #4da9d8;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e3f1f9;
+  --sidebar-accent-foreground: #212934;
+  --sidebar-border: #e2e2e2;
+  --sidebar-ring: #4da9d8;
 }
 
 .dark {
@@ -246,35 +253,6 @@
     font-weight: 300;
     letter-spacing: 0.02em;
   }
-  .font-bold,
-  .font-semibold,
-  .font-extrabold,
-  .font-black {
-    font-weight: 300;
-  }
-  .font-medium {
-    font-weight: 400;
-  }
-  .rounded,
-  .rounded-sm,
-  .rounded-md,
-  .rounded-lg,
-  .rounded-xl,
-  .rounded-2xl,
-  .rounded-3xl,
-  .rounded-full {
-    border-radius: 0;
-  }
-  .shadow-xs,
-  .shadow-sm,
-  .shadow,
-  .shadow-md,
-  .shadow-lg,
-  .shadow-xl,
-  .shadow-2xl {
-    --tw-shadow: 0 0 #0000;
-    box-shadow: none;
-  }
   .container {
     @apply px-6 sm:px-10 lg:px-16;
   }
@@ -295,45 +273,45 @@
   }
 }
 
-/* RealScout / Calendly — monochrome, no rounded chrome, no drop shadows */
+/* RealScout / Calendly — CadenceNV sky blue */
 realscout-office-listings {
-  --rs-listing-divider-color: #111111;
+  --rs-listing-divider-color: #4da9d8;
   width: 100%;
   min-height: 280px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
   padding: 1rem;
 }
 
 realscout-your-listings {
-  --rs-listing-divider-color: #111111;
+  --rs-listing-divider-color: #4da9d8;
   width: 100%;
   min-height: 200px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
   padding: 1rem;
 }
 
 realscout-advanced-search {
   --rs-as-button-text-color: #ffffff;
   --rs-as-background-color: #ffffff;
-  --rs-as-button-color: #111111;
+  --rs-as-button-color: #4da9d8;
   --rs-as-widget-width: 500px !important;
   min-height: 120px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
   padding: 1rem;
 }
 
 realscout-simple-search {
-  --rs-ss-font-primary-color: #111111;
-  --rs-ss-searchbar-border-color: #111111;
+  --rs-ss-font-primary-color: #212934;
+  --rs-ss-searchbar-border-color: #4da9d8;
   --rs-ss-box-shadow: none;
   --rs-ss-widget-width: min(500px, 100%) !important;
   width: 100%;
@@ -341,39 +319,39 @@ realscout-simple-search {
   min-height: 80px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
   padding: 0.5rem;
 }
 
 realscout-home-value {
   --rs-hvw-background-color: #ffffff;
-  --rs-hvw-title-color: #111111;
-  --rs-hvw-subtitle-color: rgba(17, 17, 17, 0.55);
+  --rs-hvw-title-color: #212934;
+  --rs-hvw-subtitle-color: #4a4e57;
   --rs-hvw-primary-button-text-color: #ffffff;
-  --rs-hvw-primary-button-color: #111111;
-  --rs-hvw-secondary-button-text-color: #111111;
+  --rs-hvw-primary-button-color: #4da9d8;
+  --rs-hvw-secondary-button-text-color: #4da9d8;
   --rs-hvw-secondary-button-color: #ffffff;
   --rs-hvw-widget-width: auto;
   min-height: 180px;
   display: block;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
   padding: 1rem;
 }
 
 .calendly-inline-widget {
   background-color: #ffffff !important;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
 }
 
 [id^='rs-embed-'] {
   min-height: 400px;
   background-color: #ffffff;
-  border: 1px solid #e5e5e5;
-  border-radius: 0;
+  border: 1px solid #e2e2e2;
+  border-radius: 4px;
 }
 
 /* Hide the Calendly floating badge if a prior session injected it */

@@ -80,7 +80,7 @@ export function ServicesSection() {
             const isExternal = service.href.startsWith('http')
             const content = (
               <>
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-black text-white mb-6">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-primary text-white mb-6">
                   <Icon className="w-6 h-6" aria-hidden />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">

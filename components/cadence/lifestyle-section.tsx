@@ -28,7 +28,7 @@ export function LifestyleSection() {
             </p>
             <Button
               size="lg"
-              className="bg-black hover:bg-neutral-800 text-lg px-8"
+              className="text-lg px-8"
               asChild
             >
               <Link href="/lifestyle">Cadence Henderson lifestyle</Link>

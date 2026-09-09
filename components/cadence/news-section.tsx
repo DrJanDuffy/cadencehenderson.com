@@ -76,7 +76,7 @@ export async function NewsSection() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-black hover:bg-neutral-800 text-lg px-8"
+              className="text-lg px-8"
               asChild
             >
               <Link href="/news">Read Latest News</Link>

@@ -5,7 +5,7 @@ import { CONTACT_INFO } from './contact-info'
 
 export function CTABanner() {
   return (
-    <section className="py-28 bg-black text-white">
+    <section className="py-28 bg-cadence-ink text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-extralight tracking-[0.08em] mb-6">
@@ -17,7 +17,7 @@ export function CTABanner() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mb-10">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-neutral-100 w-full sm:w-auto"
+              className="bg-white text-primary hover:bg-blue-50 w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Buy</CalendlyLink>
@@ -25,7 +25,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-black w-full sm:w-auto"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary w-full sm:w-auto"
               asChild
             >
               <CalendlyLink>I Want To Sell</CalendlyLink>
@@ -35,7 +35,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-black"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <CalendlyLink>
@@ -46,7 +46,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-black"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
@@ -60,7 +60,7 @@ export function CTABanner() {
             <Button
               size="lg"
               variant="outline"
-              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-black"
+              className="border-white/70 bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
