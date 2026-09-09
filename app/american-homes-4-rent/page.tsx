@@ -5,12 +5,13 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { getVillagesByBuilder } from '@/lib/cadence-nv-catalog'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 const villages = getVillagesByBuilder('american-homes-4-rent')
@@ -32,12 +33,6 @@ export default function AmericanHomesPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Apartments in Cadence Henderson', href: `${BASE}/apartments` },
-          { name: 'American Homes 4 Rent' },
-        ]}
-      />
       <PageHero
         title="American Homes 4 Rent"
         subtitle="Detached rental homes in Cadence Henderson NV 89011 — Pine Landing and Vista del Mar. Rents change; this is not a rate sheet."
@@ -72,6 +67,16 @@ export default function AmericanHomesPage() {
           </ul>
         </div>
       </section>
+      <PageAeo
+        path="/american-homes-4-rent"
+        name="American Homes 4 Rent | Cadence Henderson NV"
+        description="AMH rental villages in Cadence Henderson NV 89011: Pine Landing and Vista del Mar. Detached-home leases. Confirm current rents. Dr. Jan Duffy for buyers."
+        faqs={defaultPageFaqs('American Homes 4 Rent in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Apartments in Cadence Henderson', path: '/apartments' },
+          { name: 'American Homes 4 Rent' },
+        ]}
+      />
       <AgentContactCta
         heading="Leasing now, buying later?"
         body="Dr. Jan can keep you on a Cadence new-home shortlist while you rent an AMH house in 89011."

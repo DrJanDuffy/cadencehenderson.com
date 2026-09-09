@@ -5,11 +5,12 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -49,12 +50,6 @@ export default function LifeAtCadencePage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Realtors', href: `${BASE}/realtors` },
-          { name: 'Life at Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Life at Cadence"
@@ -94,6 +89,16 @@ export default function LifeAtCadencePage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/realtors/life-at-cadence"
+        name="Life at Cadence Henderson | Community Guide 89011"
+        description="How Cadence Henderson NV 89011 actually tours: villages, amenities, and commute. Briefing for cooperating Realtors from Dr. Jan Duffy."
+        faqs={defaultPageFaqs('life at Cadence Henderson for buyer tours')}
+        breadcrumbs={[
+          { name: 'Realtors', path: '/realtors' },
+          { name: 'Life at Cadence' },
+        ]}
+      />
       <AgentContactCta
         heading="Walk Cadence with a local agent"
         body="A 15-minute call sets a model-home route, village shortlist, and commute check from the address you care about."

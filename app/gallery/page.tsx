@@ -10,6 +10,8 @@ import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 import { Button } from '@/components/ui/button'
 import { Image as ImageIcon, X, Calendar, Phone, Mail } from 'lucide-react'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
@@ -234,6 +236,14 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/gallery"
+        name="Photo Gallery | Cadence Henderson 89011"
+        description="Cadence Henderson gallery: Central Park, amenities, homes, community. Cadence master-planned community Henderson NV 89011."
+        faqs={defaultPageFaqs('Cadence Henderson photo gallery')}
+        breadcrumbs={[{ name: 'Cadence Henderson gallery NV 89011' }]}
+        faqHeading="Cadence Henderson gallery — questions"
+      />
       <Footer />
     </div>
   )

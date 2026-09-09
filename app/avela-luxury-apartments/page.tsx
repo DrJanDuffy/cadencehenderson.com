@@ -5,11 +5,12 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -43,12 +44,6 @@ export default function AvelaPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Apartments in Cadence Henderson', href: `${BASE}/apartments` },
-          { name: 'Avela Luxury Apartments' },
-        ]}
-      />
 
       <PageHero
         title="Avela Luxury Apartments"
@@ -100,6 +95,16 @@ export default function AvelaPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/avela-luxury-apartments"
+        name="Avela Luxury Apartments | Cadence Henderson NV"
+        description="Avela luxury apartments coming to Cadence Henderson NV 89011. Studio to two-bedroom plans. Confirm leasing with the community office. Dr. Jan Duffy for buyers."
+        faqs={defaultPageFaqs('Avela luxury apartments in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Apartments in Cadence Henderson', path: '/apartments' },
+          { name: 'Avela Luxury Apartments' },
+        ]}
+      />
       <AgentContactCta
         heading="Need a Cadence home while Avela is under construction?"
         body="Dr. Jan can show current apartments, built-to-rent homes, and new-construction inventory in 89011."

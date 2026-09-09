@@ -5,11 +5,12 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -37,12 +38,6 @@ export default function AscendPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Apartments in Cadence Henderson', href: `${BASE}/apartments` },
-          { name: 'Ascend Symmetry Apartments' },
-        ]}
-      />
 
       <PageHero
         title="Ascend Symmetry"
@@ -105,6 +100,16 @@ export default function AscendPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/ascend"
+        name="Ascend Symmetry Apartments | Cadence Henderson NV"
+        description="Ascend Symmetry apartments in Cadence Henderson NV 89011. Plans from 647 to 1,387 sq ft (1–3 bedrooms). Leasing 702-444-7754. Buyer help from Dr. Jan Duffy."
+        faqs={defaultPageFaqs('Ascend Symmetry apartments in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Apartments in Cadence Henderson', path: '/apartments' },
+          { name: 'Ascend Symmetry' },
+        ]}
+      />
       <AgentContactCta
         heading="Lease now, buy in Cadence later"
         body="Keep a relationship with a Cadence buyer’s agent while you rent at Ascend. When you are ready, the builder typically pays Dr. Jan’s fee."

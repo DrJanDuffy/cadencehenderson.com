@@ -6,11 +6,12 @@ import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -53,12 +54,6 @@ export default function FindYourHomePage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'New Homes in Cadence Henderson', href: `${BASE}/new-homes` },
-          { name: 'Find Your Home in Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Find Your Home"
@@ -85,7 +80,7 @@ export default function FindYourHomePage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <h2 className="mb-4 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900">
-              Search by builder
+              Search Cadence Henderson NV 89011 by builder
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600">
               Cadence Henderson includes single-family and townhome collections
@@ -121,7 +116,7 @@ export default function FindYourHomePage() {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-5xl">
             <h2 className="mb-4 text-center text-3xl font-extralight tracking-[0.06em] text-neutral-900">
-              Apartments and rental homes
+              Apartments and rental homes in Cadence Henderson NV 89011
             </h2>
             <p className="mx-auto mb-10 max-w-2xl text-center font-light text-neutral-600">
               Prefer to lease? Cadence also has apartment communities and
@@ -158,7 +153,7 @@ export default function FindYourHomePage() {
           <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
             <Landmark size={36} className="mb-4 text-primary" aria-hidden />
             <h2 className="mb-4 text-3xl font-extralight tracking-[0.06em] text-neutral-900">
-              Compare incentives before you write an offer
+              Compare Cadence Henderson builder incentives before you write an offer
             </h2>
             <p className="mb-8 font-light text-neutral-600">
               Rate buydowns, closing-cost credits, and included upgrades vary by
@@ -172,6 +167,16 @@ export default function FindYourHomePage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/find-your-home"
+        name="Find Your Home in Cadence Henderson NV | Floor Plans"
+        description="Search new homes, rentals, and floor plans in Cadence Henderson NV 89011. Compare builders with Dr. Jan Duffy. Live inventory via RealScout."
+        faqs={defaultPageFaqs('finding a new home or rental in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'New homes in Cadence Henderson', path: '/new-homes' },
+          { name: 'Find your home in Cadence Henderson' },
+        ]}
+      />
       <AgentContactCta
         heading="Want a shortlist, not a spreadsheet?"
         body="Tell Dr. Jan your beds, budget, and move-in window. You will get matching Cadence floor plans and a tour plan."

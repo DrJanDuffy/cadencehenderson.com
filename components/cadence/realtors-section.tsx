@@ -7,7 +7,7 @@ import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 
 export function RealtorsSection() {
   return (
-    <section className="py-24 bg-neutral-50">
+    <section className="py-24 bg-neutral-50" aria-labelledby="realtors-heading">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div className="order-2 md:order-1 relative h-[400px] overflow-hidden bg-neutral-200">
@@ -21,7 +21,7 @@ export function RealtorsSection() {
             />
           </div>
           <div className="order-1 md:order-2">
-            <h2 className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8">
+            <h2 id="realtors-heading" className="text-4xl font-extralight tracking-[0.06em] text-neutral-900 mb-8">
               Why Use a Buyer&apos;s Agent for New Construction in Henderson NV
             </h2>
             <div className="flex items-center gap-4 mb-6">
@@ -39,8 +39,8 @@ export function RealtorsSection() {
                 <p className="text-lg font-light tracking-[0.04em] text-neutral-900">Dr. Jan Duffy</p>
               </div>
             </div>
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-              Dr. Jan Duffy provides free new home buyer representation at Cadence Henderson NV 89011. She negotiates upgrades, lot premiums, and closing costs with all 9 builders — at zero cost to you. The builder pays her full commission. Call {CONTACT_INFO.phone} before your first model home visit.</p>
+            <p className="aeo-lead text-xl text-gray-700 mb-8 leading-relaxed" data-speakable>
+              Dr. Jan Duffy provides free new home buyer representation at Cadence Henderson NV 89011. She negotiates upgrades, lot premiums, and closing costs with Cadence builders — at zero cost to you. The builder pays her full commission. Call {CONTACT_INFO.phone} before your first model home visit. Office: {CONTACT_INFO.welcomeCenter}.</p>
             <Button
               size="lg"
               className="text-lg px-8"

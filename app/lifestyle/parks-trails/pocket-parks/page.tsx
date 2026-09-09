@@ -6,10 +6,11 @@ import { SiteImage } from '@/components/cadence/site-image'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { cfImage, SITE_IMAGES, getAmenityImage } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -49,13 +50,6 @@ export default function PocketParksPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Cadence Henderson Lifestyle', href: `${BASE}/lifestyle` },
-          { name: 'Parks & Trails in Cadence Henderson', href: `${BASE}/lifestyle/parks-trails` },
-          { name: 'Pocket Parks in Cadence Henderson' },
-        ]}
-      />
 
       <PageHero
         title="Pocket parks"
@@ -123,6 +117,17 @@ export default function PocketParksPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/lifestyle/parks-trails/pocket-parks"
+        name="Pocket Parks in Cadence Henderson | Neighborhood Parks"
+        description="Pocket parks and trail connections inside Cadence Henderson NV 89011. Square footage of play areas varies by village. Tour with Dr. Jan Duffy."
+        faqs={defaultPageFaqs('pocket parks in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Lifestyle', path: '/lifestyle' },
+          { name: 'Parks and trails', path: '/lifestyle/parks-trails' },
+          { name: 'Pocket parks' },
+        ]}
+      />
       <AgentContactCta
         heading="Want homes near a pocket park?"
         body="Dr. Jan can filter Cadence inventory by village and walk time to the nearest playground, trail, or Central Park gate."

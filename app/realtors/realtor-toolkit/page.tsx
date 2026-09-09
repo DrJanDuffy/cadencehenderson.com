@@ -6,11 +6,12 @@ import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { HomeSearchSection } from '@/components/cadence/home-search-section'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -50,12 +51,6 @@ export default function RealtorToolkitPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Realtors', href: `${BASE}/realtors` },
-          { name: 'Cadence Henderson Realtor Toolkit' },
-        ]}
-      />
 
       <PageHero
         title="Realtor toolkit"
@@ -130,6 +125,16 @@ export default function RealtorToolkitPage() {
 
       <HomeSearchSection compact />
 
+      <PageAeo
+        path="/realtors/realtor-toolkit"
+        name="Cadence Henderson Realtor Toolkit | Agent Resources"
+        description="Cadence Henderson talking points, village links, and Fair Housing reminders for cooperating agents. Dr. Jan Duffy, Henderson NV 89011."
+        faqs={defaultPageFaqs('showing Cadence Henderson as a cooperating realtor')}
+        breadcrumbs={[
+          { name: 'Realtors', path: '/realtors' },
+          { name: 'Realtor toolkit' },
+        ]}
+      />
       <AgentContactCta
         heading="Need a Cadence co-broke?"
         body={`${CONTACT_INFO.brokerage} · License ${CONTACT_INFO.licenseNumber} · ${CONTACT_INFO.welcomeCenter}`}

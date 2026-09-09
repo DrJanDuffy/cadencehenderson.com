@@ -5,11 +5,12 @@ import { PageHero } from '@/components/cadence/page-hero'
 import { AgentContactCta } from '@/components/cadence/agent-contact-cta'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
-import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
 import { RealScoutOfficeListings } from '@/components/idx/realscout-office-listings'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import { PageAeo } from '@/components/cadence/page-aeo'
+import { defaultPageFaqs } from '@/lib/page-aeo'
 
 const BASE = 'https://www.cadencehenderson.com'
 
@@ -30,12 +31,6 @@ export default function ElysianPage() {
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
-      <BreadcrumbSchema
-        items={[
-          { name: 'Apartments in Cadence Henderson', href: `${BASE}/apartments` },
-          { name: 'Elysian Homes Rentals' },
-        ]}
-      />
 
       <PageHero
         title="Elysian Homes"
@@ -86,6 +81,16 @@ export default function ElysianPage() {
         </div>
       </section>
 
+      <PageAeo
+        path="/elysian"
+        name="Elysian Homes Rentals | Cadence Henderson NV"
+        description="Elysian built-to-rent homes in Cadence Henderson NV 89011. Single-family style leases. Confirm current rents with the leasing office. Dr. Jan Duffy for buyers."
+        faqs={defaultPageFaqs('Elysian Homes rentals in Cadence Henderson')}
+        breadcrumbs={[
+          { name: 'Apartments in Cadence Henderson', path: '/apartments' },
+          { name: 'Elysian Homes' },
+        ]}
+      />
       <AgentContactCta
         heading="Compare lease vs. buy in 89011"
         body="Dr. Jan will run a side-by-side of Elysian-style rent versus a new Cadence mortgage after incentives — using today’s rates, not a flyer."
