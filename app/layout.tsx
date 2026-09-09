@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import { CalendlyProvider } from '../components/calendly/calendly-loader'
 import { CalendlyScriptLoader } from '../components/calendly/calendly-script-loader'
 import { CalendlyStyles } from '../components/calendly/calendly-styles'
@@ -116,6 +117,7 @@ export default function RootLayout({
           <ScrollToTop />
         </ThemeProvider>
         </CalendlyProvider>
+        <Analytics />
       </body>
     </html>
   )
