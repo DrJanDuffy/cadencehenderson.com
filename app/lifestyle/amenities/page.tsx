@@ -28,8 +28,8 @@ const amenities = [
       'Multiple community pools with lap lanes, splash pads, and heated spa areas. Perfect for year-round enjoyment.',
     features: [
       'Olympic-size lap pool',
-      'Family recreation pool',
-      'Children\'s splash pad',
+      'Recreation pool',
+      'About 2,000 sq ft splash pad',
       'Adults-only hot tubs',
       'Poolside cabanas',
       'Shaded seating areas',
@@ -105,12 +105,16 @@ const additionalAmenities = [
       'Fire pits and lounge seating',
       'Walking and biking trails',
       'Community garden plots',
+      'Sunset Road Linear Park with bounce pads, play structures, table tennis, and corn hole',
+      'Resident pool with Las Vegas Strip views',
+      'Pickleball courts in Central Park',
     ],
   },
   {
     category: 'Technology',
     items: [
       'High-speed fiber internet',
+      'Free wifi at amenity areas',
       'Smart community features',
       'Mobile app for amenity booking',
       'Online portal access',
@@ -294,7 +298,7 @@ export default function AmenitiesPage() {
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Splash pad with water features for kids
+                      About 2,000 sq ft splash pad with water features
                     </span>
                   </li>
                   <li className="flex items-start">
@@ -306,7 +310,21 @@ export default function AmenitiesPage() {
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
                     <span className="text-gray-700">
-                      Scenic walking and biking trails throughout
+                      Pickleball courts plus scenic walking and biking trails
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
+                    <span className="text-gray-700">
+                      Sunset Road Linear Park: bounce pads, play structures,
+                      table tennis, and corn hole
+                    </span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-cyan-900 rounded-full mr-3 mt-2" />
+                    <span className="text-gray-700">
+                      Resident pool with Las Vegas Strip views and free wifi at
+                      amenity areas
                     </span>
                   </li>
                 </ul>

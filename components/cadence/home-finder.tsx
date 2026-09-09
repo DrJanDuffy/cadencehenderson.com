@@ -3,6 +3,7 @@ import { CalendlyLink } from '@/components/calendly/calendly-link'
 import { Button } from '@/components/ui/button'
 import { CONTACT_INFO } from '@/components/cadence/contact-info'
 import { Search } from 'lucide-react'
+import Link from 'next/link'
 
 export function HomeFinder() {
   return (
@@ -16,15 +17,23 @@ export function HomeFinder() {
             <p className="text-xl font-light text-neutral-600 leading-relaxed max-w-2xl mx-auto">
               New homes Cadence Henderson NV 89011. Dr. Jan Duffy is your free buyer’s agent — builder pays her fee. Search above or open full search below.
             </p>
-            <a
-              href={CONTACT_INFO.realScoutSearchUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-sm font-semibold tracking-[0.08em] uppercase text-primary hover:underline"
-            >
-              <Search size={16} />
-              Open Home Search
-            </a>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+              <a
+                href={CONTACT_INFO.realScoutSearchUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.08em] uppercase text-primary hover:underline"
+              >
+                <Search size={16} />
+                Open Home Search
+              </a>
+              <Link
+                href="/communities"
+                className="inline-flex items-center gap-2 text-sm font-semibold tracking-[0.08em] uppercase text-primary hover:underline"
+              >
+                Cadence neighborhoods
+              </Link>
+            </div>
           </div>
           <RealScoutWidget className="min-h-[400px] overflow-hidden bg-white border border-neutral-200" />
           <div className="text-center mt-12">

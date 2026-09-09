@@ -10,7 +10,7 @@ import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
+import { Home, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
 /** Builder logos from cadencenv.com - same source as BuildersShowcase */
 const BUILDER_LOGOS: Record<string, string> = {
@@ -120,14 +120,24 @@ export default function NewHomesPage() {
                   Start Your Search
                 </Button>
               </a>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <MapPin className="mr-2" size={20} />
-                View Community Map
-              </Button>
+              <Link href="/find-your-home">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Find your home
+                </Button>
+              </Link>
+              <Link href="/incentives">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Incentives
+                </Button>
+              </Link>
             </div>
       </PageHero>
 
@@ -195,7 +205,11 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700">
               Choose from {builders.length} premier home builders offering over
-              150 homes
+              150 homes.{' '}
+              <Link href="/communities" className="font-semibold text-blue-900 hover:underline">
+                Browse every Cadence village
+              </Link>
+              .
             </p>
           </div>
 
@@ -203,7 +217,11 @@ export default function NewHomesPage() {
             {builders.map((builder) => (
               <Link
                 key={builder.slug}
-                href={`/new-homes/${builder.slug}`}
+                href={
+                  builder.slug === 'beazer-homes'
+                    ? '/communities/beazer'
+                    : `/new-homes/${builder.slug}`
+                }
                 className="group"
               >
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
@@ -249,8 +267,8 @@ export default function NewHomesPage() {
             </h2>
             <p className="text-xl text-gray-700 mb-8">
               Contact Dr. Jan Duffy to schedule a personalized tour of Cadence.
-              I'll guide you through all builders and help you find the perfect
-              home for your family.
+              I'll guide you through Cadence builders and help you compare
+              floor plans, lot orientation, and net monthly cost.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <CalendlyLink>

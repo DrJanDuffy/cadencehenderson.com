@@ -1,14 +1,20 @@
 # Task plan
 
-Match CadenceNV.com color scheme across cadencehenderson.com (sky blue #4da9d8, ink #212934, green/orange accents). Undo Quiet Luxury grayscale remaps.
+Put CadenceNV.com information on cadencehenderson.com: every community, village, rental, and lifestyle topic that CadenceNV publishes, as original pages (no verbatim copy).
 
 ## Current plan
 
-- [x] Map Tailwind blues/greens/accents to CadenceNV palette; set `--primary` to #4da9d8
-- [x] Restyle nav, CTAs, footer, and dark bands to Cadence blue/ink
-- [x] Verify homepage + inner page in browser
-- [x] Commit, push, open PR
+- [x] Diff CadenceNV sitemap vs our routes; extract village/rental facts
+- [x] Data-driven builder village + remaining community pages
+- [x] URL aliases, sitemap, nav; fill homepage/content gaps
+- [x] Verify, commit, update PR
 
 ## Review
 
-CadenceNV live palette applied site-wide: sky `#4da9d8` (nav CTA, primary buttons, RealScout), ink `#212934` (footer and dark bands), green/orange/purple accents on inner pages. Verified homepage (blue Find a Realtor, white/blue hero CTA, ink footer), `/lifestyle`, and `/new-homes/lennar`.
+CadenceNV neighborhood IA now lives on cadencehenderson.com:
+
+- Village catalog in `lib/cadence-nv-catalog.ts` (plan names + sq ft/beds/baths, no asking prices)
+- Dynamic pages under `/communities/[builder]/[community]`
+- CadenceNV-style URLs via rewrites (`/beazer/aria-crossing`, `/lennar/carlton`, `/adler`, `/element12`, etc.)
+- Directory at `/communities`, AMH hub, Media page
+- Nav, footer, sitemap, Find Your Home, apartments, amenities, and builder pages link to the on-site villages

@@ -7,6 +7,7 @@ import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
 import { ShoppingBag, Coffee, Utensils, Film, Heart } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import Link from 'next/link'
 
 const shoppingCenters = [
   {
@@ -121,6 +122,25 @@ export default function ShoppingPage() {
       />
 
       <RealScoutOfficeListings />
+
+      <section className="border-b border-neutral-200 py-10">
+        <div className="container mx-auto px-4">
+          <nav
+            aria-label="Shopping and nearby destinations"
+            className="mx-auto flex max-w-4xl flex-wrap justify-center gap-4 text-sm"
+          >
+            <Link href="/lifestyle/shopping/restaurants" className="font-medium text-primary hover:underline">
+              Restaurants
+            </Link>
+            <Link href="/lifestyle/shopping/entertainment" className="font-medium text-primary hover:underline">
+              Entertainment
+            </Link>
+            <Link href="/lifestyle/shopping/activities" className="font-medium text-primary hover:underline">
+              Outdoor activities
+            </Link>
+          </nav>
+        </div>
+      </section>
 
       {/* Shopping Centers */}
       <section className="py-16">

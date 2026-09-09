@@ -12,6 +12,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { getHomeImage, getBuilderImage, getBuilderHeroImage, cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import { getVillagesByBuilder, NEW_HOMES_SLUG_TO_CATALOG } from '@/lib/cadence-nv-catalog'
 
 const builderRealScoutUrls: Record<string, string | undefined> = {
   'beazer-homes': CONTACT_INFO.realScoutBeazerHomesUrl,
@@ -522,6 +523,8 @@ export default async function BuilderPage({
   const { builder: builderSlug } = await params
   const builder = builderData[builderSlug]
   const builderRealScoutUrl = builderRealScoutUrls[builderSlug]
+  const catalogSlug = NEW_HOMES_SLUG_TO_CATALOG[builderSlug]
+  const villages = catalogSlug ? getVillagesByBuilder(catalogSlug) : []
 
   if (!builder) {
     notFound()
@@ -592,6 +595,50 @@ export default async function BuilderPage({
       <RealScoutOfficeListings />
 
       <HomeSearchSection compact />
+
+      {villages.length > 0 ? (
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-4xl">
+              <h2 className="mb-4 text-center text-3xl font-bold text-gray-900">
+                {builder.name} villages in Cadence
+              </h2>
+              <p className="mb-8 text-center text-gray-700">
+                Neighborhood names and published plans from the Cadence developer
+                directory. Asking prices change — confirm current inventory with
+                Dr. Jan.
+              </p>
+              <ul className="grid gap-3 sm:grid-cols-2">
+                {villages.map((village) => (
+                  <li key={village.cadencePath}>
+                    <Link
+                      href={village.cadencePath}
+                      className="font-medium text-blue-900 hover:underline"
+                    >
+                      {village.name}
+                    </Link>
+                    <span className="text-sm text-gray-600">
+                      {village.kind === 'sold-out'
+                        ? ' — sold out'
+                        : village.plans.length > 0
+                          ? ` — ${village.plans.length} published plans`
+                          : ''}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-center">
+                <Link
+                  href="/communities"
+                  className="text-sm font-medium text-blue-900 hover:underline"
+                >
+                  All Cadence Henderson neighborhoods
+                </Link>
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* About Builder */}
       <section className="py-16 bg-gray-50">

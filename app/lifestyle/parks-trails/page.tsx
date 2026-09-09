@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { Trees, MapPin, Bike, Dog, Users } from 'lucide-react'
 import { cfImage, SITE_IMAGES, getAmenityImage, getGalleryImage } from '@/lib/cloudflare-images'
 import { BreadcrumbSchema } from '@/components/schema/breadcrumb'
+import Link from 'next/link'
 
 const parks = [
   {
@@ -120,13 +121,15 @@ export default function ParksTrailsPage() {
         imageAlt="Parks and trails at Cadence Henderson NV 89011"
         icon={Trees}
       >
-        <Button
-          size="lg"
-          className="bg-white text-green-900 hover:bg-gray-100"
-        >
-          <MapPin className="mr-2" size={20} />
-          View Parks Map
-        </Button>
+        <Link href="/lifestyle/parks-trails/pocket-parks">
+          <Button
+            size="lg"
+            className="bg-white text-green-900 hover:bg-gray-100"
+          >
+            <MapPin className="mr-2" size={20} />
+            Pocket parks
+          </Button>
+        </Link>
       </PageHero>
 
       <RealScoutOfficeListings />
