@@ -20,7 +20,7 @@ export function HomeFinder() {
               href={CONTACT_INFO.realScoutSearchUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-sm font-light tracking-[0.12em] uppercase text-neutral-900 hover:underline"
+              className="inline-flex items-center gap-2 mt-6 text-sm font-semibold tracking-[0.08em] uppercase text-primary hover:underline"
             >
               <Search size={16} />
               Open Home Search
@@ -31,7 +31,7 @@ export function HomeFinder() {
             <p className="text-lg font-light text-neutral-600 mb-6">
               Want a free 15-minute buyer call or in-person tour? Dr. Jan Duffy — Cadence Henderson NV 89011.
             </p>
-            <Button size="lg" className="bg-black hover:bg-neutral-800" asChild>
+            <Button size="lg" asChild>
               <CalendlyLink>Schedule your free 15-min call</CalendlyLink>
             </Button>
           </div>

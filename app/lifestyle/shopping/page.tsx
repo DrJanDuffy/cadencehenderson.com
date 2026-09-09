@@ -286,7 +286,7 @@ export default function ShoppingPage() {
       </section>
 
       {/* Las Vegas Strip Section */}
-      <section className="py-16 bg-gradient-to-r from-slate-900 to-slate-800 text-white">
+      <section className="py-16 bg-cadence-ink text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-6">

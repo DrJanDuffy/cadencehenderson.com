@@ -43,7 +43,7 @@ export function RealtorsSection() {
               Dr. Jan Duffy provides free new home buyer representation at Cadence Henderson NV 89011. She negotiates upgrades, lot premiums, and closing costs with all 9 builders — at zero cost to you. The builder pays her full commission. Call {CONTACT_INFO.phone} before your first model home visit.</p>
             <Button
               size="lg"
-              className="bg-black hover:bg-neutral-800 text-lg px-8"
+              className="text-lg px-8"
               asChild
             >
               <CalendlyLink>Schedule your free 15-min call</CalendlyLink>

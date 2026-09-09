@@ -35,7 +35,7 @@ export function LocationSection() {
             <div className="flex flex-wrap gap-3">
               <Button
                 size="lg"
-                className="bg-black hover:bg-neutral-800 text-lg px-8"
+                className="text-lg px-8"
                 asChild
               >
                 <Link href="/maps" aria-label="Maps and directions in Cadence Henderson">

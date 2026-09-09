@@ -42,7 +42,7 @@ export function Hero() {
           <div className="flex flex-wrap gap-3">
             <Button
               size="default"
-              className="bg-white text-black hover:bg-neutral-100"
+              className="bg-white text-primary hover:bg-blue-50"
               asChild
             >
               <CalendlyLink>
@@ -53,7 +53,7 @@ export function Hero() {
             <Button
               size="default"
               variant="outline"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-black"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a
@@ -66,7 +66,7 @@ export function Hero() {
             <Button
               size="default"
               variant="outline"
-              className="border-white bg-transparent text-white hover:bg-white hover:text-black"
+              className="border-white bg-transparent text-white hover:bg-white hover:text-primary"
               asChild
             >
               <a

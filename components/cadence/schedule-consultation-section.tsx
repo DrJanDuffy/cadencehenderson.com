@@ -35,7 +35,7 @@ export function ScheduleConsultationSection() {
 
   return (
     <section
-      className="py-24 bg-black text-white"
+      className="py-24 bg-cadence-ink text-white"
       aria-labelledby="schedule-consultation-heading"
     >
       <div className="container mx-auto px-4 sm:px-6">
@@ -49,7 +49,7 @@ export function ScheduleConsultationSection() {
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             <Button
               size="lg"
-              className="bg-white text-black hover:bg-neutral-100"
+              className="bg-white text-primary hover:bg-blue-50"
               asChild
             >
               <CalendlyLink>
@@ -59,7 +59,7 @@ export function ScheduleConsultationSection() {
             </Button>
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/-/g, '')}`}
-              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-light tracking-[0.08em] text-white hover:bg-white hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-semibold tracking-[0.08em] uppercase text-white hover:bg-white hover:text-primary transition-colors"
               aria-label={`Call Dr. Jan Duffy: ${CONTACT_INFO.phone}`}
             >
               <Phone size={20} aria-hidden />
@@ -67,7 +67,7 @@ export function ScheduleConsultationSection() {
             </a>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-light tracking-[0.08em] text-white hover:bg-white hover:text-black transition-colors"
+              className="inline-flex items-center justify-center gap-2 border border-white/70 px-6 py-3 text-sm font-semibold tracking-[0.08em] uppercase text-white hover:bg-white hover:text-primary transition-colors"
               aria-label="Email Dr. Jan Duffy"
             >
               <Mail size={20} aria-hidden />

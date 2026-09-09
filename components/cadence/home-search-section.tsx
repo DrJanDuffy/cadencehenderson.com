@@ -47,7 +47,7 @@ export function HomeSearchSection({ variant = 'default', compact = false }: Home
               <p className="text-neutral-600 font-light mb-6">
                 Want a personalized tour or buyer consultation?
               </p>
-              <Button size="lg" className="bg-black hover:bg-neutral-800" asChild>
+              <Button size="lg" asChild>
                 <CalendlyLink>Schedule a call with Dr. Jan</CalendlyLink>
               </Button>
             </div>

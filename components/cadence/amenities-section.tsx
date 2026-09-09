@@ -19,7 +19,7 @@ export function AmenitiesSection() {
             </p>
             <Button
               size="lg"
-              className="bg-black hover:bg-neutral-800 text-lg px-8"
+              className="text-lg px-8"
               asChild
             >
               <Link href="/lifestyle/amenities">Cadence community amenities</Link>
