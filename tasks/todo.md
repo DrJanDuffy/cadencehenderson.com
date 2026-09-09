@@ -1,14 +1,13 @@
 # Task plan
 
-Match CadenceNV.com color scheme across cadencehenderson.com (sky blue #4da9d8, ink #212934, green/orange accents). Undo Quiet Luxury grayscale remaps.
+Create more public pages from CadenceNV.com information architecture. Original copy only (no verbatim CadenceNV paragraphs). Fair Housing: no school ratings or “family-friendly” proxies.
 
 ## Current plan
 
-- [x] Map Tailwind blues/greens/accents to CadenceNV palette; set `--primary` to #4da9d8
-- [x] Restyle nav, CTAs, footer, and dark bands to Cadence blue/ink
-- [x] Verify homepage + inner page in browser
-- [x] Commit, push, open PR
+- [ ] Add Find Your Home, Incentives, pocket parks, shopping subpages, realtor resources, apartment communities, disclaimer
+- [ ] Unique titles/canonicals, NAP from CONTACT_INFO, sitemap + nav/footer
+- [ ] Verify routes render; commit; PR stacked on brand-colors branch
 
 ## Review
 
-CadenceNV live palette applied site-wide: sky `#4da9d8` (nav CTA, primary buttons, RealScout), ink `#212934` (footer and dark bands), green/orange/purple accents on inner pages. Verified homepage (blue Find a Realtor, white/blue hero CTA, ink footer), `/lifestyle`, and `/new-homes/lennar`.
+_(filled after implementation)_

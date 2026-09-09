@@ -53,7 +53,7 @@ const lifestyleFeatures = [
     icon: GraduationCap,
     title: 'Schools',
     description:
-      'Top-rated Clark County schools including elementary, middle, and high schools.',
+      'Clark County campuses serving Cadence, including Cadence Elementary on-site. Confirm attendance zones by address.',
     image: cfImage(SITE_IMAGES.hero.schools, 'card'),
     link: '/lifestyle/schools',
   },

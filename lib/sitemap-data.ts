@@ -19,11 +19,27 @@ const BUILDERS = [
 const LIFESTYLE_PAGES = [
   '/lifestyle/events',
   '/lifestyle/parks-trails',
+  '/lifestyle/parks-trails/pocket-parks',
   '/lifestyle/schools',
   '/lifestyle/shopping',
+  '/lifestyle/shopping/restaurants',
+  '/lifestyle/shopping/entertainment',
+  '/lifestyle/shopping/activities',
   '/lifestyle/amenities',
   '/lifestyle/community',
   '/lifestyle/animal-hospital',
+] as const
+
+const RESOURCE_PAGES = [
+  '/find-your-home',
+  '/incentives',
+  '/apartments',
+  '/ascend',
+  '/avela-luxury-apartments',
+  '/elysian',
+  '/realtors/life-at-cadence',
+  '/realtors/realtor-toolkit',
+  '/disclaimer',
 ] as const
 
 export type SitemapEntry = {
@@ -75,5 +91,12 @@ export function getSitemapEntries(): SitemapEntry[] {
     priority: 0.9,
   }))
 
-  return [...mainPages, ...rentalPages, ...lifestyle, ...builderPages]
+  const resourcePages: SitemapEntry[] = RESOURCE_PAGES.map((path) => ({
+    url: `${base}${path}`,
+    lastModified: now,
+    changeFrequency: 'weekly' as const,
+    priority: 0.8,
+  }))
+
+  return [...mainPages, ...rentalPages, ...lifestyle, ...builderPages, ...resourcePages]
 }

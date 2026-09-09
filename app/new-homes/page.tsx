@@ -10,7 +10,7 @@ import { RealScoutWidget } from '@/components/idx/realscout-widget'
 import { Navigation } from '@/components/cadence/navigation'
 import { Footer } from '@/components/cadence/footer'
 import { Button } from '@/components/ui/button'
-import { Home, MapPin, Bed, Bath, Ruler, Search } from 'lucide-react'
+import { Home, Bed, Bath, Ruler, Search } from 'lucide-react'
 import Link from 'next/link'
 /** Builder logos from cadencenv.com - same source as BuildersShowcase */
 const BUILDER_LOGOS: Record<string, string> = {
@@ -120,14 +120,24 @@ export default function NewHomesPage() {
                   Start Your Search
                 </Button>
               </a>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <MapPin className="mr-2" size={20} />
-                View Community Map
-              </Button>
+              <Link href="/find-your-home">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Find your home
+                </Button>
+              </Link>
+              <Link href="/incentives">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-blue-900"
+                >
+                  Incentives
+                </Button>
+              </Link>
             </div>
       </PageHero>
 

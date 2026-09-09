@@ -20,6 +20,7 @@ import {
   Phone,
 } from 'lucide-react'
 import { cfImage, SITE_IMAGES } from '@/lib/cloudflare-images'
+import Link from 'next/link'
 
 export default function RealtorsPage() {
   return (
@@ -81,6 +82,19 @@ export default function RealtorsPage() {
       <RealScoutOfficeListings />
 
       <HomeSearchSection compact />
+
+      <section className="bg-neutral-50 py-10">
+        <div className="container mx-auto px-4">
+          <div className="mx-auto flex max-w-3xl flex-wrap justify-center gap-6 text-sm">
+            <Link href="/realtors/life-at-cadence" className="font-medium text-primary hover:underline">
+              Life at Cadence briefing
+            </Link>
+            <Link href="/realtors/realtor-toolkit" className="font-medium text-primary hover:underline">
+              Realtor toolkit
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* About Dr. Jan */}
       <section className="py-16 bg-white">

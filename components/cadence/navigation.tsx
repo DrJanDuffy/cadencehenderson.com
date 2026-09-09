@@ -46,12 +46,15 @@ const navigationItems: NavItem[] = [
     ariaLabel: 'New homes for sale in Cadence Henderson',
     titleAttr: 'Browse new homes and builders in Cadence Henderson, NV',
     items: [
+      { label: 'Find Your Home in Cadence', href: '/find-your-home' },
+      { label: 'Builder Incentives', href: '/incentives' },
       {
         label: 'Start Your Search',
         href: CONTACT_INFO.realScoutSearchUrl,
         external: true,
       },
       { label: 'Rentals in Cadence Henderson', href: '/rentals' },
+      { label: 'Apartments in Cadence Henderson', href: '/apartments' },
       {
         label: 'Search Available Rentals',
         href: CONTACT_INFO.realScoutRentalsUrl,
@@ -76,8 +79,12 @@ const navigationItems: NavItem[] = [
       { label: 'Cadence Henderson Amenities', href: '/lifestyle/amenities' },
       { label: 'Community Events', href: '/lifestyle/events' },
       { label: 'Parks & Trails', href: '/lifestyle/parks-trails' },
+      { label: 'Pocket Parks', href: '/lifestyle/parks-trails/pocket-parks' },
       { label: 'Schools Near Cadence Henderson', href: '/lifestyle/schools' },
       { label: 'Shopping & Dining', href: '/lifestyle/shopping' },
+      { label: 'Restaurants Near Cadence', href: '/lifestyle/shopping/restaurants' },
+      { label: 'Entertainment Near Cadence', href: '/lifestyle/shopping/entertainment' },
+      { label: 'Outdoor Activities Near Cadence', href: '/lifestyle/shopping/activities' },
       { label: 'Community Life', href: '/lifestyle/community' },
       { label: 'Cadence Animal Hospital', href: '/lifestyle/animal-hospital' },
     ],
@@ -100,6 +107,8 @@ const navigationItems: NavItem[] = [
     items: [
       { label: 'Cadence Henderson FAQ', href: '/faqs' },
       { label: 'Realtors', href: '/realtors' },
+      { label: 'Life at Cadence', href: '/realtors/life-at-cadence' },
+      { label: 'Realtor Toolkit', href: '/realtors/realtor-toolkit' },
       { label: 'Past Home Sales in Cadence Henderson', href: '/past-homesales' },
       { label: 'Residents', href: '/residents' },
     ],
